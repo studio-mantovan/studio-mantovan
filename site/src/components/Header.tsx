@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { patologie } from '@/lib/patologie'
-import { ChevronDown, Menu, X, Phone } from 'lucide-react'
+import { ChevronDown, Menu, X } from 'lucide-react'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -12,69 +12,144 @@ export default function Header() {
   const [dropdownOpen, setDropdownOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20)
+    const onScroll = () => setScrolled(window.scrollY > 24)
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  const navLinkClass = `text-sm font-semibold transition-colors hover:text-[#1A9EC9] ${
+    scrolled ? 'text-[#2C2C2C]' : 'text-[#2C2C2C]'
+  }`
+
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-transparent'
-      }`}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 50,
+        backgroundColor: scrolled ? 'rgba(250,250,248,0.97)' : 'rgba(250,250,248,0.85)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        boxShadow: scrolled ? '0 1px 0 #E5E9EA' : 'none',
+        transition: 'background-color 0.3s, box-shadow 0.3s',
+      }}
     >
-      <div className="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5 shrink-0">
-          <Image src="/logo.png" alt="Studio Mantovan" width={36} height={36} className="rounded-lg" />
-          <div className="leading-tight">
-            <div className="text-sm font-800 text-brand-text" style={{ fontWeight: 800 }}>Studio Mantovan</div>
-            <div className="text-[10px] text-brand-text/50 font-500 tracking-wide uppercase">Fisioterapia in Movimento</div>
-          </div>
+      <div
+        style={{
+          maxWidth: 'var(--container-max)',
+          margin: '0 auto',
+          padding: '0 var(--container-padding)',
+          height: '68px',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '1.5rem',
+        }}
+      >
+        {/* ── Logo ── */}
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '10px', flexShrink: 0, textDecoration: 'none' }}>
+          <Image
+            src="/logo.png"
+            alt="Studio Mantovan – Fisioterapia in Movimento"
+            width={52}
+            height={52}
+            priority
+            style={{ display: 'block' }}
+          />
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-7 text-sm font-600 text-brand-text/70">
-          <Link href="/" className="hover:text-brand-primary transition-colors">
-            Home
-          </Link>
+        {/* ── Desktop nav ── */}
+        <nav
+          className="hidden md:flex items-center"
+          style={{ gap: '2rem', flex: 1, justifyContent: 'center' }}
+        >
+          <Link href="/" className={navLinkClass}>Home</Link>
 
-          {/* Patologie dropdown */}
+          {/* Dropdown patologie */}
           <div
-            className="relative"
+            style={{ position: 'relative' }}
             onMouseEnter={() => setDropdownOpen(true)}
             onMouseLeave={() => setDropdownOpen(false)}
           >
             <button
-              className="flex items-center gap-1 hover:text-brand-primary transition-colors"
+              className={navLinkClass}
+              style={{ display: 'flex', alignItems: 'center', gap: '4px', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
               aria-expanded={dropdownOpen}
             >
               Patologie
               <ChevronDown
                 size={14}
-                className={`transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`}
+                style={{ transition: 'transform 0.2s', transform: dropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)' }}
               />
             </button>
 
             {dropdownOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 pt-3 w-64">
-                <div className="bg-white rounded-2xl shadow-xl border border-brand-surface p-2 overflow-hidden">
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  paddingTop: '12px',
+                  width: '260px',
+                  zIndex: 100,
+                }}
+              >
+                <div
+                  style={{
+                    background: '#FFFFFF',
+                    borderRadius: '16px',
+                    boxShadow: '0 8px 32px rgba(26,158,201,0.12), 0 2px 8px rgba(0,0,0,0.06)',
+                    border: '1px solid #F0F4F5',
+                    padding: '8px',
+                    overflow: 'hidden',
+                  }}
+                >
                   {patologie.map((p) => (
                     <Link
                       key={p.slug}
                       href={`/patologie/${p.slug}`}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-brand-surface transition-colors group"
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '12px',
+                        padding: '10px 12px',
+                        borderRadius: '10px',
+                        textDecoration: 'none',
+                        color: '#2C2C2C',
+                        fontSize: '14px',
+                        fontWeight: 600,
+                        transition: 'background 0.15s, color 0.15s',
+                      }}
+                      onMouseEnter={e => {
+                        ;(e.currentTarget as HTMLAnchorElement).style.background = '#F0F4F5'
+                        ;(e.currentTarget as HTMLAnchorElement).style.color = '#1A9EC9'
+                      }}
+                      onMouseLeave={e => {
+                        ;(e.currentTarget as HTMLAnchorElement).style.background = 'transparent'
+                        ;(e.currentTarget as HTMLAnchorElement).style.color = '#2C2C2C'
+                      }}
                     >
-                      <span className="text-lg">{p.emoji}</span>
-                      <span className="text-sm font-600 text-brand-text group-hover:text-brand-primary transition-colors leading-tight">
-                        {p.nome}
-                      </span>
+                      <span style={{ fontSize: '18px', lineHeight: 1 }}>{p.emoji}</span>
+                      <span style={{ lineHeight: 1.3 }}>{p.nome}</span>
                     </Link>
                   ))}
-                  <div className="border-t border-brand-surface mt-2 pt-2">
+                  <div style={{ borderTop: '1px solid #F0F4F5', marginTop: '8px', paddingTop: '8px' }}>
                     <Link
                       href="/patologie"
-                      className="flex items-center justify-center px-3 py-2 text-xs font-600 text-brand-primary hover:bg-brand-surface rounded-xl transition-colors"
+                      style={{
+                        display: 'block',
+                        textAlign: 'center',
+                        padding: '8px',
+                        fontSize: '12px',
+                        fontWeight: 700,
+                        color: '#1A9EC9',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        transition: 'background 0.15s',
+                      }}
                     >
                       Tutte le patologie →
                     </Link>
@@ -84,37 +159,53 @@ export default function Header() {
             )}
           </div>
 
-          <Link href="/blog" className="hover:text-brand-primary transition-colors">
-            Blog
-          </Link>
-          <Link href="/chi-sono" className="hover:text-brand-primary transition-colors">
-            Chi sono
-          </Link>
+          <Link href="/blog" className={navLinkClass}>Blog</Link>
+          <Link href="/chi-sono" className={navLinkClass}>Chi sono</Link>
         </nav>
 
-        {/* CTA desktop */}
-        <div className="hidden md:flex items-center gap-3">
+        {/* ── CTA desktop ── */}
+        <div className="hidden md:flex items-center" style={{ gap: '12px', flexShrink: 0 }}>
           <a
             href="tel:+393519242517"
-            className="flex items-center gap-1.5 text-sm text-brand-text/60 hover:text-brand-primary transition-colors"
+            style={{ fontSize: '13px', color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#1A9EC9')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
           >
-            <Phone size={13} />
             351 924 2517
           </a>
           <a
             href="https://wa.me/393519242517"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-brand-primary hover:bg-brand-primary-dark text-white text-sm font-700 px-4 py-2 rounded-full transition-all hover:-translate-y-px"
-            style={{ fontWeight: 700 }}
+            style={{
+              background: '#1A9EC9',
+              color: '#FFFFFF',
+              fontSize: '14px',
+              fontWeight: 700,
+              padding: '10px 20px',
+              borderRadius: '50px',
+              textDecoration: 'none',
+              transition: 'background 0.2s, transform 0.15s',
+              display: 'inline-block',
+              letterSpacing: '0.01em',
+            }}
+            onMouseEnter={e => {
+              ;(e.currentTarget as HTMLAnchorElement).style.background = '#147FA0'
+              ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(-1px)'
+            }}
+            onMouseLeave={e => {
+              ;(e.currentTarget as HTMLAnchorElement).style.background = '#1A9EC9'
+              ;(e.currentTarget as HTMLAnchorElement).style.transform = 'translateY(0)'
+            }}
           >
             Visita gratuita
           </a>
         </div>
 
-        {/* Hamburger */}
+        {/* ── Hamburger mobile ── */}
         <button
-          className="md:hidden p-2 text-brand-text/70 hover:text-brand-primary transition-colors"
+          className="md:hidden"
+          style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '8px', color: '#2C2C2C' }}
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Menu"
         >
@@ -122,56 +213,54 @@ export default function Header() {
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* ── Mobile menu ── */}
       {mobileOpen && (
-        <div className="md:hidden bg-white border-t border-brand-surface shadow-xl">
-          <nav className="max-w-6xl mx-auto px-5 py-4 flex flex-col gap-1">
-            <Link
-              href="/"
-              onClick={() => setMobileOpen(false)}
-              className="px-3 py-2.5 text-sm font-600 text-brand-text hover:text-brand-primary hover:bg-brand-surface rounded-xl transition-colors"
-            >
-              Home
-            </Link>
-
-            <div className="px-3 py-1.5 text-xs font-700 text-brand-text/40 uppercase tracking-wider mt-1">
+        <div
+          style={{
+            background: '#FAFAF8',
+            borderTop: '1px solid #F0F4F5',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
+          }}
+        >
+          <nav
+            style={{
+              maxWidth: 'var(--container-max)',
+              margin: '0 auto',
+              padding: '1rem var(--container-padding)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '4px',
+            }}
+          >
+            <Link href="/" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Home</Link>
+            <div style={{ padding: '8px 12px 4px', fontSize: '11px', fontWeight: 700, color: '#9CA3AF', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
               Patologie
             </div>
             {patologie.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/patologie/${p.slug}`}
-                onClick={() => setMobileOpen(false)}
-                className="flex items-center gap-3 px-3 py-2.5 text-sm font-500 text-brand-text hover:text-brand-primary hover:bg-brand-surface rounded-xl transition-colors"
-              >
-                <span>{p.emoji}</span>
-                {p.nome}
+              <Link key={p.slug} href={`/patologie/${p.slug}`} onClick={() => setMobileOpen(false)}
+                style={{ ...mobileNavStyle, display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span>{p.emoji}</span>{p.nome}
               </Link>
             ))}
-
-            <div className="border-t border-brand-surface mt-2 pt-2 flex flex-col gap-1">
-              <Link
-                href="/blog"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2.5 text-sm font-600 text-brand-text hover:text-brand-primary hover:bg-brand-surface rounded-xl transition-colors"
-              >
-                Blog
-              </Link>
-              <Link
-                href="/chi-sono"
-                onClick={() => setMobileOpen(false)}
-                className="px-3 py-2.5 text-sm font-600 text-brand-text hover:text-brand-primary hover:bg-brand-surface rounded-xl transition-colors"
-              >
-                Chi sono
-              </Link>
-            </div>
-
-            <div className="border-t border-brand-surface mt-2 pt-3">
+            <div style={{ borderTop: '1px solid #F0F4F5', margin: '8px 0 4px' }} />
+            <Link href="/blog" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Blog</Link>
+            <Link href="/chi-sono" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Chi sono</Link>
+            <div style={{ paddingTop: '12px' }}>
               <a
                 href="https://wa.me/393519242517"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center bg-brand-primary text-white font-700 py-3 rounded-full text-sm transition-colors hover:bg-brand-primary-dark"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  background: '#1A9EC9',
+                  color: '#FFFFFF',
+                  fontWeight: 700,
+                  fontSize: '14px',
+                  padding: '14px',
+                  borderRadius: '50px',
+                  textDecoration: 'none',
+                }}
               >
                 Prenota la visita gratuita
               </a>
@@ -181,4 +270,15 @@ export default function Header() {
       )}
     </header>
   )
+}
+
+const mobileNavStyle: React.CSSProperties = {
+  display: 'block',
+  padding: '10px 12px',
+  borderRadius: '10px',
+  textDecoration: 'none',
+  color: '#2C2C2C',
+  fontSize: '14px',
+  fontWeight: 600,
+  transition: 'background 0.15s, color 0.15s',
 }

@@ -3,11 +3,25 @@ import Link from 'next/link'
 import { patologie } from '@/lib/patologie'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
-import { CheckCircle2, ArrowRight, Quote } from 'lucide-react'
+import { PatologieLinks } from '@/components/PatologieLinks'
 
-/* ─────────────────────────────────────────────
-   HOME PAGE
-───────────────────────────────────────────── */
+/* ─── Costanti design system (da landing-page-style.md) ─── */
+const C = {
+  primary:        '#1A9EC9',
+  primaryDark:    '#147FA0',
+  secondary:      '#5DBFB0',
+  secondaryLight: '#7ED4C8',
+  bg:             '#FAFAF8',
+  text:           '#2C2C2C',
+  surface:        '#F0F4F5',
+  white:          '#FFFFFF',
+  radius:         '16px',
+  radiusSm:       '8px',
+  radiusLg:       '24px',
+  container:      '1100px',
+  pad:            '1.5rem',
+}
+
 export default function HomePage() {
   return (
     <>
@@ -24,72 +38,125 @@ export default function HomePage() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   HERO
-───────────────────────────────────────────── */
+/* ─────────────────── HERO ─────────────────── */
 function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-brand-bg pt-16">
+    <section
+      style={{
+        position: 'relative',
+        minHeight: '100svh',
+        display: 'flex',
+        alignItems: 'center',
+        backgroundColor: C.bg,
+        paddingTop: '68px',
+        overflow: 'hidden',
+      }}
+    >
       {/* Gradient orbs */}
-      <div className="absolute inset-0 pointer-events-none select-none">
-        <div className="absolute -bottom-40 -right-40 w-[700px] h-[700px] rounded-full bg-brand-primary/8 blur-3xl" />
-        <div className="absolute top-1/4 left-1/4 w-[450px] h-[450px] rounded-full bg-brand-secondary/6 blur-3xl" />
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        <div style={{
+          position: 'absolute', bottom: '-160px', right: '-160px',
+          width: '680px', height: '680px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(26,158,201,0.09) 0%, transparent 70%)',
+        }} />
+        <div style={{
+          position: 'absolute', top: '20%', left: '10%',
+          width: '480px', height: '480px', borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(93,191,176,0.07) 0%, transparent 70%)',
+        }} />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-5 py-20 grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-12 lg:gap-20 items-center">
-        {/* Text */}
-        <div>
+      <div style={{
+        maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}`,
+        display: 'grid', gridTemplateColumns: '1fr', gap: '3rem',
+        position: 'relative', width: '100%',
+      }}
+        className="lg:grid-cols-[1fr_460px]"
+      >
+        {/* Testo */}
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <FadeIn>
-            <span className="inline-block bg-brand-primary/10 text-brand-primary text-xs font-700 uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
+            <span style={{
+              display: 'inline-block',
+              background: `rgba(26,158,201,0.1)`,
+              color: C.primary,
+              fontSize: '0.7rem',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.12em',
+              padding: '6px 14px',
+              borderRadius: '50px',
+              marginBottom: '1.5rem',
+            }}>
               Fisioterapia · Broni, Oltrepò Pavese
             </span>
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-brand-text leading-[1.08] tracking-tight">
+            <h1 style={{
+              fontSize: 'clamp(2.4rem, 5vw, 3.6rem)',
+              fontWeight: 800,
+              color: C.text,
+              lineHeight: 1.08,
+              letterSpacing: '-0.02em',
+              margin: 0,
+            }}>
               Hai già provato tutto.
               <br />
-              <span className="text-brand-primary">Eppure il dolore</span>
+              <span style={{ color: C.primary }}>Eppure il dolore</span>
               <br />è ancora lì.
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
-            <p className="mt-6 text-lg text-brand-text/65 leading-relaxed max-w-[500px]">
+            <p style={{
+              marginTop: '1.5rem',
+              fontSize: '1.1rem',
+              color: `${C.text}99`,
+              lineHeight: 1.75,
+              maxWidth: '480px',
+            }}>
               Ti aiuto a tornare alle attività che contano per te — non solo a stare meglio qualche settimana.
               Percorso 1:1, costruito su di te. Nessun protocollo standard.
             </p>
           </FadeIn>
 
           <FadeIn delay={0.24}>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 items-start">
+            <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <a
                 href="https://wa.me/393519242517"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-700 px-6 py-3.5 rounded-full text-sm transition-all hover:-translate-y-0.5 shadow-lg shadow-brand-primary/25"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  background: C.primary, color: '#fff',
+                  fontWeight: 700, fontSize: '1rem',
+                  padding: '14px 28px', borderRadius: '50px',
+                  textDecoration: 'none',
+                  letterSpacing: '0.01em',
+                  boxShadow: `0 6px 24px rgba(26,158,201,0.28)`,
+                  width: 'fit-content',
+                  transition: 'background 0.2s, transform 0.15s',
+                }}
               >
-                Prenota la valutazione gratuita
-                <ArrowRight size={15} />
+                Prenota la valutazione gratuita →
               </a>
-              <a
-                href="tel:+393519242517"
-                className="inline-flex items-center gap-1.5 text-sm text-brand-text/55 hover:text-brand-primary transition-colors pt-3.5"
-              >
-                Oppure chiama: 351 924 2517
-              </a>
+              <p style={{ fontSize: '0.78rem', color: `${C.text}55`, margin: 0 }}>
+                Rispondo di persona entro 24 ore · Senza impegno
+              </p>
             </div>
-            <p className="mt-3 text-xs text-brand-text/40">
-              Rispondo di persona entro 24 ore · Senza impegno
-            </p>
           </FadeIn>
 
           {/* Proof strip */}
           <FadeIn delay={0.32}>
-            <div className="mt-10 flex flex-wrap gap-6 text-sm text-brand-text/50">
+            <div style={{
+              marginTop: '2.5rem',
+              display: 'flex', flexWrap: 'wrap', gap: '1.25rem',
+              fontSize: '0.85rem', color: `${C.text}66`,
+            }}>
               {['Prima visita gratuita', 'Solo sedute 1:1', 'Nessun macchinario passivo'].map((item) => (
-                <div key={item} className="flex items-center gap-1.5">
-                  <CheckCircle2 size={14} className="text-brand-secondary" />
+                <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  <span style={{ color: C.secondary, fontSize: '1rem' }}>✓</span>
                   {item}
                 </div>
               ))}
@@ -97,28 +164,49 @@ function HeroSection() {
           </FadeIn>
         </div>
 
-        {/* Photo */}
+        {/* Foto */}
         <FadeIn delay={0.1} direction="right">
-          <div className="relative w-full max-w-[480px] mx-auto">
-            <div className="absolute -inset-6 bg-brand-secondary/12 rounded-[2.5rem] blur-2xl" />
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+          <div style={{ position: 'relative', width: '100%', maxWidth: '460px', margin: '0 auto' }}>
+            {/* Glow blob */}
+            <div style={{
+              position: 'absolute', inset: '-1.5rem',
+              background: `radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)`,
+              borderRadius: '2.5rem', filter: 'blur(20px)',
+            }} />
+            <div style={{
+              position: 'relative',
+              aspectRatio: '4/5',
+              borderRadius: C.radiusLg,
+              overflow: 'hidden',
+              boxShadow: '0 24px 64px rgba(0,0,0,0.12)',
+            }}>
               <Image
                 src="/photos/f1-trattamento-lombare.jpg"
-                alt="Umberto Mantovan fisioterapista Broni durante una seduta di trattamento"
+                alt="Umberto Mantovan fisioterapista Broni durante una seduta di trattamento lombare"
                 fill
-                className="object-cover"
+                style={{ objectFit: 'cover' }}
                 priority
-                sizes="(max-width: 768px) 100vw, 480px"
+                sizes="(max-width: 768px) 100vw, 460px"
               />
             </div>
-            {/* Floating badge */}
-            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-brand-secondary/15 flex items-center justify-center text-xl">
-                🏆
-              </div>
+            {/* Badge flottante */}
+            <div style={{
+              position: 'absolute', bottom: '-20px', left: '-20px',
+              background: '#fff',
+              borderRadius: C.radius,
+              boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
+              padding: '12px 16px',
+              display: 'flex', alignItems: 'center', gap: '10px',
+            }}>
+              <div style={{
+                width: '40px', height: '40px', borderRadius: '50%',
+                background: `rgba(93,191,176,0.15)`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontSize: '1.2rem',
+              }}>🏆</div>
               <div>
-                <div className="text-xs font-700 text-brand-text" style={{ fontWeight: 700 }}>5+ anni di esperienza</div>
-                <div className="text-[10px] text-brand-text/50">Oltre 100 pazienti seguiti</div>
+                <div style={{ fontSize: '12px', fontWeight: 700, color: C.text }}>5+ anni di esperienza</div>
+                <div style={{ fontSize: '10px', color: `${C.text}55` }}>Oltre 100 pazienti seguiti</div>
               </div>
             </div>
           </div>
@@ -128,9 +216,7 @@ function HeroSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   PROBLEMA
-───────────────────────────────────────────── */
+/* ─────────────────── PROBLEMA ─────────────────── */
 function ProblemaSection() {
   const painPoints = [
     'Hai già fatto fisioterapia, massaggi, tecar. Ha aiutato — ma dopo qualche settimana il dolore è tornato.',
@@ -139,15 +225,19 @@ function ProblemaSection() {
   ]
 
   return (
-    <section className="bg-brand-surface">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-center">
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }}
+        className="md:py-28"
+      >
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <FadeIn direction="left">
-            <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Il problema</span>
-            <h2 className="mt-3 text-3xl md:text-4xl text-brand-text leading-tight" style={{ fontWeight: 800 }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Il problema
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
               Ti riconosci in questo?
             </h2>
-            <p className="mt-5 text-brand-text/60 leading-relaxed">
+            <p style={{ marginTop: '1.25rem', color: `${C.text}77`, lineHeight: 1.75 }}>
               Il dolore cronico non sparisce con il riposo o con una manciata di sedute. Se fosse così semplice, non saresti qui.
             </p>
           </FadeIn>
@@ -155,9 +245,16 @@ function ProblemaSection() {
           <StaggerChildren className="flex flex-col gap-4">
             {painPoints.map((point, i) => (
               <StaggerItem key={i}>
-                <div className="bg-white rounded-2xl p-5 flex gap-4 items-start border-l-4 border-brand-secondary shadow-sm">
-                  <CheckCircle2 size={20} className="text-brand-secondary shrink-0 mt-0.5" />
-                  <p className="text-brand-text/80 text-sm leading-relaxed">{point}</p>
+                <div style={{
+                  background: C.white,
+                  borderRadius: C.radius,
+                  padding: '1.25rem 1.5rem',
+                  display: 'flex', gap: '1rem', alignItems: 'flex-start',
+                  borderLeft: `4px solid ${C.secondary}`,
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
+                }}>
+                  <span style={{ color: C.secondary, fontSize: '1.1rem', marginTop: '1px', flexShrink: 0 }}>✓</span>
+                  <p style={{ margin: 0, color: `${C.text}CC`, fontSize: '0.95rem', lineHeight: 1.7 }}>{point}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -165,10 +262,10 @@ function ProblemaSection() {
         </div>
 
         <FadeIn delay={0.2}>
-          <div className="mt-14 text-center">
-            <p className="text-xl md:text-2xl font-700 text-brand-text max-w-2xl mx-auto leading-snug">
+          <div style={{ marginTop: '4rem', textAlign: 'center' }}>
+            <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', fontWeight: 700, color: C.text, maxWidth: '640px', margin: '0 auto', lineHeight: 1.5 }}>
               Non è colpa tua.{' '}
-              <span className="text-brand-primary">
+              <span style={{ color: C.primary }}>
                 Ma c&apos;è un motivo per cui non è passato — e si può cambiare.
               </span>
             </p>
@@ -179,66 +276,87 @@ function ProblemaSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   METODO — 3 FASI
-───────────────────────────────────────────── */
+/* ─────────────────── METODO — 3 FASI ─────────────────── */
 const fasi = [
   {
     num: '01',
     titolo: 'Capiamo cosa sta succedendo davvero',
-    corpo:
-      'Prima visita gratuita: ti ascolto, esploro la tua storia, capiamo insieme i tuoi obiettivi concreti. Uscirai con una comprensione diversa di quello che ti sta succedendo — non solo una lista di esercizi.',
+    corpo: 'Prima visita gratuita: ti ascolto, esploro la tua storia, capiamo insieme i tuoi obiettivi concreti. Uscirai con una comprensione diversa di quello che ti sta succedendo — non solo una lista di esercizi.',
     tag: 'Valutazione gratuita',
   },
   {
     num: '02',
     titolo: 'Il corpo impara di nuovo che muoversi è sicuro',
-    corpo:
-      'Sedute 1:1, pochi esercizi scelti su misura, esposizione graduale alle attività che evitavi. Nessun macchinario passivo: lavoriamo insieme, tu in prima persona.',
+    corpo: 'Sedute 1:1, pochi esercizi scelti su misura, esposizione graduale alle attività che evitavi. Nessun macchinario passivo: lavoriamo insieme, tu in prima persona.',
     tag: 'Percorso attivo',
   },
   {
     num: '03',
     titolo: 'Torni alle attività che contano per te',
-    corpo:
-      "Frequenza in calo, autonomia crescente. L'obiettivo non è non avere più dolore — è tornare a fare quello che conta. Il lavoro, lo sport, muoverti senza pensarci su.",
+    corpo: "Frequenza in calo, autonomia crescente. L'obiettivo non è non avere più dolore — è tornare a fare quello che conta. Il lavoro, lo sport, muoverti senza pensarci su.",
     tag: 'Autonomia',
   },
 ]
 
 function MetodoSection() {
   return (
-    <section className="bg-brand-bg">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <section style={{ background: C.bg }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
-          <div className="text-center mb-14">
-            <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Come lavoro</span>
-            <h2 className="mt-3 text-3xl md:text-4xl text-brand-text" style={{ fontWeight: 800 }}>
+          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Come lavoro
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
               Il dolore ha una storia.
               <br />
-              <span className="text-brand-primary">Il percorso parte da lì.</span>
+              <span style={{ color: C.primary }}>Il percorso parte da lì.</span>
             </h2>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {fasi.map((fase, i) => (
-            <StaggerItem key={i}>
-              <div className="relative bg-brand-surface rounded-3xl p-7 h-full overflow-hidden hover:shadow-lg transition-shadow">
-                <div
-                  className="absolute -top-4 -right-2 text-[7rem] leading-none select-none text-brand-primary/6"
-                  style={{ fontWeight: 800 }}
-                >
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {fasi.map((fase) => (
+            <StaggerItem key={fase.num}>
+              <div style={{
+                position: 'relative',
+                background: C.surface,
+                borderRadius: C.radiusLg,
+                padding: '2rem',
+                height: '100%',
+                overflow: 'hidden',
+                transition: 'box-shadow 0.2s',
+              }}>
+                {/* Numero watermark */}
+                <div style={{
+                  position: 'absolute', top: '-16px', right: '-8px',
+                  fontSize: '7rem', fontWeight: 800, lineHeight: 1,
+                  color: `${C.primary}0F`, userSelect: 'none',
+                }}>
                   {fase.num}
                 </div>
-                <span className="inline-block bg-brand-primary/10 text-brand-primary text-[10px] font-700 uppercase tracking-widest px-2.5 py-1 rounded-full mb-4">
+
+                <span style={{
+                  display: 'inline-block',
+                  background: `rgba(26,158,201,0.1)`,
+                  color: C.primary,
+                  fontSize: '0.7rem', fontWeight: 700,
+                  textTransform: 'uppercase', letterSpacing: '0.1em',
+                  padding: '4px 10px', borderRadius: '50px',
+                  marginBottom: '1rem',
+                }}>
                   {fase.tag}
                 </span>
-                <div className="text-3xl text-brand-primary mb-3" style={{ fontWeight: 800 }}>
+
+                <div style={{ fontSize: '2rem', fontWeight: 800, color: C.primary, marginBottom: '0.75rem' }}>
                   {fase.num}
                 </div>
-                <h3 className="text-lg font-700 text-brand-text mb-3 leading-snug">{fase.titolo}</h3>
-                <p className="text-sm text-brand-text/65 leading-relaxed">{fase.corpo}</p>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: C.text, marginBottom: '0.75rem', lineHeight: 1.4 }}>
+                  {fase.titolo}
+                </h3>
+                <p style={{ fontSize: '0.9rem', color: `${C.text}88`, lineHeight: 1.75, margin: 0 }}>
+                  {fase.corpo}
+                </p>
               </div>
             </StaggerItem>
           ))}
@@ -248,9 +366,7 @@ function MetodoSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   PER CHI / PATOLOGIE
-───────────────────────────────────────────── */
+/* ─────────────────── PER CHI ─────────────────── */
 function PerChiSection() {
   const target = [
     { icon: '🔁', testo: 'Hai dolore da settimane o mesi e hai già provato altre strade senza risultati duraturi' },
@@ -260,65 +376,57 @@ function PerChiSection() {
   ]
 
   return (
-    <section className="bg-brand-text text-white overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-16 items-start">
+    <section style={{ background: C.text, color: '#fff', overflow: 'hidden' }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+          {/* Colonna sinistra */}
           <div>
             <FadeIn direction="left">
-              <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Per chi è</span>
-              <h2 className="mt-3 text-3xl md:text-4xl text-white leading-tight" style={{ fontWeight: 800 }}>
+              <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+                Per chi è
+              </span>
+              <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#fff', marginTop: '0.75rem', lineHeight: 1.2 }}>
                 Questo percorso
                 <br />è pensato per te se&hellip;
               </h2>
             </FadeIn>
 
-            <StaggerChildren className="mt-8 flex flex-col gap-5">
+            <div style={{ marginTop: '2rem' }}>
+            <StaggerChildren className="flex flex-col gap-5">
               {target.map((t, i) => (
                 <StaggerItem key={i}>
-                  <div className="flex items-start gap-4">
-                    <span className="text-2xl mt-0.5">{t.icon}</span>
-                    <p className="text-white/75 leading-relaxed">{t.testo}</p>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
+                    <span style={{ fontSize: '1.4rem', marginTop: '1px' }}>{t.icon}</span>
+                    <p style={{ margin: 0, color: 'rgba(255,255,255,0.75)', lineHeight: 1.7 }}>{t.testo}</p>
                   </div>
                 </StaggerItem>
               ))}
             </StaggerChildren>
+            </div>
 
             <FadeIn delay={0.4}>
               <a
                 href="https://wa.me/393519242517"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center gap-2 bg-brand-primary hover:bg-brand-primary-dark text-white font-700 px-6 py-3.5 rounded-full text-sm transition-all hover:-translate-y-0.5"
+                style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '8px',
+                  background: C.primary, color: '#fff',
+                  fontWeight: 700, fontSize: '0.95rem',
+                  padding: '13px 24px', borderRadius: '50px',
+                  textDecoration: 'none',
+                  marginTop: '2.5rem',
+                  transition: 'background 0.2s',
+                }}
               >
-                Prenota la valutazione gratuita
-                <ArrowRight size={15} />
+                Prenota la valutazione gratuita →
               </a>
             </FadeIn>
           </div>
 
-          {/* Patologie links */}
+          {/* Colonna destra — link patologie (client component per hover) */}
           <FadeIn direction="right" delay={0.1}>
-            <p className="text-white/40 text-xs uppercase tracking-widest font-700 mb-4">Le aree cliniche</p>
-            <div className="flex flex-col gap-2">
-              {patologie.map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/patologie/${p.slug}`}
-                  className="group flex items-center justify-between bg-white/5 hover:bg-brand-primary/20 border border-white/10 hover:border-brand-primary/40 rounded-2xl px-5 py-4 transition-all"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="text-xl">{p.emoji}</span>
-                    <span className="text-sm font-600 text-white group-hover:text-brand-secondary-light transition-colors">
-                      {p.nome}
-                    </span>
-                  </div>
-                  <ArrowRight
-                    size={16}
-                    className="text-white/30 group-hover:text-brand-secondary-light group-hover:translate-x-1 transition-all"
-                  />
-                </Link>
-              ))}
-            </div>
+            <PatologieLinks />
           </FadeIn>
         </div>
       </div>
@@ -326,57 +434,87 @@ function PerChiSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   CASO REALE — LUCA
-───────────────────────────────────────────── */
+/* ─────────────────── CASO REALE ─────────────────── */
 function CasoRealeSection() {
   return (
-    <section className="bg-brand-bg overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          {/* Photo */}
+    <section style={{ background: C.bg, overflow: 'hidden' }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Foto */}
           <FadeIn direction="left">
-            <div className="relative">
-              <div className="absolute -inset-6 bg-brand-primary/8 rounded-[3rem] blur-2xl" />
-              <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+            <div style={{ position: 'relative' }}>
+              <div style={{
+                position: 'absolute', inset: '-1.5rem',
+                background: `radial-gradient(ellipse at center, rgba(26,158,201,0.1) 0%, transparent 70%)`,
+                borderRadius: '3rem', filter: 'blur(20px)',
+              }} />
+              <div style={{
+                position: 'relative', aspectRatio: '4/5',
+                borderRadius: C.radiusLg, overflow: 'hidden',
+                boxShadow: '0 24px 64px rgba(0,0,0,0.14)',
+              }}>
                 <Image
                   src="/photos/f6-deadlift.jpg"
-                  alt="Paziente di Studio Mantovan esegue un deadlift con bilanciere — risultato del percorso riabilitativo"
+                  alt="Paziente di Studio Mantovan esegue deadlift con bilanciere — risultato percorso riabilitativo lombalgia"
                   fill
-                  className="object-cover"
+                  style={{ objectFit: 'cover' }}
                   sizes="(max-width: 768px) 100vw, 500px"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-brand-primary text-white rounded-2xl px-4 py-3 text-sm font-700 shadow-xl">
+              <div style={{
+                position: 'absolute', bottom: '-14px', right: '-14px',
+                background: C.primary, color: '#fff',
+                borderRadius: C.radius,
+                padding: '10px 16px',
+                fontSize: '0.85rem', fontWeight: 700,
+                boxShadow: '0 8px 20px rgba(26,158,201,0.35)',
+              }}>
                 Foto reale · nessuna modifica
               </div>
             </div>
           </FadeIn>
 
-          {/* Text */}
+          {/* Testo */}
           <FadeIn direction="right" delay={0.1}>
-            <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Un caso reale</span>
-            <h2 className="mt-3 text-3xl md:text-4xl text-brand-text leading-tight" style={{ fontWeight: 800 }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Un caso reale
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
               Da non riuscire
               <br />ad allacciarsi le scarpe
               <br />
-              <span className="text-brand-primary">al deadlift con bilanciere.</span>
+              <span style={{ color: C.primary }}>al deadlift con bilanciere.</span>
             </h2>
-            <p className="mt-6 text-brand-text/65 leading-relaxed">
+            <p style={{ marginTop: '1.5rem', color: `${C.text}99`, lineHeight: 1.75 }}>
               Luca è arrivato da me con un mal di schiena che durava da anni. Aveva smesso di andare in palestra,
               evitava di chinarsi, aveva paura di qualsiasi sforzo. Con un percorso costruito su di lui — pochi
               esercizi, obiettivi concreti, nessun protocollo uguale per tutti — ha sollevato il bilanciere per
               la prima volta in vita sua.
             </p>
-            <p className="mt-4 text-brand-text/65 leading-relaxed">
+            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.75 }}>
               Non era il suo obiettivo quando è entrato nello studio. Era meglio.
             </p>
-            <div className="mt-8 border-l-4 border-brand-secondary pl-5">
-              <p className="text-brand-text font-700 italic font-serif text-[15px]">
+            <blockquote style={{
+              marginTop: '2rem',
+              borderLeft: `4px solid ${C.secondary}`,
+              paddingLeft: '1.25rem',
+              margin: '2rem 0 0',
+            }}>
+              <p style={{
+                fontFamily: 'var(--font-lora), Georgia, serif',
+                fontStyle: 'italic',
+                fontSize: '1.05rem',
+                color: C.text,
+                fontWeight: 600,
+                lineHeight: 1.6,
+                margin: 0,
+              }}>
                 &ldquo;Non pensavo fosse possibile. Adesso vado in palestra tre volte a settimana.&rdquo;
               </p>
-              <p className="text-sm text-brand-text/50 mt-2">— Luca, 38 anni, Broni</p>
-            </div>
+              <cite style={{ display: 'block', marginTop: '0.75rem', fontSize: '0.85rem', color: `${C.text}66`, fontStyle: 'normal' }}>
+                — Luca, 38 anni, Broni
+              </cite>
+            </blockquote>
           </FadeIn>
         </div>
       </div>
@@ -384,27 +522,22 @@ function CasoRealeSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   TESTIMONIANZE
-───────────────────────────────────────────── */
+/* ─────────────────── TESTIMONIANZE ─────────────────── */
 const testimonianze = [
   {
-    testo:
-      'Avevo mal di schiena da 3 anni, non riuscivo a stare seduta più di 20 minuti senza che iniziasse a bruciare. Dopo 6 settimane con Umberto sono tornata a correre.',
+    testo: 'Avevo mal di schiena da 3 anni, non riuscivo a stare seduta più di 20 minuti senza che iniziasse a bruciare. Dopo 6 settimane con Umberto sono tornata a correre.',
     nome: 'Paola',
     info: '41 anni · Casteggio',
     iniziali: 'P',
   },
   {
-    testo:
-      'Pensavo che la sciatalgia fosse qualcosa con cui dovevo imparare a convivere per sempre. Ho sbagliato. Il percorso è stato diverso da tutto quello che avevo già provato.',
+    testo: 'Pensavo che la sciatalgia fosse qualcosa con cui dovevo imparare a convivere per sempre. Ho sbagliato. Il percorso è stato diverso da tutto quello che avevo già provato.',
     nome: 'Marco',
     info: '52 anni · Broni',
     iniziali: 'M',
   },
   {
-    testo:
-      "Prima di arrivare da Umberto avevo già visto due fisioterapisti. La differenza? Qui mi ha spiegato cosa stava succedendo davvero — e ho smesso di avere paura di muovermi.",
+    testo: "Prima di arrivare da Umberto avevo già visto due fisioterapisti. La differenza? Qui mi ha spiegato cosa stava succedendo davvero — e ho smesso di avere paura di muovermi.",
     nome: 'Giulia',
     info: '35 anni · Voghera',
     iniziali: 'G',
@@ -413,34 +546,61 @@ const testimonianze = [
 
 function TestimonianzeSection() {
   return (
-    <section className="bg-brand-surface">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
-          <div className="text-center mb-12">
-            <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Testimonianze</span>
-            <h2 className="mt-3 text-3xl md:text-4xl text-brand-text" style={{ fontWeight: 800 }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Testimonianze
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
               Quello che dicono le persone
               <br />
-              <span className="text-brand-primary">che erano dove sei tu adesso.</span>
+              <span style={{ color: C.primary }}>che erano dove sei tu adesso.</span>
             </h2>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {testimonianze.map((t, i) => (
             <StaggerItem key={i}>
-              <div className="bg-white rounded-3xl p-7 h-full flex flex-col border-l-4 border-brand-secondary shadow-sm">
-                <Quote size={24} className="text-brand-secondary/40 mb-4" />
-                <p className="text-brand-text/80 leading-relaxed italic font-serif flex-1 text-[15px]">
-                  &ldquo;{t.testo}&rdquo;
+              <div style={{
+                background: C.white,
+                borderRadius: C.radiusLg,
+                padding: '2rem',
+                height: '100%',
+                display: 'flex', flexDirection: 'column',
+                borderLeft: `4px solid ${C.secondary}`,
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+              }}>
+                <span style={{ fontSize: '1.5rem', color: `${C.secondary}55`, marginBottom: '1rem', lineHeight: 1 }}>&ldquo;</span>
+                <p style={{
+                  fontFamily: 'var(--font-lora), Georgia, serif',
+                  fontStyle: 'italic',
+                  fontSize: '0.95rem',
+                  color: `${C.text}CC`,
+                  lineHeight: 1.75,
+                  flex: 1,
+                  margin: 0,
+                }}>
+                  {t.testo}
                 </p>
-                <div className="flex items-center gap-3 mt-6 pt-5 border-t border-brand-surface">
-                  <div className="w-9 h-9 rounded-full bg-brand-primary flex items-center justify-center text-white text-sm font-700 shrink-0">
+                <div style={{
+                  display: 'flex', alignItems: 'center', gap: '12px',
+                  marginTop: '1.5rem', paddingTop: '1.25rem',
+                  borderTop: `1px solid ${C.surface}`,
+                }}>
+                  <div style={{
+                    width: '36px', height: '36px', borderRadius: '50%',
+                    background: C.primary,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#fff', fontSize: '13px', fontWeight: 700, flexShrink: 0,
+                  }}>
                     {t.iniziali}
                   </div>
                   <div>
-                    <div className="text-sm font-700 text-brand-text">{t.nome}</div>
-                    <div className="text-xs text-brand-text/50">{t.info}</div>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 700, color: C.text }}>{t.nome}</div>
+                    <div style={{ fontSize: '0.75rem', color: `${C.text}66` }}>{t.info}</div>
                   </div>
                 </div>
               </div>
@@ -452,63 +612,81 @@ function TestimonianzeSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   CHI SONO
-───────────────────────────────────────────── */
+/* ─────────────────── CHI SONO ─────────────────── */
 function ChiSonoSection() {
   return (
-    <section className="bg-brand-bg overflow-hidden">
-      <div className="max-w-6xl mx-auto px-5 py-20 md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[480px_1fr] gap-12 lg:gap-20 items-center">
+    <section style={{ background: C.bg, overflow: 'hidden' }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-14 items-center">
+          {/* Foto */}
           <FadeIn direction="left">
-            <div className="relative max-w-[400px]">
-              <div className="absolute -inset-6 bg-brand-secondary/10 rounded-[3rem] blur-2xl" />
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-xl">
+            <div style={{ position: 'relative', maxWidth: '420px' }}>
+              <div style={{
+                position: 'absolute', inset: '-1.5rem',
+                background: `radial-gradient(ellipse at center, rgba(93,191,176,0.12) 0%, transparent 70%)`,
+                borderRadius: '3rem', filter: 'blur(20px)',
+              }} />
+              <div style={{
+                position: 'relative', aspectRatio: '1',
+                borderRadius: C.radiusLg, overflow: 'hidden',
+                boxShadow: '0 16px 48px rgba(0,0,0,0.1)',
+              }}>
                 <Image
                   src="/photos/f3-ritratto.jpg"
                   alt="Umberto Mantovan fisioterapista Studio Mantovan Broni"
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 400px"
+                  style={{ objectFit: 'cover', objectPosition: 'top center' }}
+                  sizes="(max-width: 768px) 100vw, 420px"
                 />
               </div>
             </div>
           </FadeIn>
 
+          {/* Testo */}
           <FadeIn direction="right" delay={0.1}>
-            <span className="text-xs font-700 uppercase tracking-widest text-brand-secondary">Chi sono</span>
-            <h2 className="mt-3 text-3xl md:text-4xl text-brand-text leading-tight" style={{ fontWeight: 800 }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Chi sono
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
               Una sola regola:
               <br />
-              <span className="text-brand-primary">nessun paziente uguale all&apos;altro.</span>
+              <span style={{ color: C.primary }}>nessun paziente uguale all&apos;altro.</span>
             </h2>
-            <p className="mt-6 text-brand-text/65 leading-relaxed">
-              Sono <strong className="text-brand-text font-700">Umberto Mantovan</strong>, fisioterapista. Ho 28 anni e
-              ho aperto Studio Mantovan a Broni nel 2025 dopo anni di esperienza in libera professione a Sanremo e
+            <p style={{ marginTop: '1.5rem', color: `${C.text}99`, lineHeight: 1.75 }}>
+              Sono <strong style={{ color: C.text, fontWeight: 700 }}>Umberto Mantovan</strong>, fisioterapista. Ho 28 anni
+              e ho aperto Studio Mantovan a Broni nel 2025 dopo anni di esperienza in libera professione a Sanremo e
               in uno studio convenzionato SSN a Casteggio.
             </p>
-            <p className="mt-4 text-brand-text/65 leading-relaxed">
+            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.75 }}>
               Ho visto come funziona il modello standard: terapie passive, protocolli uguali per tutti, pazienti
               che tornano con gli stessi problemi. Ho scelto un approccio diverso.
             </p>
-            <p className="mt-4 text-brand-text/65 leading-relaxed">
+            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.75 }}>
               Nel mio studio non trovi macchinari passivi. Trovi un fisioterapista che ti ascolta, che ti spiega
               cosa sta succedendo, e che costruisce un percorso su quello che vuoi tornare a fare — non sulla tua diagnosi.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              {["Laureato Università di Pavia", "Approccio CFT (O'Sullivan)", "First Contact Practitioner"].map(
-                (item) => (
-                  <span key={item} className="bg-brand-surface text-brand-text/70 text-xs font-600 px-3 py-1.5 rounded-full">
-                    {item}
-                  </span>
-                )
-              )}
+            <div style={{ marginTop: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+              {["Laureato Università di Pavia", "Approccio CFT (O'Sullivan)", "First Contact Practitioner"].map((item) => (
+                <span key={item} style={{
+                  background: C.surface,
+                  color: `${C.text}BB`,
+                  fontSize: '0.78rem', fontWeight: 600,
+                  padding: '6px 14px', borderRadius: '50px',
+                }}>
+                  {item}
+                </span>
+              ))}
             </div>
             <Link
               href="/chi-sono"
-              className="mt-6 inline-flex items-center gap-1.5 text-sm font-600 text-brand-primary hover:text-brand-primary-dark transition-colors"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                marginTop: '1.5rem',
+                fontSize: '0.9rem', fontWeight: 600, color: C.primary,
+                textDecoration: 'none', transition: 'color 0.2s',
+              }}
             >
-              Scopri di più su di me <ArrowRight size={14} />
+              Scopri di più su di me →
             </Link>
           </FadeIn>
         </div>
@@ -517,44 +695,61 @@ function ChiSonoSection() {
   )
 }
 
-/* ─────────────────────────────────────────────
-   CTA MID
-───────────────────────────────────────────── */
+/* ─────────────────── CTA MID ─────────────────── */
 function CtaMidSection() {
   return (
-    <section className="relative overflow-hidden bg-brand-primary">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-[500px] h-[500px] rounded-full bg-white/5 blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-black/5 blur-3xl" />
+    <section style={{ position: 'relative', overflow: 'hidden', background: C.primary }}>
+      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
+        <div style={{
+          position: 'absolute', top: '-80px', right: '-80px',
+          width: '500px', height: '500px', borderRadius: '50%',
+          background: 'rgba(255,255,255,0.05)',
+        }} />
+        <div style={{
+          position: 'absolute', bottom: '-80px', left: '-80px',
+          width: '400px', height: '400px', borderRadius: '50%',
+          background: 'rgba(0,0,0,0.05)',
+        }} />
       </div>
-      <div className="relative max-w-3xl mx-auto px-5 py-20 text-center">
+      <div style={{
+        position: 'relative',
+        maxWidth: '760px', margin: '0 auto',
+        padding: `5rem ${C.pad}`,
+        textAlign: 'center',
+      }}>
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl text-white leading-tight" style={{ fontWeight: 800 }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.25 }}>
             Inizia con una valutazione gratuita.
             <br />
             Senza impegno, senza obbligo.
           </h2>
-          <p className="mt-5 text-white/75 text-lg leading-relaxed">
+          <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1.05rem', lineHeight: 1.7 }}>
             Nella prima visita capisco la tua situazione e ti spiego chiaramente se e come posso aiutarti.
             Se non sono la persona giusta, te lo dico.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
             <a
               href="https://wa.me/393519242517"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-white text-brand-primary font-700 px-7 py-4 rounded-full text-sm hover:bg-brand-bg transition-all hover:-translate-y-0.5 shadow-xl"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: '#fff', color: C.primary,
+                fontWeight: 700, fontSize: '1rem',
+                padding: '15px 32px', borderRadius: '50px',
+                textDecoration: 'none',
+                boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+              }}
             >
-              Prenota la valutazione gratuita <ArrowRight size={15} />
+              Prenota la valutazione gratuita →
             </a>
-            <a
-              href="tel:+393519242517"
-              className="inline-flex items-center justify-center text-white/80 hover:text-white text-sm transition-colors py-4"
-            >
+            <a href="tel:+393519242517" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.9rem', textDecoration: 'none' }}>
               Chiama: 351 924 2517
             </a>
           </div>
-          <p className="mt-4 text-white/50 text-xs">Rispondo di persona entro 24 ore</p>
+          <p style={{ marginTop: '1rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
+            Rispondo di persona entro 24 ore
+          </p>
         </FadeIn>
       </div>
     </section>
