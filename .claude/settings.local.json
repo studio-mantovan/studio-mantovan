@@ -1,0 +1,27 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(New-Item -ItemType Directory -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\brand-assets\")",
+      "Bash(where inkscape *)",
+      "Bash(inkscape --version)",
+      "Bash(dir \"C:\\\\Users\\\\umber\\\\studio-mantovan\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\umber\\\\studio-mantovan\" -Recurse -Include \"*.jpg\",\"*.png\",\"*.jpeg\",\"*.webp\")",
+      "Bash(Select-Object Name, DirectoryName)",
+      "PowerShell(npx --yes serve --version 2>&1)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "Bash(python -m http.server 3456 --directory \"C:/Users/umber/studio-mantovan\")",
+      "PowerShell(New-Item -ItemType Junction -Path \"$HOME\\\\.claude\\\\skills\\\\carousel-export\" -Target \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\claude-skills\\\\carousel-export\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\.claude\\\\skills\\\\carousel-export\")",
+      "Bash(python -c \"from youtube_transcript_api import YouTubeTranscriptApi; print\\('ok'\\)\")",
+      "PowerShell(python --version 2>&1)",
+      "PowerShell(py --version 2>&1)",
+      "PowerShell(Set-Location \"$env:TEMP\\\\yt-transcript\"; node extract.mjs \"https://www.youtube.com/watch?v=A20YyV3rFvk\" 2>&1)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\" -Directory | Where-Object { $_.Name -ne \"node_modules\" } | Select-Object Name, FullName)",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\brand\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\copy\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\design\")",
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\clinica\\\\knowledge-base\")"
+    ]
+  }
+}

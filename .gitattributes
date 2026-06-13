@@ -1,0 +1,11 @@
+# Normalizza line endings su LF nel repository
+* text=auto eol=lf
+
+# Binari — nessuna conversione
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.pdf binary
+*.ai binary
+*.eps binary

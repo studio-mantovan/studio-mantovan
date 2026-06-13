@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fisioterapista Mal di Schiena Cronico a Broni | Studio Mantovan</title>
+  <meta name="description" content="Mal di schiena cronico a Broni e Oltrepò Pavese? Percorso personalizzato 1:1, approccio attivo basato su evidenze. Prima visita gratuita. Chiama: 351 924 2517." />
+  <link rel="canonical" href="https://umbertomantovan.net/fisioterapia-lombalgia-cronica-broni/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Lora:ital@1&display=swap" rel="stylesheet" />
+
+  <!-- Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "PhysicalTherapist",
+    "name": "Studio Mantovan – Fisioterapia in Movimento",
+    "url": "https://umbertomantovan.net",
+    "telephone": "+393519242517",
+    "email": "studio.mantovan@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Broni",
+      "addressRegion": "PV",
+      "addressCountry": "IT"
+    },
+    "priceRange": "€€",
+    "description": "Fisioterapista a Broni specializzato nel trattamento del mal di schiena cronico, lombalgia cronica disabilitante e dolore muscoloscheletrico. Approccio attivo 1:1, prima visita gratuita.",
+    "sameAs": [
+      "https://www.instagram.com/studio.mantovan",
+      "https://www.facebook.com/studio.mantovan"
+    ],
+    "founder": {
+      "@type": "Person",
+      "name": "Umberto Mantovan"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Ho già fatto fisioterapia e non ha funzionato. Perché dovrebbe funzionare adesso?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Dipende da cosa è stato fatto e su cosa era focalizzato. Molti percorsi si concentrano sul sintomo — togliere il dolore nel breve termine — senza lavorare sui fattori che lo mantengono nel tempo. Nella prima visita gratuita capisco cosa hai già fatto e costruiamo insieme qualcosa di diverso."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Ho l'ernia. Posso davvero muovermi senza peggiorare?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nella maggior parte dei casi, sì. Le evidenze scientifiche mostrano che le ernie e le protrusioni sono comuni anche in persone completamente asintomatiche. Il movimento, affrontato con gradualità, è parte della soluzione. Valutiamo insieme il tuo caso nella prima visita gratuita."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quante sedute ci vorranno?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non posso dirtelo prima di vederti. I primi risultati concreti nel dolore cronico arrivano di solito in 4–8 settimane. Il percorso si costruisce in base ai tuoi obiettivi reali e al tuo ritmo, non su un numero standard."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "La prima visita è davvero gratuita?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sì, completamente. Dura 45–60 minuti: ascolto la tua storia, faccio una valutazione clinica e ti spiego cosa vedo e come potremmo lavorare insieme. Non acquisti nulla, non ti viene chiesto nulla."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Devo smettere di muovermi durante il percorso di fisioterapia?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Al contrario. L'obiettivo è aiutarti a muoverti meglio e con meno paura. Il movimento graduale e contestualizzato è il principale strumento di recupero. Il riposo prolungato, nella lombalgia cronica, raramente è la risposta."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+  <style>
+    /* ─── Reset & base ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary:        #1A9EC9;
+      --primary-dark:   #147FA0;
+      --secondary:      #5DBFB0;
+      --secondary-light:#A8DDD7;
+      --bg:             #FAFAF8;
+      --surface:        #F0F4F5;
+      --text:           #2C2C2C;
+      --muted:          #6B7B82;
+      --white:          #FFFFFF;
+      --dark:           #0F2530;
+      --radius:         16px;
+      --radius-sm:      8px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.2;
+      color: var(--dark);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ─── Buttons ─── */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--primary);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 8px 28px rgba(26,158,201,0.32);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(26,158,201,0.42);
+    }
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--primary);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 2px solid var(--primary);
+      cursor: pointer;
+      transition: all 0.25s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ─── Badge ─── */
+    .badge {
+      display: inline-block;
+      background: rgba(93,191,176,0.13);
+      color: var(--primary);
+      border: 1px solid rgba(93,191,176,0.35);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 16px 0;
+      background: rgba(250,250,248,0.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(26,158,201,0.08);
+      transition: box-shadow 0.3s;
+    }
+    nav.scrolled { box-shadow: 0 4px 30px rgba(0,0,0,0.07); }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-brand {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+    }
+    .nav-brand strong {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--dark);
+      letter-spacing: -0.01em;
+    }
+    .nav-brand span {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 10px 24px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 0;
+      padding-top: 80px;
+      overflow: hidden;
+      background: var(--bg);
+    }
+    .hero-content {
+      padding: 5rem 3rem 5rem 0;
+      padding-left: max(24px, calc((100vw - 1100px) / 2 + 24px));
+    }
+    .hero-badge { margin-bottom: 1.5rem; }
+    .hero h1 {
+      font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+      font-weight: 800;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--primary);
+    }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: #4A6470;
+      line-height: 1.7;
+      max-width: 480px;
+      margin-bottom: 2.5rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      align-items: flex-start;
+    }
+    .hero-microcopy {
+      font-size: 0.82rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .hero-microcopy::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+    .hero-img-wrap {
+      position: relative;
+      height: 100vh;
+      min-height: 600px;
+      overflow: hidden;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .hero-img-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, var(--bg) 0%, transparent 18%),
+                  linear-gradient(to top, rgba(15,37,48,0.25) 0%, transparent 50%);
+    }
+    .hero-stat-card {
+      position: absolute;
+      bottom: 2.5rem;
+      right: 1.5rem;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.14);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 230px;
+      border-left: 4px solid var(--secondary);
+    }
+    .hero-stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .hero-stat-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    /* ─── SEZIONE GENERICA ─── */
+    section { padding: 5rem 0; }
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+    .section-intro {
+      font-size: 1.05rem;
+      color: #4A6470;
+      max-width: 600px;
+      line-height: 1.75;
+    }
+
+    /* ─── PROBLEMA ─── */
+    .problema { background: var(--dark); color: var(--white); }
+    .problema .section-title { color: var(--white); }
+    .problema .section-intro { color: rgba(255,255,255,0.65); }
+    .problema .section-label { color: var(--secondary); }
+    .problema-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: stretch;
+      margin-top: 3rem;
+    }
+    .check-list { list-style: none; display: flex; flex-direction: column; justify-content: center; gap: 1.1rem; }
+    .check-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      background: rgba(93,191,176,0.2);
+      border: 1px solid rgba(93,191,176,0.4);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .check-icon svg { width: 11px; height: 11px; stroke: var(--secondary); }
+    .problema-callout {
+      background: rgba(93,191,176,0.08);
+      border: 1px solid rgba(93,191,176,0.2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .problema-callout p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.75;
+      margin-bottom: 1.2rem;
+    }
+    .problema-callout p:last-child { margin-bottom: 0; }
+    .problema-callout strong { color: var(--secondary); }
+    .problema-bridge {
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      font-style: italic;
+      font-family: 'Lora', serif;
+      text-align: center;
+    }
+    .problema-bridge strong { color: var(--white); font-style: normal; font-family: 'Plus Jakarta Sans', sans-serif; }
+
+    /* ─── SOLUZIONE / 3 FASI ─── */
+    .soluzione { background: var(--bg); }
+    .fasi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .fase-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 2rem 1.8rem;
+      border: 1px solid rgba(26,158,201,0.1);
+      position: relative;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .fase-card:hover { transform: translateY(-4px); box-shadow: 0 16px 50px rgba(26,158,201,0.1); }
+    .fase-num {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.8rem;
+    }
+    .fase-card h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      margin-bottom: 0.7rem;
+      color: var(--dark);
+    }
+    .fase-card .fase-claim {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--primary);
+      font-family: 'Lora', serif;
+      margin-bottom: 1rem;
+    }
+    .fase-card p {
+      font-size: 0.95rem;
+      color: #4A6470;
+      line-height: 1.7;
+    }
+    .fase-bar {
+      height: 3px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── CASO REALE ─── */
+    .caso { background: var(--surface); overflow: hidden; }
+    .caso-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .caso-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+    }
+    .caso-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+    .caso-img:hover img { transform: scale(1.03); }
+    .caso-label {
+      display: inline-block;
+      background: rgba(26,158,201,0.1);
+      color: var(--primary);
+      border-radius: 50px;
+      padding: 4px 14px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+    .caso-content h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.3rem;
+    }
+    .caso-content p {
+      font-size: 1rem;
+      color: #4A6470;
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .caso-stat {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(26,158,201,0.12);
+    }
+    .caso-stat-item { display: flex; flex-direction: column; gap: 0.3rem; }
+    .caso-stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .caso-stat-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.4;
+      max-width: 120px;
+    }
+
+    /* ─── TESTIMONIANZE ─── */
+    .testimonianze { background: var(--white); }
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+    .testi-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      border-left: 4px solid var(--secondary);
+      position: relative;
+    }
+    .testi-quote {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 1rem;
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1.3rem;
+    }
+    .testi-meta { display: flex; align-items: center; gap: 0.8rem; }
+    .testi-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .testi-name { font-weight: 700; font-size: 0.92rem; color: var(--dark); }
+    .testi-desc { font-size: 0.8rem; color: var(--muted); }
+    .testi-stars { color: #F5A623; font-size: 0.8rem; margin-bottom: 0.3rem; }
+
+    /* ─── CTA MID ─── */
+    .cta-mid {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      text-align: center;
+      padding: 5rem 0;
+    }
+    .cta-mid h2 {
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+    .cta-mid p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 480px;
+      margin: 0 auto 2.2rem;
+      line-height: 1.7;
+    }
+    .cta-mid .btn-primary {
+      background: var(--white);
+      color: var(--primary);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+    }
+    .cta-mid .btn-primary:hover {
+      background: var(--bg);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+    }
+    .cta-mid .microcopy {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ─── CHI SONO ─── */
+    .chi-sono { background: var(--bg); }
+    .chi-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.4fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .chi-img {
+      border-radius: var(--radius);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+    }
+    .chi-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .chi-content .section-label { margin-bottom: 1rem; }
+    .chi-content h2 {
+      font-size: clamp(1.8rem, 2.8vw, 2.3rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.3rem;
+    }
+    .chi-content p {
+      font-size: 1rem;
+      color: #4A6470;
+      line-height: 1.8;
+      margin-bottom: 1rem;
+    }
+    .chi-pillole {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.5rem;
+    }
+    .pillola {
+      background: var(--white);
+      border: 1px solid rgba(26,158,201,0.15);
+      border-radius: 50px;
+      padding: 5px 16px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    /* ─── FAQ ─── */
+    .faq { background: var(--surface); }
+    .faq-list { margin-top: 2.5rem; display: flex; flex-direction: column; gap: 0; }
+    .faq-item {
+      border-bottom: 1px solid rgba(26,158,201,0.1);
+    }
+    .faq-item:first-child { border-top: 1px solid rgba(26,158,201,0.1); }
+    .faq-q {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.4rem 0;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark);
+      list-style: none;
+      user-select: none;
+    }
+    .faq-q::marker { display: none; }
+    .faq-q::-webkit-details-marker { display: none; }
+    details[open] .faq-q { color: var(--primary); }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(26,158,201,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+    details[open] .faq-icon { transform: rotate(45deg); background: rgba(26,158,201,0.15); }
+    .faq-icon svg { width: 14px; height: 14px; stroke: var(--primary); }
+    .faq-a {
+      padding: 0 0 1.4rem 0;
+      font-size: 0.97rem;
+      color: #4A6470;
+      line-height: 1.75;
+    }
+    .faq-a strong { color: var(--primary); }
+
+    /* ─── CTA FINALE ─── */
+    .cta-finale {
+      background: var(--dark);
+      padding: 6rem 0;
+      text-align: center;
+    }
+    .cta-finale h2 {
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+    }
+    .cta-finale h2 em {
+      font-style: normal;
+      color: var(--secondary);
+    }
+    .cta-finale p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .cta-finale-actions {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+    .cta-finale .btn-primary { background: var(--secondary); box-shadow: 0 8px 28px rgba(93,191,176,0.35); }
+    .cta-finale .btn-primary:hover { background: #4aaDA3; box-shadow: 0 14px 40px rgba(93,191,176,0.45); }
+    .cta-phone {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .cta-phone:hover { color: var(--white); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: #080F14;
+      padding: 2.5rem 0;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .footer-brand { font-weight: 700; color: rgba(255,255,255,0.5); font-size: 0.9rem; }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--secondary); }
+    .footer-piva { color: rgba(255,255,255,0.25); font-size: 0.78rem; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 80px; }
+      .hero-content { padding: 3rem 24px; }
+      .hero-img-wrap { height: 55vw; min-height: 320px; }
+      .hero-img-overlay { background: linear-gradient(to top, var(--bg) 0%, transparent 30%); }
+      .hero-stat-card { right: 16px; bottom: 1.5rem; }
+      .problema-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .fasi-grid { grid-template-columns: 1fr; }
+      .caso-inner { grid-template-columns: 1fr; }
+      .caso-img { aspect-ratio: 16/9; }
+      .testi-grid { grid-template-columns: 1fr; }
+      .chi-inner { grid-template-columns: 1fr; }
+      .chi-img { aspect-ratio: 4/3; }
+      .cta-finale-actions { flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .nav-cta { display: none; }
+      .hero h1 { font-size: 2rem; }
+      section { padding: 3.5rem 0; }
+      .caso-stat { flex-wrap: wrap; gap: 1.5rem; }
+    }
+
+    /* ─── ANIMAZIONI ─── */
+    /* opacity gestita interamente da GSAP — nessun nascondimento CSS preventivo */
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="https://umbertomantovan.net" class="nav-brand">
+          <strong>Studio Mantovan</strong>
+          <span>Fisioterapia in Movimento · Broni (PV)</span>
+        </a>
+        <a href="https://wa.me/393519242517?text=Ciao%20Umberto%2C%20vorrei%20prenotare%20la%20prima%20visita%20gratuita%20per%20il%20mal%20di%20schiena." class="nav-cta" target="_blank" rel="noopener">
+          Visita gratuita →
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge">Fisioterapista per lombalgia cronica · Broni e Oltrepò Pavese</span>
+      </div>
+      <h1 class="reveal">
+        Hai già provato.<br>
+        Non è <em>ancora</em> passato.
+      </h1>
+      <p class="hero-sub reveal">
+        Il mal di schiena cronico non si risolve con il riposo, le terapie passive o aspettando che passi da solo. C'è un motivo per cui è ancora lì — e si può cambiare.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="https://wa.me/393519242517?text=Ciao%20Umberto%2C%20vorrei%20prenotare%20la%20prima%20visita%20gratuita%20per%20il%20mal%20di%20schiena." class="btn-primary" target="_blank" rel="noopener">
+          Prenota la valutazione gratuita →
+        </a>
+        <span class="hero-microcopy">Prima visita gratuita · Senza impegno · Rispondo entro 24h</span>
+      </div>
+    </div>
+    <div class="hero-img-wrap">
+      <img src="../photos/f1-trattamento-lombare.jpg" alt="Umberto Mantovan fisioterapista al lavoro sulla zona lombare di un paziente" loading="eager" />
+      <div class="hero-img-overlay"></div>
+      <div class="hero-stat-card reveal">
+        <div class="hero-stat-num">62%</div>
+        <div class="hero-stat-label">dei pazienti ottiene un miglioramento duraturo a 3 anni</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PROBLEMA ═══ -->
+  <section class="problema">
+    <div class="container">
+      <div style="text-align:center; max-width:680px; margin:0 auto 3rem;">
+        <p class="section-label reveal">Il problema</p>
+        <h2 class="section-title reveal">Hai già fatto il percorso standard.<br>Ma il dolore è ancora lì.</h2>
+        <p class="section-intro reveal" style="margin:0 auto;">Massaggi, tecar, riposo, postura. Ti hanno detto che è l'ernia, che è la colonna consumata, che devi imparare a conviverci. Il dolore è ancora lì.</p>
+      </div>
+
+      <div class="problema-grid">
+        <ul class="check-list reveal">
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></span>
+            Fai fatica ad alzarti la mattina o dopo una lunga seduta
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></span>
+            Hai smesso di fare sport, hobby o attività che amavi per paura di peggiorare
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></span>
+            La risonanza magnetica mostra "qualcosa", ma i medici ti dicono che non spiega tutto
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></span>
+            Hai fatto fisioterapia, ma il sollievo durava poco e il dolore tornava
+          </li>
+          <li>
+            <span class="check-icon"><svg viewBox="0 0 12 12" fill="none" stroke-width="2"><polyline points="2,6 5,9 10,3"/></svg></span>
+            Non sai più quali movimenti puoi fare e quali no — e questo ti spaventa
+          </li>
+        </ul>
+
+        <div class="problema-callout reveal">
+          <p>Il problema non è che hai <strong>la schiena rotta</strong>. Nella maggior parte dei casi di dolore cronico, la causa non è strutturale — o non solo.</p>
+          <p>Il dolore cronico è anche un'esperienza del sistema nervoso. E quando il sistema nervoso impara che muoversi è pericoloso, inizia a proteggerti anche quando non ce n'è bisogno.</p>
+          <p>La paura del movimento diventa uno degli ostacoli principali. E il riposo, invece di aiutare, <strong>lo alimenta</strong>.</p>
+        </div>
+      </div>
+
+      <p class="problema-bridge reveal">
+        Non è colpa tua. Non hai fatto niente di sbagliato.<br>
+        <strong>Ma c'è un motivo per cui non è passato — e si può cambiare.</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ SOLUZIONE / 3 FASI ═══ -->
+  <section class="soluzione">
+    <div class="container">
+      <p class="section-label reveal">Il percorso</p>
+      <h2 class="section-title reveal">Il dolore ha una storia.<br>Il percorso parte da lì.</h2>
+      <p class="section-intro reveal">Non uso protocolli uguali per tutti. Ogni percorso inizia da te — dalla tua storia, dalle tue abitudini, da quello che vuoi tornare a fare.</p>
+
+      <div class="fasi-grid">
+        <div class="fase-card reveal">
+          <div class="fase-bar"></div>
+          <div class="fase-num">Fase 1</div>
+          <h3>Capire il tuo dolore</h3>
+          <p class="fase-claim">"Il dolore non significa che stai facendo danno."</p>
+          <p>Nella prima visita gratuita ti ascolto: la tua storia, i tuoi obiettivi, le tue preoccupazioni. Lavoriamo insieme per smontare le credenze che bloccano il movimento — postura, ernia, riposo obbligato. Esci dalla prima visita con una lettura diversa del tuo dolore.</p>
+        </div>
+        <div class="fase-card reveal">
+          <div class="fase-bar"></div>
+          <div class="fase-num">Fase 2</div>
+          <h3>Ritrovare fiducia nel movimento</h3>
+          <p class="fase-claim">"Il corpo impara di nuovo che muoversi è sicuro."</p>
+          <p>Lavoriamo 1–2 volte a settimana con pochi esercizi scelti su misura. Ti espongo gradualmente ai movimenti che evitavi. Gli esercizi non sono una lista da spuntare — sono strumenti concreti per gli obiettivi che contano per te.</p>
+        </div>
+        <div class="fase-card reveal">
+          <div class="fase-bar"></div>
+          <div class="fase-num">Fase 3</div>
+          <h3>Tornare a fare quello che ami</h3>
+          <p class="fase-claim">"Non gestisci il dolore. Torni a vivere."</p>
+          <p>Riduciamo la frequenza delle sedute man mano che guadagni autonomia. Il mio obiettivo non è toglierti il dolore — è farti tornare alle attività che contano per te: il lavoro, lo sport, giocare con i tuoi figli, muoverti senza pensarci su.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CASO REALE ═══ -->
+  <section class="caso">
+    <div class="container">
+      <div class="caso-inner">
+        <div class="caso-img reveal">
+          <img src="../photos/f6-deadlift.jpg" alt="Paziente che esegue deadlift con bilanciere nello studio di fisioterapia, supervisionato da Umberto Mantovan" loading="lazy" />
+        </div>
+        <div class="caso-content">
+          <div class="caso-label reveal">Caso reale</div>
+          <h2 class="reveal">Da non riuscire ad allacciarsi le scarpe al deadlift con il bilanciere.</h2>
+          <p class="reveal">Luca è arrivato da me con un mal di schiena cronico che lo accompagnava da anni. Non riusciva ad allacciarsi le scarpe. Aveva smesso di fare sport, aveva ridotto ogni attività. Aveva già fatto fisioterapia, più volte.</p>
+          <p class="reveal">Non ho usato protocolli. Ho ascoltato la sua storia, capito i suoi obiettivi, costruito un percorso con pochi esercizi scelti come strumenti — non come condanna. Esposizione graduale. Conversazioni costanti su cosa significasse davvero quel dolore.</p>
+          <p class="reveal">Oggi Luca fa deadlift con il bilanciere carico. Non perché il dolore sia sparito per magia — ma perché ha imparato che il suo corpo può muoversi. E il movimento è parte della soluzione.</p>
+          <div class="caso-stat reveal">
+            <div class="caso-stat-item">
+              <span class="caso-stat-num">62%</span>
+              <span class="caso-stat-desc">miglioramento clinicamente significativo a 3 anni*</span>
+            </div>
+            <div class="caso-stat-item">
+              <span class="caso-stat-num">vs 33%</span>
+              <span class="caso-stat-desc">con le cure fisioterapiche standard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TESTIMONIANZE ═══ -->
+  <section class="testimonianze">
+    <div class="container">
+      <p class="section-label reveal">Quello che dicono</p>
+      <h2 class="section-title reveal">Le persone che erano dove sei tu adesso.</h2>
+
+      <div class="testi-grid">
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Avevo mal di schiena da due anni, non riuscivo a stare in piedi più di venti minuti. Dopo sei settimane con Umberto sono tornata a camminare normalmente e ho ripreso a lavorare senza antidolorifici."</p>
+          <div class="testi-meta">
+            <div class="testi-avatar">M</div>
+            <div>
+              <div class="testi-name">Maria, 52 anni</div>
+              <div class="testi-desc">Lombaglia cronica da 2 anni</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Mi avevano detto che con l'ernia non potevo fare molto. Umberto mi ha spiegato perché non era così. Ho ricominciato ad allenarmi — qualcosa che non facevo da tre anni."</p>
+          <div class="testi-meta">
+            <div class="testi-avatar">G</div>
+            <div>
+              <div class="testi-name">Giorgio, 44 anni</div>
+              <div class="testi-desc">Ernia lombare, dolore cronico</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card reveal">
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-quote">"Avevo paura di muovermi, ogni gesto sembrava pericoloso. Il percorso con Umberto mi ha insegnato a fidarmi di nuovo del mio corpo. Non ci avevo creduto possibile."</p>
+          <div class="testi-meta">
+            <div class="testi-avatar">S</div>
+            <div>
+              <div class="testi-name">Sara, 38 anni</div>
+              <div class="testi-desc">Kinesiofobia, lombalgia cronica</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA MID ═══ -->
+  <section class="cta-mid">
+    <div class="container">
+      <h2 class="reveal">Inizia con una visita gratuita.</h2>
+      <p class="reveal">Nessun impegno, nessun pacchetto da comprare. Ascolto la tua storia, valutiamo insieme dove sei e dove vuoi arrivare.</p>
+      <a href="https://wa.me/393519242517?text=Ciao%20Umberto%2C%20vorrei%20prenotare%20la%20prima%20visita%20gratuita%20per%20il%20mal%20di%20schiena." class="btn-primary reveal" target="_blank" rel="noopener">
+        Prenota la valutazione gratuita →
+      </a>
+      <p class="microcopy reveal">Senza impegno · Prima visita gratuita · Rispondo di persona entro 24 ore</p>
+    </div>
+  </section>
+
+  <!-- ═══ CHI SONO ═══ -->
+  <section class="chi-sono">
+    <div class="container">
+      <div class="chi-inner">
+        <div class="chi-img reveal">
+          <img src="../photos/f3-ritratto.jpg" alt="Umberto Mantovan fisioterapista, Studio Mantovan Broni" loading="lazy" />
+        </div>
+        <div class="chi-content">
+          <p class="section-label reveal">Chi sono</p>
+          <h2 class="reveal">Una sola regola:<br>nessun paziente uguale all'altro.</h2>
+          <p class="reveal">Sono Umberto Mantovan, fisioterapista. Ho aperto il mio studio a Broni nel 2025 dopo oltre cinque anni di lavoro tra Sanremo e la provincia di Pavia — ambulatori privati, strutture convenzionate SSN, supervisione di tirocinanti universitari.</p>
+          <p class="reveal">Mi sono specializzato nel dolore muscoloscheletrico cronico, nella riabilitazione sportiva e negli aspetti psicologici e comunicativi del dolore. Ho imparato che le terapie passive — massaggi, tecar, ultrasuoni — possono dare sollievo. Ma da sole non bastano: sono come mettere un secchio sotto un rubinetto che perde. Risolvono il sintomo, non il problema.</p>
+          <p class="reveal">Quello che ti offro è diverso: ti accompagno in un percorso costruito sui tuoi obiettivi reali — non su un protocollo standard, non su un numero di sedute deciso in anticipo.</p>
+          <div class="chi-pillole reveal">
+            <span class="pillola">Dolore cronico</span>
+            <span class="pillola">Fisioterapia sportiva</span>
+            <span class="pillola">Riab. post-operatoria</span>
+            <span class="pillola">Approccio biopsicosociale</span>
+            <span class="pillola">Prima visita gratuita</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq">
+    <div class="container" style="max-width:760px">
+      <p class="section-label reveal">Hai qualche dubbio?</p>
+      <h2 class="section-title reveal">È normale. Ecco le domande più comuni.</h2>
+
+      <div class="faq-list reveal">
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Ho già fatto fisioterapia e non ha funzionato. Perché dovrebbe funzionare adesso?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">Dipende da <strong>cosa è stato fatto</strong> e su <strong>cosa era focalizzato</strong>. Molti percorsi si concentrano sul sintomo — togliere il dolore nel breve termine — senza lavorare sui fattori che lo mantengono nel tempo. Ne parliamo nella prima visita gratuita: capire cosa hai già fatto aiuta a capire cosa può essere diverso.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Ho l'ernia. Posso davvero muovermi senza peggiorare?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">Nella maggior parte dei casi, sì. Le evidenze scientifiche mostrano che l'ernia non spiega da sola il dolore cronico — e che il movimento, affrontato con gradualità, è parte della soluzione. Valutiamo insieme il tuo caso nella prima visita gratuita.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Quante sedute ci vorranno?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">Non posso dirtelo prima di vederti — e chiunque te lo dica senza conoscerti sta inventando un numero. Quello che posso dirti è che i primi risultati concreti nel dolore cronico arrivano di solito in 4–8 settimane, e che il percorso si costruisce in base ai tuoi obiettivi reali e al tuo ritmo.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            La prima visita è davvero gratuita? Senza impegno?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">Sì, completamente. La prima visita dura 45–60 minuti: ascolto la tua storia, faccio una valutazione clinica e ti spiego cosa vedo e come potremmo lavorare insieme. Non acquisti nulla, non ti viene chiesto nulla. Se poi ha senso andare avanti, lo decidiamo insieme.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Devo smettere di muovermi mentre faccio fisioterapia?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">Al contrario. Il mio obiettivo non è fermarti — è accompagnarti a <strong>muoverti meglio e con meno paura</strong>. Il movimento graduale è il principale strumento di recupero. Il riposo prolungato, nella lombalgia cronica, raramente aiuta.</p>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-q">
+            Come faccio a sapere se il mio dolore è pericoloso?
+            <span class="faq-icon"><svg viewBox="0 0 16 16" fill="none" stroke-width="2"><line x1="8" y1="2" x2="8" y2="14"/><line x1="2" y1="8" x2="14" y2="8"/></svg></span>
+          </summary>
+          <p class="faq-a">La maggior parte del mal di schiena cronico non è pericolosa — ma ci sono segnali che richiedono valutazione medica urgente: perdita di controllo di vescica o intestino, intorpidimento nella zona inguinale, debolezza muscolare che peggiora rapidamente, dolore notturno ingravescente a riposo. Se hai uno di questi sintomi, rivolgiti prima al medico. In tutti gli altri casi, ne parliamo nella prima visita gratuita.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA FINALE ═══ -->
+  <section class="cta-finale">
+    <div class="container">
+      <h2 class="reveal">Smettila di aspettare<br>che <em>passi da solo</em>.</h2>
+      <p class="reveal">La prima visita è gratuita. Nessun pacchetto, nessun impegno. Solo un'ora per capire dove sei e dove puoi arrivare.</p>
+      <div class="cta-finale-actions reveal">
+        <a href="https://wa.me/393519242517?text=Ciao%20Umberto%2C%20vorrei%20prenotare%20la%20prima%20visita%20gratuita%20per%20il%20mal%20di%20schiena." class="btn-primary" target="_blank" rel="noopener">
+          Scrivimi su WhatsApp →
+        </a>
+        <a href="tel:+393519242517" class="cta-phone">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.63 3.47 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+          351 924 2517
+        </a>
+      </div>
+      <p style="margin-top:2rem;font-size:0.82rem;color:rgba(255,255,255,0.35);">
+        Studio Mantovan – Fisioterapia in Movimento · Broni (PV) · <a href="tel:+393519242517" style="color:rgba(255,255,255,0.35);text-decoration:none;">351 924 2517</a> · <a href="mailto:studio.mantovan@gmail.com" style="color:rgba(255,255,255,0.35);text-decoration:none;">studio.mantovan@gmail.com</a><br>
+        <a href="https://maps.google.com/?q=Studio+Mantovan+Fisioterapia+Broni" target="_blank" rel="noopener" style="color:rgba(93,191,176,0.6);text-decoration:none;font-size:0.78rem;">📍 Vedi su Google Maps</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-brand">© 2025 Studio Mantovan – Fisioterapia in Movimento · Broni (PV) · P.IVA 02842510188</span>
+        <div class="footer-links">
+          <a href="https://www.instagram.com/studio.mantovan" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://www.facebook.com/studio.mantovan" target="_blank" rel="noopener">Facebook</a>
+          <a href="mailto:studio.mantovan@gmail.com">Email</a>
+        </div>
+        <span class="footer-piva">P.IVA 02842510188</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Nav scroll shadow
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // GSAP ScrollTrigger animations
+    window.addEventListener('load', () => {
+      if (typeof gsap === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero immediato
+      gsap.from('.hero .reveal', {
+        opacity: 0,
+        y: 32,
+        stagger: 0.15,
+        duration: 0.9,
+        ease: 'power3.out',
+        delay: 0.1,
+      });
+
+      // Resto della pagina
+      gsap.utils.toArray('section:not(.hero) .reveal').forEach(el => {
+        gsap.from(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            once: true,
+          },
+          opacity: 0,
+          y: 28,
+          duration: 0.75,
+          ease: 'power2.out',
+        });
+      });
+
+      // Counter animate per le stat
+      document.querySelectorAll('.caso-stat-num, .hero-stat-num').forEach(el => {
+        const text = el.textContent.trim();
+        const match = text.match(/(\d+)/);
+        if (!match) return;
+        const target = parseInt(match[1]);
+        const prefix = text.includes('vs') ? 'vs ' : '';
+        const suffix = text.includes('%') ? '%' : '';
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'top 90%',
+          once: true,
+          onEnter: () => {
+            gsap.fromTo(el, { textContent: prefix + '0' + suffix }, {
+              duration: 1.5,
+              ease: 'power2.out',
+              snap: { textContent: 1 },
+              textContent: prefix + target + suffix,
+            });
+          },
+        });
+      });
+    });
+  </script>
+</body>
+</html>
