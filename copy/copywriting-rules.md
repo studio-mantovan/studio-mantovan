@@ -1,61 +1,67 @@
-# Studio Mantovan — Regole di Copywriting
+---
 
-*Correlati: [[landing-page-style]] · [[tecniche-design]] · [[voice-style]] · [[filosofia-clinica]]*
+## tags: [copywriting, vault, regole, ads, blog, instagram] correlati: [[landing-page-style]] · [[tecniche-design]] · [[voice-style]] · [[filosofia-clinica]] trigger: copywriting, copy, articolo, blog, post, instagram, carosello, ads, meta, landing, testo, headline, cta, titolo, caption
+
+# Regole Copywriting — Studio Mantovan
+
+Guida operativa da leggere prima di scrivere qualsiasi contenuto: articolo di blog, post Instagram, carosello, Meta Ad, landing page. Non è teoria. È una lista costruita sulla clinica, sul paziente target e su quello che funziona.
+
+Fonti: Dario Vignali / Marketers, Paolo Borzacchiello, Andrea Bottoni, principi classici (Ogilvy, Sugarman, Hopkins), posizionamento specifico di Studio Mantovan e filosofia CFT (O'Sullivan).
 
 ---
 
-*Guida operativa per scrivere landing page, ads e contenuti che convertono.*
-*Basata su: Andrea Bottoni, Dario Vignali / Marketers, Copy Persuasivo (Andrea Lisi), principi classici (Ogilvy, Hopkins, Sugarman) e il posizionamento specifico di Studio Mantovan.*
+## 0. Prima di aprire il documento
+
+Rispondi a queste tre domande. Quelle tre righe sono la struttura del pezzo.
+
+1. **Qual è la frase che il paziente direbbe a voce alta?** Es. "Il chirurgo mi ha detto che è andato tutto bene, ma il ginocchio non è più come prima."
+2. **Cosa non sa ancora che spiega la sua situazione?** Es. "Il deficit di forza del quadricipite può restare per mesi senza un lavoro specifico."
+3. **Quale azione concreta può fare oggi?** Es. "Prenotare la prima visita gratuita."
 
 ---
 
 ## 1. Il principio fondamentale
 
-> *"Il copywriting non è scrivere bene. È scrivere per far agire qualcuno."*
-> — Andrea Bottoni
+> "Il copywriting non è scrivere bene. È scrivere per far agire qualcuno."
 
-Ogni parola ha un solo scopo: portare il paziente al passo successivo. Non informare, non impressionare, non spiegare. **Far agire.**
-
-Per Studio Mantovan l'unica azione è: **scrivere su WhatsApp o prenotare la valutazione gratuita.**
+Ogni parola ha un solo scopo: portare il paziente al passo successivo. Per Studio Mantovan l'unica azione è: **scrivere su WhatsApp o prenotare la valutazione gratuita.**
 
 ---
 
-## 2. La voce del brand
+## 2. Struttura obbligatoria — valida per tutti i formati
 
-### Tono
-- Diretto, caldo, umano — mai clinico
-- Prima persona singolare: "io", "il mio studio", "lavoro con te" — mai "noi offriamo"
-- Parla **al** paziente, non **di** fisioterapia
-- Usa il lessico del paziente, non il gergo medico
+La sequenza segue la psicologia di chi arriva da un'ad fredda: non sa chi sei, ha dolore, è scettico perché ha già provato altro.
 
-### Cosa NON dire mai
-| ❌ Evita | ✅ Sostituisci con |
-|---------|-------------------|
-| "movimento giusto/sbagliato" | "muoversi con consapevolezza" |
-| "abbassare il dolore" | "tornare alle attività che ami" |
-| "terapia passiva" (come attacco) | lascia che emerga dal contrasto |
-| "protocollo", "trattamento standard" | "percorso su misura" |
-| "Studio Mantovan offre..." | "Nel mio studio..." |
-| gergo clinico in hero/ads | sempre dopo aver conquistato attenzione |
+### Apertura — Cattura (cortisolo)
 
-### Cosa dire sempre
-- Benefici concreti e reali, non astratti → non "miglioramento funzionale" ma "torni ad allacciarti le scarpe"
-- Attività di valore del paziente → sport, lavoro, hobby, vita quotidiana
-- Prima visita gratuita — sempre, è la leva principale
-- "Nessun pacchetto uguale per tutti" — differenziante forte
+Il lettore deve riconoscersi nelle prime due frasi. Non presentarti, non spiegare chi sei. Parti dalla sua situazione.
+
+> Tecnica: usa una citazione in virgolette della cosa che il paziente pensa o dice. È il modo più rapido per creare riconoscimento.
+
+### Ponte — Connessione (serotonina + ossitocina)
+
+Qui entri tu. Racconta cosa vedi in studio, cosa succede in valutazione, cosa ti dicono i pazienti. Non dati, non studi: la tua esperienza concreta. È il momento in cui smetti di essere "l'esperto" e diventi "uno che capisce".
+
+### Contenuto — Spiegazione
+
+Solo dopo la connessione emotiva puoi spiegare il meccanismo. Breve, chiaro, senza gergo. Una sola idea centrale per pezzo.
+
+### CTA — Azione (dopamina)
+
+Sempre presente. Sempre specifica. Mai vaga.
+
+> Sequenza corretta: problema riconoscibile → connessione umana → spiegazione → azione. Se salti la connessione e vai diretto alla spiegazione, perdi il lettore a metà.
 
 ---
 
-## 3. La struttura della landing page (ordine e logica)
-
-La sequenza segue la psicologia del paziente che arriva da un'ads fredda su Meta. Non sa chi sei. Ha dolore. È scettico perché ha già provato altro.
+## 2b. Struttura landing page — ordine delle sezioni
 
 ```
 HERO           → Ferma il pollice. Fa riconoscere il problema.
-PROBLEMA       → "Sei tu quello di cui parlo." (PAS: Pain + Agitate)
-SOLUZIONE      → "Ecco perché è diverso." (PAS: Solve)
+PROBLEMA       → "Sei tu quello di cui parlo." (Pain + Agitate)
+SOLUZIONE      → "Ecco perché è diverso." (Solve)
 LE 3 FASI      → Struttura il percorso. Riduce l'incertezza.
-CASO REALE     → Prova concreta. Prima/dopo specifico.
+CASO REALE     → Prova concreta. Situazione specifica.
 TESTIMONIANZE  → Prova sociale. Credibilità esterna.
 CTA MID        → Per chi è già convinto a metà pagina.
 CHI SONO       → Umanizza. Costruisce fiducia personale.
@@ -63,275 +69,343 @@ FAQ            → Smonta le ultime obiezioni.
 CTA FINALE     → Ultima chiamata. Rimuovi attrito.
 ```
 
-**Regola d'oro:** ogni sezione ha **un solo compito**. Se ne fa due, va spezzata.
+**Regola d'oro:** ogni sezione ha un solo compito. Se ne fa due, va spezzata.
 
 ---
 
-## 4. Formula PAS — l'asse portante
+## 3. Formula PAS — l'asse portante
 
-Ogni landing, ogni ads, ogni email segue questa struttura di base:
+Ogni landing, ogni ad, ogni articolo segue questa struttura:
 
-**P — Problem (Problema)**
-Nomina il dolore specifico. Non generico. Il paziente deve pensare: *"Sta parlando di me."*
-> *"Fai fatica ad alzarti la mattina. Eviti certi movimenti da così tanto tempo che non ricordi più com'era prima."*
+**P — Problem:** nomina il dolore specifico. Il paziente deve pensare: _"Sta parlando di me."_
 
-**A — Agitate (Agitazione)**
-Approfondisci il disagio. Mostra il costo del non fare niente. Non esagerare — il punto è empatia, non paura.
-> *"Hai già provato massaggi, tecar, riposo. Ti hanno detto che 'è l'ernia', che 'è la postura', che devi imparare a conviverci. Il dolore è ancora lì."*
+> _"Fai fatica ad alzarti la mattina. Eviti certi movimenti da così tanto tempo che non ricordi più com'era prima."_
 
-**S — Solve (Soluzione)**
-Presenta la soluzione come la via d'uscita naturale — non come un prodotto, ma come una trasformazione.
-> *"C'è un motivo per cui non è passato. E si può cambiare."*
+**A — Agitate:** approfondisci il disagio. Mostra il costo del non fare niente. Non esagerare — il punto è empatia, non paura.
 
-**Regola PAS:** scegli **il dolore più acuto**, non tutti i dolori. Un pain point agitato bene vale 5 superficiali.
+> _"Hai già provato massaggi, tecar, riposo. Ti hanno detto che 'è l'ernia', che 'è la postura'. Il dolore è ancora lì."_
+
+**S — Solve:** presenta la soluzione come via d'uscita naturale — non un prodotto, ma una trasformazione.
+
+> _"C'è un motivo per cui non è passato. E si può cambiare."_
+
+**Regola PAS:** scegli il dolore più acuto, non tutti i dolori. Un pain point agitato bene vale cinque superficiali.
 
 ---
 
-## 5. La Hero Section — le prime 3 righe decidono tutto
+## 4. Il titolo
 
-Il 80% delle persone non scorre oltre la hero. Se non le fermi qui, hai perso.
+### Formula base
 
-### Struttura hero efficace
-1. **Badge/label** — contestualizza in 3-5 parole (es. "Fisioterapia per mal di schiena a Broni")
-2. **Headline** — sfida una credenza o nomina il dolore principale. Max 10 parole. Peso 800.
-3. **Sottotitolo** — beneficio concreto + differenziante. Non feature: beneficio. Max 2 righe.
-4. **Foto** — reale, emotiva, non stock. Mostra il lavoro o il risultato.
-5. **CTA primaria** — una sola. Azione chiara + beneficio. Bottone pieno, colore primario.
-6. **CTA secondaria** — solo se serve (es. telefono). Tono più basso, non compete con la primaria.
+**Oggetto : Motivazione**
 
-### Regole headline
-- Sfida un luogo comune → *"Il riposo non guarisce il mal di schiena."*
-- Nomina il problema → *"Fai fatica ad alzarti la mattina?"*
-- Prometti una trasformazione → *"Torni ad allacciarti le scarpe."*
+- Oggetto = cosa tratta il pezzo
+- Motivazione = perché dovrebbe continuare a leggere
+
+Esempi:
+
+- "Operato al menisco: perché il ginocchio non è ancora come prima"
+- "Lombalgia cronica: quello che nessuno ti ha spiegato sul riposo"
+- "Sciatalgia: il riposo non guarisce, il movimento sì"
+
+### Regole titolo
+
+- Usa la frase che il paziente già pensa, non quella che vorresti che pensasse
+- Max 60 caratteri per SEO
+- Niente termini tecnici nel titolo
+- Niente punti interrogativi retorici che non risolvono nulla
+- Deve promettere qualcosa di specifico, non di generico
 - **Mai iniziare con "Noi"** — il paziente non si interessa a te, si interessa al suo problema
-- **Mai feature come headline** → *"Percorsi personalizzati 1:1"* è una feature, non una headline
+- **Mai feature come headline** → "Percorsi personalizzati 1:1" è una feature, non una headline
 
-### Regole sottotitolo
-- Deve rispondere a: *"Cosa ottengo concretamente?"*
-- Deve contenere un differenziante implicito
-- Deve ridurre il rischio percepito o amplificare il desiderio
-- ❌ *"Costruisco percorsi personalizzati per farti tornare alle attività"* → troppo generico
-- ✅ *"Torni ad allacciarti le scarpe, fare sport, lavorare senza pensarci su. Senza pacchetti standard. Solo un percorso costruito su di te."*
+### Formule alternative
 
----
+- **"Ho [fatto X] e il dolore non passa. Ecco perché."** — intercetta chi ha già provato
+- **"Dopo [evento]: quello che succede davvero e cosa fare"** — per post-operatori, post-diagnosi
+- **"[Condizione]: il problema non è quello che pensi"** — myth-busting CFT
+- **Sfida un luogo comune** → "Il riposo non guarisce il mal di schiena."
 
-## 6. La CTA — l'elemento più sottovalutato
+### Titoli di sezione — non descrittivi, coinvolgenti
 
-### Regole CTA
-- **Una sola CTA primaria per sezione** — due CTA sullo stesso livello creano paralisi
-- La CTA secondaria (es. telefono) va come link testo, non come secondo bottone
-- Usa **verbo d'azione + beneficio**: *"Prenota la valutazione gratuita"* > *"Clicca qui"*
-- Aggiungi **microcopy** sotto la CTA: riduce l'attrito dell'ultimo metro
-  - *"Rispondo entro 24 ore · Senza impegno"*
-  - *"Prima visita gratuita · Nessun obbligo"*
-- Evita: *"Scopri di più"*, *"Contattaci"*, *"Clicca qui"* — non dicono cosa succede dopo
+|❌ Descrittivo|✅ Coinvolgente|
+|---|---|
+|"I nostri servizi"|"Cosa succede quando arrivi da me"|
+|"Chi siamo"|"Una sola regola: nessun paziente uguale all'altro"|
+|"Testimonianze"|"Quello che dicono le persone che erano dove sei tu"|
+|"Come funziona"|"Il dolore ha una storia. Il percorso parte da lì."|
+|"Domande frequenti"|"Hai qualche dubbio? È normale."|
 
-### CTA per Studio Mantovan
-| Posizione | CTA primaria | Microcopy |
-|-----------|-------------|-----------|
-| Hero | "Prenota la valutazione gratuita →" | "Rispondo di persona entro 24 ore" |
-| CTA mid | "Prenota la valutazione gratuita" | "Senza impegno · Prima visita gratuita" |
-| Footer | "Scrivimi su WhatsApp" | "Rispondo entro 24 ore" |
-| Topbar | "Visita gratuita" | — |
+**Regola:** se il titolo può andare su qualsiasi landing di qualsiasi fisioterapista, è troppo generico.
 
 ---
 
-## 7. Titoli di sezione — non descrittivi, coinvolgenti
+## 5. Regole di tono e stile
 
-Il titolo di ogni sezione deve fare una cosa: **far continuare a leggere**.
+- **Scrivi come parli.** Leggi ogni frase ad alta voce. Se non la diresti in studio, riscrivila.
+- **Frasi corte.** Una idea per frase. Un concetto per paragrafo. Riga bianca tra i paragrafi.
+- **Prima e seconda persona.** Sempre "io" e "tu". Mai "il paziente", mai "si dovrebbe".
+- **Parole semplici.** "Dolore" non "sintomatologia". "Forza" non "performance muscolare".
+- **Niente hedging.** Elimina: "potrebbe", "forse", "in alcuni casi", "tendenzialmente". Se dici qualcosa, dillo.
 
-| ❌ Descrittivo | ✅ Coinvolgente |
-|--------------|---------------|
-| "I nostri servizi" | "Cosa succede quando arrivi da me" |
-| "Chi siamo" | "Una sola regola: nessun paziente uguale all'altro" |
-| "Testimonianze" | "Quello che dicono le persone che erano dove sei tu adesso" |
-| "Come funziona" | "Il dolore ha una storia. Il percorso parte da lì." |
-| "Domande frequenti" | "Hai qualche dubbio? È normale." |
+### Cosa NON dire mai
 
-**Regola:** se il titolo può andare su qualsiasi landing page di qualsiasi fisioterapista, è troppo generico. Riscrivilo.
+|❌ Evita|✅ Sostituisci con|
+|---|---|
+|"movimento giusto/sbagliato"|"muoversi con consapevolezza"|
+|"abbassare il dolore"|"tornare alle attività che ami"|
+|"protocollo", "trattamento standard"|"percorso su misura"|
+|"Studio Mantovan offre..."|"Nel mio studio..."|
+|gergo clinico in hero/ads|sempre dopo aver conquistato attenzione|
+
+### Frasi che distruggono l'autorevolezza — da non usare mai
+
+- "Scusa se ti disturbo"
+- "Ti rubo solo 5 minuti"
+- "Potrebbe valere la pena di valutare..."
+- "Non so se fa al caso suo..."
+- "Magari potrebbe essere utile..."
+- "Prima di tutto, due parole su di me..."
+
+Queste frasi comunicano che quello che hai da dire non vale l'attenzione del lettore.
 
 ---
 
-## 8. Le testimonianze — specificità = credibilità
+## 6. Regole cliniche assolute — non derogabili su nessun formato
+
+- ❌ Mai riferimento a movimenti "sbagliati" o "corretti"
+- ❌ Mai promessa di guarigione garantita
+- ❌ Mai posizionare la terapia passiva come soluzione
+- ❌ Mai dire "il dolore non è il vero problema"
+- ❌ Mai usare la parola "danno" riferita al corpo
+- ❌ Mai "quello che ami" — troppo pubblicitario → usa "attività che contano per te"
+- ✅ Sempre prima persona
+- ✅ Focus sul ritorno alle attività reali ("salire le scale", "giocare a calcetto", "accompagnare i figli in bici")
+- ✅ Il paziente è protagonista del suo recupero, non oggetto di trattamento
+- ✅ Il dolore è reale, non è colpa del paziente — non giudicare le scelte passate
+
+---
+
+## 7. La CTA
+
+### Principio
+
+La prima visita gratuita non è un favore che chiedi. È un'offerta con un valore preciso.
+
+### CTA che funzionano
+
+- "Fare due chiacchiere sul tuo ginocchio non costa nulla. La prima visita è gratuita."
+- "Se ti riconosci in questa situazione, il primo passo è parlarne."
+- "Scrivimi un messaggio — guardiamo insieme a che punto sei."
+
+### CTA che non funzionano
+
+- "Contattami per maggiori informazioni"
+- "Prenota una visita"
+- "Scopri di più"
+- "Clicca qui"
+
+### Posizione per canale
+
+- **Articolo blog:** CTA a metà (dopo spiegazione del problema) + CTA finale
+- **Carosello Instagram:** ultima slide dedicata, testo grande + "Invia messaggio"
+- **Caption Instagram:** ultimo paragrafo, dopo la storia
+- **Meta Ad:** nella headline o nella prima riga del testo principale
+- **Landing page:** hero + sezione centrale + footer
+
+### CTA per landing (riferimento rapido)
+
+|Posizione|CTA primaria|Microcopy|
+|---|---|---|
+|Hero|"Prenota la valutazione gratuita →"|"Rispondo di persona entro 24 ore"|
+|CTA mid|"Prenota la valutazione gratuita"|"Senza impegno · Prima visita gratuita"|
+|Footer|"Scrivimi su WhatsApp"|"Rispondo entro 24 ore"|
+
+**Regola:** una sola CTA primaria per sezione. Due CTA sullo stesso livello creano paralisi. Aggiungi sempre microcopy sotto il bottone: riduce l'attrito dell'ultimo metro.
+
+---
+
+## 8. Storytelling — come usarlo
+
+### La storia non serve a parlare di te
+
+Serve a creare uno specchio in cui il lettore si riconosce. Il caso clinico non dimostra la tua competenza — dimostra che quella situazione esiste, è comune, ha una via d'uscita.
+
+### Struttura del caso clinico
+
+1. Profilo rapido ("un paziente di circa 50 anni, operato tre mesi prima")
+2. La situazione concreta ("camminava bene, ma le scale erano ancora un problema")
+3. Cosa mancava ("nessuno gli aveva spiegato perché, né cosa fare")
+4. Cosa è cambiato — opzionale, solo se non suona come promessa di guarigione
+
+### Regola
+
+Non raccontare mai il caso per impressionare. Raccontalo per far dire al lettore "anch'io sono così".
+
+---
+
+## 9. Le testimonianze
 
 Una testimonianza generica non converte. La specificità sì.
 
-### Formula recensione che converte
+### Formula
+
 ```
 [Problema specifico prima] + [durata del problema] + [risultato concreto dopo]
 ```
 
-> ✅ *"Avevo mal di schiena da 3 anni, non riuscivo a stare seduto più di 20 minuti. Dopo 6 settimane con Umberto sono tornato in palestra."* — Marco, 44 anni
-
-> ❌ *"Molto professionale e competente. Consiglio vivamente!"* — Paziente verificato
+> ✅ "Avevo mal di schiena da 3 anni, non riuscivo a stare seduto più di 20 minuti. Dopo 6 settimane con Umberto sono tornato in palestra." — Marco, 44 anni ❌ "Molto professionale e competente. Consiglio vivamente!"
 
 ### Come raccogliere testimonianze utili
-Chiedi ai pazienti di rispondere a queste tre domande:
-1. **Prima:** Qual era il tuo problema? Da quanto tempo ce l'avevi?
-2. **Durante:** Cosa ti ha sorpreso del percorso?
-3. **Dopo:** Cosa riesci a fare adesso che non riuscivi prima?
 
-### Formato nel copy
-- Nome + età (o professione se rilevante) — rende reale
-- Problema specifico — fa identificare il lettore
-- Risultato concreto — mostra la trasformazione
-- Stelle opzionali, ma fonte (Google) aumenta la credibilità
+Chiedi al paziente di rispondere a tre domande:
+
+1. Qual era il tuo problema? Da quanto tempo ce l'avevi?
+2. Cosa ti ha sorpreso del percorso?
+3. Cosa riesci a fare adesso che non riuscivi prima?
 
 ---
 
-## 9. La sezione Problema — agitare senza spaventare
+## 10. Le FAQ — risolvere obiezioni, non spiegare
 
-### Struttura ottimale
-1. **Titolo** che crea curiosità o riconoscimento — non descrittivo
-2. **Intro** di 1-2 righe che nomina il percorso fallito (tecar, riposo, postura)
-3. **3 check item** max — i 3 dolori/situazioni più comuni e specifici
-4. **Frase ponte** — apre alla speranza senza ancora presentare la soluzione
-   > *"Non è colpa tua. Ma c'è un motivo per cui non è passato — e si può cambiare."*
+Le FAQ non servono a informare. Servono a smontare le ultime resistenze di chi è quasi convinto.
 
-### Regole agitazione
-- Scegli **un solo pain point principale** da agitare in profondità
-- Non agitare troppo — il paziente non deve sentirsi senza speranza, solo capito
-- Il dolore più forte va **in cima**, non in fondo
-- Evita elenchi di 5+ punti — diluiscono l'effetto emotivo
+**Regole:**
 
----
-
-## 10. La sezione Metodo/Soluzione — bridge tra problema e risultato
-
-### Regola del bridge narrativo
-Non ripetere il problema già descritto nella sezione precedente. Parti direttamente dal cambiamento.
-
-> ❌ *"La maggior parte dei percorsi per il mal di schiena si concentra sul sintomo..."* ← già detto
-> ✅ *"Il tuo dolore ha una storia. Il percorso parte da lì."* ← bridge
-
-### Le 3 fasi come struttura narrativa
-Le fasi non sono un elenco di servizi — sono un **racconto di trasformazione**:
-- Fase 1: comprensione (il paziente si sente ascoltato)
-- Fase 2: movimento (il paziente recupera fiducia)
-- Fase 3: vita reale (il paziente torna a fare quello che ama)
-
-Ogni fase deve finire con **un'immagine mentale concreta**, non con un concetto astratto.
-
----
-
-## 11. Le FAQ — risolvere obiezioni, non spiegare
-
-Le FAQ non servono a informare. Servono a **smontare le ultime resistenze** di chi è quasi convinto.
-
-### Regole FAQ
-- Risposta max 2 frasi per domanda — chi legge le FAQ è già warm
-- Finisci sempre con una micro-CTA implicita (*"Ne parliamo nella prima visita gratuita"*)
+- Max 2 frasi per risposta — chi legge le FAQ è già warm
+- Finisci sempre con una micro-CTA implicita ("Ne parliamo nella prima visita gratuita")
 - Anticipa le vere obiezioni, non le domande ovvie
-- Le vere obiezioni di questo target:
-  - *"Ho già provato, non funzionerà neanche stavolta"*
-  - *"Ho l'ernia, non posso muovermi"*
-  - *"Quante sedute ci vorranno? Non ho tempo/soldi"*
-  - *"È davvero gratuita la prima visita?"*
+
+**Le vere obiezioni del paziente target:**
+
+- "Ho già provato, non funzionerà neanche stavolta"
+- "Ho l'ernia, non posso muovermi"
+- "Quante sedute ci vorranno? Non ho tempo/soldi"
+- "È davvero gratuita la prima visita?"
 
 ---
 
-## 12. Regole per Meta Ads (traffico freddo)
+## 11. Regole per canale
 
-Per Studio Mantovan il 90% del traffico verrà da Meta Ads. Queste regole sono prioritarie.
+### Articolo di blog
 
-### Il paziente da Meta è diverso
-- Non ti sta cercando — stava scorrendo il feed
-- Non sa chi sei
-- È scettico (ha già provato altro)
-- Legge su mobile, spesso senza audio
-- Ha un'attenzione di 1-2 secondi prima di decidere se scorrere oltre
+- Lunghezza: 600–1200 parole
+- Struttura: H1 → intro (caso clinico o frase ricorrente) → promessa esplicita → H2 meccanismo → H2 cosa faccio → CTA centrale → H2 riflessione finale → CTA finale
+- Keyword principale: nel titolo, nel primo paragrafo, in almeno un H2
+- Fonti: cita solo studi pertinenti, mai con dettagli che possono spaventare
 
-### Regole ads → landing
-- **Continuità narrativa:** la headline dell'ads deve essere la stessa (o molto simile) alla headline della landing — il paziente deve sentirsi "nel posto giusto"
-- **Mobile first:** tutto deve funzionare su schermo da 390px
-- **Sottotitoli** sempre nei video/reel (70-80% senza audio)
-- **CTA unica:** WhatsApp/Messenger — abbassa la barriera massimamente
-- **Niente prezzi** nella landing per traffico freddo — prima costruisci il valore
+### Carosello Instagram (5 slide)
 
-### Hook per ads (prime 3 parole che fermano il pollice)
-- Sfida la credenza: *"Il riposo peggiora il mal di schiena."*
-- Nomina il problema: *"Sciatalgia da mesi?"*
-- Racconta il caso: *"Non riusciva ad allacciarsi le scarpe."*
-- Usa la domanda: *"Hai già fatto fisioterapia e non ha funzionato?"*
+- Slide 1: frase del paziente in virgolette + riga che la aggancia alla tua esperienza
+- Slide 2–4: una idea per slide, testo leggibile in 3 secondi
+- Slide 5: domanda diretta al target + "Prima visita gratuita" + "Invia messaggio"
+- Elemento ricorrente: progress bar o elemento visivo fisso uguale su tutte le slide
+- Caption: storia → spiegazione → cosa faccio → CTA
 
----
+### Meta Ads — traffico freddo
 
-## 13. Errori da non fare mai
+Il paziente da Meta non ti sta cercando, stava scorrendo il feed. Ha 1-2 secondi per decidere se continuare.
 
-| Errore | Perché è sbagliato | Correzione |
-|--------|-------------------|------------|
-| Due CTA primarie sullo stesso livello | Paralisi della scelta | Una primaria, una secondaria come link testo |
-| Headline = feature ("Percorsi 1:1") | Non risponde a "cosa ottengo?" | Trasforma in beneficio concreto |
-| Testimonianze generiche | Non credibili, non identificanti | Problema + durata + risultato specifico |
-| Intro sezione che ripete la sezione precedente | Rallenta, annoia | Bridge narrativo diretto |
-| FAQ lunghe e esplicative | Chi legge FAQ è già warm | Max 2 frasi, finisci con micro-CTA |
-| 5+ pain point nella sezione Problema | Diluisce l'effetto emotivo | Max 3, il più forte per primo |
-| "Noi offriamo" / "Il nostro studio" | Distanza, non connessione | Sempre prima persona: "io", "nel mio studio" |
-| Gergo medico in hero o sezione problema | Aliena il paziente | Linguaggio del paziente, non del clinico |
+**Hook (prime 3 parole che fermano il pollice):**
 
----
+- Sfida la credenza: "Il riposo peggiora il mal di schiena."
+- Nomina il problema: "Sciatalgia da mesi?"
+- Racconta il caso: "Non riusciva ad allacciarsi le scarpe."
+- Usa la domanda: "Hai già fatto fisioterapia e non ha funzionato?"
 
-## 13b. Meta Ads Carousel — Regole Copy
+**Regole operative:**
 
-*Ricavate dalla sessione di produzione carousel dolore cronico — giugno 2026.*
+- Continuità narrativa: headline ads = headline landing
+- Sottotitoli sempre su video/reel (70-80% senza audio)
+- CTA unica: WhatsApp/Messenger — `wa.me/393519242517`
+- Niente prezzi per traffico freddo — prima costruisci il valore
+- Geo: raggio 15–20km da Broni, Advantage+, Feed only
+- Non cambiare nulla nei primi 7 giorni
 
-### Hook (Card 1)
-- Inizia con un dato contestualizzante per il paziente: *"Se hai dolore da più di X mesi..."*
-- Continua con la lista di soluzioni già provate (farmaci, massaggi, terapie passive) — non criticarle, ma evidenziare che non hanno risolto
-- Chiudi con *"Ma poi eri di nuovo al punto di partenza"* — frase da mantenere: crea riconoscimento immediato
-- ❌ NON usare *"forse il problema non è quello che pensi"* o frasi simili — suonano condescendenti
-- ❌ NON usare *"il dolore non è il vero problema"* — per il paziente il dolore è sempre il problema
+**Frasi vietate nelle Meta Ads:**
 
-### Card problema/educativa
-- Il dolore cronico non è legato solo alle modificazioni strutturali del corpo
-- Fare sempre esempi concreti: ernie, protrusioni, sfilacciamenti dei tendini
-- Concetto chiave: i pensieri e le credenze sviluppate sul proprio corpo influenzano il recupero **tanto quanto** le modificazioni strutturali
-- ❌ NON usare la parola "danno" riferita al corpo del paziente
-- ❌ NON usare *"togliere il dolore non basta"* come headline isolata — suona fredda
-
-### Card approccio
-- ❌ NON usare *"non ti dico cosa hai torto a pensare"* — non è italiano e suona male
-- Formula corretta: *"Capiamo insieme cosa alimenta davvero il tuo dolore"*
-- Elencare sempre: cosa non riesci più a fare / cosa stai evitando / cosa ti ha fatto entrare in questo circolo
-
-### Card differenzianti — sequenza CFT (mantenere questo ordine)
-La sequenza è quella clinica CFT reale — non va cambiata:
-1. Valuto cosa si nasconde davvero dietro al tuo dolore
-2. Ti aiuto a gestire i sintomi senza evitare i movimenti
-3. Esposizione graduale alle attività che contano per te
-4. Esercizi costruiti esattamente intorno a quello che fai
-
-### CTA
-- Usare sempre *"attività che contano per te"* — ❌ NON *"quello che ami"* (troppo pubblicitario)
-- Formula CTA: *"Parliamo di cosa ti impedisce davvero di tornare alle attività che contano per te"*
-- CTA sempre su WhatsApp: `wa.me/393519242517`
-
-### Frasi vietate nel copy Meta Ads
 - "quello che ami" / "tornare a fare quello che ami"
 - "il dolore non è il vero problema"
 - "togliere il dolore non basta" come headline isolata
 - "danno fisico" / "danno strutturale"
-- "non ti dico cosa hai torto a pensare"
 - "forse il problema non è dove pensi"
 - qualsiasi frase che implichi fragilità strutturale del corpo
 
+**Sequenza copy carousel Meta:**
+
+1. Hook — frase ricorrente del paziente + soluzioni già provate + "eri di nuovo al punto di partenza"
+2. Card educativa — il dolore cronico non è solo strutturale; pensieri e credenze influenzano il recupero tanto quanto le modificazioni fisiche
+3. Card approccio — "Capiamo insieme cosa alimenta davvero il tuo dolore" + cosa non riesci più a fare
+4. Card differenzianti CFT (questo ordine è fisso — è la sequenza clinica reale):
+    - Valuto cosa si nasconde davvero dietro al tuo dolore
+    - Ti aiuto a gestire i sintomi senza evitare i movimenti
+    - Esposizione graduale alle attività che contano per te
+    - Esercizi costruiti intorno a quello che fai
+5. CTA — "Parliamo di cosa ti impedisce di tornare alle attività che contano per te"
+
 ---
 
-## 14. Il copy di Studio Mantovan — linea editoriale
+## 12. Errori da non fare mai
 
-Tutto ciò che viene scritto per Studio Mantovan (landing, ads, post, email) deve rispettare questi pilastri:
+|Errore|Perché è sbagliato|Correzione|
+|---|---|---|
+|Due CTA primarie sullo stesso livello|Paralisi della scelta|Una primaria, una secondaria come link testo|
+|Headline = feature ("Percorsi 1:1")|Non risponde a "cosa ottengo?"|Trasforma in beneficio concreto|
+|Testimonianze generiche|Non credibili, non identificanti|Problema + durata + risultato specifico|
+|Intro sezione che ripete la precedente|Rallenta, annoia|Bridge narrativo diretto|
+|FAQ lunghe ed esplicative|Chi legge FAQ è già warm|Max 2 frasi, finisci con micro-CTA|
+|5+ pain point nella sezione Problema|Diluisce l'effetto emotivo|Max 3, il più forte per primo|
+|"Noi offriamo" / "Il nostro studio"|Distanza, non connessione|Sempre "io", "nel mio studio"|
+|Gergo medico in hero o sezione problema|Aliena il paziente|Linguaggio del paziente, non del clinico|
+|Hedging ("potrebbe", "forse")|Distrugge autorevolezza|Dillo o non dirlo|
+|Frasi di scusa in apertura|Comunica che non vale la tua attenzione|Riscrivi l'apertura|
 
-**1. Il dolore è reale, non è colpa del paziente**
-Non giudicare le scelte passate. Non dire "hai fatto male a fare tecar". Dire: "hai già provato, non ha funzionato — c'è un motivo."
+---
 
-**2. Il movimento è la soluzione, non il problema**
-Mai comunicare che ci sono movimenti giusti e sbagliati. Il corpo può muoversi — il percorso aiuta a riscoprirlo.
+## 13. Checklist pre-pubblicazione
 
-**3. L'obiettivo non è solo meno dolore**
-L'obiettivo è tornare a fare quello che ami. Il dolore diminuisce come conseguenza, non come scopo.
+**Struttura**
 
-**4. Nessun paziente uguale all'altro**
-Mai comunicare pacchetti, protocolli, numeri di sedute standard. Sempre: "costruiamo il percorso insieme."
+- [ ] Il lettore si riconosce nelle prime due frasi?
+- [ ] C'è una promessa esplicita di cosa imparerà leggendo?
+- [ ] C'è almeno una CTA posizionata correttamente?
 
-**5. La prima visita gratuita è la porta d'ingresso**
-È il differenziante principale e la leva di conversione più forte. Va menzionata in ogni touchpoint.
+**Tono**
+
+- [ ] Ho letto il testo ad alta voce?
+- [ ] Ogni frase è in prima o seconda persona?
+- [ ] Ho eliminato tutti i "potrebbe", "forse", "tendenzialmente"?
+- [ ] Ho eliminato le frasi di scusa o hedging?
+
+**Regole cliniche**
+
+- [ ] Nessun riferimento a movimenti sbagliati o corretti?
+- [ ] Nessuna promessa di guarigione?
+- [ ] Il focus è su attività reali della vita del paziente?
+- [ ] Nessun uso della parola "danno"?
+- [ ] Nessun "il dolore non è il vero problema"?
+
+**CTA**
+
+- [ ] La CTA dice esattamente cosa succede quando il lettore scrive?
+- [ ] È specifica e non generica?
+- [ ] C'è il microcopy sotto il bottone?
+
+**Titolo**
+
+- [ ] Usa la frase o la situazione che il paziente già conosce?
+- [ ] È sotto i 60 caratteri?
+- [ ] Promette qualcosa di specifico?
+
+---
+
+## 14. Pilastri editoriali — linea che non cambia mai
+
+1. **Il dolore è reale, non è colpa del paziente.** Non giudicare le scelte passate. "Hai già provato, non ha funzionato — c'è un motivo."
+2. **Il movimento è la soluzione, non il problema.** Mai comunicare che ci sono movimenti giusti e sbagliati.
+3. **L'obiettivo non è solo meno dolore.** È tornare a fare quello che conta. Il dolore diminuisce come conseguenza, non come scopo.
+4. **Nessun paziente uguale all'altro.** Mai comunicare pacchetti, protocolli, numeri di sedute standard.
+5. **La prima visita gratuita è la porta d'ingresso.** Va menzionata in ogni touchpoint. È il differenziante principale.
+
+---
+
+_Ultimo aggiornamento: giugno 2026_ _Percorso vault: `conoscenza/copywriting-rules.md`_

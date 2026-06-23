@@ -21,7 +21,26 @@
       "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\brand\")",
       "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\copy\")",
       "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\design\")",
-      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\clinica\\\\knowledge-base\")"
+      "PowerShell(New-Item -ItemType Directory -Force -Path \"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\clinica\\\\knowledge-base\")",
+      "PowerShell(Get-ChildItem C:\\\\Users\\\\umber\\\\studio-mantovan\\\\photos -File | Select-Object Name, @{N='MB';E={[math]::Round\\($_.Length/1MB, 2\\)}})",
+      "PowerShell(Test-Path \"$env:TEMP\\\\yt-transcript\\\\node_modules\\\\youtube-transcript\")",
+      "WebFetch(domain:recuperoefficace.it)",
+      "WebFetch(domain:umbertomantovan.net)",
+      "Bash(tasklist /FI \"PID eq 1412\" /NH)",
+      "PowerShell(Get-Process -Id 1412)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":3001\")",
+      "Bash(npm run *)",
+      "Bash(Remove-Item -Recurse -Force /c/Users/umber/studio-mantovan/site/.next/cache)",
+      "PowerShell(Stop-Process -Id \\(Get-NetTCPConnection -LocalPort 3000 -State Listen\\).OwningProcess -Force -ErrorAction SilentlyContinue; Write-Output \"stopped\")",
+      "Bash(npx next *)",
+      "Bash(Get-ChildItem \"C:\\\\Users\\\\umber\\\\studio-mantovan\" -Directory)",
+      "Bash(Select-Object -ExpandProperty Name)",
+      "Bash(npm install *)",
+      "Bash(taskkill /PID 23276 /F)",
+      "PowerShell(Stop-Process -Id 23276 -Force)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

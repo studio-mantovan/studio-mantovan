@@ -168,24 +168,24 @@
 
 ### Catalogo foto disponibili
 
-| ID | File | Soggetto | Uso consigliato | Punto di forza |
+| ID | File nel sito | Soggetto | Uso consigliato | Punto di forza |
 |----|------|----------|-----------------|----------------|
-| F1 | `5a7ee4bc...jpg` | Umberto tratta la lombare di un paziente sul lettino — spalle di entrambi, spazio con scaletta svedese e palloni | Hero section, sezione "Come lavoro", ads trattamento manuale | Mostra il lavoro reale, dinamico, non patinato |
-| F2 | `20250808_173953.jpg` | Sala d'attesa — sedie design, pianta, quadro colorato, ingresso con logo visibile sul vetro | Sezione "Lo studio", footer, Google My Business | Ambiente accogliente, non clinico, logo ben visibile |
-| F3 | `20250808_172426.jpg` | Umberto alla scrivania, braccia conserte, sorriso — luce diffusa dalla finestra | Sezione "Chi sono", bio, about page | Espressione aperta e fiduciosa, molto umana |
-| F4 | `20250808_173236.jpg` | Umberto alla scrivania nello studio teal — più contestualizzato, con diplomi/certificati sul muro | Sezione "Chi sono" alternativa, credibilità | Mostra l'ambiente di studio, trasmette competenza |
-| F5 | `20250808_173744.jpg` | Sala trattamento vuota — lettino blu, scaletta svedese con elastici colorati, scrivania | Sezione "Lo studio", tour virtuale | Spazio pulito e attrezzato, colori in linea con brand |
-| F6 | `PXL_20251223...jpg` | Umberto osserva un paziente fare deadlift con bilanciere — sala con power rack | Sezione "Fisioterapia sportiva / esercizio attivo", hero per sportivi | Unica nel settore fisioterapia — messaggio forte sull'approccio attivo |
-| F7 | `af6c2864...jpg` | Umberto tratta il ginocchio di un paziente sul lettino — visione laterale nitida | Hero section alternativa, sezione trattamenti, ads dolore articolare | Mani sul ginocchio = immediato riconoscimento del problema da parte del paziente |
+| F1 | `f1-trattamento-lombare.jpg` | Umberto tratta la lombare di un paziente sul lettino — spalle di entrambi, spazio con scaletta svedese e palloni | Hero section, sezione "Come lavoro", ads trattamento manuale | Mostra il lavoro reale, dinamico, non patinato |
+| F3 | `f3-ritratto.jpg` | Ritratto di Umberto | Sezione "Chi sono", bio, about page | Espressione aperta e fiduciosa |
+| F4 | `f4-studio.jpg` | Sala trattamento vuota — lettino blu, scaletta svedese con elastici colorati, scrivania | Sezione "Lo studio", tour virtuale, Google My Business | Spazio pulito e attrezzato, colori in linea con brand |
+| F5 | `f5-trattamento-ginocchio.jpg` | Umberto tratta il ginocchio di un paziente sul lettino — visione laterale, mani sul ginocchio | **Hero section principale**, sezione trattamenti, ads | Mani sul ginocchio = immediato riconoscimento — mostra Umberto in azione |
+| F6 | `f6-deadlift.jpg` | Umberto osserva un paziente fare deadlift con bilanciere | Sezione "Fisioterapia sportiva / esercizio attivo" | Unica nel settore — messaggio forte sull'approccio attivo |
+| F7 | `f7-trattamento-caviglia.jpg` | Umberto tratta la caviglia/piede di un paziente — vista di spalle, foto verticale | Sezione "Chi sono", sezione trattamenti alternativa | Di spalle = discrezione, focus sul lavoro delle mani |
+| F8 | `f8-sala-attesa.jpg` | Sala d'attesa — sedie design, pianta, quadro colorato, ingresso con logo visibile sul vetro | Sezione "Lo studio", footer, Google My Business | Ambiente accogliente, non clinico, logo ben visibile |
 
-### Abbinamento sezioni → foto
+### Abbinamento sezioni → foto (sito Next.js attuale)
 
-| Sezione landing | Foto primaria | Foto secondaria |
-|----------------|---------------|-----------------|
-| Hero (dolore/riabilitazione) | F7 o F1 | — |
-| Hero (sportivi/attivo) | F6 | F1 |
-| Chi sono / About | F3 | F4 |
-| Lo studio | F5 | F2 |
+| Sezione | Foto usata | Note |
+|---------|------------|------|
+| Hero | `f5-trattamento-ginocchio.jpg` | Umberto in azione, formato 4:5 |
+| Chi sono | `f7-trattamento-caviglia.jpg` | Di spalle, formato 1:1 |
+| Caso reale / da aggiungere | `f6-deadlift.jpg` | Per sezione sportiva futura |
+| Lo studio (da aggiungere) | `f4-studio.jpg` + `f8-sala-attesa.jpg` | Tour virtuale |
 | Metodo / Esercizio attivo | F6 | F1 |
 | Trattamento manuale | F7 | F1 |
 | Sala d'attesa / Accoglienza | F2 | — |

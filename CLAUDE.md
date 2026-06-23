@@ -102,6 +102,14 @@ Contiene: formula PAS, regole hero section, regole CTA, struttura landing, regol
 
 Contiene: 13 principi operativi (Hopkins, Atkinson, Kaufman) adattati al contesto sanitario — specificità, titolo che seleziona, fase mentale del lettore, lessico da evitare, checklist pre-pubblicazione.
 
+## Struttura landing page — riferimento master
+
+Prima di costruire qualsiasi landing page (di servizio, locale, ads, scorecard):
+
+**Leggi sempre prima:** `conoscenza/2026-06-anatomia-landing-page-perfetta.md` [[anatomia-landing-page-perfetta]]
+
+Contiene: struttura completa delle sezioni in ordine, regole above the fold, leggi del copy (headline, principio "so that", Value Equation Hormozi), social proof operativa, gerarchia visiva, CRO/AB testing, framework assessment alternativo.
+
 ## YouTube e video
 
 Per trascrivere, rielaborare o estrarre contenuti da video YouTube:
@@ -138,6 +146,22 @@ Quando produci contenuti di personal branding, storytelling, pagina "Chi sono", 
 **Leggi sempre prima:** `brand/storia-personale.md` [[storia-personale]]
 
 Contiene: percorso biografico reale, nodo centrale della storia (Sanremo come svolta non pianificata), 5 temi narrativi disponibili, tono da usare, cosa non fare con il materiale.
+
+## Percorsi e Pricing
+
+Quando crei o aggiorni la sezione "Percorsi" del sito, scrivi preventivi, contenuti social o qualsiasi comunicazione che riguardi l'offerta dello studio:
+
+**Leggi sempre prima:** `servizi/percorsi-pricing.md` [[percorsi-pricing]]
+
+Contiene: filosofia del sistema (mesi, non sedute), struttura percorsi (1/2/3 mesi), le tre categorie cliniche (post-op, infortunio, dolore cronico), sistema bonus, regole di comunicazione (termini da usare/evitare, no prezzi sul sito), argomento narrativo per contenuti educativi.
+
+## Tempi Clinici — Strategia di Divulgazione
+
+Quando crei contenuti educativi sui tempi di recupero (caroselli, post, articoli blog/SEO, copy su durate cliniche):
+
+**Leggi sempre prima:** `marketing/tempi-clinici-divulgazione.md` [[tempi-clinici-divulgazione]]
+
+Contiene: perché il tema è identitario per lo studio, le due dimensioni da comunicare (durata del recupero + finestra utile di intervento), regole per formato (carosello, post singolo, articolo blog), regole linguistiche trasversali, 6 angoli editoriali ricorrenti (36 contenuti potenziali), connessione con il sistema percorsi.
 
 ## Meta Ads
 
