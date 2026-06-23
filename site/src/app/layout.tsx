@@ -3,6 +3,8 @@ import { Plus_Jakarta_Sans, Lora } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton'
+import CookieBanner from '@/components/CookieBanner'
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -42,6 +44,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
+        <CookieBanner />
       </body>
     </html>
   )

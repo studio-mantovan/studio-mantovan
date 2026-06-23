@@ -56,7 +56,7 @@ export const patologie: Patologia[] = [
     sottotitolo: 'Approccio biopsicosociale per chi ha dolore da mesi o anni.',
     descrizione:
       'Il dolore cronico non è solo fisico. Le credenze, le paure e le abitudini di movimento entrano in gioco tanto quanto la struttura. Lavoriamo su tutto, insieme.',
-    emoji: '🧠',
+    emoji: '🌀',
     keywords: ['dolore cronico', 'dolore persistente', 'fibromialgia', 'dolore cronico schiena'],
   },
   {
