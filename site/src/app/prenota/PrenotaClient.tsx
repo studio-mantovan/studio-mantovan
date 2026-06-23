@@ -1,7 +1,13 @@
 'use client'
 
-import { useActionState, useRef } from 'react'
+import { useActionState, useEffect, useRef } from 'react'
 import { inviaRichiesta, type FormState } from './actions'
+
+declare global {
+  interface Window { fbq?: (...args: unknown[]) => void }
+}
+
+const trackContact = () => window.fbq?.('track', 'Contact')
 
 const C = {
   primary:   '#1A9EC9',
@@ -22,9 +28,12 @@ export function PrenotaClient() {
   const [state, action, pending] = useActionState(inviaRichiesta, initial)
   const formRef = useRef<HTMLFormElement>(null)
 
-  if (state.status === 'success' && formRef.current) {
-    formRef.current.reset()
-  }
+  useEffect(() => {
+    if (state.status === 'success') {
+      formRef.current?.reset()
+      trackContact()
+    }
+  }, [state.status])
 
   return (
     <main style={{ background: C.bg, paddingTop: '68px', minHeight: '100svh' }}>
@@ -63,6 +72,7 @@ export function PrenotaClient() {
             <a
               href="https://wa.me/393519242517"
               target="_blank" rel="noopener noreferrer"
+              onClick={trackContact}
               style={{
                 display: 'flex', alignItems: 'center', gap: '1.25rem',
                 background: C.white, borderRadius: C.radiusLg,
@@ -104,6 +114,7 @@ export function PrenotaClient() {
             {/* Chiamata */}
             <a
               href="tel:+393519242517"
+              onClick={trackContact}
               style={{
                 display: 'flex', alignItems: 'center', gap: '1.25rem',
                 background: C.white, borderRadius: C.radiusLg,

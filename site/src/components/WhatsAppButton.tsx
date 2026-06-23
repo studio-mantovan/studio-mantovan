@@ -1,5 +1,9 @@
 'use client'
 
+declare global {
+  interface Window { fbq?: (...args: unknown[]) => void }
+}
+
 export default function WhatsAppButton() {
   return (
     <>
@@ -9,6 +13,7 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         aria-label="Contattaci su WhatsApp"
         className="whatsapp-fab"
+        onClick={() => window.fbq?.('track', 'Contact')}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
