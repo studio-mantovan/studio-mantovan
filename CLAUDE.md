@@ -163,6 +163,14 @@ Quando crei contenuti educativi sui tempi di recupero (caroselli, post, articoli
 
 Contiene: perché il tema è identitario per lo studio, le due dimensioni da comunicare (durata del recupero + finestra utile di intervento), regole per formato (carosello, post singolo, articolo blog), regole linguistiche trasversali, 6 angoli editoriali ricorrenti (36 contenuti potenziali), connessione con il sistema percorsi.
 
+## Deploy sito — Guida tecnica
+
+Quando lavori sul sito Next.js, fai deploy, configuri GitHub o Vercel, o risolvi problemi di DNS/dominio:
+
+**Leggi sempre prima:** `conoscenza/guida-deploy-sito-nextjs.md` [[guida-deploy-sito-nextjs]]
+
+Contiene: struttura monorepo, workflow sviluppo locale, convenzione commit, setup Vercel (Root Directory = `site`), collegamento dominio Hostinger, nameserver Vercel, problemi noti e soluzioni (CDN conflict, propagazione DNS, foto non visibili).
+
 ## Meta Ads
 
 - Stile copy: educativo, sfida i luoghi comuni (es. *"Il riposo non guarisce la sciatalgia. Il movimento sì."*)
@@ -170,3 +178,46 @@ Contiene: perché il tema è identitario per lo studio, le due dimensioni da com
 - CTA preferita: "Invia messaggio" (WhatsApp/Messenger)
 - Continuità narrativa ads → landing: headline coerente tra i due
 - Niente prezzi nella landing per traffico freddo
+
+## Contenuti Instagram — Skill di produzione
+
+### Carosello Feed (1:1 — 1080×1080)
+
+Quando crei slide per il feed Instagram (PNG 1080×1080):
+
+**Leggi sempre prima:** `claude-skills/carosello-feed/SKILL.md` [[carosello-feed]]
+
+Contiene: struttura HTML completa, layout slide 1 (3 varianti), slide contenuto e CTA, progress bar, export Playwright, regole copy CFT, checklist pre-consegna.
+
+### Stories / Reels (9:16 — 1080×1920)
+
+Quando crei slide per Stories, Reels o Meta Ads verticali:
+
+**Leggi sempre prima:** `claude-skills/carosello-stories/SKILL.md` [[carosello-stories]]
+
+Contiene: struttura HTML 9:16, safe zone Instagram (top 160px, bottom 200px), layout full-bleed slide 1, dimensioni font minime (quote ≥100px, body ≥52px), export Playwright, swipe hint CTA.
+
+### Conversione Square → Reel (1:1 → 9:16)
+
+Quando converti PNG 1080×1080 in formato verticale per Reel/Stories:
+
+**Leggi sempre prima:** `claude-skills/square-to-reel/SKILL.md` [[square-to-reel]]
+
+Contiene: tipi di sfondo (blur, gradient_teal, gradient_dark, brand_cream), script FFmpeg, linee guida sfondo per tipo di contenuto.
+
+### Animazione Reel (PNG → MP4)
+
+Quando animì PNG 9:16 e produci un video MP4 per Instagram:
+
+**Leggi sempre prima:** `claude-skills/reel-animator/SKILL.md` [[reel-animator]]
+
+Contiene: animazioni (ken_burns, ken_burns_alt, zoom_in, zoom_out, static), transizioni (fade, slide_left, slide_up, zoom_fade), parametri durata/fps, script FFmpeg.
+
+### Pipeline Completa Instagram (Feed + Reel)
+
+Quando vuoi produrre carosello + reel in un unico flusso partendo da testo o immagini:
+
+**Leggi sempre prima:** `claude-skills/instagram-content-pipeline/SKILL.md` [[instagram-content-pipeline]]
+
+Orchestrare in sequenza: carosello-feed → square-to-reel → reel-animator.
+Output: 5 PNG 1:1 per il feed + 1 MP4 9:16 per il reel, pronti per l'upload.

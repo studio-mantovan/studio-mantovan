@@ -18,124 +18,102 @@ Questo è anche coerente con l'approccio CFT (Cognitive Functional Therapy): il 
 
 ## 2. Struttura del sistema percorsi
 
-### Durate disponibili
-
-I percorsi sono strutturati su tre durate:
-
-- **1 mese** — percorso base, nessun bonus
-- **2 mesi** — percorso intermedio, con bonus check-up
-- **3 mesi** — percorso completo, con bonus seduta gratuita
-
 ### Pagamento e flessibilità
 
-Il pagamento è **mensile anticipato**. Non esiste un vincolo contrattuale: il paziente può interrompere il percorso in qualsiasi momento. Non ci sono penali né conguagli.
+Il pagamento è **mensile anticipato** (o a cadenza concordata per i percorsi brevi in settimane). Non esiste un vincolo contrattuale: il paziente può interrompere il percorso in qualsiasi momento. Non ci sono penali né conguagli.
 
 Il risparmio sulla tariffa per seduta aumenta con la durata del percorso scelto. I prezzi esatti sono a discrezione del titolare e non vengono pubblicati — il preventivo viene sempre presentato in studio, dopo la valutazione iniziale.
 
-### Revisione mensile
+### Rivalutazione periodica
 
-A fine di ogni mese si effettua una rivalutazione del percorso. In base all'andamento clinico si può confermare, ridurre o estendere la frequenza. Questo protegge sia il paziente (che non si sente bloccato) sia la coerenza clinica del trattamento.
+Al termine di ogni mese (o a metà percorso per quelli brevi) si effettua una rivalutazione. In base all'andamento clinico si può confermare, ridurre o estendere la frequenza. Questo protegge sia il paziente (che non si sente bloccato) sia la coerenza clinica del trattamento.
+
+### Bonus — condizione di attivazione
+
+I bonus si attivano **solo completando il percorso concordato in prima visita**. Se il paziente interrompe anticipatamente, il bonus decade. Non sono cumulabili né trasferibili salvo indicazione esplicita.
 
 ---
 
 ## 3. Le tre categorie cliniche
 
-La frequenza settimanale (1×, 2× o 3×/settimana) viene stabilita in valutazione. Le categorie sotto indicano i pattern tipici per ciascuna condizione.
-
-### Post-operatorio / Fase acuta
-
-*Esempi: protesi anca o ginocchio, lombalgia acuta intensa, spalla post-chirurgica*
-
-Frequenza tipica: alta nella fase iniziale, progressivamente decrescente.
-
-- Mese 1: fino a 3×/settimana
-- Mese 2: 2×/settimana
-- Mese 3: 1×/settimana
-
-La fase acuta ad alta frequenza può prevedere una tariffa differenziata rispetto ai percorsi standard, a discrezione del titolare.
-
-### Infortunio / Fase subacuta
-
-*Esempi: distorsione, strappo muscolare, tendinopatia in fase attiva, post-trauma*
-
-Frequenza tipica: media nella fase iniziale, in riduzione nel secondo mese.
-
-- Mese 1: 2×/settimana
-- Mese 2: 1×/settimana
-
-Percorso tipico su 2 mesi con frequenza decrescente che riflette il recupero progressivo.
+La frequenza settimanale (1×, 2× o 3×/settimana) viene stabilita in valutazione. I range sotto indicano le durate tipiche per ciascuna condizione.
 
 ### Dolore cronico / Condizione persistente
 
 *Esempi: lombalgia cronica, cervicalgia ricorrente, sciatalgia persistente, radicolopatia stabile*
 
-Frequenza tipica: bassa fin dall'inizio, con fase di mantenimento finale.
+**Durata indicativa: 3–6 mesi**
 
-- Mesi 1–2: 1×/settimana
-- Mese 3: 1×/2 settimane
-- Fase di mantenimento (opzionale, continuativa): 1×/mese o 1×/2 mesi
+Frequenza tipica: 1×/settimana nei primi mesi, con possibile riduzione a 1×/2 settimane nella fase finale.
 
-Il mantenimento non è incluso nei percorsi base ma può essere proposto al termine come presidio sulla recidiva. È clinicamente coerente con CFT: il trattamento finisce, il percorso continua.
+Il dolore cronico richiede tempo per essere rieducato. Il percorso lavora sulle credenze, sui comportamenti di evitamento e sull'autonomia progressiva — non solo sul sintomo.
+
+### Infortunio / Fase subacuta
+
+*Esempi: distorsioni, lesioni muscolari, tendiniti in fase attiva, post-trauma*
+
+**Durata indicativa: 2–8 settimane**
+
+Frequenza tipica: alta nella fase acuta, progressivamente decrescente.
+
+Il range ampio (2–8 settimane) riflette la variabilità tra condizioni diverse: una distorsione lieve si risolve in 2–3 settimane, una tendinite cronica o una lesione più importante richiede 6–8 settimane.
+
+### Post-operatorio / Riabilitazione chirurgica
+
+*Esempi: protesi anca o ginocchio, artroscopia, spalla post-chirurgica, interventi alla schiena*
+
+**Durata indicativa: 2–6 mesi** secondo il tipo di intervento e la fase di guarigione tissutale.
+
+Frequenza tipica: alta nella fase iniziale (fino a 3×/settimana), progressivamente decrescente.
 
 ---
 
 ## 4. Sistema bonus
 
-I bonus si attivano al completamento del percorso concordato in valutazione. Non sono cumulabili e non sono trasferibili salvo eccezione esplicita (vedi sezione 4.3).
+I bonus si attivano al completamento del percorso concordato in prima visita. Nessun bonus universale — ogni categoria ha il proprio.
 
-### 4.1 Percorso 1 mese
-Nessun bonus. Tariffa base applicata.
+### Dolore cronico
+- **1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento**, da usare entro 30 giorni dal termine del ciclo.
+- Esempio: percorso da 3 mesi → 1 rivalutazione gratuita. Percorso da 6 mesi → 2 rivalutazioni gratuite.
 
-### 4.2 Percorso 2 mesi
-**Check-up di controllo gratuito** al termine del percorso. È una rivalutazione funzionale che verifica il mantenimento dei risultati e orienta l'eventuale fase successiva.
+*Logica clinica:* la rivalutazione a 30 giorni dal termine del ciclo permette di monitorare il mantenimento dei risultati, intercettare segnali di recidiva e decidere insieme se è necessario un nuovo ciclo. È coerente con la logica CFT: il trattamento finisce, il percorso continua.
 
-### 4.3 Percorso 3 mesi
-**1 seduta gratuita** — il paziente può usarla per sé oppure regalarla a chiunque voglia. Se ceduta a terzi, include la valutazione iniziale gratuita per quella persona.
+### Infortunio
+- **Seduta di valutazione "return to activity" gratuita a 30 giorni dal termine del percorso.**
 
-**Gestione operativa del bonus ceduto:**
-Il bonus viene emesso tramite messaggio WhatsApp con:
-- Nome del beneficiario (se già noto) o "per un tuo caro"
-- Data di emissione
-- Scadenza: 2–3 mesi dalla data di emissione (a discrezione del titolare)
-- Cosa include: prima visita + 1 trattamento gratuiti
+*Logica clinica:* a 30 giorni il paziente ha ripreso le attività quotidiane o sportive sotto carico reale. La seduta valuta se il recupero regge davvero e intercetta eventuali segnali di recidiva precoce.
 
-Non è necessario nessun sistema esterno. Il tracciamento avviene via chat WhatsApp.
+### Post-operatorio
+- **Check-up gratuito entro 6 mesi dal termine del percorso di fisioterapia.**
+
+*Logica clinica:* 6 mesi è il milestone chirurgico standard per la valutazione del recupero tissutale completo. È un momento clinicamente significativo che molti pazienti affrontano senza supporto professionale.
 
 ---
 
 ## 5. Regole di comunicazione
 
 ### Sul sito
-**Nessun prezzo pubblicato.** La pagina percorsi descrive il sistema (mesi, frequenza, categorie cliniche, bonus) senza indicare cifre. L'unica CTA è verso la prima visita gratuita o il contatto WhatsApp.
+**Nessun prezzo pubblicato.** La pagina percorsi descrive il sistema (categorie, range di durata, bonus) senza indicare cifre. L'unica CTA è verso la prima visita gratuita o il contatto WhatsApp.
 
 ### Su WhatsApp / primo contatto
 Quando un potenziale paziente chiede il prezzo prima della valutazione, non si risponde con cifre. Si invita alla prima visita gratuita, spiegando che il percorso — e quindi il costo — si definisce solo dopo aver capito la situazione specifica.
-
-Esempio di risposta:
-> *"Ciao [nome], per darti un'idea chiara di cosa ti serve preferisco vederti prima di persona — la prima visita è gratuita e senza impegno. Da lì capisco la tua situazione e ti propongo un percorso su misura. Quando sei libero/a?"*
-
-### In studio / preventivo
-Il preventivo viene presentato verbalmente e/o per iscritto dopo la valutazione iniziale. Include: categoria clinica, frequenza consigliata, durata del percorso, costo mensile, totale indicativo, bonus previsto. Non si parla mai di "pacchetto" o "sedute incluse" — sempre di percorso e frequenza.
 
 ### Termini da evitare sempre
 - "Pacchetto"
 - "X sedute incluse"
 - "Ciclo di fisioterapia"
-- Qualsiasi framing che suggerisca un numero fisso di appuntamenti come unità di misura del trattamento
+- "Tendinopatie" nella comunicazione pubblica → usare **"tendiniti"**
 
 ### Termini da usare sempre
 - "Percorso"
-- "Mesi di trattamento"
+- "Settimane / mesi di trattamento"
 - "Frequenza consigliata"
-- "Rivalutazione mensile"
+- "Rivalutazione periodica"
 - "Autonomia progressiva"
+- Range temporali (es. "2–8 settimane", "3–6 mesi") invece di durate fisse
 
 ---
 
 ## 6. Perché questo sistema funziona (argomento per contenuti e copy)
 
-Questo è il filo narrativo da usare in post, reel, o sezioni del sito che spiegano il sistema:
-
 > Le linee guida internazionali per i disturbi muscolo-scheletrici indicano tempi di recupero in settimane e mesi, non in sedute. Un approccio serio rispetta quei tempi. Strutturare la fisioterapia in "pacchetti da 10 sedute" non ha basi cliniche — è un modello commerciale, non terapeutico. Studio Mantovan propone percorsi costruiti sul tempo reale che la tua condizione richiede: una frequenza che cambia con te, una durata che rispetta la biologia del recupero, e la libertà di fermarti quando vuoi.
-
-Questo argomento può essere usato in formato educativo (reel, carosello, post) senza mai attaccare esplicitamente altri colleghi — il contrasto è implicito e il lettore lo percepisce.
