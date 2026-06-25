@@ -1111,8 +1111,9 @@ function CtaMidSection() {
       }}>
         <FadeIn>
           <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#fff', lineHeight: 1.25 }}>
-            Se c&apos;è qualcosa che hai smesso di fare
-            e vorresti riprendere, partiamo da una conversazione.
+            Se c&apos;è qualcosa che hai smesso di fare e che vorresti riprendere,
+            inizia il tuo percorso parlandomi del tuo problema.
+            La prima visita è gratuita.
           </h2>
           <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             Nella prima visita ti ascolto, esploro la tua storia e capiamo insieme
