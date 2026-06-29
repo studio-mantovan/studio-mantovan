@@ -94,6 +94,7 @@ export default function Footer() {
                 { href: '/chi-sono',       label: 'Chi sono' },
                 { href: '/percorsi',       label: 'Percorsi e tariffe' },
                 { href: '/blog',           label: 'Blog' },
+                { href: '/zone-servite',   label: 'Zone servite' },
                 { href: '/dove-trovarmi',  label: 'Dove trovarmi' },
                 { href: '/prenota',        label: 'Prenota la visita' },
               ].map(({ href, label }) => (

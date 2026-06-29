@@ -64,6 +64,7 @@ export default function Header() {
           <Link href="/chi-sono" className={navLinkClass}>Chi sono</Link>
           <Link href="/percorsi" className={navLinkClass}>Percorsi</Link>
           <Link href="/blog" className={navLinkClass}>Blog</Link>
+          <Link href="/zone-servite" className={navLinkClass}>Zone servite</Link>
           <Link href="/dove-trovarmi" className={navLinkClass}>Dove trovarmi</Link>
         </nav>
 
@@ -138,6 +139,7 @@ export default function Header() {
             <Link href="/chi-sono" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Chi sono</Link>
             <Link href="/percorsi" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Percorsi</Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Blog</Link>
+            <Link href="/zone-servite" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Zone servite</Link>
             <Link href="/dove-trovarmi" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Dove trovarmi</Link>
             <div style={{ paddingTop: '12px' }}>
               <a
