@@ -31,19 +31,19 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'MedicalWebPage',
     headline: post.title,
     description: post.description,
-    url: `https://umbertomantovan.net/blog/${post.slug}/`,
+    url: `https://studio-mantovan.vercel.app/blog/${post.slug}/`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
       '@type': 'Person',
       name: 'Umberto Mantovan',
       jobTitle: 'Fisioterapista',
-      url: 'https://umbertomantovan.net',
+      url: 'https://studio-mantovan.vercel.app',
     },
     publisher: {
       '@type': 'LocalBusiness',
       name: 'Studio Mantovan – Fisioterapia in Movimento',
-      url: 'https://umbertomantovan.net',
+      url: 'https://studio-mantovan.vercel.app',
       telephone: '+393519242517',
       address: {
         '@type': 'PostalAddress',

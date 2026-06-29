@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'it_IT',
-    url: 'https://umbertomantovan.net',
+    url: 'https://studio-mantovan.vercel.app',
     siteName: 'Studio Mantovan – Fisioterapia in Movimento',
   },
 }

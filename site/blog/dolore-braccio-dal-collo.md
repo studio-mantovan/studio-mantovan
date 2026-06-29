@@ -137,10 +137,10 @@ Quello che serve è capire cosa sta succedendo nel tuo caso specifico e costruir
 **La prima visita nel mio studio a Broni è gratuita.** Guardiamo insieme la situazione reale, senza impegno.
 
 → Scrivimi su WhatsApp: **351 924 2517**
-→ Oppure [prenota la prima visita gratuita](https://umbertomantovan.net/prenota) — rispondo di persona entro 24 ore.
+→ Oppure [prenota la prima visita gratuita](https://studio-mantovan.vercel.app/prenota) — rispondo di persona entro 24 ore.
 
 ---
 
-*Correlati: [Chi sono](https://umbertomantovan.net/chi-sono) · [Dove trovarmi](https://umbertomantovan.net/dove-trovarmi)*
+*Correlati: [Chi sono](https://studio-mantovan.vercel.app/chi-sono) · [Dove trovarmi](https://studio-mantovan.vercel.app/dove-trovarmi)*
 
 *Fonti: Dan Pope, Cervical Radiculopathy Evidence-Based Cheat Sheet; Núñez de Arenas-Arroyo et al. 2025, Clinical Rehabilitation; Sleijser-Koehorst et al. 2021, Physiotherapy; StatPearls 2025, Cervical Radiculopathy.*

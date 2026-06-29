@@ -89,7 +89,7 @@ Lavoriamo insieme verso un ritorno graduale alle attività che per te contano �
 
 ---
 
-Se ti ritrovi in questa situazione e non sai da dove iniziare, [prenota la prima visita gratuita](https://umbertomantovan.net/prenota). Guardiamo insieme a che punto sei, senza impegno.
+Se ti ritrovi in questa situazione e non sai da dove iniziare, [prenota la prima visita gratuita](https://studio-mantovan.vercel.app/prenota). Guardiamo insieme a che punto sei, senza impegno.
 
 ---
 
@@ -117,10 +117,10 @@ Se non hai mai fatto fisioterapia dopo l'intervento — o se hai fatto qualche s
 **La prima visita nel mio studio a Broni è gratuita.** Ci vediamo, misuriamo la situazione reale e capiamo insieme — senza impegno — se e come un percorso di fisioterapia attiva può fare al caso tuo.
 
 → Scrivimi su WhatsApp: **351 924 2517**
-→ Oppure [prenota la prima visita gratuita](https://umbertomantovan.net/prenota) — rispondo di persona entro 24 ore.
+→ Oppure [prenota la prima visita gratuita](https://studio-mantovan.vercel.app/prenota) — rispondo di persona entro 24 ore.
 
 ---
 
-*Correlati: [Chi sono](https://umbertomantovan.net/chi-sono) · [Dove trovarmi](https://umbertomantovan.net/dove-trovarmi)*
+*Correlati: [Chi sono](https://studio-mantovan.vercel.app/chi-sono) · [Dove trovarmi](https://studio-mantovan.vercel.app/dove-trovarmi)*
 
 *Fonti: Moffet et al., Impact of knee extensor strength deficits on stair ascent performance in patients after medial meniscectomy, Scand J Rehabil Med, 1993. Linee guida cliniche su attivazione del quadricipite e deficit neuromuscolari post-meniscectomia.*
