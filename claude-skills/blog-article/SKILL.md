@@ -131,6 +131,13 @@ Organizzalo per rispondere alle domande reali nell'ordine in cui le fa il pazien
 - Segnali che indicano che serve una valutazione professionale
 - Non spaventare: inquadrare come opportunità, non come emergenza
 - CTA morbida: "se ti riconosci in uno di questi segnali, la prima visita gratuita è il punto di partenza"
+### Informazioni pratiche obbligatorie (regola fissa — vale per ogni articolo)
+Ogni articolo deve rispondere esplicitamente a queste domande che il paziente si sta facendo mentre legge. Non sono opzionali: senza queste informazioni l'articolo non è completo.
+1. **Tempi di recupero indicativi** — quanto tempo richiede tipicamente il miglioramento/recupero per la condizione trattata. Usa range, non promesse ("la maggior parte delle persone vede un miglioramento significativo in 4-6 settimane", non "guarisci in 4 settimane"). Se la letteratura distingue fasi (es. sollievo dal dolore vs recupero funzionale completo), spiega entrambe.
+2. **Cosa è consigliato fare** — comportamenti, movimenti o attività che la ricerca supporta in quella fase/condizione (es. carico progressivo, movimento guidato, attività specifiche da reintrodurre gradualmente).
+3. **Cosa è sconsigliato fare** — errori comuni o comportamenti controproducenti (es. riposo prolungato, immobilizzazione eccessiva, ripresa troppo rapida senza progressione). Sempre framed come "attenzione a" non come terrore ("il riposo prolungato rallenta il recupero", non "il riposo ti farà peggiorare per sempre").
+4. **Frequenza indicativa del trattamento** — quante volte a settimana / con che cadenza è tipicamente utile lavorare in un percorso di fisioterapia per quella condizione, secondo le linee guida o la pratica clinica corrente (es. "nelle prime settimane il lavoro è spesso più frequente, poi si dilata man mano che il paziente diventa autonomo"). Non fissare numeri rigidi di sedute totali — resta coerente con la regola "niente pacchetti standardizzati": la frequenza è indicativa, il percorso resta personalizzato.
+Queste informazioni possono essere integrate nelle sezioni esistenti (es. dentro "Cosa funziona davvero" o in una sezione dedicata "Tempi di recupero e cosa aspettarti") — non serve necessariamente un H2 a parte, ma il contenuto deve essere presente e facilmente individuabile dal lettore.
 ### Conclusione e CTA (obbligatoria)
 ```
 Struttura fissa:
@@ -293,6 +300,9 @@ Il testo ancora deve essere descrittivo (mai "clicca qui" o "leggi di più").
 - [ ] Nessun riferimento a "movimenti sbagliati"
 - [ ] CTA esplicita con numero WhatsApp e/o link contatti
 - [ ] Sezione "quando rivolgersi a un fisioterapista" presente
+- [ ] Tempi di recupero indicativi presenti (con range, non promesse)
+- [ ] Cosa fare e cosa evitare esplicitati chiaramente
+- [ ] Frequenza indicativa del trattamento menzionata (senza numero fisso di sedute)
 - [ ] Tono in prima persona, niente brand al posto della voce
 ### SEO
 - [ ] Title tag ≤ 60 caratteri con keyword

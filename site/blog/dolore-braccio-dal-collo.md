@@ -110,6 +110,30 @@ Non è un percorso fatto di passività.
 
 ---
 
+## Tempi di recupero e cosa aspettarti
+
+Una delle domande che mi fanno più spesso è semplice: *quanto ci vorrà?*
+
+I dati sono incoraggianti. La maggior parte delle persone con questo tipo di dolore vede un **miglioramento significativo già in 4-6 settimane** di trattamento attivo. Il recupero completo — quello in cui il sistema nervoso torna del tutto tollerante e i sintomi residui scompaiono — richiede in media più tempo, indicativamente **24-36 mesi**, ma questo non significa 24 mesi di dolore intenso: significa che il miglioramento continua a consolidarsi anche dopo che hai ripreso le tue attività normali.
+
+Una piccola percentuale di persone (intorno al 22% a 2-3 anni) può avere una recidiva, generalmente più lieve dell'episodio iniziale.
+
+**Cosa è utile fare:**
+- Muovere il collo e il braccio nei range che il tuo sistema tollera, anche se non è il range completo
+- Mantenere le attività quotidiane possibili, adattandole se serve, invece di sospenderle del tutto
+- Seguire una progressione costante negli esercizi, anche piccola, settimana dopo settimana
+- Dare al tuo corpo il tempo di rispondere: i miglioramenti spesso non sono lineari
+
+**Cosa è meglio evitare:**
+- Il riposo assoluto prolungato (oltre i primi giorni in caso di dolore molto acuto)
+- Smettere completamente le attività che ti piacciono per "paura di peggiorare"
+- Affidarsi solo a terapie passive (massaggi, tecar, ultrasuoni) come unica soluzione
+- Aspettare mesi prima di chiedere una valutazione, sperando che passi da solo
+
+**Frequenza indicativa del trattamento:** nelle prime settimane il lavoro è spesso più frequente — alcuni esercizi neurodinamici vengono proposti anche 3 volte a settimana — per poi diventare più autonomo man mano che imposti la tua routine di movimento. Non è un numero fisso di sedute: la cadenza si adatta a come risponde il tuo sistema nervoso e a quanto velocemente diventi indipendente nella gestione.
+
+---
+
 ## Quando rivolgersi a un fisioterapista
 
 Le linee guida raccomandano di non aspettare: la fisioterapia è indicata già a partire da circa 3 settimane di sintomi persistenti.

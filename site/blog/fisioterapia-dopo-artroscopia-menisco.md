@@ -93,6 +93,30 @@ Se ti ritrovi in questa situazione e non sai da dove iniziare, [prenota la prima
 
 ---
 
+## Tempi di recupero e cosa aspettarti
+
+Quanto ci vuole per tornare a fare le scale senza pensarci, o a correre? Dipende dal tipo di intervento, ma qualche riferimento indicativo aiuta a orientarsi.
+
+Dopo una **meniscectomia parziale** (rimozione della parte lesionata), molte persone tornano alle attività quotidiane senza grosse limitazioni nell'arco di **3-6 settimane**, e a un'attività sportiva moderata nell'arco di **2-3 mesi** — sempre che il lavoro sul deficit di forza venga affrontato attivamente, non lasciato al caso. Dopo una **sutura del menisco**, i tessuti hanno bisogno di più tempo per guarire: la progressione è più graduale e il ritorno allo sport richiede generalmente **4-6 mesi**.
+
+Questi sono range, non scadenze: il punto di partenza (quanta forza hai recuperato, quanto è gonfio il ginocchio, da quanto tempo hai iniziato a muoverti attivamente) conta più del calendario.
+
+**Cosa è utile fare:**
+- Lavorare sul quadricipite con esercizi specifici fin dalle prime settimane, non solo camminare
+- Misurare la differenza di forza tra le due gambe (es. con il test dell'alzata da seduto su una gamba) per sapere davvero a che punto sei
+- Progredire per gradi: dalla sedia, alle scale, allo squat, alla corsa — ogni fase prepara la successiva
+- Mantenere il movimento quotidiano, anche leggero, mentre il ginocchio recupera
+
+**Cosa è meglio evitare:**
+- Affidarsi solo al cammino come "esercizio", pensando che basti a recuperare la forza
+- Tornare di colpo ad attività intense (corsa, sport, sollevamenti pesanti) senza una progressione di carico
+- Ignorare un'asimmetria persistente tra le due gambe pensando che si risolva da sola col tempo
+- Aspettare mesi prima di iniziare un percorso attivo, soprattutto dopo una sutura del menisco dove i tempi di guarigione vanno rispettati ma non significano immobilità
+
+**Frequenza indicativa del trattamento:** nelle prime settimane, quando il deficit di forza è più marcato, il lavoro è in genere più frequente; con il recupero della forza e dell'autonomia negli esercizi, gli incontri si distanziano e il programma diventa sempre più gestito in autonomia tra una seduta e l'altra. Anche qui, niente numero fisso di sedute: la cadenza si calibra su come risponde il tuo ginocchio.
+
+---
+
 ## Quando è il momento giusto per iniziare la fisioterapia dopo l'artroscopia
 
 La domanda che mi fanno spesso è: "Quanto devo aspettare prima di iniziare?"
