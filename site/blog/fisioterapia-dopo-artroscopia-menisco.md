@@ -138,7 +138,7 @@ Il recupero dopo un'artroscopia al menisco non finisce quando si chiude la ferit
 
 Se non hai mai fatto fisioterapia dopo l'intervento — o se hai fatto qualche seduta ma il ginocchio non ti convince ancora — il punto di partenza è una valutazione che guardi al tuo ginocchio per quello che è oggi.
 
-**La prima visita nel mio studio a Broni è gratuita.** Ci vediamo, misuriamo la situazione reale e capiamo insieme — senza impegno — se e come un percorso di fisioterapia attiva può fare al caso tuo.
+Se abiti nella zona di Broni, Stradella, Casteggio o nei dintorni, vieni a trovarmi nel mio studio: **la prima visita è totalmente gratuita.** Ci vediamo, misuriamo la situazione reale e capiamo insieme — senza impegno — se e come un percorso di fisioterapia attiva può fare al caso tuo.
 
 → Scrivimi su WhatsApp: **351 924 2517**
 → Oppure [prenota la prima visita gratuita](https://studio-mantovan.vercel.app/prenota) — rispondo di persona entro 24 ore.

@@ -147,6 +147,8 @@ Struttura fissa:
 ```
 Esempio:
 > Il mal di schiena non si risolve aspettando. Si risolve capendo cosa lo mantiene e costruendo un percorso di movimento progressivo e personalizzato. Se vuoi sapere da dove iniziare, la prima visita è gratuita e senza impegno. Scrivimi su WhatsApp al 351 924 2517 o compila il modulo contatti — rispondo di persona entro 24 ore.
+
+**Regola fissa — zone servite nella CTA:** la CTA finale (o quella subito prima) deve sempre menzionare le tre zone servite, con una frase tipo: *"Se abiti nella zona di Broni, Stradella, Casteggio o nei dintorni, vieni a trovarmi nel mio studio: la prima visita è totalmente gratuita."* Variarla naturalmente articolo per articolo, ma mantenere sempre le tre città nominate insieme.
 ---
 ## 6. Knowledge base clinica disponibile
 Claude Code può accedere ai seguenti file di knowledge base per arricchire i contenuti clinici. Consultali sempre quando l'argomento è pertinente.

@@ -158,7 +158,7 @@ Non hai bisogno di stare fermo ad aspettare, e non hai bisogno di considerare la
 
 Quello che serve è capire cosa sta succedendo nel tuo caso specifico e costruire un percorso di movimento guidato, calibrato su come risponde il tuo corpo — *non su un protocollo uguale per tutti*.
 
-**La prima visita nel mio studio a Broni è gratuita.** Guardiamo insieme la situazione reale, senza impegno.
+Se abiti nella zona di Broni, Stradella, Casteggio o nei dintorni, vieni a trovarmi nel mio studio: **la prima visita è totalmente gratuita.** Guardiamo insieme la situazione reale, senza impegno.
 
 → Scrivimi su WhatsApp: **351 924 2517**
 → Oppure [prenota la prima visita gratuita](https://studio-mantovan.vercel.app/prenota) — rispondo di persona entro 24 ore.
