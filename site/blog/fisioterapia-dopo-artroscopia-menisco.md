@@ -11,7 +11,7 @@ keywords:
   - fisioterapia ginocchio Broni
 ---
 
-# Fisioterapia dopo l'artroscopia al menisco: perché il ginocchio non torna da solo
+# Fisioterapia dopo l'artroscopia al menisco: perché la riabilitazione è fondamentale
 
 "Il chirurgo mi ha detto che è andato tutto bene. Ma il ginocchio non è come prima."
 
