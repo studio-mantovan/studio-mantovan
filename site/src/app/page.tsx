@@ -858,6 +858,17 @@ function PercorsiSection() {
             <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginBottom: '0', lineHeight: 1.7 }}>
               Non sai in quale categoria rientri? La prima visita è gratuita — e serve esattamente a questo.
             </p>
+            <Link
+              href="/percorsi"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '6px',
+                marginTop: '0.75rem',
+                fontSize: '0.9rem', fontWeight: 600, color: C.primary,
+                textDecoration: 'none',
+              }}
+            >
+              Scopri percorsi e tariffe →
+            </Link>
             <CtaButton center mt="1.25rem" />
             <p style={{ marginTop: '0.6rem', fontSize: '0.78rem', color: `${C.text}44` }}>
               Rispondo di persona entro 24 ore · Nessun impegno

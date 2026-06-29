@@ -93,7 +93,7 @@ I bonus si attivano al completamento del percorso concordato in prima visita. Ne
 ## 5. Regole di comunicazione
 
 ### Sul sito
-**Nessun prezzo pubblicato.** La pagina percorsi descrive il sistema (categorie, range di durata, bonus) senza indicare cifre. L'unica CTA è verso la prima visita gratuita o il contatto WhatsApp.
+**Aggiornamento 2026-06-29:** su decisione di Umberto, la pagina `/percorsi` pubblica ora la **tariffa base di 50€ a seduta**, lasciando intendere che il costo medio per seduta si riduce scegliendo un percorso più lungo (senza pubblicare le cifre esatte dei percorsi, che restano a discrezione del titolare e vengono presentate in studio dopo la valutazione). La pagina descrive il sistema (categorie, range di durata, frequenza tipica, bonus) e mantiene sempre la prima visita gratuita come CTA principale.
 
 ### Su WhatsApp / primo contatto
 Quando un potenziale paziente chiede il prezzo prima della valutazione, non si risponde con cifre. Si invita alla prima visita gratuita, spiegando che il percorso — e quindi il costo — si definisce solo dopo aver capito la situazione specifica.
