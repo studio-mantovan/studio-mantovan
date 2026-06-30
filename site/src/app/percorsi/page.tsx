@@ -84,6 +84,7 @@ export default function PercorsiPage() {
       <FilosofiaSection />
       <CategorieSection />
       <TariffaSection />
+      <PagamentoSection />
       <ComeSiDecideSection />
       <FaqSection />
     </div>
@@ -314,6 +315,95 @@ function TariffaSection() {
             </div>
           </FadeIn>
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────── PAGAMENTO ─────────────────── */
+function PagamentoSection() {
+  return (
+    <section style={{ background: C.bg }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <FadeIn>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Come funziona il pagamento
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
+              Hai due opzioni a tua disposizione.
+            </h2>
+            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto', fontSize: '1rem' }}>
+              Nessun vincolo contrattuale: puoi interrompere il percorso in qualsiasi momento, senza penali né conguagli.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FadeIn direction="left" delay={0.05}>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: `5px solid ${C.primary}`,
+            }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Seduta per seduta
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                Paghi ogni seduta singolarmente, al prezzo base. Massima libertà, nessun impegno anticipato.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {[
+                  'Nessun anticipo',
+                  'Puoi fermarti quando vuoi',
+                  'Tariffa base per seduta',
+                ].map((v, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                    <div style={{ width: 8, height: 8, borderRadius: '50%', background: C.primary, flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.88rem', color: C.text }}>{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="right" delay={0.1}>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: `5px solid ${C.secondary}`,
+            }}>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Mensile con bonus
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                Scegli un percorso concordato in prima visita e paghi mese per mese anticipato. Il costo medio per seduta si riduce — e al termine del percorso si attivano i bonus.
+              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {[
+                  'Tariffa per seduta ridotta rispetto al singolo',
+                  'Rivalutazione periodica inclusa ogni mese',
+                  'Bonus clinici al completamento del percorso',
+                  'Nessun vincolo: puoi interrompere liberamente',
+                ].map((v, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                    <div style={{ width: 8, height: 8, borderRadius: '50%', background: C.secondary, flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.88rem', color: C.text }}>{v}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
+        <FadeIn delay={0.15}>
+          <p style={{
+            marginTop: '2rem', textAlign: 'center',
+            fontSize: '0.85rem', color: `${C.text}55`, lineHeight: 1.7,
+          }}>
+            Il costo esatto te lo presento in studio, dopo la valutazione iniziale — dipende dalla frequenza e dalla durata che la tua condizione richiede davvero.
+          </p>
+        </FadeIn>
       </div>
     </section>
   )
