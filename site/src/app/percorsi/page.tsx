@@ -5,7 +5,7 @@ import { FaqSection } from '@/components/FaqSection'
 export const metadata: Metadata = {
   title: 'Percorsi e tariffe',
   description:
-    'Niente pacchetti da 10 sedute: percorsi di fisioterapia costruiti sul tempo che la tua condizione richiede. Tariffa base 50€, prima visita gratuita.',
+    'Niente pacchetti da 10 sedute: percorsi di fisioterapia costruiti sul tempo che la tua condizione richiede. Prima visita gratuita.',
 }
 
 const C = {
@@ -262,10 +262,9 @@ function TariffaSection() {
               Tariffa
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Una tariffa base, che si riduce scegliendo un percorso più lungo.
+              Una tariffa che si riduce scegliendo un percorso più lungo.
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              La tariffa base della singola seduta è di <strong style={{ color: C.text }}>50€</strong>.
               Il costo medio per seduta scende in base al percorso che scegli insieme a me in prima
               visita — più lungo è il percorso concordato, più conviene.
             </p>
@@ -296,14 +295,13 @@ function TariffaSection() {
               boxShadow: '0 8px 32px rgba(0,0,0,0.08)', textAlign: 'center',
             }}>
               <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: `${C.text}55` }}>
-                Tariffa base
+                Tariffa
               </span>
-              <div style={{ marginTop: '0.5rem', display: 'flex', alignItems: 'baseline', justifyContent: 'center', gap: '4px' }}>
-                <span style={{ fontSize: '3.2rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>50€</span>
-                <span style={{ fontSize: '0.95rem', color: `${C.text}77`, fontWeight: 600 }}>/ seduta</span>
-              </div>
-              <p style={{ marginTop: '0.75rem', fontSize: '0.85rem', color: `${C.text}77`, lineHeight: 1.6 }}>
+              <p style={{ marginTop: '0.75rem', fontSize: '1.05rem', fontWeight: 700, color: C.text, lineHeight: 1.5 }}>
                 Il costo medio scende con i percorsi più lunghi
+              </p>
+              <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: `${C.text}77`, lineHeight: 1.6 }}>
+                Te lo presento in studio, dopo la valutazione iniziale
               </p>
               <div style={{ height: '1px', background: C.surface, margin: '1.5rem 0' }} />
               <p style={{ fontSize: '0.9rem', fontWeight: 700, color: C.text, marginBottom: '0.5rem' }}>
