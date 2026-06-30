@@ -1,8 +1,5 @@
 'use client'
 
-import { useActionState, useEffect, useRef } from 'react'
-import { inviaRichiesta, type FormState } from './actions'
-
 declare global {
   interface Window { fbq?: (...args: unknown[]) => void }
 }
@@ -22,19 +19,7 @@ const C = {
   pad:       '1.5rem',
 }
 
-const initial: FormState = { status: 'idle', message: '' }
-
 export function PrenotaClient() {
-  const [state, action, pending] = useActionState(inviaRichiesta, initial)
-  const formRef = useRef<HTMLFormElement>(null)
-
-  useEffect(() => {
-    if (state.status === 'success') {
-      formRef.current?.reset()
-      trackContact()
-    }
-  }, [state.status])
-
   return (
     <main style={{ background: C.bg, paddingTop: '68px', minHeight: '100svh' }}>
       <section style={{ padding: `5rem ${C.pad}` }}>
@@ -66,7 +51,7 @@ export function PrenotaClient() {
           </div>
 
           {/* Canali diretti */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ marginBottom: '3rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
             {/* WhatsApp */}
             <a
@@ -154,112 +139,8 @@ export function PrenotaClient() {
             </a>
           </div>
 
-          {/* Divisore */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
-            <div style={{ flex: 1, height: '1px', background: `${C.text}15` }} />
-            <span style={{ fontSize: '0.78rem', color: `${C.text}55`, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.08em' }}>
-              oppure scrivi un messaggio
-            </span>
-            <div style={{ flex: 1, height: '1px', background: `${C.text}15` }} />
-          </div>
-
-          {/* Form email */}
-          <form
-            ref={formRef}
-            action={action}
-            style={{
-              background: C.white,
-              borderRadius: C.radiusLg,
-              padding: '2.5rem',
-              boxShadow: '0 4px 24px rgba(0,0,0,0.06)',
-              display: 'flex', flexDirection: 'column', gap: '1.25rem',
-            }}
-          >
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <Field label="Nome e cognome *" name="nome" type="text" placeholder="Mario Rossi" />
-              <Field label="Telefono" name="telefono" type="tel" placeholder="345 678 9012" />
-            </div>
-            <Field label="Email *" name="email" type="email" placeholder="mario@email.it" />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-              <label style={labelStyle}>Messaggio * <span style={{ fontWeight: 400, color: `${C.text}55` }}>— descrivi brevemente il tuo problema</span></label>
-              <textarea
-                name="messaggio"
-                required
-                rows={4}
-                placeholder="Ho un dolore alla schiena da circa tre mesi..."
-                style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }}
-              />
-            </div>
-
-            {/* Feedback */}
-            {state.status !== 'idle' && (
-              <div style={{
-                padding: '1rem 1.25rem',
-                borderRadius: C.radiusSm,
-                fontSize: '0.88rem', fontWeight: 600,
-                background: state.status === 'success' ? 'rgba(93,191,176,0.12)' : 'rgba(224,90,90,0.1)',
-                color: state.status === 'success' ? '#2A8A7A' : '#C0392B',
-                border: `1px solid ${state.status === 'success' ? 'rgba(93,191,176,0.3)' : 'rgba(224,90,90,0.2)'}`,
-              }}>
-                {state.message}
-              </div>
-            )}
-
-            <button
-              type="submit"
-              disabled={pending}
-              style={{
-                display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
-                background: pending ? `${C.primary}99` : C.primary,
-                color: '#fff', fontWeight: 700, fontSize: '1rem',
-                padding: '14px 28px', borderRadius: '50px',
-                border: 'none', cursor: pending ? 'not-allowed' : 'pointer',
-                letterSpacing: '0.01em',
-                boxShadow: pending ? 'none' : '0 6px 24px rgba(26,158,201,0.28)',
-                transition: 'background 0.2s, box-shadow 0.2s',
-                alignSelf: 'flex-start',
-              }}
-            >
-              {pending ? 'Invio in corso…' : 'Invia messaggio →'}
-            </button>
-          </form>
-
         </div>
       </section>
     </main>
-  )
-}
-
-/* ── Helpers ── */
-const labelStyle: React.CSSProperties = {
-  fontSize: '0.82rem', fontWeight: 700,
-  color: '#2C2C2C', letterSpacing: '0.01em',
-}
-
-const inputStyle: React.CSSProperties = {
-  width: '100%', padding: '12px 14px',
-  borderRadius: '10px',
-  border: '1.5px solid #E0E5E6',
-  fontSize: '0.95rem', color: '#2C2C2C',
-  background: '#FAFAF8',
-  outline: 'none',
-  boxSizing: 'border-box',
-  transition: 'border-color 0.2s',
-}
-
-function Field({ label, name, type, placeholder }: { label: string; name: string; type: string; placeholder: string }) {
-  return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-      <label style={labelStyle}>{label}</label>
-      <input
-        name={name}
-        type={type}
-        placeholder={placeholder}
-        required={label.includes('*')}
-        style={inputStyle}
-        onFocus={e => (e.currentTarget.style.borderColor = '#1A9EC9')}
-        onBlur={e => (e.currentTarget.style.borderColor = '#E0E5E6')}
-      />
-    </div>
   )
 }
