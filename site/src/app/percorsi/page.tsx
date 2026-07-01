@@ -432,7 +432,7 @@ function ComeSiDecideSection() {
               Come si decide
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Come deve essere strutturato un percorso fisioterapico.
+              Come nasce il tuo percorso.
             </h2>
             <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '560px', marginLeft: 'auto', marginRight: 'auto' }}>
               Tre passaggi fondamentali che ogni percorso serio dovrebbe seguire — a partire dalla prima visita gratuita.
