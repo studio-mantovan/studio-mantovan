@@ -46,22 +46,22 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
 
 const percorsi = [
   {
-    icon: '🌀',
+    icon: '🧠',
     tag: 'Dolore cronico · Condizione persistente',
     titolo: 'Dolore cronico',
-    corpo: 'Lombalgia cronica, cervicalgia, sciatalgia persistente, radicolopatia stabile.',
+    corpo: 'Lombalgia cronica, cervicalgia, sciatalgia e cervico-brachialgia.',
     durata: '3–6 mesi',
-    frequenza: '1×/settimana nei primi mesi, poi anche 1×/2 settimane',
+    frequenza: 'Bassa frequenza settimanale',
     bonus: 'Completando il percorso: 1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento',
     bonusColore: C.secondary,
   },
   {
     icon: '⚡',
-    tag: 'Infortunio · Fase subacuta',
+    tag: 'Infortunio · Fase acuta',
     titolo: 'Infortunio',
-    corpo: 'Distorsioni, lesioni muscolari, tendiniti in fase attiva, post-trauma.',
+    corpo: 'Distorsioni, lesioni muscolari, tendiniti.',
     durata: '2–8 settimane',
-    frequenza: 'Alta nella fase acuta, progressivamente decrescente',
+    frequenza: 'Media frequenza settimanale',
     bonus: 'Completando il percorso: valutazione "return to activity" gratuita a 30 giorni dal termine',
     bonusColore: C.primary,
   },
@@ -69,9 +69,9 @@ const percorsi = [
     icon: '🏥',
     tag: 'Post-operatorio · Riabilitazione chirurgica',
     titolo: 'Post-operatorio',
-    corpo: 'Protesi, artroscopia, interventi alla schiena o alla spalla.',
+    corpo: 'Protesi, artroscopia, schiena o spalla.',
     durata: '2–6 mesi',
-    frequenza: 'Alta nella fase iniziale (fino a 3×/settimana), poi decrescente',
+    frequenza: 'Alta frequenza all\'inizio del percorso, poi decrescente',
     bonus: 'Completando il percorso: check-up gratuito entro 6 mesi dal termine',
     bonusColore: C.secondary,
   },
@@ -190,13 +190,13 @@ function CategorieSection() {
         <FadeIn>
           <div style={{ maxWidth: '680px', marginBottom: '3rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Le tre categorie
+              Per chi è adatto
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              I tempi cambiano in base alla tua condizione.
+              Le condizioni che meglio si adattano a questo tipo di percorso.
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Durata e frequenza indicative — quelle reali emergono dalla valutazione iniziale.
+              Durata e frequenza indicative — quelle reali emergono dalla valutazione iniziale. La frequenza esatta la definiamo insieme dopo la prima visita.
             </p>
           </div>
         </FadeIn>
@@ -279,7 +279,7 @@ function TariffaSection() {
             }}>
               {[
                 { icon: '📅', testo: 'Pagamento mensile anticipato, nessun vincolo contrattuale' },
-                { icon: '🔄', testo: 'Rivalutazione periodica: la frequenza si adatta ai tuoi progressi' },
+                { icon: '🔄', testo: 'Rivalutazioni mensili: al termine di ogni mese valutiamo insieme i progressi e aggiustiamo la frequenza' },
                 { icon: '🚪', testo: 'Puoi interrompere il percorso in qualsiasi momento, senza penali' },
               ].map((n, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
@@ -331,7 +331,7 @@ function PagamentoSection() {
               Come funziona il pagamento
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Hai due opzioni a tua disposizione.
+              A seconda delle tue necessità, ho pensato a due tipologie di percorso.
             </h2>
             <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto', fontSize: '1rem' }}>
               Nessun vincolo contrattuale: puoi interrompere il percorso in qualsiasi momento, senza penali né conguagli.
@@ -349,8 +349,11 @@ function PagamentoSection() {
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
                 Seduta per seduta
               </h3>
-              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '1.25rem' }}>
-                Paghi ogni seduta singolarmente, al prezzo base. Massima libertà, nessun impegno anticipato.
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Prezzo fisso: paghi la singola seduta dopo ogni appuntamento. Nessun impegno oltre alla singola seduta.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: C.primary, fontWeight: 600, marginBottom: '1.25rem' }}>
+                Ideale per chi deve fare controlli dopo un percorso riabilitativo.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {[
@@ -376,13 +379,16 @@ function PagamentoSection() {
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
                 Mensile con bonus
               </h3>
-              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '1.25rem' }}>
-                Scegli un percorso concordato in prima visita e paghi mese per mese anticipato. Il costo medio per seduta si riduce — e al termine del percorso si attivano i bonus.
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Paghi mese per mese, in base alla frequenza consigliata e alla durata stimata per il tuo problema. Il costo medio per seduta si riduce — e al termine del percorso si attivano i bonus.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: C.secondary, fontWeight: 600, marginBottom: '1.25rem' }}>
+                Ideale per chi deve affrontare più mesi di riabilitazione.
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                 {[
                   'Tariffa per seduta ridotta rispetto al singolo',
-                  'Rivalutazione periodica inclusa ogni mese',
+                  'Rivalutazioni mensili incluse nel percorso',
                   'Bonus clinici al completamento del percorso',
                   'Nessun vincolo: puoi interrompere liberamente',
                 ].map((v, i) => (
@@ -412,9 +418,9 @@ function PagamentoSection() {
 /* ─────────────────── COME SI DECIDE ─────────────────── */
 function ComeSiDecideSection() {
   const step = [
-    { num: '01', titolo: 'Capire il tuo problema', testo: 'Valutazione clinica approfondita — non un\'occhiata veloce.' },
-    { num: '02', titolo: 'Capire i tuoi obiettivi reali', testo: 'Cosa ti sta davvero limitando, cosa vuoi tornare a fare.' },
-    { num: '03', titolo: 'Definire frequenza e durata', testo: 'Per la tua condizione specifica — non per una diagnosi generica.' },
+    { num: '01', titolo: 'Valutazione', testo: 'Capisco davvero qual è il tuo problema grazie a test specifici per il tuo dolore estremamente affidabili.' },
+    { num: '02', titolo: 'Frequenza consigliata', testo: 'In base all\'esito dei test clinici, è possibile stabilire la frequenza settimanale consigliata per il tuo problema.' },
+    { num: '03', titolo: 'Durata stimata', testo: 'Dopodiché è possibile definire le reali tempistiche di miglioramento.' },
   ]
 
   return (
@@ -426,10 +432,10 @@ function ComeSiDecideSection() {
               Come si decide
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Come si capisce quanto tempo ci vuole?
+              Come deve essere strutturato un percorso fisioterapico.
             </h2>
             <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '560px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Grazie a una prima visita approfondita e specifica — gratuita.
+              Tre passaggi fondamentali che ogni percorso serio dovrebbe seguire — a partire dalla prima visita gratuita.
             </p>
           </div>
         </FadeIn>
