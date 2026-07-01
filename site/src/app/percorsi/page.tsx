@@ -82,10 +82,10 @@ export default function PercorsiPage() {
     <div style={{ background: C.bg }}>
       <HeroSection />
       <FilosofiaSection />
-      <CategorieSection />
+      <ComeSiDecideSection />
       <TariffaSection />
       <PagamentoSection />
-      <ComeSiDecideSection />
+      <CategorieSection />
       <FaqSection />
     </div>
   )
