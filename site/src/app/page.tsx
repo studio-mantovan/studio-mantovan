@@ -719,11 +719,11 @@ function MetodoSection() {
 const percorsi = [
   {
     icon: '🌀',
-    tag: 'Dolore cronico · Condizione persistente',
-    titolo: 'Dolore cronico',
-    corpo: 'Lombalgia cronica, cervicalgia, sciatalgia persistente.',
+    tag: 'Dolore persistente · Condizione cronica',
+    titolo: 'Dolore persistente',
+    corpo: 'Lombalgia cronica, cervicalgia, sciatalgia, cervico-brachialgia.',
     durata: '3–6 mesi',
-    bonus: 'Se completi il percorso: 1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento, da usare entro 30 giorni dal termine del ciclo',
+    bonus: 'Completando il percorso: 1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento',
     bonusColore: C.secondary,
   },
   {
@@ -732,16 +732,16 @@ const percorsi = [
     titolo: 'Infortunio',
     corpo: 'Distorsioni, lesioni muscolari, tendiniti.',
     durata: '2–8 settimane',
-    bonus: 'Se completi il percorso: seduta di valutazione "return to activity" gratuita a 30 giorni dal termine',
+    bonus: 'Completando il percorso: valutazione "return to activity" gratuita a 30 giorni dal termine',
     bonusColore: C.primary,
   },
   {
     icon: '🏥',
     tag: 'Post-operatorio · Riabilitazione',
     titolo: 'Post-operatorio',
-    corpo: 'Protesi, artroscopia, interventi alla schiena o alla spalla.',
+    corpo: 'Protesi di ginocchio, protesi di anca, artroscopia di spalla, fratture.',
     durata: '2–6 mesi',
-    bonus: 'Se completi il percorso: check-up gratuito entro 6 mesi dal termine della fisioterapia',
+    bonus: 'Completando il percorso: check-up gratuito entro 6 mesi dal termine',
     bonusColore: C.secondary,
   },
 ]
@@ -836,8 +836,8 @@ function PercorsiSection() {
           }}
             className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
-            {[
-              { icon: '📅', titolo: 'Pagamento mensile anticipato', testo: 'Nessun vincolo contrattuale.' },
+            [
+              { icon: '📌', titolo: 'Tre opzioni di pagamento', testo: 'Seduta per seduta, mensile o trimestrale — scegli in base alla tua condizione.' },
               { icon: '🔄', titolo: 'Rivalutazione ogni mese', testo: 'La frequenza si adatta ai tuoi progressi.' },
               { icon: '💬', titolo: 'Il percorso si definisce in valutazione', testo: 'Durata e frequenza si definiscono nella prima visita — non prima.' },
             ].map((nota, i) => (
