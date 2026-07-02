@@ -69,7 +69,7 @@ const percorsi = [
     icon: '🏥',
     tag: 'Post-operatorio · Riabilitazione chirurgica',
     titolo: 'Post-operatorio',
-    corpo: 'Protesi, artroscopia, schiena o spalla.',
+    corpo: 'Protesi di ginocchio, protesi di anca, artroscopia di spalla, fratture.',
     durata: '2–6 mesi',
     frequenza: 'Alta frequenza all\'inizio del percorso, poi decrescente',
     bonus: 'Completando il percorso: check-up gratuito entro 6 mesi dal termine',
