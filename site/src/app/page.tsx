@@ -836,7 +836,7 @@ function PercorsiSection() {
           }}
             className="grid grid-cols-1 md:grid-cols-3 gap-4"
           >
-            [
+            {[
               { icon: '📌', titolo: 'Tre opzioni di pagamento', testo: 'Seduta per seduta, mensile o trimestrale — scegli in base alla tua condizione.' },
               { icon: '🔄', titolo: 'Rivalutazione ogni mese', testo: 'La frequenza si adatta ai tuoi progressi.' },
               { icon: '💬', titolo: 'Il percorso si definisce in valutazione', testo: 'Durata e frequenza si definiscono nella prima visita — non prima.' },
