@@ -328,10 +328,10 @@ function PagamentoSection() {
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Come funziona il pagamento
+              Le opzioni di pagamento
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              A seconda delle tue necessità, ho pensato a due tipologie di percorso.
+              A seconda delle tue necessità, ho pensato a tre tipologie di percorso.
             </h2>
             <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto', fontSize: '1rem' }}>
               Nessun vincolo contrattuale: puoi interrompere il percorso in qualsiasi momento, senza penali né conguagli.
@@ -339,65 +339,61 @@ function PagamentoSection() {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FadeIn direction="left" delay={0.05}>
             <div style={{
               background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
               height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               borderTop: `5px solid ${C.primary}`,
             }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📌</div>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
                 Seduta per seduta
               </h3>
               <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Prezzo fisso: paghi la singola seduta dopo ogni appuntamento. Nessun impegno oltre alla singola seduta.
+                Paghi ogni seduta singolarmente dopo l&apos;appuntamento. Nessun impegno anticipato.
               </p>
-              <p style={{ fontSize: '0.85rem', color: C.primary, fontWeight: 600, marginBottom: '1.25rem' }}>
-                Ideale per chi deve fare controlli dopo un percorso riabilitativo.
+              <p style={{ fontSize: '0.85rem', color: C.primary, fontWeight: 600, marginTop: 'auto' }}>
+                Ideale per controlli post-riabilitazione
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {[
-                  'Nessun anticipo',
-                  'Puoi fermarti quando vuoi',
-                  'Tariffa base per seduta',
-                ].map((v, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <div style={{ width: 8, height: 8, borderRadius: '50%', background: C.primary, flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.88rem', color: C.text }}>{v}</span>
-                  </div>
-                ))}
-              </div>
             </div>
           </FadeIn>
 
-          <FadeIn direction="right" delay={0.1}>
+          <FadeIn delay={0.1}>
             <div style={{
               background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
               height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               borderTop: `5px solid ${C.secondary}`,
             }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📅</div>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
-                Mensile con bonus
+                Mensile
               </h3>
               <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Paghi mese per mese, in base alla frequenza consigliata e alla durata stimata per il tuo problema. Il costo medio per seduta si riduce — e al termine del percorso si attivano i bonus.
+                Paghi mese per mese in base alla frequenza consigliata. Costo per seduta ridotto.
               </p>
-              <p style={{ fontSize: '0.85rem', color: C.secondary, fontWeight: 600, marginBottom: '1.25rem' }}>
-                Ideale per chi deve affrontare più mesi di riabilitazione.
+              <p style={{ fontSize: '0.85rem', color: '#3A8C7F', fontWeight: 600, marginTop: 'auto' }}>
+                Bonus: check-up gratuiti + sconto seduta. Ideale per percorsi più lunghi
               </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                {[
-                  'Tariffa per seduta ridotta rispetto al singolo',
-                  'Rivalutazioni mensili incluse nel percorso',
-                  'Bonus clinici al completamento del percorso',
-                  'Nessun vincolo: puoi interrompere liberamente',
-                ].map((v, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    <div style={{ width: 8, height: 8, borderRadius: '50%', background: C.secondary, flexShrink: 0 }} />
-                    <span style={{ fontSize: '0.88rem', color: C.text }}>{v}</span>
-                  </div>
-                ))}
-              </div>
+            </div>
+          </FadeIn>
+
+          <FadeIn direction="right" delay={0.15}>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: '5px solid #EEAE30',
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🏆</div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Percorso completo
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Paghi l&apos;intero percorso in un&apos;unica soluzione prima di iniziare.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#9a7200', fontWeight: 600, marginTop: 'auto' }}>
+                Il costo per seduta più basso delle tre opzioni
+              </p>
             </div>
           </FadeIn>
         </div>
