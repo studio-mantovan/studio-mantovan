@@ -53,7 +53,9 @@ Questo modello funziona sulla dipendenza passiva del paziente. Il mio funziona s
 
 **Ruolo rivendicato:** First Contact Practitioner — il fisioterapista come primo punto di accesso, non ultima spiaggia dopo ortopedico e imaging diagnostico.
 
-**Framework clinico di riferimento:** Cognitive Functional Therapy (CFT) — O'Sullivan et al.
+**Framework clinico di riferimento:** Cognitive Functional Therapy (CFT) — O'Sullivan et al., come punto di riferimento principale ma non esclusivo. L'approccio integra anche terapia manuale (Mulligan/MWM) quando utile, sempre e solo al servizio dell'esercizio — mai come trattamento isolato.
+
+**Posizionamento in una frase:** *La fisioterapia che capisce il tuo dolore e ti riporta alle cose che contano per te.*
 
 ---
 
@@ -84,8 +86,10 @@ L'esercizio fisico graduato e progressivo è la terapia principale — non un co
 - Mirato ai movimenti che il paziente evita o ha perso
 - Supervisionato e adattato seduta per seduta
 
-### 5. Comunicazione come parte del trattamento
-Le credenze errate (kinesiofobia, catastrofizzazione, senso di fragilità) non si modificano con spiegazioni frontali. Si modificano attraverso l'esperienza diretta del movimento.
+### 5. Lavoro su paure, pensieri negativi e convinzioni errate
+Il fulcro del lavoro non è "educazione al dolore" in senso stretto. È smontare le paure, i pensieri negativi e le convinzioni sbagliate che il paziente ha accumulato — spesso ricevute da altri professionisti o dall'ambiente. Questo non avviene con spiegazioni frontali ma attraverso l'esperienza diretta del movimento.
+
+La terapia manuale (es. Mulligan/MWM) può essere usata come strumento per facilitare questo processo — mai come fine a sé stessa. Il suo ruolo è creare la finestra di movimento in cui il paziente sperimenta che muoversi non fa male come credeva.
 
 Concetto chiave: *"Le paure non si cancellano con una spiegazione — si cancellano con un'esperienza."*
 

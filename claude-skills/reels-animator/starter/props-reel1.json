@@ -1,0 +1,60 @@
+{
+  "durationSec": 61,
+  "videoSrc": "reel1.mp4",
+  "brandHandle": "@studio.mantovan",
+  "accentColor": "#1A9EC9",
+  "transcript": [
+    { "start": 0.0,  "end": 15.7, "text": "Luca soffriva di mal di schiena e sciatica da diversi anni." },
+    { "start": 15.7, "end": 20.1, "text": "Gli avevano detto che a causa delle sue ernie e protrusioni non poteva più piegare" },
+    { "start": 20.1, "end": 23.4, "text": "la schiena e che per fare sforzi era meglio usare una cintura." },
+    { "start": 23.4, "end": 28.1, "text": "Si bloccava spesso e i farmaci ormai erano all'ordine del giorno." },
+    { "start": 28.7, "end": 32.2, "text": "Tutto questo prima di iniziare un percorso riabilitativo con me." },
+    { "start": 33.3, "end": 38.0, "text": "Queste immagini mostrano alcuni degli esercizi che hanno aiutato Luca a tornare a muoversi come" },
+    { "start": 38.0, "end": 41.7, "text": "prima, bloccarsi molto meno e ridurre la sciatica alla gamba." },
+    { "start": 42.3, "end": 46.3, "text": "Se soffri di mal di schiena o sciatica da più di tre mesi e vuoi tornare a muoverti come" },
+    { "start": 46.3, "end": 51.2, "text": "prima di avere dolore, puoi prenotare una prima visita fisioterapica o cliccare qui sotto." }
+  ],
+  "animations": [
+    {
+      "type": "quote",
+      "startSec": 1.0,
+      "durationSec": 13.0,
+      "data": {
+        "text": "Non potevo più piegare la schiena. Pensavo fosse per sempre.",
+        "accent": false
+      }
+    },
+    {
+      "type": "checklist",
+      "startSec": 23.5,
+      "durationSec": 9.0,
+      "data": {
+        "items": [
+          { "text": "Blocchi frequenti",           "revealAtSec": 23.5 },
+          { "text": "Farmaci quotidiani",           "revealAtSec": 25.0 },
+          { "text": "Cintura per ogni sforzo",      "revealAtSec": 26.5 }
+        ]
+      }
+    },
+    {
+      "type": "text_reveal",
+      "startSec": 33.5,
+      "durationSec": 8.0,
+      "data": {
+        "lines": [
+          "Torna a muoverti come prima.",
+          "Senza farmaci. Senza cintura."
+        ]
+      }
+    },
+    {
+      "type": "badge",
+      "startSec": 43.0,
+      "durationSec": 8.5,
+      "data": {
+        "text": "PRIMA VISITA GRATUITA",
+        "emoji": "📅"
+      }
+    }
+  ]
+}

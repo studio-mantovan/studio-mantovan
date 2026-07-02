@@ -147,6 +147,14 @@ Quando produci contenuti di personal branding, storytelling, pagina "Chi sono", 
 
 Contiene: percorso biografico reale, nodo centrale della storia (Sanremo come svolta non pianificata), 5 temi narrativi disponibili, tono da usare, cosa non fare con il materiale.
 
+## Post Instagram storytelling / personal brand
+
+Quando scrivi un post Instagram di storytelling o personal brand (non educativo):
+
+**Leggi sempre prima:** `marketing/storytelling-prompt.md` [[storytelling-prompt]]
+
+Contiene: contesto, chi è Umberto, regole editoriali assolute, tono, struttura suggerita, temi biografici disponibili, strategia distribuzione organico→boost.
+
 ## Percorsi e Pricing
 
 Quando crei o aggiorni la sezione "Percorsi" del sito, scrivi preventivi, contenuti social o qualsiasi comunicazione che riguardi l'offerta dello studio:

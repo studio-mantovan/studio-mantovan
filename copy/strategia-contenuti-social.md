@@ -64,6 +64,18 @@ Esempio: *"Se vuoi capire da cosa dipende il tuo dolore, la prima visita è grat
 
 ---
 
+## Tipologie di contenuto
+
+### Storytelling / Personal brand
+
+Non è contenuto educativo. L'obiettivo è far conoscere chi è Umberto — come pensa, come lavora, perché ha scelto questo approccio. Costruisce fiducia e riconoscibilità locale, non converte subito.
+
+Caratteristiche: prima persona, tono narrativo, può partire da un episodio reale (anonimizzato), mai vantarsi di un risultato, CTA finale sempre "prima visita gratuita" in modo non aggressivo.
+
+**Riferimento completo:** `marketing/storytelling-prompt.md` [[storytelling-prompt]]
+
+---
+
 ## Tipologie di contenuto consapevolezza
 
 ### Errori
@@ -124,11 +136,20 @@ Funzione gratuita di Instagram per distribuire contenuti su chi non segue ancora
 
 Strategia: pubblicare variazioni dei contenuti migliori — cambia titolo, font o taglio. La piattaforma non deve riconoscerlo come identico. Funziona a volume: solo alcuni funzioneranno su molti tentati.
 
-### 3. Messa in evidenza a pagamento
+### 3. Strategia organico → boost (Meta Ads Manager)
 
-Utile solo per amplificare contenuti che già funzionano organicamente. Non investe su contenuti che non performano da soli.
+Organico e ads non sono canali separati: sono un sistema unico.
 
-Si affianca — non sostituisce — la campagna Meta Ads carosello già attiva.
+**Flusso:**
+1. Pubblica in organico
+2. Lascia girare 24-48 ore e leggi i segnali (salvataggi/condivisioni per educativi; commenti/DM per storytelling)
+3. Se ci sono segnali → boosten via Ads Manager, obiettivo **Awareness**
+4. €1-2/giorno per 5-7 giorni massimo (su pubblico locale piccolo si satura oltre)
+5. Non boostare contenuti senza nessun segnale organico
+
+**Scopo:** non generare lead diretti ma costruire riconoscibilità locale nel medio-lungo termine. Il paziente non prenota dal singolo post — prenota perché ti ha visto 10 volte e sa già chi sei quando ha bisogno.
+
+**Budget:** €10-30/mese. Basso per scelta, non per mancanza di strategia.
 
 ---
 

@@ -1,0 +1,23 @@
+{
+  "name": "studio-mantovan-reels-animator",
+  "version": "1.0.0",
+  "description": "Remotion starter per Studio Mantovan – reel animati con dati clinici",
+  "scripts": {
+    "start": "npx remotion studio src/index.ts",
+    "render:split": "npx remotion render src/index.ts SplitReelComposition out/reel-finale.mp4 --props=./props.json --codec=h264",
+    "render:overlay": "npx remotion render src/index.ts ReelComposition out/reel-finale.mp4 --props=./props.json --codec=h264",
+    "transcode": "bash scripts/transcode.sh"
+  },
+  "dependencies": {
+    "@remotion/bundler": "^4.0.0",
+    "@remotion/cli": "^4.0.0",
+    "@remotion/renderer": "^4.0.0",
+    "remotion": "^4.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.0",
+    "typescript": "^5.0.0"
+  }
+}

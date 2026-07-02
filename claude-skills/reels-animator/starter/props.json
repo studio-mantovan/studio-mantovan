@@ -1,0 +1,79 @@
+{
+  "_commento": "Esempio reale per Studio Mantovan – reel lombalgia cronica 35 secondi. Layout B (SplitReelComposition) consigliato.",
+  "_layout": "SplitReelComposition",
+
+  "videoSrc": "lombalgia-reel.mp4",
+  "brandHandle": "@studio.mantovan",
+  "accentColor": "#1A9EC9",
+  "keywords": ["lombalgia", "CFT", "movimento", "riabilitazione"],
+
+  "transcript": [
+    { "start": 0.0,  "end": 6.0,  "text": "Il 70% dei pazienti con lombalgia cronica migliora con la terapia giusta." },
+    { "start": 6.0,  "end": 14.0, "text": "Non il riposo a letto. Non le terapie passive. Il movimento attivo e guidato." },
+    { "start": 14.0, "end": 22.0, "text": "Lo studio RESTORE: dopo 12 settimane di CFT, dolore ridotto dal 7 all'1,8 su 10." },
+    { "start": 22.0, "end": 30.0, "text": "Engagement 63%, retention 41%, pazienti soddisfatti 98,6%." },
+    { "start": 30.0, "end": 35.0, "text": "Prenota una valutazione a Studio Mantovan, Broni." }
+  ],
+
+  "animations": [
+    {
+      "type": "flip_stat",
+      "startSec": 1.0,
+      "durationSec": 6.5,
+      "data": {
+        "value": "70%",
+        "label": "pazienti con lombalgia cronica",
+        "sublabel": "migliora con terapia attiva"
+      }
+    },
+    {
+      "type": "checklist",
+      "startSec": 7.5,
+      "durationSec": 7.5,
+      "data": {
+        "items": [
+          { "text": "❌  Riposo a letto",         "revealAtSec": 7.5 },
+          { "text": "❌  Terapie passive",          "revealAtSec": 9.0 },
+          { "text": "✅  Movimento attivo guidato", "revealAtSec": 10.5 }
+        ]
+      }
+    },
+    {
+      "type": "chart_bar",
+      "startSec": 15.5,
+      "durationSec": 7.5,
+      "data": {
+        "label": "DOLORE NRS – STUDIO RESTORE",
+        "bars": [
+          { "label": "Inizio",  "value": 7.0 },
+          { "label": "4 sett",  "value": 5.1 },
+          { "label": "8 sett",  "value": 3.4 },
+          { "label": "12 sett", "value": 1.8, "accent": true }
+        ],
+        "maxValue": 10
+      }
+    },
+    {
+      "type": "ring_stat",
+      "startSec": 23.5,
+      "durationSec": 7.0,
+      "data": {
+        "label": "RISULTATI STUDIO MANTOVAN",
+        "rings": [
+          { "value": 63,   "label": "engagement pazienti" },
+          { "value": 41,   "label": "retention a 6 mesi" },
+          { "value": 98,   "label": "soddisfazione", "color": "#E8503A" }
+        ]
+      }
+    },
+    {
+      "type": "lower_third",
+      "startSec": 30.5,
+      "durationSec": 5.0,
+      "data": {
+        "name": "Umberto Mantovan",
+        "role": "Fisioterapista – Broni (PV)"
+      }
+    }
+  ]
+}

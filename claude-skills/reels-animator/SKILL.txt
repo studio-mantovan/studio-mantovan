@@ -1,0 +1,335 @@
+# SKILL: reels-animator
+**Studio Mantovan – Fisioterapia in Movimento**
+Versione 1.0 | Percorso: `C:\Users\umber\studio-mantovan\claude-skills\reels-animator\`
+
+---
+
+## Cos'è questa skill
+
+Sistema completo per produrre reel animati con dati clinici partendo da un video parlato.
+Basato su **Remotion** (render React → MP4) + **Whisper** (trascrizione) + **FFmpeg** (transcodifica).
+Costo: zero. Nessun abbonamento, nessuna API esterna.
+
+---
+
+## Struttura cartelle
+
+```
+reels-animator/
+├── SKILL.md                  ← questo file
+├── starter/
+│   ├── package.json
+│   ├── tsconfig.json
+│   ├── props.json            ← modifica qui per ogni reel
+│   ├── public/               ← metti qui i video .mp4
+│   ├── out/                  ← output MP4 renderizzati
+│   ├── scripts/
+│   │   ├── transcode.sh      ← MOV/HEVC → H.264
+│   │   └── whisper-transcribe.py
+│   └── src/
+│       ├── index.ts          ← entry point Remotion
+│       ├── tokens.ts         ← colori e font brand
+│       ├── types.ts          ← TypeScript types
+│       ├── animations.tsx    ← tutti i 17 componenti
+│       ├── compositions.tsx  ← Layout A e Layout B
+│       └── Subtitles.tsx     ← sottotitoli sincronizzati
+```
+
+---
+
+## Setup iniziale (una sola volta)
+
+```bash
+# 1. Entra nella cartella starter
+cd C:\Users\umber\studio-mantovan\claude-skills\reels-animator\starter
+
+# 2. Installa dipendenze (~600MB, 3-5 minuti)
+npm install
+
+# 3. Installa Whisper (per trascrizione automatica)
+pip install openai-whisper
+```
+
+---
+
+## Workflow per ogni reel
+
+### Step 1 – Prepara il video
+
+Se il video è MOV/HEVC (iPhone):
+```bash
+bash scripts/transcode.sh C:\Users\umber\Desktop\mio-reel.MOV
+```
+Il file `.mp4` viene salvato automaticamente in `starter/public/`.
+
+Se è già MP4 H.264, copialo direttamente:
+```bash
+cp C:\Users\umber\Desktop\mio-reel.mp4 starter/public/
+```
+
+### Step 2 – Trascrivi il parlato
+
+```bash
+python3 scripts/whisper-transcribe.py starter/public/mio-reel.mp4
+```
+Output: blocco JSON da incollare nel campo `transcript` del `props.json`.
+**Controlla sempre**: nomi brand, numeri, termini clinici (CFT, NDI, HIT-6, CCFT...).
+
+### Step 3 – Scrivi il props.json
+
+Apri `starter/props.json` e modifica:
+
+```json
+{
+  "videoSrc": "nome-del-tuo-video.mp4",
+  "brandHandle": "@studio.mantovan",
+  "accentColor": "#1A9EC9",
+  "transcript": [ ... ],
+  "animations": [ ... ]
+}
+```
+
+### Step 4 – Anteprima (opzionale ma consigliato)
+
+```bash
+npx remotion studio src/index.ts
+```
+Apre nel browser. Scorri frame per frame per verificare timing.
+
+### Step 5 – Render finale
+
+**Layout B – SplitReelComposition** (consigliato per talking head):
+```bash
+npm run render:split
+```
+
+**Layout A – ReelComposition** (per b-roll o sfondo scuro):
+```bash
+npm run render:overlay
+```
+
+Output in `starter/out/reel-finale.mp4`. Pronto per Instagram.
+
+---
+
+## Quale layout usare
+
+| Situazione | Layout |
+|------------|--------|
+| Parli guardando la camera, citi numeri | **B – Split** ✅ (consigliato) |
+| B-roll, sfondo clinico, estetica cinematica | **A – Overlay** |
+| Presentazione o tutorial con grafici | **B – Split** |
+| Hook forte con glitch o quote di impatto | **A – Overlay** |
+
+**Layout B dettagli**: 40% superiore (sfondo ink #1F3A40) per animazioni, 60% inferiore per il video con faccia. Barra teal in cima, handle brand in alto a destra, progress bar in fondo al pannello superiore.
+
+---
+
+## I 17 tipi di animazione
+
+### TESTO
+| Type | Quando usarlo | Esempio clinico |
+|------|--------------|-----------------|
+| `quote` | Hook iniziale, frase chiave, claim | "Il dolore non significa danno." |
+| `typewriter` | Processi, framework, frasi tecniche | "CFT → biopsicosociale → movimento" |
+| `text_reveal` | Conclusioni, punti chiave uno alla volta | Tre principi della CFT |
+| `glitch_text` | Hook ad alto impatto visivo | "IL RIPOSO NON GUARISCE." |
+| `keywords` | Tag del video, concetti chiave | lombalgia, CFT, movimento, evidenza |
+
+### NUMERI
+| Type | Quando usarlo | Esempio clinico |
+|------|--------------|-----------------|
+| `flip_stat` | Il numero più importante del reel | "70%" tasso di miglioramento |
+| `number_roll` | KPI secondari, crescita fluida | Da 8 a 2 (NRS dopo trattamento) |
+
+### SEQUENZE
+| Type | Quando usarlo | Esempio clinico |
+|------|--------------|-----------------|
+| `steps` | Tutorial, how-to, protocolli | 3 fasi della CFT |
+| `checklist` | Risultati raggiunti, recap | ✅ Valutazione ✅ Piano ✅ Follow-up |
+| `countdown` | Conta alla rovescia prima di lista | 3 errori da evitare |
+
+### GRAFICI
+| Type | Quando usarlo | Esempio clinico |
+|------|--------------|-----------------|
+| `chart_bar` | Confronti, serie storiche, outcome | NRS settimana per settimana |
+| `chart_line` | Crescita nel tempo | Miglioramento funzionale mese/mese |
+| `ring_stat` | Fino a 3 KPI compositi | Engagement + retention + soddisfazione |
+
+### SOCIAL & BRANDING
+| Type | Quando usarlo | Esempio clinico |
+|------|--------------|-----------------|
+| `lower_third` | Presentazione, citazione fonte | "Umberto Mantovan – Fisioterapista" |
+| `notification` | Social proof, risultati in tempo reale | "Nuovo paziente: sciatalgia risolta in 8 sett." |
+| `badge` | Segnalare passaggio chiave | "STUDIO RESTORE 2023" / "EVIDENCE-BASED" |
+| `stat` | Statistica semplice senza animazione | "12 settimane" |
+
+---
+
+## Struttura props.json completa
+
+```json
+{
+  "videoSrc": "nome-video.mp4",
+  "brandHandle": "@studio.mantovan",
+  "accentColor": "#1A9EC9",
+  "keywords": ["parola1", "parola2"],
+  "transcript": [
+    { "start": 0.0, "end": 6.0, "text": "Testo del parlato." }
+  ],
+  "animations": [
+    {
+      "type": "TIPO_ANIMAZIONE",
+      "startSec": 1.0,
+      "durationSec": 6.5,
+      "data": { ... }
+    }
+  ]
+}
+```
+
+---
+
+## Data per ogni tipo di animazione
+
+```jsonc
+// quote
+{ "text": "Il dolore non significa danno.", "accent": true }
+
+// typewriter
+{ "text": "Cognitive Functional Therapy → biopsicosociale → movimento attivo" }
+
+// text_reveal
+{ "lines": ["Prima linea.", "Seconda linea.", "Terza linea."] }
+
+// glitch_text
+{ "text": "IL RIPOSO NON GUARISCE." }
+
+// keywords
+{ "items": ["lombalgia", "CFT", "movimento", "evidenza"] }
+
+// flip_stat
+{ "value": "70%", "label": "pazienti con lombalgia", "sublabel": "migliorano con terapia attiva" }
+
+// number_roll
+{ "from": 8, "to": 2, "label": "NRS dopo 12 settimane", "suffix": "/10" }
+
+// steps (revealAtSec = secondo esatto in cui pronunci quel passo nel video)
+{ "items": [
+  { "text": "Valutazione biopsicosociale", "revealAtSec": 7.0 },
+  { "text": "Piano di trattamento attivo",  "revealAtSec": 9.5 },
+  { "text": "Verifica degli obiettivi",     "revealAtSec": 12.0 }
+]}
+
+// checklist
+{ "items": [
+  { "text": "Dolore ridotto", "revealAtSec": 14.0 },
+  { "text": "Funzione ripristinata", "revealAtSec": 15.5 }
+]}
+
+// countdown
+{ "from": 3 }
+
+// chart_bar
+{ "label": "NRS NEL TEMPO", "bars": [
+  { "label": "Inizio", "value": 7.2 },
+  { "label": "4 sett", "value": 5.1 },
+  { "label": "12 sett", "value": 1.8, "accent": true }
+], "maxValue": 10 }
+
+// chart_line
+{ "label": "MIGLIORAMENTO FUNZIONALE", "points": [
+  { "label": "Gen", "value": 40 },
+  { "label": "Feb", "value": 58 },
+  { "label": "Mar", "value": 74 }
+]}
+
+// ring_stat (max 3 anelli)
+{ "label": "KPI CLINICI", "rings": [
+  { "value": 70, "label": "miglioramento" },
+  { "value": 41, "label": "retention 6 mesi" },
+  { "value": 98, "label": "soddisfazione", "color": "#E8503A" }
+]}
+
+// lower_third
+{ "name": "Umberto Mantovan", "role": "Fisioterapista – Broni (PV)" }
+
+// notification
+{ "appName": "Studio Mantovan", "title": "Nuovo messaggio", "body": "Posso tornare a correre dopo 8 settimane. Grazie!" }
+
+// badge
+{ "text": "EVIDENCE-BASED", "emoji": "📊" }
+
+// stat
+{ "value": "12 sett.", "label": "durata media del trattamento CFT" }
+```
+
+---
+
+## Regole di timing (CRITICHE)
+
+1. **No overlap**: `startSec + durationSec` deve essere < `startSec` dell'animazione successiva. Gap minimo consigliato: **0.7 secondi**.
+
+2. **Sincronia col parlato**: `startSec` dell'animazione = momento in cui *inizi* a pronunciare quel dato nel video. Non dopo.
+
+3. **Durata minima leggibile**:
+   - Animazioni semplici (flip_stat, badge): **5 secondi** minimo
+   - Animazioni complesse (ring_stat 3 anelli, chart_bar 4+ barre): **8 secondi** minimo
+
+4. **Ritmo consigliato**: 4-5 animazioni in 30 secondi. Una ogni ~7 secondi. Più di 5 diventa frenetico.
+
+5. **Regola dei numeri**: il valore nel `data` deve corrispondere esattamente al numero che pronunci nel video.
+
+---
+
+## Design tokens
+
+```
+Colori brand:
+  teal   #1A9EC9  → accentColor default, barra superiore Layout B
+  mint   #5DBFB0  → label grafici, elementi secondari
+  cream  #F5F0EB  → sfondi chiari (non usato nei reel)
+  coral  #E8503A  → accenti caldi, badge, ring terzo anello
+  ink    #1F3A40  → sfondo pannello superiore Layout B
+
+Font:
+  Fraunces (serif) → titoli, quote, flip_stat, lower_third
+  Archivo (sans)   → body, label, sottotitoli
+
+Dimensioni: 1080×1920 @30fps (verticale Instagram Reels)
+```
+
+---
+
+## Prompt tipo per Claude Code
+
+Una volta installata la skill, usa questo pattern:
+
+```
+"Ho un reel di 35 secondi in cui parlo della lombalgia cronica.
+Cito questi dati: 70% di miglioramento, NRS da 7 a 1.8 in 12 settimane, 
+retention del 41% a 6 mesi.
+Il video è lombalgia-reel.mp4 e l'ho già copiato in public/.
+Trascrivi il video, genera il props.json con le animazioni giuste 
+e renderizza con Layout B (SplitReelComposition)."
+```
+
+Per aggiustamenti:
+```
+"Il flip_stat arriva troppo tardi, spostalo al secondo 1."
+"Aggiungi un badge EVIDENCE-BASED al secondo 20."
+"Cambia l'accentColor a coral #E8503A per questo reel."
+```
+
+---
+
+## Troubleshooting
+
+| Problema | Soluzione |
+|----------|-----------|
+| Video non si carica in preview | Transcodifica con `transcode.sh` |
+| Audio mancante nel render | Stessa causa, riconverti in H.264 |
+| Animazione che si sovrappone | Controlla gap tra animazioni (>0.7s) |
+| Whisper trascrive male i nomi | Correggi a mano nel JSON |
+| Render lentissimo | Normale su CPU: ~1-2 min per 30 secondi |
+| npm install fallisce | Verifica Node.js 18+: `node --version` |
