@@ -6,7 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Dove trovarmi – Studio Mantovan, Broni (PV)',
   description:
-    'Studio Mantovan – Via Enzo Togni 75, 27043 Broni (PV). Lunedì–Venerdì 15:00–20:00, solo su appuntamento. Prima visita gratuita.',
+    'Studio Mantovan – Via Enzo Togni 75, 27043 Broni (PV). Lun 15–20, Mer–Gio 08–20, Sab 14–19. Solo su appuntamento. Prima visita gratuita.',
 }
 
 const C = {
@@ -23,7 +23,7 @@ const C = {
 
 const info = [
   { emoji: '📍', label: 'Indirizzo', value: 'Via Enzo Togni 75, 27043 Broni (PV)' },
-  { emoji: '🕒', label: 'Orari',     value: 'Lun – Ven: 15:00 – 20:00 · Solo su appuntamento' },
+  { emoji: '🕒', label: 'Orari',     value: 'Lun 15–20 · Mer–Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
   { emoji: '📞', label: 'Telefono',  value: '351 924 2517',              href: 'tel:+393519242517' },
   { emoji: '✉️', label: 'Email',     value: 'studio.mantovan@gmail.com', href: 'mailto:studio.mantovan@gmail.com' },
 ]

@@ -264,7 +264,7 @@ function ProofStrip() {
 function DoveTrovarmiSection() {
   const info = [
     { label: 'Indirizzo', value: 'Via Enzo Togni 75, 27043 Broni (PV)' },
-    { label: 'Orari', value: 'Lun – Ven: 15:00 – 20:00 · Solo su appuntamento' },
+    { label: 'Orari', value: 'Lun 15–20 · Mer–Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
     { label: 'Telefono', value: '351 924 2517' },
     { label: 'Email', value: 'studio.mantovan@gmail.com' },
   ]

@@ -132,7 +132,7 @@ export function PrenotaClient() {
                   Chiama il 351 924 2517
                 </div>
                 <div style={{ fontSize: '0.82rem', color: `${C.text}66`, lineHeight: 1.5 }}>
-                  Lun – Ven, 15:00 – 20:00
+                  Lun 15–20 · Mer–Gio 08–20 · Sab 14–19
                 </div>
               </div>
               <div style={{ marginLeft: 'auto', color: `${C.text}33`, fontSize: '1.2rem' }}>→</div>
