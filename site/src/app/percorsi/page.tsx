@@ -47,8 +47,8 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
 const percorsi = [
   {
     icon: '🧠',
-    tag: 'Dolore cronico · Condizione persistente',
-    titolo: 'Dolore cronico',
+    tag: 'Dolore persistente · Condizione persistente',
+    titolo: 'Dolore persistente',
     corpo: 'Lombalgia cronica, cervicalgia, sciatalgia e cervico-brachialgia.',
     durata: '3–6 mesi',
     frequenza: 'Bassa frequenza settimanale',
@@ -373,7 +373,7 @@ function PagamentoSection() {
                 Paghi mese per mese in base alla frequenza consigliata. Costo per seduta ridotto.
               </p>
               <p style={{ fontSize: '0.85rem', color: '#3A8C7F', fontWeight: 600, marginTop: 'auto' }}>
-                Bonus: check-up gratuiti + sconto seduta. Ideale per percorsi più lunghi
+                Bonus: check-up gratuiti + sconto seduta. Ideale per condizioni acute e infortuni
               </p>
             </div>
           </FadeIn>
@@ -384,15 +384,15 @@ function PagamentoSection() {
               height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
               borderTop: '5px solid #EEAE30',
             }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🏆</div>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🗓️</div>
               <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
-                Percorso completo
+                Trimestrale
               </h3>
               <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Paghi l&apos;intero percorso in un&apos;unica soluzione prima di iniziare.
+                Paghi 3 mesi in anticipo. Costo per seduta inferiore al mensile.
               </p>
               <p style={{ fontSize: '0.85rem', color: '#9a7200', fontWeight: 600, marginTop: 'auto' }}>
-                Il costo per seduta più basso delle tre opzioni
+                Bonus: 1 seduta gratuita ogni trimestre completato. Ideale per dolore cronico e riabilitazione post-intervento
               </p>
             </div>
           </FadeIn>
