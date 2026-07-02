@@ -79,7 +79,7 @@ export const zoneServite: ZonaServita[] = [
         a: 'Sì, trovi parcheggio comodamente nelle vicinanze. Trovi indicazioni precise nella pagina Dove trovarmi.',
       },
     ],
-    teaser: 'Vivo qui: conosco la zona e le persone che la vivono.',
+    teaser: 'La cittadina in cui vivo.',
   },
   {
     slug: 'casteggio',

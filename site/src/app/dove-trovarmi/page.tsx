@@ -1,4 +1,7 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { zoneServite } from '@/lib/zoneServite'
+import { ArrowRight } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Dove trovarmi – Studio Mantovan, Broni (PV)',
@@ -108,6 +111,53 @@ export default function DoveTrovarmiPage() {
               </a>
             </div>
 
+          </div>
+        </div>
+      </section>
+      {/* Zone servite */}
+      <section style={{ background: C.surface }}>
+        <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4rem ${C.pad}` }}>
+          <h2 style={{
+            fontSize: 'clamp(1.4rem, 2.5vw, 1.9rem)', fontWeight: 800, color: C.text,
+            lineHeight: 1.25, marginBottom: '0.75rem',
+          }}>
+            Broni, Stradella, Casteggio: tre zone, una storia condivisa.
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginBottom: '2rem' }}>
+            Il mio studio è a Broni, ma il mio legame con il territorio va oltre i confini del paese.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {zoneServite.map((z) => (
+              <Link
+                key={z.slug}
+                href={`/fisioterapia-${z.slug}`}
+                style={{
+                  background: C.white, borderRadius: C.radiusLg, padding: '2rem',
+                  display: 'flex', flexDirection: 'column', textDecoration: 'none',
+                  boxShadow: '0 2px 16px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)',
+                }}
+                className="group hover:shadow-md transition-shadow"
+              >
+                <span style={{
+                  fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase',
+                  letterSpacing: '0.1em', color: C.secondary, marginBottom: '0.5rem',
+                }}>
+                  {z.citta}
+                </span>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: C.text, marginBottom: '0.75rem', lineHeight: 1.3 }}>
+                  {z.teaser}
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: `${C.text}77`, lineHeight: 1.65, marginBottom: '1.5rem', flex: 1 }}>
+                  {z.distanza}
+                </p>
+                <span style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '6px',
+                  fontSize: '0.85rem', fontWeight: 700, color: C.primary,
+                }}>
+                  Scopri di più <ArrowRight size={15} />
+                </span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
