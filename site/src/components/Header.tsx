@@ -7,6 +7,7 @@ import { Menu, X } from 'lucide-react'
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const [percorsiOpen, setPercorsiOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -62,7 +63,30 @@ export default function Header() {
         >
           <Link href="/" className={navLinkClass}>Home</Link>
           <Link href="/chi-sono" className={navLinkClass}>Chi sono</Link>
-          <Link href="/percorsi" className={navLinkClass}>Percorsi</Link>
+          <div
+            style={{ position: 'relative' }}
+            onMouseEnter={() => setPercorsiOpen(true)}
+            onMouseLeave={() => setPercorsiOpen(false)}
+          >
+            <button className={navLinkClass} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', font: 'inherit' }}>
+              Percorsi
+            </button>
+            {percorsiOpen && (
+              <div style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)', paddingTop: '0.6rem' }}>
+                <div style={{
+                  background: '#fff', borderRadius: '12px', boxShadow: '0 8px 24px rgba(0,0,0,0.14)',
+                  padding: '0.4rem', minWidth: '240px', display: 'flex', flexDirection: 'column', gap: '2px',
+                }}>
+                  <Link href="/spalla-lesionata" style={dropdownItemStyle} onClick={() => setPercorsiOpen(false)}>
+                    Metodo Spalla in Movimento
+                  </Link>
+                  <Link href="/percorsi" style={dropdownItemStyle} onClick={() => setPercorsiOpen(false)}>
+                    Percorsi
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
           <Link href="/blog" className={navLinkClass}>Blog</Link>
           <Link href="/dove-trovarmi" className={navLinkClass}>Dove trovarmi</Link>
         </nav>
@@ -136,6 +160,7 @@ export default function Header() {
           >
             <Link href="/" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Home</Link>
             <Link href="/chi-sono" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Chi sono</Link>
+            <Link href="/spalla-lesionata" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Metodo Spalla in Movimento</Link>
             <Link href="/percorsi" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Percorsi</Link>
             <Link href="/blog" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Blog</Link>
             <Link href="/dove-trovarmi" onClick={() => setMobileOpen(false)} style={mobileNavStyle}>Dove trovarmi</Link>
@@ -164,6 +189,17 @@ export default function Header() {
       )}
     </header>
   )
+}
+
+const dropdownItemStyle: React.CSSProperties = {
+  display: 'block',
+  padding: '10px 14px',
+  borderRadius: '8px',
+  textDecoration: 'none',
+  color: '#2C2C2C',
+  fontSize: '14px',
+  fontWeight: 600,
+  whiteSpace: 'nowrap',
 }
 
 const mobileNavStyle: React.CSSProperties = {
