@@ -32,12 +32,12 @@ export const patologie: Patologia[] = [
   {
     slug: 'spalla',
     nome: 'Dolore alla spalla',
-    titolo: 'Spalla che fa male? Prima capiamo perché.',
-    sottotitolo: 'Sindrome da conflitto, cuffia dei rotatori, calcificazioni: percorso attivo.',
+    titolo: 'Una spalla che fa male non significa dover operare subito.',
+    sottotitolo: 'Cuffia dei rotatori, dolore alla spalla: un percorso attivo, prima di pensare all\'intervento.',
     descrizione:
-      'Il dolore alla spalla limita ogni gesto quotidiano. Un approccio basato sull\'esercizio graduale ottiene risultati che le terapie passive non riescono a mantenere.',
+      'Una lesione della cuffia dei rotatori nel referto non significa dover operare. Un percorso attivo, costruito su di te, ottiene risultati che le terapie passive non riescono a mantenere.',
     emoji: '💪',
-    keywords: ['dolore spalla', 'cuffia rotatori', 'sindrome conflitto spalla', 'spalla infiammata'],
+    keywords: ['dolore spalla', 'cuffia dei rotatori', 'lesione cuffia rotatori', 'spalla congelata'],
   },
   {
     slug: 'ginocchio',

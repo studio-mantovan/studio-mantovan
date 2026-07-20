@@ -1,10 +1,8 @@
 'use client'
 
-declare global {
-  interface Window { fbq?: (...args: unknown[]) => void }
-}
+import { trackMetaEvent } from '@/lib/meta-pixel'
 
-const trackContact = () => window.fbq?.('track', 'Contact')
+const trackContact = () => trackMetaEvent('Lead')
 
 const C = {
   primary:   '#1A9EC9',
