@@ -61,32 +61,6 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
   )
 }
 
-const jsonLdPhysicalTherapist = {
-  '@context': 'https://schema.org',
-  '@type': 'PhysicalTherapist',
-  name: 'Studio Mantovan – Fisioterapia in Movimento',
-  url: 'https://umbertomantovan.net/patologie/spalla',
-  telephone: '+393519242517',
-  email: 'studio.mantovan@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Via Enzo Togni 75',
-    addressLocality: 'Broni',
-    addressRegion: 'PV',
-    postalCode: '27043',
-    addressCountry: 'IT',
-  },
-  areaServed: ['Broni', 'Stradella', 'Casteggio', 'Oltrepò Pavese'],
-  priceRange: '€€',
-  sameAs: [
-    'https://www.instagram.com/studio.mantovan',
-    'https://www.facebook.com/studio.mantovan',
-  ],
-  description:
-    'Fisioterapista a Broni per dolore alla spalla e cuffia dei rotatori. Percorso attivo 1:1, prima visita gratuita.',
-  founder: { '@type': 'Person', name: 'Umberto Mantovan' },
-}
-
 const faqSpalla = [
   {
     q: 'Ho una lesione alla cuffia dei rotatori: devo operarmi?',
@@ -119,7 +93,6 @@ const jsonLdFaqPage = {
 export default function SpallaPage() {
   return (
     <div style={{ background: C.bg }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPhysicalTherapist) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqPage) }} />
       <HeroSection />
       <ProofStripSpalla />
@@ -801,7 +774,7 @@ function ChiSonoSection() {
 function DoveSiamoSection() {
   const info = [
     { label: 'Indirizzo', value: 'Via Enzo Togni 75, 27043 Broni (PV)' },
-    { label: 'Orari', value: 'Lun 15–20 · Mer–Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
+    { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
     { label: 'Telefono', value: '351 924 2517' },
     { label: 'Email', value: 'studio.mantovan@gmail.com' },
   ]
