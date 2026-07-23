@@ -35,7 +35,7 @@ export const zoneServite: ZonaServita[] = [
     faq: [
       {
         q: 'Dove si trova esattamente lo studio a Broni?',
-        a: 'In Via Enzo Togni 75, 27043 Broni (PV). Trovi la mappa e tutte le indicazioni nella pagina Dove trovarmi.',
+        a: 'In Via Enzo Togni, 75, 27043 Broni PV. Trovi la mappa e tutte le indicazioni nella pagina Dove trovarmi.',
       },
       {
         q: 'Serve una prescrizione del medico per venire in studio?',

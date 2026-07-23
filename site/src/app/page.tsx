@@ -269,7 +269,7 @@ function ProofStrip() {
 /* ─────────────────── DOVE TROVARMI ─────────────────── */
 function DoveTrovarmiSection() {
   const info = [
-    { label: 'Indirizzo', value: 'Via Enzo Togni 75, 27043 Broni (PV)' },
+    { label: 'Indirizzo', value: 'Via Enzo Togni, 75, 27043 Broni PV' },
     { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
     { label: 'Telefono', value: '351 924 2517' },
     { label: 'Email', value: 'studio.mantovan@gmail.com' },
@@ -307,7 +307,7 @@ function DoveTrovarmiSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Studio Mantovan – Via Enzo Togni 75, Broni (PV)"
+                title="Studio Mantovan – Via Enzo Togni, 75, Broni PV"
               />
             </div>
           </FadeIn>

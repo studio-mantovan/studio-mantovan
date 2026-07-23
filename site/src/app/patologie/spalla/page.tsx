@@ -707,7 +707,7 @@ function CtaMidSection() {
             Senza impegno · Prima visita gratuita
           </p>
           <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
-            📍 Via Enzo Togni 75, 27043 Broni (PV) · 📞{' '}
+            📍 Via Enzo Togni, 75, 27043 Broni PV · 📞{' '}
             <a href="tel:+393519242517" style={{ color: '#fff', textDecoration: 'underline' }}>351 924 2517</a>
           </p>
         </FadeIn>
@@ -773,7 +773,7 @@ function ChiSonoSection() {
 /* ─────────────────── DOVE SIAMO ─────────────────── */
 function DoveSiamoSection() {
   const info = [
-    { label: 'Indirizzo', value: 'Via Enzo Togni 75, 27043 Broni (PV)' },
+    { label: 'Indirizzo', value: 'Via Enzo Togni, 75, 27043 Broni PV' },
     { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
     { label: 'Telefono', value: '351 924 2517' },
     { label: 'Email', value: 'studio.mantovan@gmail.com' },
@@ -807,7 +807,7 @@ function DoveSiamoSection() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Studio Mantovan – Via Enzo Togni 75, Broni (PV)"
+                title="Studio Mantovan – Via Enzo Togni, 75, Broni PV"
               />
             </div>
           </FadeIn>
@@ -915,7 +915,7 @@ function CtaFinaleSection() {
             </a>
           </div>
           <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-            📍 Via Enzo Togni 75, 27043 Broni (PV)
+            📍 Via Enzo Togni, 75, 27043 Broni PV
           </p>
           <p style={{ marginTop: '0.35rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
             📞 351 924 2517 · ✉️ studio.mantovan@gmail.com

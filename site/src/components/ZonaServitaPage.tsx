@@ -2,7 +2,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getZonaServita } from '@/lib/zoneServite'
 import { FaqSection } from '@/components/FaqSection'
+import { recensioni } from '@/lib/recensioni'
 import { ArrowRight } from 'lucide-react'
+
+const MAPS_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.123456789!2d9.259!3d45.062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787c3c3c3c3c3c3%3A0x0!2sVia+Enzo+Togni+75%2C+27043+Broni+PV!5e0!3m2!1sit!2sit!4v1234567890'
+
+// Sottoinsiemi diversi per pagina: evita di ripetere lo stesso blocco recensioni identico su tutte e tre le zone
+const recensioniPerZona: Record<'broni' | 'stradella' | 'casteggio', number[]> = {
+  broni: [0, 1],
+  stradella: [2, 3],
+  casteggio: [4, 5],
+}
 
 const C = {
   primary:   '#1A9EC9',
@@ -49,30 +60,21 @@ export function ZonaServitaPage({ slug }: { slug: 'broni' | 'stradella' | 'caste
   const zona = getZonaServita(slug)
   if (!zona) return null
 
-  const jsonLd = {
+  const jsonLdFaq = {
     '@context': 'https://schema.org',
-    '@type': 'PhysicalTherapist',
-    name: 'Studio Mantovan – Fisioterapia in Movimento',
-    url: `https://studio-mantovan.vercel.app/fisioterapia-${zona.slug}`,
-    telephone: '+393519242517',
-    email: 'studio.mantovan@gmail.com',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Via Enzo Togni 75',
-      addressLocality: 'Broni',
-      addressRegion: 'PV',
-      postalCode: '27043',
-      addressCountry: 'IT',
-    },
-    areaServed: ['Broni', 'Stradella', 'Casteggio', 'Oltrepò Pavese'],
-    priceRange: '€€',
-    description: zona.metaDescription,
-    founder: { '@type': 'Person', name: 'Umberto Mantovan' },
+    '@type': 'FAQPage',
+    mainEntity: zona.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   }
+
+  const recensioniZona = recensioniPerZona[slug].map((i) => recensioni[i])
 
   return (
     <div style={{ background: C.bg }}>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }} />
 
       {/* Hero */}
       <section style={{ paddingTop: '68px' }}>
@@ -153,6 +155,81 @@ export function ZonaServitaPage({ slug }: { slug: 'broni' | 'stradella' | 'caste
             </Link>
           </div>
           <CtaButton center mt="2.5rem" />
+        </div>
+      </section>
+
+      {/* Dove trovarmi — NAP + mappa */}
+      <section style={{ background: C.surface }}>
+        <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start">
+            <div style={{ borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', aspectRatio: '4/3', position: 'relative' }}>
+              <iframe
+                src={MAPS_EMBED_SRC}
+                width="100%" height="100%"
+                style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
+                allowFullScreen loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Studio Mantovan – Via Enzo Togni, 75, Broni PV, a pochi minuti da ${zona.citta}`}
+              />
+            </div>
+            <div style={{ background: C.white, borderRadius: C.radiusLg, padding: '2rem', boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}>
+              <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+                Dove trovarmi
+              </span>
+              <p style={{ marginTop: '0.75rem', fontWeight: 700, color: C.text, fontSize: '1rem' }}>
+                Studio Mantovan – Fisioterapia in Movimento
+              </p>
+              <p style={{ marginTop: '0.4rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7 }}>
+                Via Enzo Togni, 75, 27043 Broni PV
+              </p>
+              <p style={{ marginTop: '0.75rem', color: `${C.text}99`, fontSize: '0.92rem' }}>
+                📞 <a href="tel:+393519242517" style={{ color: C.text, textDecoration: 'none', fontWeight: 600 }}>351 924 2517</a>
+              </p>
+              <p style={{ marginTop: '0.4rem', color: `${C.text}99`, fontSize: '0.92rem' }}>
+                ✉️ <a href="mailto:studio.mantovan@gmail.com" style={{ color: C.text, textDecoration: 'none', fontWeight: 600 }}>studio.mantovan@gmail.com</a>
+              </p>
+              <a
+                href="https://maps.google.com/?q=Via+Enzo+Togni+75,+Broni+PV"
+                target="_blank" rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '1.25rem', fontSize: '0.88rem', fontWeight: 600, color: C.primary, textDecoration: 'none' }}
+              >
+                Apri in Google Maps <ArrowRight size={14} />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recensioni Google */}
+      <section style={{ background: C.bg }}>
+        <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4rem ${C.pad}` }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Cosa dicono di me
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3vw, 1.9rem)', fontWeight: 800, color: C.text, marginTop: '0.5rem' }}>
+              Recensioni Google verificate
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ maxWidth: '820px', margin: '0 auto' }}>
+            {recensioniZona.map((r, i) => (
+              <div key={i} style={{
+                background: C.white, borderRadius: C.radiusLg, padding: '1.75rem',
+                borderLeft: `4px solid ${C.secondary}`, boxShadow: '0 2px 12px rgba(0,0,0,0.04)',
+              }}>
+                <div style={{ color: '#FBBC04', fontSize: '0.9rem', letterSpacing: '2px', marginBottom: '0.75rem' }}>★★★★★</div>
+                <p style={{ fontFamily: 'var(--font-lora), Georgia, serif', fontStyle: 'italic', fontSize: '0.92rem', color: `${C.text}CC`, lineHeight: 1.7, margin: 0 }}>
+                  &ldquo;{r.testo}&rdquo;
+                </p>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '1.1rem', paddingTop: '1rem', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+                  <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: C.primary, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontSize: '12px', fontWeight: 700, flexShrink: 0 }}>
+                    {r.iniziali}
+                  </div>
+                  <div style={{ fontSize: '0.82rem', fontWeight: 700, color: C.text }}>{r.nome}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -4,6 +4,7 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Privacy Policy – Studio Mantovan',
   description: 'Informativa sul trattamento dei dati personali ai sensi del Regolamento UE 2016/679 (GDPR) – Studio Mantovan, Umberto Mantovan.',
+  alternates: { canonical: '/privacy' },
 }
 
 const C = {
@@ -38,7 +39,7 @@ export default function PrivacyPage() {
             </p>
             <InfoBox>
               <strong>Umberto Mantovan</strong> – Studio Mantovan, Fisioterapia in Movimento<br />
-              Via Enzo Togni 75, 27043 Broni (PV)<br />
+              Via Enzo Togni, 75, 27043 Broni PV<br />
               P.IVA 02842510188<br />
               Email: <a href="mailto:studio.mantovan@gmail.com" style={{ color: C.primary }}>studio.mantovan@gmail.com</a><br />
               Tel: <a href="tel:+393519242517" style={{ color: C.primary }}>351 924 2517</a>

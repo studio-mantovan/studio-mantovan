@@ -824,7 +824,7 @@ function CtaFinaleSection() {
             </a>
           </div>
           <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-            📍 Via Enzo Togni 75, 27043 Broni (PV)
+            📍 Via Enzo Togni, 75, 27043 Broni PV
           </p>
           <p style={{ marginTop: '0.35rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
             📞 351 924 2517 · ✉️ studio.mantovan@gmail.com

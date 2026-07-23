@@ -65,7 +65,7 @@ export default function Footer() {
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <span style={{ color: C.secondary, flexShrink: 0 }}>📍</span>
-              Via Enzo Togni 75, 27043 Broni (PV)
+              Via Enzo Togni, 75, 27043 Broni PV
             </li>
             <li>
               <a href="tel:+393519242517" style={{ display: 'flex', alignItems: 'center', gap: '10px', color: 'rgba(255,255,255,0.55)', textDecoration: 'none' }}>
