@@ -21,7 +21,7 @@ Mi chiamo Umberto Mantovan, sono un fisioterapista in libera professione e da ol
 
 ## Cos'è davvero una spondilolistesi
 
-Una spondilolistesi è una vertebra scivolata leggermente in avanti (o più raramente in altre direzioni) rispetto a quella sottostante. Succede più spesso tra L4 e L5, o tra L5 e S1 — gli stessi livelli coinvolti in molti casi di [sciatalgia](https://umbertomantovan.net/blog/sciatalgia-perche-il-fisioterapista-e-il-tuo-primo-alleato-e-non-la-risonanza/) e lombalgia.
+Una spondilolistesi è una vertebra scivolata leggermente in avanti (o più raramente in altre direzioni) rispetto a quella sottostante. Succede più spesso tra L4 e L5, o tra L5 e S1 — gli stessi livelli coinvolti in molti casi di [sciatalgia](https://umbertomantovan.net/blog/sciatalgia-perche-il-fisioterapista-e-il-tuo-primo-alleato-e-non-la-risonanza) e lombalgia.
 
 Non è un segno che la schiena è "rotta" o instabile: è solo una posizione diversa dal solito. Esistono vari gradi, misurati in base a quanto la vertebra è scivolata (classificazione di Meyerding):
 
@@ -44,11 +44,11 @@ Le indicazioni più comuni che vengono date a chi riceve questa diagnosi sono pi
 
 Questi consigli vengono dati quasi sempre a tutti, come se ogni spondilolistesi fosse uguale. Ma non è così: i gradi diversi vanno gestiti in modo diverso, e una diagnosi identica sulla carta può corrispondere a situazioni molto diverse nella vita reale.
 
-Ed evitare tutto quello che potrebbe far male non risolve nulla: aumenta solo la lista di cose che non riesci più a fare. Il corpo, protetto troppo a lungo, diventa più sensibile — non guarisce. È lo stesso meccanismo che ha vissuto [Federico](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena/) quando ha smesso del tutto di piegare la schiena per paura di una protrusione discale.
+Ed evitare tutto quello che potrebbe far male non risolve nulla: aumenta solo la lista di cose che non riesci più a fare. Il corpo, protetto troppo a lungo, diventa più sensibile — non guarisce. È lo stesso meccanismo che ha vissuto [Federico](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena) quando ha smesso del tutto di piegare la schiena per paura di una protrusione discale.
 
 ## Cosa dice la ricerca
 
-Una revisione della letteratura scientifica (Vanti et al., 2021) descrive come il legame tra quello che si vede in una risonanza e il dolore che senti sia molto spesso non sufficiente per spiegare il tuo dolore. L'immagine della tua schiena da sola non basta per decidere cosa puoi o non puoi fare — lo stesso principio che vale per il [dolore cronico](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico/) in generale: un referto non racconta la tua capacità di muoverti.
+Una revisione della letteratura scientifica (Vanti et al., 2021) descrive come il legame tra quello che si vede in una risonanza e il dolore che senti sia molto spesso non sufficiente per spiegare il tuo dolore. L'immagine della tua schiena da sola non basta per decidere cosa puoi o non puoi fare — lo stesso principio che vale per il [dolore cronico](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico) in generale: un referto non racconta la tua capacità di muoverti.
 
 Un altro dato interessante viene da uno studio controllato (Nava-Bringas et al., 2021) che ha confrontato due approcci molto diversi tra loro — esercizi di stabilizzazione lombare (addominali, core) ed esercizi di flessione — su persone con spondilolistesi degenerativa. Risultato: nessuna differenza significativa tra i due gruppi, né sul dolore né sulla disabilità. In altre parole, non esiste un singolo esercizio "magico" superiore a tutti gli altri.
 

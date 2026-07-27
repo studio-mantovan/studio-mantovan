@@ -37,7 +37,7 @@ Si raccomanda la visita specialistica neurologica quando si presenta a distanza 
 
 ## Secondo step: la prima valutazione fisioterapica
 
-Generalmente può essere svolta entro 3–7 giorni dall'incidente. Durante questa fase, si valuta la mobilità cervicale, la forza muscolare e lo stato di salute dei nervi — lo stesso tipo di valutazione che uso per chi arriva con [dolore al braccio che parte dal collo](https://umbertomantovan.net/blog/dolore-braccio-dal-collo/), anche se qui l'origine non è una radicolopatia ma un trauma.
+Generalmente può essere svolta entro 3–7 giorni dall'incidente. Durante questa fase, si valuta la mobilità cervicale, la forza muscolare e lo stato di salute dei nervi — lo stesso tipo di valutazione che uso per chi arriva con [dolore al braccio che parte dal collo](https://umbertomantovan.net/blog/dolore-braccio-dal-collo), anche se qui l'origine non è una radicolopatia ma un trauma.
 
 Questa impostazione è altamente raccomandata nell'approccio moderno al colpo di frusta, perché permette di capire da subito quali strategie accelerano il recupero e quali, invece, rischiano di rallentarlo.
 

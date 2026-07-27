@@ -42,7 +42,7 @@ Il dolore sciatico ha tratti distintivi che lo differenziano dal comune mal di s
 - **Natura del dolore:** spesso descritto come una scossa elettrica, un bruciore o un dolore acuto e trafittivo.
 - **Sintomi neurologici:** può essere accompagnato da parestesie (formicolio), intorpidimento o debolezza muscolare nella gamba colpita.
 
-Fare una risonanza nelle prime sei settimane dall'esordio del sintomo, in assenza di segnali d'allarme seri, non migliora né velocizza la guarigione. Anzi, leggere su un referto la parola "ernia" o "protrusione" può spaventare, farti sentire fragile, portarti alla cosiddetta [**kinesiofobia**](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico/) — la paura di muoversi a causa del dolore — e rallentare il normale recupero.
+Fare una risonanza nelle prime sei settimane dall'esordio del sintomo, in assenza di segnali d'allarme seri, non migliora né velocizza la guarigione. Anzi, leggere su un referto la parola "ernia" o "protrusione" può spaventare, farti sentire fragile, portarti alla cosiddetta [**kinesiofobia**](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico) — la paura di muoversi a causa del dolore — e rallentare il normale recupero.
 
 ## Il vecchio consiglio "stai fermo" è superato
 
@@ -54,7 +54,7 @@ Nella grande maggioranza dei casi, il decorso è favorevole anche se può durare
 
 ## "E se ho già la diagnosi di ernia o protrusione?"
 
-Vale la pena sfatare uno dei miti più duri a morire: l'ernia non è una condanna. La ricerca ci dice che nel **60–70% dei casi** il nostro organismo è in grado di riassorbirla spontaneamente. Il sistema immunitario la riconosce come un corpo estraneo e, nel tempo, la riduce. È quello che è successo, ad esempio, a [Federico](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena/), che aveva smesso di piegare la schiena per paura di una protrusione discale.
+Vale la pena sfatare uno dei miti più duri a morire: l'ernia non è una condanna. La ricerca ci dice che nel **60–70% dei casi** il nostro organismo è in grado di riassorbirla spontaneamente. Il sistema immunitario la riconosce come un corpo estraneo e, nel tempo, la riduce. È quello che è successo, ad esempio, a [Federico](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena), che aveva smesso di piegare la schiena per paura di una protrusione discale.
 
 Il ruolo del fisioterapista è proprio questo: creare le condizioni ideali — attraverso il movimento e il carico corretto — perché questo processo avvenga senza ostacoli.
 

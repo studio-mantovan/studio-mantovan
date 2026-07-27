@@ -19,13 +19,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: post.description,
     keywords: post.keywords,
     alternates: {
-      canonical: `/blog/${post.slug}/`,
+      canonical: `/blog/${post.slug}`,
     },
     openGraph: {
       type: 'article',
       title: post.title,
       description: post.description,
-      url: `/blog/${post.slug}/`,
+      url: `/blog/${post.slug}`,
     },
   }
 }
@@ -40,7 +40,7 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'MedicalWebPage',
     headline: post.title,
     description: post.description,
-    url: `https://umbertomantovan.net/blog/${post.slug}/`,
+    url: `https://umbertomantovan.net/blog/${post.slug}`,
     datePublished: post.date,
     dateModified: post.date,
     author: {

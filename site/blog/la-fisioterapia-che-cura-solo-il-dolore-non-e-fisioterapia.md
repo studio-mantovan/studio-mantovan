@@ -77,7 +77,7 @@ Puoi anche uscire senza più nessun fastidio dal mio studio, ma se continui a pe
 
 - "Ho una lesione alla spalla, quindi non posso sforzarla."
 - "Fare sport è rischioso per le mie ginocchia."
-- ["La mia schiena è fragile."](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena/)
+- ["La mia schiena è fragile."](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena)
 
 …quel dolore, presente o passato che sia, continuerà a condizionarti per sempre.
 

@@ -39,7 +39,7 @@ Federico ha quindi smesso del tutto di piegare la schiena per evitare di sentire
 
 ## La risonanza e la diagnosi
 
-Dopo circa due anni di episodi, Federico ha deciso di rivolgersi al suo ortopedico che gli ha prescritto una risonanza. L'esito ha mostrato una piccola [protrusione discale](https://umbertomantovan.net/blog/sciatalgia-perche-il-fisioterapista-e-il-tuo-primo-alleato-e-non-la-risonanza/) L4-L5 e L5-S1. Da lì è nata un'altra convinzione: "Se ho delle protrusioni, allora i miei blocchi ci sono per colpa loro" — e questa convinzione alimentava ancora di più il dolore e la paura di muoversi.
+Dopo circa due anni di episodi, Federico ha deciso di rivolgersi al suo ortopedico che gli ha prescritto una risonanza. L'esito ha mostrato una piccola [protrusione discale](https://umbertomantovan.net/blog/sciatalgia-perche-il-fisioterapista-e-il-tuo-primo-alleato-e-non-la-risonanza) L4-L5 e L5-S1. Da lì è nata un'altra convinzione: "Se ho delle protrusioni, allora i miei blocchi ci sono per colpa loro" — e questa convinzione alimentava ancora di più il dolore e la paura di muoversi.
 
 ## I primi trattamenti: il dolore sparisce, ma non il problema
 
@@ -61,7 +61,7 @@ Per due anni Federico ha trattato la sua schiena come se fosse di cristallo. Abb
 
 Federico era convinto che i suoi blocchi fossero colpa delle protrusioni viste in risonanza. Non ho cercato di convincerlo a parole: non aveva bisogno di una lezioncina, aveva bisogno di fare un'esperienza diretta.
 
-[Le paure non si cancellano con una spiegazione](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico/). Per questo abbiamo fatto un percorso in cui il movimento stesso diventava la prova concreta che la sua schiena potesse piegarsi senza bloccarsi. Solo così, passo dopo passo, Federico è riuscito ad allontanarsi da quel pensiero fisso.
+[Le paure non si cancellano con una spiegazione](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico). Per questo abbiamo fatto un percorso in cui il movimento stesso diventava la prova concreta che la sua schiena potesse piegarsi senza bloccarsi. Solo così, passo dopo passo, Federico è riuscito ad allontanarsi da quel pensiero fisso.
 
 ## I risultati
 
