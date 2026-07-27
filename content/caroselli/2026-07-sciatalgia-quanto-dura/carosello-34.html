@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Carosello 3:4 — Sciatalgia: neurodinamica e durata</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap');
+
+  :root{
+    --cream:      #F5F0EB;
+    --cream-2:    #FBF8F4;
+    --blue:       #1A9EC9;
+    --blue-soft:  #8FCBDE;
+    --green:      #5DBFB0;
+    --green-deep: #3A8C7F;
+    --coral:      #E8503A;
+    --ink:        #1F3A40;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: #E0DAD0;
+    font-family: 'Archivo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 0 120px;
+  }
+
+  .label{
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8a8676;
+    font-weight: 600;
+  }
+
+  /* 3:4 — 1080×1440 */
+  .slide{
+    width: 1080px;
+    height: 1440px;
+    background: var(--cream);
+    position: relative;
+    padding: 96px;
+    color: var(--ink);
+    overflow: hidden;
+    flex-shrink: 0;
+    transform: scale(0.4);
+    transform-origin: top center;
+    margin-bottom: -864px;
+  }
+
+  /* Progress bar — 8 segmenti */
+  .progress{
+    display: flex;
+    gap: 11px;
+    margin-bottom: 64px;
+  }
+  .progress span{
+    flex: 1; height: 10px; border-radius: 6px;
+    background: transparent;
+    border: 2px solid var(--blue-soft);
+  }
+  .progress span.done{ background: var(--blue); border-color: var(--blue); }
+  .progress span.now{ background: var(--green); border-color: var(--green); }
+
+  .accent-line{
+    width: 72px; height: 6px;
+    background: var(--coral);
+    border-radius: 3px;
+    margin-bottom: 28px;
+  }
+
+  .eyebrow{
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 32px;
+  }
+
+  .quote{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 82px;
+    line-height: 1.26;
+    color: var(--blue);
+    max-width: 880px;
+  }
+  .quote.small  { font-size: 68px; }
+  .quote.xsmall { font-size: 54px; }
+
+  .body-text{
+    font-size: 37px;
+    line-height: 1.68;
+    color: var(--ink);
+    max-width: 860px;
+    margin-top: 44px;
+  }
+  .body-text strong{ color: var(--blue); }
+
+  /* Steplist */
+  .steplist{
+    margin-top: 52px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+  }
+  .steplist-item{ display: flex; gap: 32px; align-items: flex-start; }
+  .steplist-num{
+    font-family: 'Fraunces', serif;
+    font-size: 48px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.4;
+    flex-shrink: 0;
+    width: 52px;
+  }
+  .steplist-text{
+    font-size: 35px;
+    line-height: 1.55;
+    max-width: 700px;
+    color: var(--ink);
+    padding-top: 4px;
+  }
+  .steplist-text strong{ color: var(--blue); }
+
+  /* Footer brand */
+  .footer{
+    position: absolute;
+    bottom: 96px; left: 96px; right: 96px;
+  }
+  .brand{
+    font-size: 24px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--blue);
+  }
+
+  /* Slide CTA */
+  .slide.cta{ background: var(--ink); color: var(--cream-2); }
+  .slide.cta .progress span{ border-color: rgba(251,248,244,0.28); }
+  .slide.cta .progress span.done,
+  .slide.cta .progress span.now{ background: var(--green); border-color: var(--green); }
+  .slide.cta .quote{ color: var(--cream-2); }
+  .slide.cta .body-text{ color: rgba(251,248,244,0.85); }
+
+  .cta-button{
+    margin-top: 52px;
+    display: inline-flex;
+    align-items: center;
+    background: var(--blue);
+    color: var(--cream-2);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    padding: 30px 60px;
+    border-radius: 100px;
+    width: fit-content;
+  }
+  .save-note{
+    margin-top: 36px;
+    font-size: 29px;
+    color: rgba(251,248,244,0.50);
+  }
+
+  /* ── Slide 1 — illustrazione nervo (full-bottom) ── */
+  .nerve-wrap{
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    height: 780px;
+    overflow: hidden;
+  }
+  .nerve-wrap svg{ display: block; width: 100%; height: 100%; }
+
+  /* Decorative ambient circles (stile percorsi) */
+  .deco{ position: absolute; border-radius: 50%; pointer-events: none; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 1 / 8 — HOOK ILLUSTRATO
+     Niente eyebrow — "Sciatalgia" È il titolo
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 1 / 8 — Hook</div>
+<div class="slide">
+  <!-- ambient decoration -->
+  <div class="deco" style="width:320px;height:320px;background:var(--blue);opacity:0.04;top:-80px;right:-80px;"></div>
+
+  <div class="progress">
+    <span class="now"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="accent-line"></div>
+
+  <!-- Titolo con Sciatalgia esplicito, no eyebrow -->
+  <p style="font-family:'Fraunces',serif; font-weight:600; font-size:108px; line-height:1.10; color:var(--blue);">Sciatalgia:</p>
+  <p style="font-family:'Fraunces',serif; font-weight:500; font-size:64px; line-height:1.22; color:var(--ink); max-width:820px; margin-top:16px;">il nervo che non riesce a scorrere.</p>
+  <p style="font-size:34px; line-height:1.6; color:var(--ink); opacity:0.65; max-width:780px; margin-top:36px;">
+    C'è qualcosa che quasi nessuno spiega. E che fa la differenza tra chi migliora e chi no.
+  </p>
+
+  <!-- Illustrazione SVG nervo sciatico -->
+  <div class="nerve-wrap">
+    <svg viewBox="0 0 1080 780" xmlns="http://www.w3.org/2000/svg">
+      <!-- Background glow blobs -->
+      <ellipse cx="700" cy="420" rx="360" ry="320" fill="rgba(26,158,201,0.05)"/>
+      <ellipse cx="240" cy="360" rx="180" ry="340" fill="rgba(31,58,64,0.03)"/>
+
+      <!-- ── COLONNA VERTEBRALE (sx, centrata a x=230) ── -->
+      <!-- Canale spinale (sottile linea centrale) -->
+      <rect x="218" y="30" width="24" height="530" rx="12" fill="rgba(143,203,222,0.16)"/>
+
+      <!-- V1 -->
+      <rect x="155" y="30" width="150" height="56" rx="12" fill="rgba(31,58,64,0.76)"/>
+      <rect x="178" y="86" width="104" height="14" rx="7" fill="#8FCBDE"/>
+      <!-- V2 -->
+      <rect x="155" y="100" width="150" height="56" rx="12" fill="rgba(31,58,64,0.76)"/>
+      <rect x="178" y="156" width="104" height="14" rx="7" fill="#8FCBDE"/>
+      <!-- V3 -->
+      <rect x="155" y="170" width="150" height="56" rx="12" fill="rgba(31,58,64,0.76)"/>
+      <rect x="178" y="226" width="104" height="14" rx="7" fill="#8FCBDE"/>
+      <!-- V4 (L4) — leggermente evidenziata -->
+      <rect x="148" y="240" width="164" height="62" rx="12" fill="rgba(31,58,64,0.88)"/>
+      <!-- Disco L4-L5 — INFIAMMATO (coral) -->
+      <ellipse cx="230" cy="322" rx="72" ry="26" fill="rgba(232,80,58,0.14)"/>
+      <rect x="168" y="302" width="124" height="22" rx="11" fill="#E8503A"/>
+      <!-- V5 (L5) — evidenziata -->
+      <rect x="148" y="324" width="164" height="62" rx="12" fill="rgba(31,58,64,0.88)"/>
+      <rect x="178" y="386" width="104" height="14" rx="7" fill="#8FCBDE"/>
+      <!-- V6 (S1) -->
+      <rect x="155" y="400" width="150" height="56" rx="12" fill="rgba(31,58,64,0.70)"/>
+      <!-- Sacro (stile più piatto) -->
+      <rect x="160" y="456" width="140" height="48" rx="12" fill="rgba(31,58,64,0.58)"/>
+      <rect x="166" y="504" width="128" height="42" rx="12" fill="rgba(31,58,64,0.44)"/>
+
+      <!-- Label L4-L5 -->
+      <text x="352" y="318" font-family="Arial,sans-serif" font-size="26" fill="#E8503A" font-weight="700" opacity="0.90">L4–L5</text>
+      <line x1="344" y1="312" x2="296" y2="312" stroke="#E8503A" stroke-width="2" opacity="0.55"/>
+      <!-- Anello di compressione -->
+      <circle cx="230" cy="313" r="58" fill="none" stroke="#E8503A" stroke-width="2" stroke-dasharray="6,5" opacity="0.28"/>
+
+      <!-- ── NERVO SCIATICO ── -->
+      <!-- Alone / glow -->
+      <path d="M 313,312 C 450,295 560,360 600,450 C 640,540 650,640 626,760"
+            stroke="#E8503A" stroke-width="20" fill="none" stroke-linecap="round" opacity="0.08"/>
+      <!-- Percorso principale -->
+      <path d="M 313,312 C 450,295 560,360 600,450 C 640,540 650,640 626,760"
+            stroke="#E8503A" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+      <!-- Ramo secondario (più sottile) -->
+      <path d="M 350,324 C 450,350 510,420 500,510 L 484,640"
+            stroke="#E8503A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.28"/>
+
+      <!-- Punti di sensibilizzazione lungo il nervo -->
+      <circle cx="440" cy="330" r="11" fill="#E8503A" opacity="0.55"/>
+      <circle cx="572" cy="430" r="9" fill="#E8503A" opacity="0.38"/>
+      <circle cx="620" cy="580" r="8" fill="#E8503A" opacity="0.25"/>
+
+      <!-- Label nervo sciatico -->
+      <text x="662" y="390" font-family="Arial,sans-serif" font-size="26" fill="#E8503A" opacity="0.72" font-style="italic">nervo sciatico</text>
+      <line x1="656" y1="383" x2="608" y2="358" stroke="#E8503A" stroke-width="1.5" opacity="0.38"/>
+
+      <!-- ── ONDE NEURODINAMICA (destra) — mobilità ── -->
+      <g transform="translate(756, 200)" opacity="0.55">
+        <path d="M 0,0 Q 35,-38 70,0 Q 105,38 140,0 Q 175,-38 210,0"
+              stroke="#5DBFB0" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M 0,52 Q 35,14 70,52 Q 105,90 140,52 Q 175,14 210,52"
+              stroke="#5DBFB0" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <path d="M 0,104 Q 35,66 70,104 Q 105,142 140,104 Q 175,66 210,104"
+              stroke="#5DBFB0" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+        <text x="105" y="148" font-family="Arial,sans-serif" font-size="20"
+              fill="#5DBFB0" text-anchor="middle" font-weight="700" letter-spacing="0.12em">NEURODINAMICA</text>
+      </g>
+    </svg>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 2 / 8 — La durata reale
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 2 / 8 — La durata reale</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">La durata reale</p>
+  <p class="quote small">"Mi hanno detto che passa in sei settimane. Sono al terzo mese."</p>
+  <p class="body-text">
+    Nella maggior parte dei casi la sciatalgia migliora nelle prime settimane. Ma in molti si prolunga oltre i tre mesi — non perché il nervo non vuole guarire, ma perché <strong>qualcosa nel mezzo blocca il processo</strong>.<br><br>
+    Capire quel "qualcosa" è il punto di partenza.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 3 / 8 — Il fattore paura
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 3 / 8 — La paura del movimento</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">I dati scientifici</p>
+  <p class="quote xsmall">La paura di muoversi prolunga il dolore più di quanto pensi.</p>
+  <p class="body-text">
+    Ricerche su migliaia di persone con sciatalgia mostrano una cosa chiara: chi mantiene alta la paura del movimento, a distanza di mesi, <strong>sta peggio</strong> di chi la riduce.<br><br>
+    Non è psicologia alternativa. È come funziona il sistema nervoso sotto stress persistente.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 4 / 8 — Il riposo
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 4 / 8 — Il riposo</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Il meccanismo</p>
+  <p class="quote small">Il riposo totale, a un certo punto, diventa parte del problema.</p>
+  <p class="body-text">
+    Nelle primissime ore, ridurre il carico ha senso. Poi no.<br><br>
+    Il riposo prolungato riduce la forza, aumenta la rigidità, e — soprattutto — <strong>conferma al sistema nervoso che muoversi fa male</strong>.<br><br>
+    Il cervello impara dall'esperienza, nel bene e nel male.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 5 / 8 — Neurodinamica: introduzione
+     (fattore dimenticato — di cui nessuno parla)
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 5 / 8 — Neurodinamica: introduzione</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Il fattore dimenticato</p>
+  <p class="quote xsmall">Oltre alla schiena, c'è il nervo. E il nervo deve potersi muovere.</p>
+  <p class="body-text">
+    Il nervo sciatico percorre tutta la gamba: dalla colonna lombare fino al piede. Per funzionare, deve <strong>scorrere liberamente</strong> tra i tessuti che lo circondano.<br><br>
+    Quando si infiamma o perde mobilità, diventa ipersensibile a qualsiasi movimento. Per questo stare seduti a lungo, piegarsi in avanti o camminare scatena il dolore — anche quando la schiena sta migliorando.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 6 / 8 — Come funziona la neurodinamica
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 6 / 8 — Come funziona la neurodinamica</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Neurodinamica</p>
+  <p class="quote xsmall">Come un filo in un tubo: se lo muovi nel modo giusto, si libera.</p>
+  <p class="body-text">
+    Le tecniche di mobilizzazione neurale — chiamate <strong>slider</strong> — fanno scorrere il nervo tra i tessuti senza stirarlo. Non sono massaggi. Non sono esercizi generici.<br><br>
+    Revisioni sistematiche recenti (2023–2024, oltre 20 studi clinici) mostrano che <strong>riducono dolore e disabilità</strong> nelle persone con sciatalgia, in aggiunta al trattamento fisioterapico convenzionale.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 7 / 8 — Le 3 cose che fanno la differenza (CLIMAX)
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 7 / 8 — Le 3 cose (climax)</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">La risposta</p>
+  <p class="quote xsmall" style="margin-bottom:0;">Chi migliora fa tre cose.</p>
+  <div class="steplist">
+    <div class="steplist-item">
+      <div class="steplist-num">1</div>
+      <div class="steplist-text"><strong>Capisce il dolore</strong> — non aspetta che "passi" senza sapere perché c'è</div>
+    </div>
+    <div class="steplist-item">
+      <div class="steplist-num">2</div>
+      <div class="steplist-text"><strong>Mobilizza il nervo</strong> — con tecniche mirate che restituiscono al nervo la capacità di scorrere</div>
+    </div>
+    <div class="steplist-item">
+      <div class="steplist-num">3</div>
+      <div class="steplist-text"><strong>Torna a muoversi</strong> — in modo guidato e progressivo, non evitando</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 8 / 8 — CTA
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 8 / 8 — CTA</div>
+<div class="slide cta">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span>
+  </div>
+  <div class="accent-line" style="background: var(--coral);"></div>
+  <p class="eyebrow" style="color: var(--green);">Il primo passo</p>
+  <p class="quote small">Se la sciatalgia non passa, c'è un motivo. E si può cambiare.</p>
+  <p class="body-text" style="margin-top: 36px; color: rgba(251,248,244,0.85);">
+    Parliamo di cosa ti impedisce di tornare alla vita di prima.<br>
+    La prima visita è gratuita.
+  </p>
+  <div class="cta-button">Scrivimi →</div>
+  <p class="save-note">Salva questo post — ti servirà rileggerlo.</p>
+</div>
+
+</body>
+</html>

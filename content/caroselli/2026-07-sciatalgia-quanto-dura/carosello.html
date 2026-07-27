@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Carosello — Sciatalgia: quanto dura davvero?</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap');
+
+  :root{
+    --cream:      #F5F0EB;
+    --cream-2:    #FBF8F4;
+    --blue:       #1A9EC9;
+    --blue-soft:  #8FCBDE;
+    --green:      #5DBFB0;
+    --green-deep: #3A8C7F;
+    --coral:      #E8503A;
+    --ink:        #1F3A40;
+  }
+
+  *{ box-sizing: border-box; margin: 0; padding: 0; }
+
+  body{
+    background: #E0DAD0;
+    font-family: 'Archivo', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+    padding: 48px 0 120px;
+  }
+
+  .label{
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #8a8676;
+    font-weight: 600;
+  }
+
+  /* Ogni slide è 1080×1080, scalata a 0.5 per anteprima */
+  .slide{
+    width: 1080px;
+    height: 1080px;
+    background: var(--cream);
+    position: relative;
+    padding: 84px;
+    color: var(--ink);
+    overflow: hidden;
+    flex-shrink: 0;
+    transform: scale(0.5);
+    transform-origin: top center;
+    margin-bottom: -540px;
+  }
+
+  /* Progress bar — 7 segmenti */
+  .progress{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 52px;
+  }
+  .progress span{
+    flex: 1; height: 10px; border-radius: 6px;
+    background: transparent;
+    border: 2px solid var(--blue-soft);
+  }
+  .progress span.done{ background: var(--blue); border-color: var(--blue); }
+  .progress span.now{ background: var(--green); border-color: var(--green); }
+
+  /* Accent line coral */
+  .accent-line{
+    width: 64px; height: 5px;
+    background: var(--coral);
+    border-radius: 3px;
+    margin-bottom: 24px;
+  }
+
+  /* Eyebrow */
+  .eyebrow{
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--green-deep);
+    margin-bottom: 28px;
+  }
+
+  /* Quote Fraunces */
+  .quote{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 78px;
+    line-height: 1.28;
+    color: var(--blue);
+    max-width: 880px;
+  }
+  .quote.small  { font-size: 64px; max-width: 820px; }
+  .quote.xsmall { font-size: 52px; max-width: 820px; }
+
+  /* Body text */
+  .body-text{
+    font-size: 36px;
+    line-height: 1.65;
+    color: var(--ink);
+    max-width: 820px;
+    margin-top: 40px;
+  }
+  .body-text strong{ color: var(--blue); }
+
+  /* Steplist */
+  .steplist{
+    margin-top: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+  }
+  .steplist-item{ display: flex; gap: 28px; align-items: flex-start; }
+  .steplist-num{
+    font-family: 'Fraunces', serif;
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--green-deep);
+    line-height: 1.4;
+    flex-shrink: 0;
+    width: 48px;
+  }
+  .steplist-text{
+    font-size: 33px;
+    line-height: 1.5;
+    max-width: 680px;
+    color: var(--ink);
+    padding-top: 4px;
+  }
+  .steplist-text strong{ color: var(--blue); }
+
+  /* Footer brand */
+  .footer{
+    position: absolute;
+    bottom: 84px; left: 84px; right: 84px;
+  }
+  .brand{
+    font-size: 22px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--blue);
+  }
+
+  /* Layout slide 1 — 2 colonne */
+  .slide-1-inner{
+    display: flex;
+    gap: 0;
+    height: calc(1080px - 84px - 84px - 52px - 10px);
+    align-items: stretch;
+  }
+  .slide-1-left{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 48px;
+  }
+  .slide-1-right{
+    width: 320px;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 20px 44px rgba(31,58,64,0.18);
+    flex-shrink: 0;
+    position: relative;
+  }
+  .slide-1-right img{
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    display: block;
+  }
+  .portrait-tag{
+    position: absolute;
+    right: 14px; bottom: 14px;
+    background: var(--coral);
+    color: var(--cream-2);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    padding: 10px 18px;
+    border-radius: 100px;
+    box-shadow: 0 8px 18px rgba(232,80,58,0.35);
+  }
+
+  /* Slide CTA (ultima) */
+  .slide.cta{ background: var(--ink); color: var(--cream-2); }
+  .slide.cta .progress span{ border-color: rgba(251,248,244,0.30); }
+  .slide.cta .progress span.done,
+  .slide.cta .progress span.now{ background: var(--green); border-color: var(--green); }
+  .slide.cta .quote{ color: var(--cream-2); }
+  .slide.cta .body-text{ color: rgba(251,248,244,0.85); }
+
+  .cta-button{
+    margin-top: 52px;
+    display: inline-flex;
+    align-items: center;
+    background: var(--blue);
+    color: var(--cream-2);
+    font-family: 'Archivo', sans-serif;
+    font-weight: 700;
+    font-size: 34px;
+    padding: 28px 52px;
+    border-radius: 100px;
+    width: fit-content;
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 1 / 7 — HOOK  (layout 2 colonne + ritratto)
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 1 / 7 — Hook</div>
+<div class="slide">
+  <div class="progress">
+    <span class="now"></span><span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="slide-1-inner">
+    <div class="slide-1-left">
+      <div class="accent-line"></div>
+      <p class="eyebrow">Sciatalgia</p>
+      <p class="quote" style="font-size:60px; color: var(--ink);">"Mi hanno detto che passa in sei settimane. Sono al terzo mese."</p>
+      <p style="font-size:36px; line-height:1.55; color:var(--ink); margin-top:36px;">
+        <strong style="color:var(--coral);">Il tempo da solo non basta.</strong><br>Ecco cosa fa davvero la differenza.
+      </p>
+    </div>
+    <div class="slide-1-right">
+      <img src="../../../photos/foto studio/f3-ritratto.jpg" alt="Umberto Mantovan - Fisioterapista Broni">
+      <div class="portrait-tag">Umberto Mantovan · Fisioterapista</div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 2 / 7 — La durata reale
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 2 / 7 — La durata reale</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">La durata reale</p>
+  <p class="quote small">Non esiste un calendario uguale per tutti.</p>
+  <p class="body-text">
+    Nella maggior parte dei casi la sciatalgia migliora nelle prime settimane. Ma in molti la situazione si prolunga oltre i tre mesi — non perché il nervo "non vuole guarire", ma perché <strong>qualcosa nel mezzo rallenta il processo</strong>.<br><br>
+    Capire quel "qualcosa" è il punto di partenza.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 3 / 7 — Il fattore prognostico
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 3 / 7 — Il fattore che cambia tutto</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">I dati scientifici</p>
+  <p class="quote xsmall">La paura di muoversi prolunga il dolore più di quanto pensi.</p>
+  <p class="body-text">
+    Ricerche su migliaia di persone con sciatalgia mostrano una cosa chiara: chi mantiene alta la paura del movimento, a distanza di mesi, <strong>sta peggio</strong> di chi la riduce.<br><br>
+    Non è psicologia alternativa. È come funziona il sistema nervoso sotto stress persistente.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 4 / 7 — Cosa rallenta il recupero
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 4 / 7 — Cosa rallenta il recupero</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Il meccanismo</p>
+  <p class="quote small">Il riposo totale, a un certo punto, diventa parte del problema.</p>
+  <p class="body-text">
+    Nelle primissime ore, ridurre il carico ha senso. Poi no.<br><br>
+    Il riposo prolungato riduce la forza, aumenta la rigidità, e — soprattutto — <strong>conferma al sistema nervoso che muoversi fa male</strong>. Il cervello impara dall'esperienza, nel bene e nel male.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 5 / 7 — Cosa accelera il recupero
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 5 / 7 — Cosa accelera il recupero</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Evidenze 2023–2025</p>
+  <p class="quote xsmall" style="margin-bottom:0;">Le persone che migliorano fanno tre cose.</p>
+  <div class="steplist">
+    <div class="steplist-item">
+      <div class="steplist-num">1</div>
+      <div class="steplist-text"><strong>Capiscono il dolore</strong> — non aspettano che "passi" senza sapere perché c'è</div>
+    </div>
+    <div class="steplist-item">
+      <div class="steplist-num">2</div>
+      <div class="steplist-text"><strong>Riducono la paura</strong> — tornano ai movimenti in modo guidato, non li evitano</div>
+    </div>
+    <div class="steplist-item">
+      <div class="steplist-num">3</div>
+      <div class="steplist-text"><strong>Caricano progressivamente</strong> — riaddestrare il corpo, non aspettarlo</div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 6 / 7 — La domanda giusta
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 6 / 7 — La domanda giusta</div>
+<div class="slide">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span><span></span>
+  </div>
+  <div class="accent-line"></div>
+  <p class="eyebrow">Una prospettiva diversa</p>
+  <p class="quote small">Non "quanto dura?"<br>Ma "cosa sto facendo nel frattempo?"</p>
+  <p class="body-text">
+    La sciatalgia non si risolve aspettando un calendario. Si risolve con un percorso che <strong>carica il corpo in modo progressivo</strong> e affronta le paure che tengono fermo il movimento.<br><br>
+    Il tempo è la cornice, non la risposta.
+  </p>
+  <div class="footer">
+    <div class="brand">Studio Mantovan · Fisioterapia a Broni</div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     SLIDE 7 / 7 — CTA
+═══════════════════════════════════════════════ -->
+<div class="label">Slide 7 / 7 — CTA</div>
+<div class="slide cta">
+  <div class="progress">
+    <span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="done"></span><span class="now"></span>
+  </div>
+  <div class="accent-line" style="background: var(--coral);"></div>
+  <p class="eyebrow" style="color: var(--green);">Il primo passo</p>
+  <p class="quote small">Se la sciatalgia non passa, c'è un motivo. E si può cambiare.</p>
+  <p class="body-text" style="margin-top: 32px; color: rgba(251,248,244,0.85);">
+    Parliamo di cosa ti impedisce di tornare alla vita di prima.<br>
+    La prima visita è gratuita.
+  </p>
+  <div class="cta-button">Scrivimi →</div>
+</div>
+
+</body>
+</html>
