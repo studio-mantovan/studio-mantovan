@@ -60,6 +60,8 @@ Un percorso di fisioterapia pre-operatoria efficace ti spiega cosa succede esatt
 
 Quando sai cosa aspettarti, non rimani spaventato o deluso, e segui il percorso con più tranquillità e consapevolezza.
 
+*(Se invece devi affrontare un'artroscopia al menisco, non una protesi, la logica del deficit muscolare da recuperare attivamente è la stessa: la trovi in [fisioterapia dopo l'artroscopia al menisco](https://umbertomantovan.net/blog/fisioterapia-dopo-artroscopia-menisco/).)*
+
 ## Aspettative realistiche: una delle chiavi per un buon risultato
 
 Molte persone pensano che la protesi sia come "cambiare un pezzo rotto": entro poche settimane tutto torna perfetto. La realtà è diversa:

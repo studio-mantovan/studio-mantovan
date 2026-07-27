@@ -41,7 +41,7 @@ Pensa al dolore come un'immagine riflessa in uno specchio: a volte il sistema ne
 
 Quando il dolore dura settimane o mesi, continuare a fermarsi può peggiorare la situazione: i muscoli perdono forza e resistenza, le articolazioni diventano più rigide, il cervello impara a collegare movimento e dolore anche quando il corpo non è più in pericolo.
 
-Questa convinzione alimenta la trappola della **kinesiofobia** — la paura di muoversi perché si teme che il movimento possa peggiorare il danno. Non è "pigrizia": è una paura radicata, spesso inconscia.
+Questa convinzione alimenta la trappola della **kinesiofobia** — la paura di muoversi perché si teme che il movimento possa peggiorare il danno. Non è "pigrizia": è una paura radicata, spesso inconscia — è quello che ha vissuto [Federico](https://umbertomantovan.net/blog/come-federico-ha-smesso-di-bloccarsi-con-la-schiena/) per due anni, e quello che spinge molte persone con [sciatalgia](https://umbertomantovan.net/blog/sciatalgia-perche-il-fisioterapista-e-il-tuo-primo-alleato-e-non-la-risonanza/) a smettere di muoversi del tutto.
 
 Questo meccanismo (il *Fear Avoidance Model*) descrive due strade possibili dopo un episodio doloroso:
 

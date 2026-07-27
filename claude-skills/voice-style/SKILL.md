@@ -400,7 +400,15 @@ Se un contatto scrive su WhatsApp e poi sparisce, un secondo messaggio dopo qual
 
 **Zone servite nella CTA — regola fissa:** la CTA finale (o quella subito prima) deve sempre menzionare le tre zone servite: *"Se abiti nella zona di Broni, Stradella, Casteggio o nei dintorni, vieni a trovarmi nel mio studio: la prima visita è totalmente gratuita."* Variarla articolo per articolo, ma mantenere sempre le tre città insieme.
 
-**Link interni obbligatori:** almeno una pagina di servizio pertinente (es. `/mal-di-schiena`), almeno un altro articolo correlato del blog, CTA finale verso WhatsApp/contatti. Anchor text sempre descrittivo, mai "clicca qui".
+**Link interni obbligatori — regola fissa, da verificare ad ogni nuovo articolo e ad ogni revisione:**
+
+1. **Ogni volta che un articolo nomina una condizione, un sintomo o un concetto già spiegato in un altro articolo del blog, deve linkarlo nel punto in cui lo nomina** — non solo in una sezione "correlati" a fine pagina. Esempio: se un articolo sulla sciatalgia nomina la kinesiofobia e questo concetto è già approfondito nell'articolo sul dolore cronico, la prima menzione di "kinesiofobia" diventa un link a quell'articolo. Non aspettare che l'argomento sia identico al 100% — basta che l'altro articolo lo tratti in modo utile per chi legge.
+2. **Ogni articolo deve linkare `/chi-sono`** almeno una volta, dove il contesto lo permette naturalmente (non forzato in apertura).
+3. **Ogni articolo deve linkare `/prenota`** almeno una volta oltre alla CTA finale, tipicamente nel punto in cui si parla della valutazione/prima visita.
+4. Anchor text sempre descrittivo, mai "clicca qui" — il testo del link deve poter stare in piedi da solo.
+5. **Quando scrivi o revisioni un articolo, controlla anche gli altri articoli già pubblicati**: se il nuovo articolo introduce un concetto che un articolo precedente avrebbe dovuto linkare e non lo fa, aggiungi il link anche lì (i link interni si costruiscono in entrambe le direzioni, non solo dal nuovo articolo verso i vecchi).
+
+In sintesi: almeno una pagina di servizio pertinente (es. `/mal-di-schiena`), `/chi-sono`, `/prenota`, e ogni altro articolo del blog che tratta un concetto nominato nel testo — non solo un link "correlati" generico a fine pagina.
 
 **Schema JSON-LD** — includi sempre nell'HTML:
 ```html

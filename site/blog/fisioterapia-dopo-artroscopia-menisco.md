@@ -140,6 +140,8 @@ Se non hai mai fatto fisioterapia dopo l'intervento — o se hai fatto qualche s
 
 Se abiti nella zona di Broni, Stradella, Casteggio o nei dintorni, vieni a trovarmi nel mio studio: **la prima visita è totalmente gratuita.** Ci vediamo, misuriamo la situazione reale e capiamo insieme — senza impegno — se e come un percorso di fisioterapia attiva può fare al caso tuo.
 
+*(Se invece stai per affrontare una protesi di ginocchio, non un'artroscopia, ho scritto una guida su [perché la fisioterapia prima dell'intervento è decisiva per il recupero](https://umbertomantovan.net/blog/fisioterapia-pre-operatoria-protesi-ginocchio/).)*
+
 → Scrivimi su WhatsApp: **351 924 2517**
 → Oppure [prenota la prima visita gratuita](https://umbertomantovan.net/prenota) — rispondo di persona entro 24 ore.
 

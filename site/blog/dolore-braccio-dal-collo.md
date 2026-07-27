@@ -88,7 +88,7 @@ L'istinto, quando qualcosa fa male, è fermarsi. Con la radicolopatia cervicale 
 Il meccanismo è semplice da capire: il dolore genera paura del movimento, la paura porta a evitare certe posizioni o attività, l'evitamento riduce ulteriormente la mobilità e la forza, e questo a sua volta mantiene — o peggiora — il dolore.
 **È un circolo che si autoalimenta.**
 
-C'è anche una componente che va oltre il fisico: ansia, paura del movimento e la tendenza a immaginare il peggio (quello che in letteratura si chiama *catastrofizzazione*) possono spiegare fino al 17% della disabilità percepita da chi vive questa condizione.
+C'è anche una componente che va oltre il fisico: ansia, paura del movimento e la tendenza a immaginare il peggio (quello che in letteratura si chiama [*catastrofizzazione*](https://umbertomantovan.net/blog/le-cose-che-nessuno-ti-ha-mai-detto-sul-dolore-cronico/)) possono spiegare fino al 17% della disabilità percepita da chi vive questa condizione.
 Non perché "è tutto nella tua testa" — il dolore è reale — ma perché il modo in cui lo interpretiamo influisce su quanto ci limita.
 
 ---
