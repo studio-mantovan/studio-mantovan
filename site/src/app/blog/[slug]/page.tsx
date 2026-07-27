@@ -84,8 +84,8 @@ export default async function BlogPostPage({ params }: Props) {
         <article
           className="mt-3
             [&_h1]:text-3xl [&_h1]:md:text-4xl [&_h1]:font-extrabold [&_h1]:text-brand-text [&_h1]:leading-tight [&_h1]:mb-6
-            [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-brand-text [&_h2]:mt-12 [&_h2]:mb-4
-            [&_h3]:text-lg [&_h3]:font-700 [&_h3]:text-brand-text [&_h3]:mt-8 [&_h3]:mb-3
+            [&_h2]:text-2xl [&_h2]:font-extrabold [&_h2]:text-brand-primary [&_h2]:mt-12 [&_h2]:mb-4
+            [&_h3]:text-lg [&_h3]:font-extrabold [&_h3]:text-brand-primary [&_h3]:mt-8 [&_h3]:mb-3
             [&_p]:text-brand-text/75 [&_p]:leading-relaxed [&_p]:mb-5 [&_p]:text-[1.05rem]
             [&_strong]:text-brand-text [&_strong]:font-700
             [&_em]:text-brand-text/85

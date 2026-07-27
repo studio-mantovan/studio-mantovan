@@ -249,6 +249,13 @@ Solo negli articoli di blog lunghi (mai in landing page o ads), un piccolo set s
 | 🎯 | CTA finale verso la prenotazione |
 | ⚠️ | avvertenza/limite del contenuto (es. "si riferisce solo a casi senza fratture") |
 
+### Formattazione HTML — regola fissa per ogni articolo del blog
+
+- **A capo dopo ogni frase, non solo dopo ogni paragrafo.** Dentro un `<p>` con più frasi, separa ogni frase con `<br>` (nel Markdown sorgente: fine riga con spazio finale, stesso pattern già usato in `dolore-braccio-dal-collo.html`). Non lasciare mai due o più frasi sulla stessa riga visiva senza interruzione — il testo deve "respirare" anche dentro il paragrafo.
+- **Più grassetto (`<strong>`) sui termini che meritano attenzione**: nomi di condizioni cliniche, numeri/percentuali, concetti chiave che il lettore deve ricordare. Non decorativo — solo dove aiuta la scansione visiva.
+- **Corsivo (`<em>`) per virgolettati, espressioni colloquiali o citazioni**: frasi che il paziente potrebbe dire ("mi hanno detto che..."), termini gergali messi in discussione, aggiunte a margine del discorso principale.
+- **Titoli e sottotitoli:** il colore e la dimensione sono già gestiti a livello di template (`site/src/app/blog/[slug]/page.tsx`) — H1 grande, H2/H3 in blu del brand (`text-brand-primary`) e in grassetto, più piccoli dell'H1 ma sempre più grandi del corpo del testo. Non serve intervenire manualmente nell'HTML del singolo articolo per questo, solo usare i tag `<h2>`/`<h3>` correttamente.
+
 ### Domande retoriche
 
 Una domanda retorica apre l'articolo o una sezione nuova. Non più di una ogni 2-3 paragrafi. La risposta arriva sempre — non si lascia il lettore in sospeso.
