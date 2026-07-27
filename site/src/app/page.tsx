@@ -143,7 +143,7 @@ function HeroSection() {
               Torna alle attività<br />
               <span style={{ color: C.primary }}>che davvero contano</span><br />
               con la{' '}
-              <span style={{ color: C.secondary }}>fisioterapia moderna.</span>
+              <span style={{ color: C.secondary }}>fisioterapia in movimento.</span>
             </h1>
           </FadeIn>
 
@@ -187,7 +187,7 @@ function HeroSection() {
             }}>
               <Image
                 src="/photos/f6-deadlift.jpg"
-                alt="Paziente che esegue uno stacco da terra con bilanciere seguito da Umberto Mantovan – fisioterapia attiva a Broni, Oltrepò Pavese"
+                alt="Paziente che esegue uno stacco da terra con bilanciere seguito da Umberto Mantovan – fisioterapia in movimento a Broni, Oltrepò Pavese"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
                 priority
@@ -583,12 +583,12 @@ function SoluzioneSection() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                 <div style={{ padding: '1rem 1.5rem', background: C.surface, borderBottom: `2px solid ${C.surface}` }}>
                   <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: `${C.text}66` }}>
-                    Fisioterapia standard
+                    Fisioterapia tradizionale
                   </span>
                 </div>
                 <div style={{ padding: '1rem 1.5rem', background: C.primary, borderBottom: `2px solid ${C.primaryDark}` }}>
                   <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.85)' }}>
-                    Studio Mantovan
+                    Fisioterapia in movimento
                   </span>
                 </div>
               </div>
