@@ -68,6 +68,7 @@ export default function HomePage() {
       <SoluzioneSection />
       <MetodoSection />
       <PerChiSection />
+      <QualificaSection />
       <PercorsiSection />
       <ChiSonoSection />
       <RecensioniSection />
@@ -141,9 +142,7 @@ function HeroSection() {
               margin: 0,
             }}>
               Torna alle attività<br />
-              <span style={{ color: C.primary }}>che davvero contano</span><br />
-              con la{' '}
-              <span style={{ color: C.secondary }}>fisioterapia moderna.</span>
+              <span style={{ color: C.primary }}>che contano davvero.</span>
             </h1>
           </FadeIn>
 
@@ -155,14 +154,34 @@ function HeroSection() {
               lineHeight: 1.8,
               maxWidth: '500px',
             }}>
-              Se soffri di dolore cronico, hai subito un infortunio o stai recuperando da un
-              intervento chirurgico, puoi tornare alle tue attività con un percorso riabilitativo
-              specifico per la tua condizione.
+              Se il dolore ti impedisce di lavorare, fare sport o vivere come vorresti, ti aiuto
+              a recuperare con un percorso riabilitativo costruito sulla tua situazione.
+            </p>
+            <p style={{
+              marginTop: '0.9rem',
+              fontSize: '1.05rem',
+              color: `${C.text}99`,
+              lineHeight: 1.8,
+              maxWidth: '500px',
+            }}>
+              Non seguo protocolli standard né percorsi uguali per tutti. Ogni seduta è
+              individuale e ha un solo obiettivo: aiutarti a tornare a fare ciò che per te ha valore.
             </p>
           </FadeIn>
 
+          <FadeIn delay={0.2}>
+            <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {['Prima visita gratuita', 'Sedute individuali 1:1', 'Nessun macchinario passivo'].map((t) => (
+                <div key={t} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                  <span style={{ color: C.secondary, fontWeight: 800, fontSize: '0.95rem' }}>✅</span>
+                  <span style={{ fontSize: '0.92rem', color: C.text, fontWeight: 600 }}>{t}</span>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
           <FadeIn delay={0.24}>
-            <CtaButton mt="2rem" />
+            <CtaButton mt="1.75rem" />
             <p style={{ marginTop: '0.6rem', fontSize: '0.78rem', color: `${C.text}55` }}>
               Rispondo di persona entro 24 ore · Nessuna lista d&apos;attesa
             </p>
@@ -377,24 +396,10 @@ function DoveTrovarmiSection() {
 
 /* ─────────────────── PER CHI È ─────────────────── */
 const profili = [
-  {
-    icon: '🌀',
-    tag: 'Dolore cronico',
-    titolo: 'Soffri di dolore cronico',
-    corpo: 'Lombalgia, cervicalgia, sciatalgia — un dolore che non passa mai davvero, che migliora per qualche settimana e poi torna. Magari hai già provato qualcosa, senza risultati duraturi. Con un percorso costruito sulla tua situazione reale impari a muoverti senza paura e torni alle attività che contano per te.',
-  },
-  {
-    icon: '⚡',
-    tag: 'Infortunio',
-    titolo: 'Hai subito un infortunio',
-    corpo: 'Una distorsione, una lesione muscolare, una tendinopatia che non guarisce. Sai che devi fare qualcosa ma non vuoi rischiare di peggiorare. Con un percorso graduato e progressivo torni allo sport o alle tue attività quotidiane nel modo più adatto alla tua condizione.',
-  },
-  {
-    icon: '🏥',
-    tag: 'Post-operatorio',
-    titolo: 'Stai recuperando da un intervento chirurgico',
-    corpo: 'Protesi, artroscopia, intervento alla schiena o alla spalla. Il recupero che fa la differenza non è quello che ti riporta a "stare discretamente" — è quello che ti riporta a fare. Con un percorso individuale costruito sulla tua situazione post-operatoria lavoriamo insieme per recuperare al meglio della tua condizione.',
-  },
+  'Hai un dolore che continua a tornare.',
+  'Ti sei infortunato e vuoi recuperare nel modo giusto.',
+  'Ti stai riprendendo dopo un intervento chirurgico.',
+  'Vuoi tornare a lavorare, fare sport o vivere senza che il dolore decida per te.',
 ]
 
 function PerChiSection() {
@@ -402,44 +407,29 @@ function PerChiSection() {
     <section style={{ background: C.text, color: '#fff', overflow: 'hidden' }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
-          <div style={{ marginBottom: '3rem' }}>
+          <div style={{ marginBottom: '3rem', maxWidth: '640px' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
               Per chi è
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#fff', marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Questo percorso fa per te se…
+              Questo percorso è pensato per te se…
             </h2>
           </div>
         </FadeIn>
 
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {profili.map((p, i) => (
+        <StaggerChildren className="flex flex-col gap-4 max-w-[640px]">
+          {profili.map((testo, i) => (
             <StaggerItem key={i}>
               <div style={{
+                display: 'flex', alignItems: 'center', gap: '1rem',
                 background: 'rgba(255,255,255,0.06)',
                 borderRadius: C.radiusLg,
-                padding: '2rem',
-                height: '100%',
-                display: 'flex', flexDirection: 'column',
+                padding: '1.25rem 1.5rem',
                 borderLeft: `3px solid ${C.secondary}`,
               }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{p.icon}</div>
-                <span style={{
-                  display: 'inline-block',
-                  background: `rgba(93,191,176,0.15)`,
-                  color: C.secondary,
-                  fontSize: '0.68rem', fontWeight: 700,
-                  textTransform: 'uppercase', letterSpacing: '0.1em',
-                  padding: '3px 10px', borderRadius: '50px',
-                  marginBottom: '0.75rem', alignSelf: 'flex-start',
-                }}>
-                  {p.tag}
-                </span>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.3 }}>
-                  {p.titolo}
-                </h3>
-                <p style={{ margin: 0, color: 'rgba(255,255,255,0.7)', fontSize: '0.88rem', lineHeight: 1.8, flex: 1 }}>
-                  {p.corpo}
+                <span style={{ color: C.secondary, fontWeight: 800, fontSize: '1.1rem', flexShrink: 0 }}>✔</span>
+                <p style={{ margin: 0, color: 'rgba(255,255,255,0.9)', fontSize: '1rem', lineHeight: 1.6 }}>
+                  {testo}
                 </p>
               </div>
             </StaggerItem>
@@ -457,9 +447,9 @@ function PerChiSection() {
 /* ─────────────────── IL PROBLEMA ─────────────────── */
 function ProblemaSection() {
   const problemPoints = [
-    'Sono troppo generici, non costruiti sulla tua situazione reale',
-    'Sono scollegati da quello che vuoi tornare a fare',
-    'Sono noiosi, difficili da seguire nel tempo',
+    'Si concentrano sul sintomo invece che sulla persona',
+    'Propongono esercizi generici scollegati dalla vita reale',
+    'Ti dicono cosa evitare invece di insegnarti come tornare a muoverti',
     'Non affrontano le paure e le abitudini che mantengono il problema',
   ]
 
@@ -472,9 +462,9 @@ function ProblemaSection() {
               Il problema
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Perché molte persone che fanno fisioterapia
+              Perché molte persone fanno fisioterapia…
               <br />
-              <span style={{ color: C.primary }}>non risolvono davvero il loro problema.</span>
+              <span style={{ color: C.primary }}>…ma il dolore continua a tornare.</span>
             </h2>
           </div>
         </FadeIn>
@@ -482,17 +472,21 @@ function ProblemaSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start" style={{ marginTop: '3rem' }}>
           <FadeIn direction="left">
             <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Hai presente quella sensazione di migliorare durante le sedute, e poi ricominciare
-              da capo appena finiscono?
+              Magari ti è già successo.<br />
+              Durante le sedute stavi meglio.<br />
+              Qualche settimana dopo eri di nuovo punto e a capo.
+            </p>
+            <p style={{ color: C.text, fontWeight: 700, lineHeight: 1.85, fontSize: '1.05rem', marginTop: '1.25rem' }}>
+              Il problema non è il tuo corpo.<br />
+              Spesso è il percorso.
+            </p>
+            <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', marginTop: '1.25rem' }}>
+              Molti trattamenti si concentrano soprattutto sul ridurre il dolore nel breve
+              periodo. Quando però il percorso finisce, non hai davvero recuperato la capacità
+              di fare ciò che conta per te.
             </p>
             <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', marginTop: '1rem' }}>
-              Non è sfortuna. È il limite di un modello che si concentra sul togliere il dolore
-              nel breve periodo — non sul darti gli strumenti per non ritrovarti nella stessa situazione.
-            </p>
-            <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', marginTop: '1rem' }}>
-              Il modello standard funziona così: terapie passive per ridurre il dolore, qualche
-              tecnica manuale, una lista di movimenti da evitare. E alla fine, un foglio con gli
-              esercizi da fare a casa. Tutto concentrato sul sintomo. Niente sulla persona.
+              Per questo il dolore torna e ricomincia tutto da capo.
             </p>
           </FadeIn>
 
@@ -504,7 +498,7 @@ function ProblemaSection() {
               boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
             }}>
               <p style={{ fontWeight: 700, color: C.text, marginBottom: '1.25rem', fontSize: '0.95rem' }}>
-                Perché quegli esercizi, nella maggior parte dei casi, non funzionano:
+                Molti percorsi…
               </p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
                 {problemPoints.map((p, i) => (
@@ -523,10 +517,12 @@ function ProblemaSection() {
               borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`,
               padding: '1.25rem 1.5rem',
             }}>
-              <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
-                Il risultato? Qualche settimana di miglioramento, poi il dolore torna. E ricomincia
-                il ciclo. Non perché il tuo caso sia difficile. Ma perché un percorso standardizzato
-                non risolve un problema specifico.
+              <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 700 }}>
+                Il risultato?
+              </p>
+              <p style={{ margin: '0.4rem 0 0', color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
+                Stai meglio per un po&apos;.<br />
+                Poi il dolore ritorna.
               </p>
             </div>
           </FadeIn>
@@ -538,13 +534,11 @@ function ProblemaSection() {
 
 /* ─────────────────── LA SOLUZIONE ─────────────────── */
 const confronto = [
-  { standard: 'Terapie passive: tecar, ultrasuoni, massaggi', studio: 'Esercizio terapeutico attivo, in seduta' },
-  { standard: 'Pacchetti da 10 sedute uguali per tutti', studio: 'Percorso costruito sulla tua situazione reale' },
-  { standard: 'Lista di movimenti da evitare', studio: 'Ritorno graduale a quello che vuoi tornare a fare' },
-  { standard: 'Esercizi a casa da fare da soli', studio: 'Indicazioni pratiche legate alle tue attività quotidiane' },
-  { standard: 'Si tratta il sintomo', studio: 'Si lavora sulla persona' },
-  { standard: 'Il paziente riceve', studio: 'Il paziente è protagonista del recupero' },
-  { standard: 'Torni ogni volta che il dolore si ripresenta', studio: 'Esci con gli strumenti per non aver più bisogno di me' },
+  { standard: 'Trattano soprattutto il dolore', studio: 'Ti aiutano a recuperare la funzione' },
+  { standard: 'Esercizi standard', studio: 'Percorso costruito sulla tua situazione' },
+  { standard: 'Ti dicono cosa evitare', studio: 'Ti insegnano a tornare a fare' },
+  { standard: 'Il paziente riceve', studio: 'Il paziente partecipa attivamente' },
+  { standard: 'L\'obiettivo è finire le sedute', studio: 'L\'obiettivo è renderti autonomo' },
 ]
 
 function SoluzioneSection() {
@@ -554,17 +548,20 @@ function SoluzioneSection() {
         <FadeIn>
           <div style={{ maxWidth: '720px', marginBottom: '3rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              La soluzione
+              La mia promessa
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Un approccio diverso esiste.
+              Il mio obiettivo non è farti fare più sedute.
               <br />
-              <span style={{ color: C.primary }}>Ecco su cosa si fonda il mio lavoro.</span>
+              <span style={{ color: C.primary }}>È aiutarti a non averne più bisogno.</span>
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Non si tratta di essere &ldquo;alternativi&rdquo; o di rifiutare la tradizione per principio.
-              Si tratta di fare quello che le evidenze scientifiche indicano come efficace —
-              e di farlo davvero, non a metà.
+              La fisioterapia dovrebbe renderti autonomo, non dipendente dal fisioterapista.
+            </p>
+            <p style={{ marginTop: '0.75rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
+              Per questo ogni percorso è costruito per riportarti gradualmente alle attività
+              che vuoi riprendere: lavorare, fare sport, giocare con i tuoi figli o semplicemente
+              vivere senza paura del dolore.
             </p>
           </div>
         </FadeIn>
@@ -583,7 +580,7 @@ function SoluzioneSection() {
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                 <div style={{ padding: '1rem 1.5rem', background: C.surface, borderBottom: `2px solid ${C.surface}` }}>
                   <span style={{ fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: `${C.text}66` }}>
-                    Fisioterapia standard
+                    Molti percorsi
                   </span>
                 </div>
                 <div style={{ padding: '1rem 1.5rem', background: C.primary, borderBottom: `2px solid ${C.primaryDark}` }}>
@@ -630,20 +627,20 @@ function SoluzioneSection() {
 const fasi = [
   {
     num: '01',
-    titolo: 'Prima visita gratuita: capire davvero cosa sta succedendo',
-    corpo: 'Non parto dalla tua diagnosi o dal tuo referto. Parto da te — dalla tua storia, da quello che hai già provato, da quello che non riesci più a fare. Nella prima visita ascolto, valuto e costruiamo insieme un quadro chiaro della tua situazione. Uscirai già con una comprensione diversa del tuo problema — indipendentemente da quello che deciderai di fare dopo.',
+    titolo: 'Prima visita gratuita',
+    corpo: 'Ascolto la tua storia, valuto la situazione e capiamo insieme cosa sta limitando il tuo recupero. Anche se deciderai di non iniziare il percorso, uscirai con una comprensione più chiara del tuo problema.',
     tag: 'Valutazione gratuita',
   },
   {
     num: '02',
-    titolo: 'Percorso attivo: sedute individuali, esercizio al centro',
-    corpo: 'Niente macchinari passivi, niente protocolli standard. Ogni seduta è costruita sulla tua situazione e si adatta settimana dopo settimana ai tuoi progressi. L\'esercizio terapeutico è lo strumento principale — progressivo, graduato, pensato per riportarti a fare quello che conta per te.',
+    titolo: 'Percorso riabilitativo',
+    corpo: 'Ogni seduta è individuale. Lavoriamo con esercizi progressivi e specifici per aiutarti a recuperare le attività che per te hanno valore.',
     tag: 'Percorso attivo',
   },
   {
     num: '03',
-    titolo: 'Seguito fino alla fine: nessun passo fatto da solo',
-    corpo: 'Ogni fase del percorso ha un inizio e una fine chiari. Ogni seduta ha un senso preciso nel percorso complessivo — e lo saprai anche tu. Quando il percorso finisce, finisce perché stai davvero bene — non perché le sedute sono finite.',
+    titolo: 'Ritorno alle tue attività',
+    corpo: 'Il percorso termina quando hai gli strumenti per continuare in autonomia. Perché il successo non è averti in studio. È vederti tornare alla tua vita.',
     tag: 'Autonomia',
   },
 ]
@@ -655,15 +652,13 @@ function MetodoSection() {
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Come lavoro
+              Come funziona
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Come funziona il percorso
+              Un percorso semplice.
+              <br />
+              Costruito intorno a te.
             </h2>
-            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '600px', marginLeft: 'auto', marginRight: 'auto' }}>
-              Se l&apos;obiettivo è renderti autonomo, il percorso deve essere costruito per
-              arrivarci — non per tenerti in studio il più a lungo possibile.
-            </p>
           </div>
         </FadeIn>
 
@@ -715,6 +710,26 @@ function MetodoSection() {
 
         <FadeIn delay={0.2}>
           <CtaButton center mt="3rem" />
+        </FadeIn>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────── QUALIFICA ─────────────────── */
+function QualificaSection() {
+  return (
+    <section style={{ background: C.bg }}>
+      <div style={{ maxWidth: '760px', margin: '0 auto', padding: `4rem ${C.pad}`, textAlign: 'center' }}>
+        <FadeIn>
+          <p style={{ fontSize: 'clamp(1.15rem, 2.2vw, 1.4rem)', color: `${C.text}99`, lineHeight: 1.7, fontWeight: 500 }}>
+            Se stai cercando qualcuno che ti faccia sdraiare sul lettino sperando che il dolore
+            passi da solo, probabilmente non sono il fisioterapista giusto per te.
+          </p>
+          <p style={{ marginTop: '1.25rem', fontSize: 'clamp(1.15rem, 2.2vw, 1.4rem)', color: C.text, lineHeight: 1.7, fontWeight: 700 }}>
+            Se invece vuoi capire il tuo problema e lavorare insieme per tornare alle attività
+            che contano davvero, <span style={{ color: C.primary }}>allora possiamo fare un ottimo lavoro.</span>
+          </p>
         </FadeIn>
       </div>
     </section>
