@@ -5,6 +5,7 @@ import { ResetButton } from './ResetButton'
 export const metadata: Metadata = {
   title: 'Cookie Policy – Studio Mantovan',
   description: 'Informativa sull\'uso dei cookie sul sito di Studio Mantovan – Umberto Mantovan, fisioterapista a Broni (PV).',
+  alternates: { canonical: '/cookie' },
 }
 
 const C = {

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Chi sono – Umberto Mantovan, fisioterapista a Broni',
   description:
     'Sono Umberto Mantovan, fisioterapista a Broni (PV). Ho aperto il mio studio a fine 2024 dopo anni di esperienza a Sanremo e in uno studio convenzionato. Approccio basato su evidenze, percorsi 1:1, prima visita gratuita.',
+  alternates: { canonical: '/chi-sono' },
 }
 
 const C = {

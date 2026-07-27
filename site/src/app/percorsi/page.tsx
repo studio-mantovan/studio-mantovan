@@ -6,6 +6,7 @@ export const metadata: Metadata = {
   title: 'Percorsi e tariffe',
   description:
     'Niente pacchetti da 10 sedute: percorsi di fisioterapia costruiti sul tempo che la tua condizione richiede. Prima visita gratuita.',
+  alternates: { canonical: '/percorsi' },
 }
 
 const C = {

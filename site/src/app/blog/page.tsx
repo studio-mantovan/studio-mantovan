@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Blog – Fisioterapia e movimento',
   description: 'Articoli su fisioterapia, dolore cronico, movimento e riabilitazione. Studio Mantovan, Broni.',
+  alternates: { canonical: '/blog' },
 }
 
 export default function BlogPage() {

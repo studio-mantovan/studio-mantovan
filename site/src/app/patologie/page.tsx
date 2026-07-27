@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react'
 export const metadata: Metadata = {
   title: 'Patologie trattate',
   description: 'Fisioterapia per lombalgia, sciatalgia, cervicalgia, dolore alla spalla, ginocchio e dolore cronico a Broni, Oltrepò Pavese.',
+  alternates: { canonical: '/patologie' },
 }
 
 export default function PatologiePage() {

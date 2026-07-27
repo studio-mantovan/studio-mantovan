@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: 'Zone servite — Broni, Stradella, Casteggio',
   description:
     'Studio Mantovan segue pazienti da Broni, Stradella, Casteggio e da tutto l\'Oltrepò Pavese. Scopri il mio legame con ciascuna zona e come raggiungere lo studio.',
+  alternates: { canonical: '/zone-servite' },
 }
 
 const C = {

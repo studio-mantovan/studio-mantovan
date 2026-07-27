@@ -186,10 +186,10 @@ function HeroSection() {
               boxShadow: '0 24px 64px rgba(0,0,0,0.12)',
             }}>
               <Image
-                src="/photos/f7-studio.jpg"
-                alt="Sala trattamento Studio Mantovan – fisioterapia a Broni, Oltrepò Pavese"
+                src="/photos/f6-deadlift.jpg"
+                alt="Paziente che esegue uno stacco da terra con bilanciere seguito da Umberto Mantovan – fisioterapia attiva a Broni, Oltrepò Pavese"
                 fill
-                style={{ objectFit: 'cover', objectPosition: 'center center', filter: 'brightness(1.15)' }}
+                style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
                 priority
                 sizes="(max-width: 768px) 100vw, 420px"
               />

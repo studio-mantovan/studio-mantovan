@@ -7,6 +7,7 @@ const zona = getZonaServita('broni')!
 export const metadata: Metadata = {
   title: zona.metaTitle,
   description: zona.metaDescription,
+  alternates: { canonical: '/fisioterapia-broni' },
 }
 
 export default function FisioterapiaBroniPage() {

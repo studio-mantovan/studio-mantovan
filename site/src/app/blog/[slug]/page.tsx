@@ -18,6 +18,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: post.title,
     description: post.description,
     keywords: post.keywords,
+    alternates: {
+      canonical: `/blog/${post.slug}/`,
+    },
+    openGraph: {
+      type: 'article',
+      title: post.title,
+      description: post.description,
+      url: `/blog/${post.slug}/`,
+    },
   }
 }
 
@@ -31,19 +40,19 @@ export default async function BlogPostPage({ params }: Props) {
     '@type': 'MedicalWebPage',
     headline: post.title,
     description: post.description,
-    url: `https://studio-mantovan.vercel.app/blog/${post.slug}/`,
+    url: `https://umbertomantovan.net/blog/${post.slug}/`,
     datePublished: post.date,
     dateModified: post.date,
     author: {
       '@type': 'Person',
       name: 'Umberto Mantovan',
       jobTitle: 'Fisioterapista',
-      url: 'https://studio-mantovan.vercel.app',
+      url: 'https://umbertomantovan.net',
     },
     publisher: {
       '@type': 'LocalBusiness',
       name: 'Studio Mantovan – Fisioterapia in Movimento',
-      url: 'https://studio-mantovan.vercel.app',
+      url: 'https://umbertomantovan.net',
       telephone: '+393519242517',
       address: {
         '@type': 'PostalAddress',
