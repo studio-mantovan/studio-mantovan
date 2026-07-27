@@ -64,10 +64,10 @@ export default function HomePage() {
       <HeroSection />
       <ProofStrip />
       <DoveTrovarmiSection />
-      <PerChiSection />
       <ProblemaSection />
       <SoluzioneSection />
       <MetodoSection />
+      <PerChiSection />
       <PercorsiSection />
       <ChiSonoSection />
       <RecensioniSection />
