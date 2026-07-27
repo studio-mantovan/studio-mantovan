@@ -14,7 +14,7 @@ stato: rivisto
 **Autrice:** Chiara Dosio, fondatrice di Unconventional
 **Data rielaborazione:** 2026-06-11
 
-**Connessioni vault:** [[copywriting-rules]] (formula narrativa e CTA), [[voice-style]] (tono e comunicazione autentica), [[instagram-carousel]] (repurposing dei contenuti in slide), [[blog-article]] (rielaborazione video in articolo SEO)
+**Connessioni vault:** [[voice-style]] (formula narrativa e CTA), [[voice-style]] (tono e comunicazione autentica), [[instagram-carousel]] (repurposing dei contenuti in slide), [[blog-article]] (rielaborazione video in articolo SEO), [[personal-branding-caleb-ralston]] (framework di posizionamento e Contrarian Belief, complementare al meccanismo di acquisizione descritto qui)
 
 ---
 
@@ -84,7 +84,7 @@ Documentare il proprio percorso: alti, bassi, difficoltà, traguardi. Portare le
 
 Target chiaro, offerta comunicata in modo comprensibile, differenziazione percepita. Non viene esploso in profondità nel corso (è molto custom per singola situazione), ma la premessa è che qualsiasi confusione interna su questi elementi si ripercuote nella comunicazione. Una consulenza one-to-one è consigliata se c'è incertezza qui. La biografia è il biglietto da visita: la prima riga deve spiegare perché un bambino delle elementari dovrebbe darti i soldi.
 
-> Vedi [[copywriting-rules]] per la formula PAS e le regole hero section applicabili alla bio Instagram e alla landing page.
+> Vedi [[voice-style]] per la formula PAS e le regole hero section applicabili alla bio Instagram e alla landing page.
 
 ---
 
@@ -159,7 +159,7 @@ Non esiste un numero di follower o interazioni che "fa convertire" un profilo: l
 - **Post pinnati**: autorevolezza, certezza del risultato, storia personale.
 - **Link in bio**: massimo due link. Se non sai cosa mettere, metti WhatsApp Business o link di prenotazione call diretta. Non mettere form di candidatura se hai poco volume: prima porta gente, poi scremala.
 
-> Per le regole di struttura della bio e delle CTA vedi [[copywriting-rules]].
+> Per le regole di struttura della bio e delle CTA vedi [[voice-style]].
 
 ### Spettro proattivo → reattivo
 

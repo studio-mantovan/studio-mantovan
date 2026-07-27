@@ -1,7 +1,7 @@
 # Lombalgia Cronica Disabilitante & Cognitive Functional Therapy (CFT)
 > File di riferimento clinico — Umberto Mantovan, Fisioterapista  
 > Percorso: `knowledge-base/lombalgia-cronica-cft.md`  
-> Correlati: [[landing-page-style]] · [[copywriting-rules]]  
+> Correlati: [[landing-page-style]] · [[voice-style]]  
 > Aggiornato a: giugno 2025  
 > Fonti: tesi su CFT (2025) + letteratura scientifica 2023–2025
 

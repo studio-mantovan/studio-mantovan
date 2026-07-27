@@ -128,7 +128,7 @@ Frasi significative pronunciate nel video (in corsivo, con attribuzione).
 ## Step 6 — Wiki-link Obsidian nella rielaborazione
 
 Prima di salvare, cercare nel vault file correlati al contenuto del video e aggiungere wiki-link sostanziali. Esempi:
-- Video su comunicazione/marketing → [[voice-style]], [[copywriting-rules]], [[instagram-carousel]]
+- Video su comunicazione/marketing → [[voice-style]], [[voice-style]], [[instagram-carousel]]
 - Video clinico su patologia → file corrispondente in `knowledge-base/`
 - Video su contenuti/blog → [[blog-article]]
 

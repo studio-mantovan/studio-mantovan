@@ -1,6 +1,6 @@
 # Guida Deploy — Sito Next.js + GitHub + Vercel
 
-*Correlati: [[landing-page-style]] · [[brand-colors]] · [[copywriting-rules]]*
+*Correlati: [[landing-page-style]] · [[brand-colors]] · [[voice-style]]*
 
 ---
 

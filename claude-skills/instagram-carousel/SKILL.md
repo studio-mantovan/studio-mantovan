@@ -83,19 +83,9 @@ Il formato carosello è ideale perché:
 - **Logo/handle**: sempre visibile, discreto, in basso a destra o sinistra
 ---
 ## 4. Regole di copy e tono
-Derivate dalla filosofia clinica e comunicativa di Studio Mantovan:
-### MAI scrivere
-- "movimenti sbagliati" o "movimenti giusti" — non esistono movimenti sbagliati in assoluto
-- "abbassare il dolore" come unico obiettivo — l'obiettivo è tornare a fare ciò che conta
-- "il massaggio risolve" o "la terapia passiva guarisce"
-- Termini spaventosi: "ernia pericolosa", "nervo compromesso", "lesione grave"
-- Promesse di guarigione rapida o garantita
-### SEMPRE scrivere
-- Prima persona: "il mio approccio", "lavoro con i miei pazienti"
-- Focus su attività reali del paziente: "tornare a correre", "giocare con i tuoi figli", "stare seduto senza dolore"
-- Credenze da sfidare: "contrariamente a quello che si pensa..."
-- Evidence-based senza essere pedante: "la ricerca ci dice che..."
-- Tono caldo, diretto, mai condescendente
+
+**Leggi sempre prima:** `claude-skills/voice-style/SKILL.md` — file unico e obbligatorio per tono, voce e regole cliniche assolute (§4: cosa non scrivere mai, cosa includere sempre, modello clinico di riferimento). Non ripetuto qui per evitare versioni duplicate. Vedi anche §11 di quel file per le regole specifiche del formato carosello (repurposing da blog, struttura slide-per-slide del copy).
+
 ### Lunghezza del testo per slide
 - Hook: 5-10 parole
 - Slide informative: 15-35 parole

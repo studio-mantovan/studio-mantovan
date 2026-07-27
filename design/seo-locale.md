@@ -1,6 +1,6 @@
 # Studio Mantovan — SEO Locale: Guida Operativa per Landing Page
 
-*Correlati: [[landing-page-style]] · [[copywriting-rules]] · [[tecniche-design]] · [[brand-colors]]*
+*Correlati: [[landing-page-style]] · [[voice-style]] · [[tecniche-design]] · [[brand-colors]]*
 
 ---
 
@@ -99,7 +99,7 @@ Google riconosce immediatamente le pagine copia-incolla con solo il nome città 
 
 ### Tono e stile
 
-Coerente con la filosofia Studio Mantovan — vedi [[copywriting-rules]]:
+Coerente con la filosofia Studio Mantovan — vedi [[voice-style]]:
 - Linguaggio diretto, educativo, che sfida credenze comuni
 - Focus sul "perché", non solo sul "cosa"
 - Prima o seconda persona: mai generico/istituzionale

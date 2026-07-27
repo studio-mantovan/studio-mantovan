@@ -1,6 +1,6 @@
 # Studio Mantovan — Linee Guida per Landing Page
 
-*Correlati: [[copywriting-rules]] · [[tecniche-design]] · [[brand-colors]] · [[local-seo-landing-page]]*
+*Correlati: [[voice-style]] · [[tecniche-design]] · [[brand-colors]] · [[local-seo-landing-page]]*
 
 ---
 

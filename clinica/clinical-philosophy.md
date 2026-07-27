@@ -4,7 +4,7 @@
 > È la fonte unica di identità, valori, approccio clinico e tono di voce.
 > Ultimo aggiornamento: giugno 2026
 
-**File correlati nel vault:** [[copywriting-rules]] (formula PAS, CTA, hero section), [[voice-style]] (tono, registro, parole chiave di brand), [[landing-page-style]] (struttura visiva e componenti), [[lombalgia-cronica-cft]] (approfondimento clinico CFT), [[radicolopatia-cervicale]] (approfondimento clinico cervicale)
+**File correlati nel vault:** [[voice-style]] (formula PAS, CTA, hero section), [[voice-style]] (tono, registro, parole chiave di brand), [[landing-page-style]] (struttura visiva e componenti), [[lombalgia-cronica-cft]] (approfondimento clinico CFT), [[radicolopatia-cervicale]] (approfondimento clinico cervicale), [[spalla-cuffia-rotatori-rcrsp]] (approfondimento clinico spalla/RCRSP)
 
 ---
 

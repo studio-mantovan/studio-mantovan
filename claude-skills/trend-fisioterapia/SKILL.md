@@ -85,7 +85,7 @@ strumento di ricerca web nativo di Claude Code per:
 Prima di proporre un argomento, verificalo contro le regole editoriali del
 vault: `marketing/content-rules-v2.md` [[content-rules-v2]],
 `clinica/clinical-philosophy.md` [[clinical-philosophy]],
-`copy/copywriting-rules.md` [[copywriting-rules]]. Scarta o riformula se
+`copy/copywriting-rules.md` [[voice-style]]. Scarta o riformula se
 l'argomento porterebbe a:
 - promettere risultati specifici o guarigione
 - parlare di "movimento corretto/scorretto"

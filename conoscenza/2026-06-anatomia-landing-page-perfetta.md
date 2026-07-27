@@ -174,9 +174,10 @@ Per generare lead qualificati (specialmente per servizi professionali e coaching
 
 ## Link correlati nel vault
 
+- [[strategie-avanzate-landing-page-hormozi-miller-cattoni]] — approfondimento: Value Equation, StoryBrand, dati opt-in vs sales page, metodologia di test
 - [[landing-page-style]] — palette, font, mood visivo, componenti CSS per Studio Mantovan
-- [[copywriting-rules]] — formula PAS, hero section, CTA, errori da non fare
-- [[copywriting-medico-sanitario]] — 13 principi operativi adattati al contesto sanitario
+- [[voice-style]] — formula PAS, hero section, CTA, errori da non fare
+- [[voice-style]] — 13 principi operativi adattati al contesto sanitario
 - [[voice-style]] — tono, registro, parole chiave di brand
 - [[clinical-philosophy]] — identità e valori clinici da cui ogni landing deve partire
 - [[brand-colors]] — #1A9EC9, #5DBFB0, logo ufficiale

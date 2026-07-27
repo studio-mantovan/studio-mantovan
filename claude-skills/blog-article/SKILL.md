@@ -4,7 +4,8 @@ description: >
   Usa questa skill ogni volta che devi creare un articolo di blog per Studio Mantovan.
   Triggera quando l'utente menziona: articolo, blog, post sito, contenuto SEO, testo sito,
   pagina approfondimento, guida, articolo su [argomento clinico].
-  Contiene linee guida editoriali, regole SEO on-page, filosofia clinica e workflow completo.
+  Contiene regole SEO on-page, struttura narrativa e workflow completo. Per tono, voce e
+  regole cliniche assolute rimanda a claude-skills/voice-style/SKILL.md.
 ---
 # Blog Article — Skill Operativa
 # Studio Mantovan – Fisioterapia in Movimento
@@ -18,42 +19,14 @@ Ogni articolo ha tre funzioni simultanee:
 3. **Convertire** — portare il lettore a contattare lo studio per la prima visita gratuita
 Un articolo ben fatto non è un testo promozionale. È una risposta autorevole e utile a una domanda reale che una persona sta cercando su Google.
 ---
-## 2. Filosofia clinica — Regole assolute di contenuto
-Queste regole derivano direttamente dall'approccio clinico di Umberto Mantovan e non possono mai essere violate, indipendentemente dall'argomento trattato.
-### MAI scrivere
-- "movimenti sbagliati" o "movimenti corretti" — non esistono movimenti sbagliati in assoluto per la maggior parte delle condizioni muscoloscheletriche
-- "abbassare il dolore" come unico obiettivo — l'obiettivo è tornare alle attività che contano
-- Termini catastrofici: "ernia pericolosa", "nervo schiacciato in modo grave", "lesione irreversibile"
-- Promesse di guarigione rapida, certa o garantita
-- "La terapia passiva risolve il problema" — massage, tecar, laser, ultrasuoni come soluzioni definitive
-- "Devi fare X sedute" — nessun pacchetto standardizzato
-- "Il riposo è la cura" — salvo casi specifici documentati (es. fase acuta post-chirurgica)
-- Il nome dello studio o il brand al posto della prima persona ("Studio Mantovan consiglia" → "ti consiglio")
-### SEMPRE includere
-- Il dolore come fenomeno complesso: biologico, psicologico, sociale (senza necessariamente citare il modello biopsicosociale esplicitamente)
-- Il movimento come medicina: attivo, progressivo, personalizzato
-- Il paziente come protagonista del suo recupero
-- Il focus sulle attività reali: "tornare a correre", "dormire senza svegliarti", "portare i tuoi figli a scuola"
-- L'approccio 1:1 e la valutazione individuale come valore differenziante
-- La prima visita gratuita nella CTA finale
-### Modello clinico di riferimento
-- **Dolore cronico/persistente**: Cognitive Functional Therapy (CFT, O'Sullivan) — dolore ≠ danno tissutale, sistema nervoso sensibilizzato, importanza del contesto e delle credenze
-- **Fisioterapia attiva**: esercizio terapeutico come intervento principale, non accessorio
-- **Evidence-based**: fare riferimento implicito alla letteratura recente senza citazioni accademiche pedanti (a meno che l'articolo non sia esplicitamente divulgativo-scientifico)
-- **Return to sport / return to activity**: obiettivo funzionale, non solo sintomatico
+## 2. Tono, voce e regole cliniche assolute
+
+**Leggi sempre prima:** `claude-skills/voice-style/SKILL.md` — file unico e obbligatorio per tono, voce, regole cliniche assolute (§4), struttura narrativa degli articoli lunghi (§6: hook, autopresentazione, myth-busting/case-study, chiusura, emoji, analogie) e regole per canale blog (§11). Non ripetuto qui per evitare versioni duplicate.
+
+Questa skill copre solo ciò che è specifico del blog: SEO on-page, workflow di produzione, schema markup, argomenti editoriali. Per qualsiasi dubbio su tono o linguaggio da evitare, la fonte è sempre `voice-style/SKILL.md`.
+
 ---
-## 3. Tono e stile editoriale
-### Voce
-- **Prima persona singolare**: "lavoro con i miei pazienti", "nella mia esperienza", "ti spiego"
-- Mai terza persona o brand ("il fisioterapista consiglia", "Studio Mantovan propone")
-- Tono: competente ma accessibile, diretto senza essere freddo, mai condescendente
-### Registro linguistico
-- Livello: paziente adulto intelligente, non medico
-- Termini tecnici: usabili, ma sempre spiegati subito dopo con una frase semplice
-- Frasi brevi (max 20-25 parole). Paragrafi brevi (max 4-5 righe).
-- Evitare il "giornalese": niente frasi passive, niente nominalizzazioni inutili
-- Preferire il concreto all'astratto: "sollevare una borsa della spesa" invece di "attività quotidiane"
-### Struttura del testo
+## 3. Struttura del testo
 - Usa titoli H2 e H3 chiari, non creativi: devono rispondere a una domanda reale
 - Usa elenchi puntati per liste di 3+ elementi
 - Usa grassetto per concetti chiave (non decorativo)
