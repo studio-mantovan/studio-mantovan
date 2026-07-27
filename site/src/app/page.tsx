@@ -722,35 +722,6 @@ function MetodoSection() {
 }
 
 /* ─────────────────── PERCORSI ─────────────────── */
-const percorsi = [
-  {
-    icon: '🌀',
-    tag: 'Dolore persistente · Condizione cronica',
-    titolo: 'Dolore persistente',
-    corpo: 'Lombalgia cronica, cervicalgia, sciatalgia, cervico-brachialgia.',
-    durata: '3–6 mesi',
-    bonus: 'Completando il percorso: 1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento',
-    bonusColore: C.secondary,
-  },
-  {
-    icon: '⚡',
-    tag: 'Infortunio · Fase subacuta',
-    titolo: 'Infortunio',
-    corpo: 'Distorsioni, lesioni muscolari, tendiniti.',
-    durata: '2–8 settimane',
-    bonus: 'Completando il percorso: valutazione "return to activity" gratuita a 30 giorni dal termine',
-    bonusColore: C.primary,
-  },
-  {
-    icon: '🏥',
-    tag: 'Post-operatorio · Riabilitazione',
-    titolo: 'Post-operatorio',
-    corpo: 'Protesi di ginocchio, protesi di anca, artroscopia di spalla, fratture.',
-    durata: '2–6 mesi',
-    bonus: 'Completando il percorso: check-up gratuito entro 6 mesi dal termine',
-    bonusColore: C.secondary,
-  },
-]
 
 function PercorsiSection() {
   return (
@@ -759,123 +730,92 @@ function PercorsiSection() {
 
         {/* Intestazione */}
         <FadeIn>
-          <div style={{ maxWidth: '680px', marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              I percorsi
+              Le opzioni di pagamento
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Non compri sedute.
-              <br />
-              <span style={{ color: C.primary }}>Entri in un percorso.</span>
+              A seconda delle tue necessità, ho pensato a tre tipologie di percorso.
             </h2>
-            <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Le linee guida internazionali per i disturbi muscolo-scheletrici parlano di settimane
-              e mesi — mai di un numero fisso di appuntamenti. Per questo non trovi pacchetti:
-              trovi percorsi strutturati sul tempo reale che la tua condizione richiede.
+            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto', fontSize: '1rem' }}>
+              Nessun vincolo contrattuale: puoi interrompere il percorso in qualsiasi momento, senza penali né conguagli.
             </p>
           </div>
         </FadeIn>
 
-        {/* Card percorsi */}
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {percorsi.map((p, i) => (
-            <StaggerItem key={i}>
-              <div style={{
-                background: C.white,
-                borderRadius: C.radiusLg,
-                padding: '2rem',
-                height: '100%',
-                display: 'flex', flexDirection: 'column',
-                boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-                border: `1px solid rgba(0,0,0,0.04)`,
-              }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>{p.icon}</div>
+        {/* Card tipologie di pagamento */}
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <StaggerItem>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: `5px solid ${C.primary}`,
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📌</div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Seduta per seduta
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Paghi ogni seduta singolarmente dopo l&apos;appuntamento. Nessun impegno anticipato.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: C.primary, fontWeight: 600, marginTop: 'auto' }}>
+                Ideale per controlli post-riabilitazione
+              </p>
+            </div>
+          </StaggerItem>
 
-                <span style={{
-                  display: 'inline-block',
-                  background: `rgba(93,191,176,0.12)`,
-                  color: C.secondary,
-                  fontSize: '0.65rem', fontWeight: 700,
-                  textTransform: 'uppercase', letterSpacing: '0.1em',
-                  padding: '3px 10px', borderRadius: '50px',
-                  marginBottom: '0.75rem', alignSelf: 'flex-start',
-                }}>
-                  {p.tag}
-                </span>
+          <StaggerItem>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: `5px solid ${C.secondary}`,
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📅</div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Mensile
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Paghi mese per mese in base alla frequenza consigliata. Costo per seduta ridotto.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#3A8C7F', fontWeight: 600, marginTop: 'auto' }}>
+                Bonus: check-up gratuiti + sconto seduta. Ideale per condizioni acute e infortuni
+              </p>
+            </div>
+          </StaggerItem>
 
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text, lineHeight: 1.35, marginBottom: '0.5rem' }}>
-                  {p.titolo}
-                </h3>
-                <p style={{ fontSize: '0.85rem', color: `${C.text}77`, lineHeight: 1.6, marginBottom: '1.5rem', flex: 1 }}>
-                  {p.corpo}
-                </p>
-
-                {/* Durata */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
-                  <span style={{ fontSize: '0.75rem', color: `${C.text}55` }}>Durata indicativa:</span>
-                  <span style={{ fontSize: '0.9rem', fontWeight: 800, color: C.text }}>{p.durata}</span>
-                </div>
-
-                {/* Bonus */}
-                <div style={{
-                  background: `rgba(93,191,176,0.08)`,
-                  borderLeft: `3px solid ${p.bonusColore}`,
-                  borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`,
-                  padding: '0.75rem 1rem',
-                }}>
-                  <p style={{ margin: 0, fontSize: '0.78rem', color: C.text, fontWeight: 600, lineHeight: 1.5 }}>
-                    🎁 {p.bonus}
-                  </p>
-                </div>
-              </div>
-            </StaggerItem>
-          ))}
+          <StaggerItem>
+            <div style={{
+              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
+              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
+              borderTop: '5px solid #EEAE30',
+            }}>
+              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🗓️</div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
+                Trimestrale
+              </h3>
+              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
+                Paghi 3 mesi in anticipo. Costo per seduta inferiore al mensile.
+              </p>
+              <p style={{ fontSize: '0.85rem', color: '#9a7200', fontWeight: 600, marginTop: 'auto' }}>
+                Bonus: 1 seduta gratuita ogni trimestre completato. Ideale per dolore cronico e riabilitazione post-intervento
+              </p>
+            </div>
+          </StaggerItem>
         </StaggerChildren>
 
-        {/* Note di servizio */}
-        <FadeIn delay={0.2}>
-          <div style={{
-            marginTop: '2.5rem',
-            background: C.surface,
-            borderRadius: C.radiusLg,
-            padding: '1.75rem 2rem',
-          }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4"
-          >
-            {[
-              { icon: '📌', titolo: 'Tre opzioni di pagamento', testo: 'Seduta per seduta, mensile o trimestrale — scegli in base alla tua condizione.' },
-              { icon: '🔄', titolo: 'Rivalutazione ogni mese', testo: 'La frequenza si adatta ai tuoi progressi.' },
-              { icon: '💬', titolo: 'Il percorso si definisce in valutazione', testo: 'Durata e frequenza si definiscono nella prima visita — non prima.' },
-            ].map((nota, i) => (
-              <div key={i} style={{ display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                <span style={{ fontSize: '1.2rem', marginTop: '1px', flexShrink: 0 }}>{nota.icon}</span>
-                <div>
-                  <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: 700, color: C.text }}>{nota.titolo}</p>
-                  <p style={{ margin: '0.25rem 0 0', fontSize: '0.8rem', color: `${C.text}77`, lineHeight: 1.6 }}>{nota.testo}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+        <FadeIn delay={0.15}>
+          <p style={{
+            marginTop: '2rem', textAlign: 'center',
+            fontSize: '0.85rem', color: `${C.text}55`, lineHeight: 1.7,
+          }}>
+            Il costo esatto te lo presento in studio, dopo la valutazione iniziale — dipende dalla frequenza e dalla durata che la tua condizione richiede davvero.
+          </p>
         </FadeIn>
 
         {/* CTA */}
         <FadeIn delay={0.25}>
-          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-            <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginBottom: '0', lineHeight: 1.7 }}>
-              Non sai in quale categoria rientri? La prima visita è gratuita — e serve esattamente a questo.
-            </p>
-            <Link
-              href="/percorsi"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                marginTop: '0.75rem',
-                fontSize: '0.9rem', fontWeight: 600, color: C.primary,
-                textDecoration: 'none',
-              }}
-            >
-              Scopri percorsi e tariffe →
-            </Link>
-            <CtaButton center mt="1.25rem" />
+          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
+            <CtaButton center mt="0" />
             <p style={{ marginTop: '0.6rem', fontSize: '0.78rem', color: `${C.text}44` }}>
               Rispondo di persona entro 24 ore · Nessun impegno
             </p>

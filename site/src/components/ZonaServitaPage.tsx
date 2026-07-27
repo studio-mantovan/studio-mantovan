@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { getZonaServita } from '@/lib/zoneServite'
 import { FaqSection } from '@/components/FaqSection'
 import { recensioni } from '@/lib/recensioni'
@@ -148,11 +147,6 @@ export function ZonaServitaPage({ slug }: { slug: 'broni' | 'stradella' | 'caste
                 <p style={{ fontSize: '0.88rem', color: `${C.text}88`, lineHeight: 1.7, margin: 0 }}>{s.testo}</p>
               </div>
             ))}
-          </div>
-          <div style={{ marginTop: '2rem' }}>
-            <Link href="/percorsi" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', fontSize: '0.9rem', fontWeight: 600, color: C.primary, textDecoration: 'none' }}>
-              Scopri percorsi e tariffe <ArrowRight size={15} />
-            </Link>
           </div>
           <CtaButton center mt="2.5rem" />
         </div>
