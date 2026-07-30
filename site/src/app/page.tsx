@@ -140,10 +140,9 @@ function HeroSection() {
               letterSpacing: '-0.02em',
               margin: 0,
             }}>
-              Torna alle attività<br />
-              <span style={{ color: C.primary }}>che davvero contano</span><br />
-              con la{' '}
-              <span style={{ color: C.secondary }}>fisioterapia in movimento.</span>
+              <span style={{ color: C.primary }}>Fisioterapia in Movimento.</span><br />
+              Per tornare a muoverti<br />
+              <span style={{ color: C.secondary }}>senza che il dolore decida per te.</span>
             </h1>
           </FadeIn>
 
@@ -155,9 +154,9 @@ function HeroSection() {
               lineHeight: 1.8,
               maxWidth: '500px',
             }}>
-              Se soffri di dolore cronico, hai subito un infortunio o stai recuperando da un
-              intervento chirurgico, puoi tornare alle tue attività con un percorso riabilitativo
-              specifico per la tua condizione.
+              Percorsi riabilitativi individuali per chi convive con dolore persistente, ha subito
+              un infortunio o sta recuperando da un intervento chirurgico. Ogni percorso è
+              costruito per aiutarti a tornare alle attività che hanno valore per te.
             </p>
           </FadeIn>
 
