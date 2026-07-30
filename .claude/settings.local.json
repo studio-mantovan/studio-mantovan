@@ -283,7 +283,14 @@
       "Bash(curl -sI --max-time 10 https://www.umbertomantovan.net)",
       "Bash(curl -s --max-time 10 https://umbertomantovan.net)",
       "WebFetch(domain:www.linkedin.com)",
-      "mcp__Claude_in_Chrome__list_connected_browsers"
+      "mcp__Claude_in_Chrome__list_connected_browsers",
+      "Bash(grep -n 'blog/\\\\${post.slug}' src/app/blog/\\\\[slug\\\\]/page.tsx)",
+      "Bash(git checkout *)",
+      "mcp__visualize__read_me",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\node_modules\" node \"C:\\\\Users\\\\umber\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-umber-studio-mantovan\\\\f2a33c6d-4c0a-4096-a5ce-0c6df5c3502c\\\\scratchpad\\\\export-slide-01.js\")",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\node_modules\" node \"C:\\\\Users\\\\umber\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-umber-studio-mantovan\\\\f2a33c6d-4c0a-4096-a5ce-0c6df5c3502c\\\\scratchpad\\\\slide-template.js\")",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\node_modules\" node \"C:\\\\Users\\\\umber\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-umber-studio-mantovan\\\\f2a33c6d-4c0a-4096-a5ce-0c6df5c3502c\\\\scratchpad\\\\slide-template-whitebox.js\")",
+      "Bash(NODE_PATH=\"C:\\\\Users\\\\umber\\\\studio-mantovan\\\\node_modules\" node \"C:\\\\Users\\\\umber\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\C--Users-umber-studio-mantovan\\\\f2a33c6d-4c0a-4096-a5ce-0c6df5c3502c\\\\scratchpad\\\\export-slide-07.js\")"
     ]
   }
 }
