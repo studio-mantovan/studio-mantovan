@@ -56,6 +56,13 @@ const nextConfig: NextConfig = {
         destination: "/blog",
         permanent: true,
       },
+      // Pagina /percorsi eliminata il 27/07: contenuto spostato in homepage,
+      // ma Google l'aveva già indicizzata (dava 404 in Search Console).
+      {
+        source: "/percorsi",
+        destination: "/",
+        permanent: true,
+      },
     ];
   },
 };
