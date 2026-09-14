@@ -100,7 +100,6 @@ export default function LombalgiaPage() {
       <NonBastaSection />
       <FasiSection />
       <PercorsiSection />
-      <CasoRealeSection />
       <CtaMidSection />
       <ChiSonoSection />
       <DoveSiamoSection />
@@ -539,54 +538,6 @@ function PercorsiSection() {
             <CtaButton center mt="1.25rem" />
           </div>
         </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── CASO REALE — LUCA ─────────────────── */
-function CasoRealeSection() {
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-14 items-center">
-          <FadeIn direction="left">
-            <div style={{ position: 'relative', maxWidth: '420px' }}>
-              <div style={{
-                position: 'absolute', inset: '-1.5rem',
-                background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.12) 0%, transparent 70%)',
-                borderRadius: '3rem', filter: 'blur(20px)',
-              }} />
-              <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.1)' }}>
-                <Image
-                  src="/photos/f6-deadlift.jpg"
-                  alt="Luca esegue uno stacco da terra con bilanciere carico, seguito da Umberto Mantovan"
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'center 30%' }}
-                  sizes="(max-width: 768px) 100vw, 420px"
-                />
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn direction="right" delay={0.1}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Caso reale
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Luca
-            </h2>
-            <p style={{ marginTop: '1.25rem', color: `${C.text}99`, lineHeight: 1.85 }}>
-              Luca è arrivato in studio incapace di allacciarsi le scarpe: piegarsi in avanti gli faceva troppa paura, ancora prima che male.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.85 }}>
-              Il percorso è partito da lì — pochi esercizi scelti come strumenti, non come una lista da eseguire, con un carico che è aumentato seduta dopo seduta, insieme alla sua fiducia nel movimento.
-            </p>
-            <p style={{ marginTop: '1rem', color: C.text, fontWeight: 600, lineHeight: 1.85 }}>
-              Oggi Luca solleva un bilanciere carico da terra — questa foto è stata scattata in uno dei suoi allenamenti in studio.
-            </p>
-          </FadeIn>
-        </div>
       </div>
     </section>
   )
