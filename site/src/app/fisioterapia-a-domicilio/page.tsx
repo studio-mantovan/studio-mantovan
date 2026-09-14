@@ -157,7 +157,7 @@ function HeroSection() {
 
           <FadeIn delay={0.08}>
             <p style={{ marginTop: '1.5rem', fontSize: '1.02rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Dopo un intervento, una frattura o per una difficoltà a muoverti da casa, arrivare in studio può essere un ostacolo. Vengo io da te, con lo stesso approccio attivo che uso in ambulatorio.
+              Dopo un intervento, una frattura o per difficoltà a uscire di casa, arrivare in studio può essere un ostacolo. Vengo io da te, con lo stesso approccio attivo che uso in ambulatorio.
             </p>
           </FadeIn>
 
@@ -211,7 +211,7 @@ function HeroSection() {
 /* ─────────────────── PROOF STRIP ─────────────────── */
 function ProofStrip() {
   const items = [
-    { icon: '★★★★★', testo: '5 su Google · recensioni verificate' },
+    { icon: '✓', testo: '5+ anni di esperienza nell’ambito muscolo-scheletrico' },
     { icon: '✓', testo: 'Consulto telefonico gratuito' },
     { icon: '✓', testo: 'Vengo io a casa tua' },
   ]
