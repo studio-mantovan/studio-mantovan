@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { getZonaServita } from '@/lib/zoneServite'
 import { FaqSection } from '@/components/FaqSection'
 import { recensioni } from '@/lib/recensioni'
@@ -53,6 +54,7 @@ const servizi = [
   { icon: '🌀', titolo: 'Dolore cronico', testo: 'Lombalgia, cervicalgia, sciatalgia persistente: lavoriamo su un percorso che ti riporta a muoverti senza paura.' },
   { icon: '⚡', titolo: 'Infortuni', testo: 'Distorsioni, lesioni muscolari, tendiniti: un percorso graduato per tornare allo sport o alle attività quotidiane.' },
   { icon: '🏥', titolo: 'Riabilitazione post-operatoria', testo: 'Protesi, artroscopia, interventi alla schiena o alla spalla: ti accompagno passo dopo passo nel recupero.' },
+  { icon: '🏠', titolo: 'Fisioterapia a domicilio', testo: 'Non riesci ancora a spostarti dopo un intervento o una frattura? Vengo io da te.', href: '/fisioterapia-a-domicilio' },
 ]
 
 export function ZonaServitaPage({ slug }: { slug: 'broni' | 'stradella' | 'casteggio' }) {
@@ -136,17 +138,33 @@ export function ZonaServitaPage({ slug }: { slug: 'broni' | 'stradella' | 'caste
               Cosa posso fare per te
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {servizi.map((s, i) => (
-              <div key={i} style={{
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+            {servizi.map((s, i) => {
+              const cardStyle: React.CSSProperties = {
+                display: 'block', textDecoration: 'none',
                 background: C.white, borderRadius: C.radiusLg, padding: '2rem',
                 boxShadow: '0 2px 16px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)',
-              }}>
-                <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>{s.icon}</div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>{s.titolo}</h3>
-                <p style={{ fontSize: '0.88rem', color: `${C.text}88`, lineHeight: 1.7, margin: 0 }}>{s.testo}</p>
-              </div>
-            ))}
+              }
+              const content = (
+                <>
+                  <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>{s.icon}</div>
+                  <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>{s.titolo}</h3>
+                  <p style={{ fontSize: '0.88rem', color: `${C.text}88`, lineHeight: 1.7, margin: 0 }}>{s.testo}</p>
+                  {s.href && (
+                    <span style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '0.9rem', fontSize: '0.85rem', fontWeight: 700, color: C.primary }}>
+                      Scopri di più <ArrowRight size={14} />
+                    </span>
+                  )}
+                </>
+              )
+              return s.href ? (
+                <Link key={i} href={s.href} style={cardStyle} className="hover:shadow-md transition-shadow">
+                  {content}
+                </Link>
+              ) : (
+                <div key={i} style={cardStyle}>{content}</div>
+              )
+            })}
           </div>
           <CtaButton center mt="2.5rem" />
         </div>

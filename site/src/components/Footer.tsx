@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const C = {
   primary:   '#1A9EC9',
@@ -10,41 +11,52 @@ const C = {
   pad:       '1.5rem',
 }
 
+// Pagine dove la prima visita/seduta non è gratuita (es. fisioterapia a domicilio,
+// dove solo il consulto telefonico lo è): qui il footer nasconde la CTA "prima
+// visita gratuita" e il claim "senza macchinari passivi" per non contraddire il
+// resto della pagina. Il footer resta invariato ovunque altrove sul sito.
+const HIDE_FREE_VISIT_CLAIMS_ROUTES = ['/fisioterapia-a-domicilio']
+
 export default function Footer() {
+  const pathname = usePathname()
+  const hideFreeVisitClaims = HIDE_FREE_VISIT_CLAIMS_ROUTES.includes(pathname)
+
   return (
     <footer style={{ background: C.text, color: 'rgba(255,255,255,0.75)' }}>
 
       {/* CTA strip */}
-      <div style={{ background: C.primary }}>
-        <div style={{
-          maxWidth: C.container, margin: '0 auto',
-          padding: `2.5rem ${C.pad}`,
-          display: 'flex', flexWrap: 'wrap',
-          alignItems: 'center', justifyContent: 'space-between',
-          gap: '1.5rem',
-        }}>
-          <div>
-            <p style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.3, margin: 0 }}>
-              Prima visita gratuita, senza impegno.
-            </p>
-            <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '0.9rem', marginTop: '4px', marginBottom: 0 }}>
-              Scopri se questo è l&apos;approccio giusto per te.
-            </p>
+      {!hideFreeVisitClaims && (
+        <div style={{ background: C.primary }}>
+          <div style={{
+            maxWidth: C.container, margin: '0 auto',
+            padding: `2.5rem ${C.pad}`,
+            display: 'flex', flexWrap: 'wrap',
+            alignItems: 'center', justifyContent: 'space-between',
+            gap: '1.5rem',
+          }}>
+            <div>
+              <p style={{ color: '#fff', fontWeight: 800, fontSize: '1.25rem', lineHeight: 1.3, margin: 0 }}>
+                Prima visita gratuita, senza impegno.
+              </p>
+              <p style={{ color: 'rgba(255,255,255,0.78)', fontSize: '0.9rem', marginTop: '4px', marginBottom: 0 }}>
+                Scopri se questo è l&apos;approccio giusto per te.
+              </p>
+            </div>
+            <a
+              href="/prenota"
+              style={{
+                flexShrink: 0,
+                background: '#fff', color: C.primary,
+                fontWeight: 700, fontSize: '0.9rem',
+                padding: '12px 24px', borderRadius: '50px',
+                textDecoration: 'none', whiteSpace: 'nowrap',
+              }}
+            >
+              Prenota la prima visita gratuita →
+            </a>
           </div>
-          <a
-            href="/prenota"
-            style={{
-              flexShrink: 0,
-              background: '#fff', color: C.primary,
-              fontWeight: 700, fontSize: '0.9rem',
-              padding: '12px 24px', borderRadius: '50px',
-              textDecoration: 'none', whiteSpace: 'nowrap',
-            }}
-          >
-            Prenota la prima visita gratuita →
-          </a>
         </div>
-      </div>
+      )}
 
       {/* Main footer */}
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `3.5rem ${C.pad}` }}
@@ -58,11 +70,13 @@ export default function Footer() {
               Fisioterapia in Movimento
             </div>
           </div>
-          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: '300px', margin: '0 0 1.5rem' }}>
-            Fisioterapia 1:1 per tornare alle attività che contano per te.
-            Senza protocolli standard, senza macchinari passivi.
-          </p>
-          <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)' }}>
+          {!hideFreeVisitClaims && (
+            <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.7, maxWidth: '300px', margin: '0 0 1.5rem' }}>
+              Fisioterapia 1:1 per tornare alle attività che contano per te.
+              Senza protocolli standard, senza macchinari passivi.
+            </p>
+          )}
+          <ul style={{ listStyle: 'none', padding: hideFreeVisitClaims ? 0 : 0, margin: hideFreeVisitClaims ? '1rem 0 0' : 0, display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.875rem', color: 'rgba(255,255,255,0.55)' }}>
             <li style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
               <span style={{ color: C.secondary, flexShrink: 0 }}>📍</span>
               Via Enzo Togni, 75, 27043 Broni PV
@@ -92,9 +106,11 @@ export default function Footer() {
               {[
                 { href: '/',               label: 'Home' },
                 { href: '/chi-sono',       label: 'Chi sono' },
+                { href: '/servizi',        label: 'Servizi' },
                 { href: '/percorsi',       label: 'Percorsi e tariffe' },
                 { href: '/blog',           label: 'Blog' },
                 { href: '/zone-servite',   label: 'Zone servite' },
+                { href: '/fisioterapia-a-domicilio', label: 'Fisioterapia a domicilio' },
                 { href: '/dove-trovarmi',  label: 'Dove trovarmi' },
                 { href: '/prenota',        label: 'Prenota la visita' },
               ].map(({ href, label }) => (

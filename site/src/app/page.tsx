@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
 import { recensioni } from '@/lib/recensioni'
@@ -63,13 +62,10 @@ export default function HomePage() {
     <>
       <HeroSection />
       <ProofStrip />
-      <DoveTrovarmiSection />
-      <ProblemaSection />
       <SoluzioneSection />
       <MetodoSection />
-      <PerChiSection />
-      <PercorsiSection />
-      <ChiSonoSection />
+      <ComePrenotareSection />
+      <DoveTrovarmiSection />
       <RecensioniSection />
       <CtaMidSection />
       <FaqSection />
@@ -265,277 +261,7 @@ function ProofStrip() {
   )
 }
 
-/* ─────────────────── DOVE TROVARMI ─────────────────── */
-function DoveTrovarmiSection() {
-  const info = [
-    { label: 'Indirizzo', value: 'Via Enzo Togni, 75, 27043 Broni PV' },
-    { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
-    { label: 'Telefono', value: '351 924 2517' },
-    { label: 'Email', value: 'studio.mantovan@gmail.com' },
-  ]
-
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-20">
-        <FadeIn>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Dove trovarmi
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Studio Mantovan · Broni (PV)
-            </h2>
-          </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 items-start">
-          {/* Mappa */}
-          <FadeIn direction="left">
-            <div style={{
-              borderRadius: C.radiusLg,
-              overflow: 'hidden',
-              boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-              aspectRatio: '16/9',
-              position: 'relative',
-            }}>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.123456789!2d9.259!3d45.062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787c3c3c3c3c3c3%3A0x0!2sVia+Enzo+Togni+75%2C+27043+Broni+PV!5e0!3m2!1sit!2sit!4v1234567890"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Studio Mantovan – Via Enzo Togni, 75, Broni PV"
-              />
-            </div>
-          </FadeIn>
-
-          {/* Info contatti */}
-          <FadeIn direction="right" delay={0.1}>
-            <div style={{
-              background: C.white,
-              borderRadius: C.radiusLg,
-              padding: '2rem',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '1.5rem',
-            }}>
-              {info.map((item) => (
-                <div key={item.label} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: C.secondary }}>
-                    {item.label}
-                  </span>
-                  <span style={{ fontSize: '0.95rem', color: C.text, fontWeight: 500, lineHeight: 1.6 }}>
-                    {item.value}
-                  </span>
-                </div>
-              ))}
-
-              <div style={{ paddingTop: '0.5rem', borderTop: `1px solid ${C.surface}`, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                <a
-                  href="https://wa.me/393519242517"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '8px',
-                    background: '#25D366', color: '#fff',
-                    fontWeight: 700, fontSize: '0.9rem',
-                    padding: '12px 20px', borderRadius: '50px',
-                    textDecoration: 'none',
-                    boxShadow: '0 4px 14px rgba(37,211,102,0.35)',
-                  }}
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="#fff">
-                    <path d="M16.003 2.667C8.639 2.667 2.667 8.638 2.667 16c0 2.354.638 4.638 1.849 6.638L2.667 29.333l6.854-1.797A13.285 13.285 0 0 0 16.003 29.333C23.365 29.333 29.333 23.362 29.333 16c0-7.362-5.968-13.333-13.33-13.333zm0 24.267a11.01 11.01 0 0 1-5.617-1.541l-.402-.239-4.068 1.067 1.085-3.962-.263-.412A10.98 10.98 0 0 1 5.003 16c0-6.065 4.935-11 11-11s11 4.935 11 11-4.935 11-11 11zm6.03-8.23c-.33-.165-1.954-.964-2.257-1.074-.303-.11-.523-.165-.744.165-.22.33-.853 1.074-1.046 1.294-.193.22-.385.248-.715.083-.33-.165-1.394-.514-2.656-1.638-.982-.874-1.645-1.953-1.837-2.283-.193-.33-.021-.508.145-.672.15-.148.33-.385.495-.578.165-.193.22-.33.33-.55.11-.22.055-.413-.028-.578-.083-.165-.744-1.794-1.019-2.456-.268-.644-.54-.557-.744-.567l-.633-.011c-.22 0-.578.083-.881.413-.303.33-1.156 1.129-1.156 2.754s1.184 3.194 1.349 3.414c.165.22 2.33 3.558 5.648 4.991.79.341 1.406.544 1.886.697.792.252 1.514.216 2.084.131.636-.095 1.954-.799 2.23-1.571.275-.771.275-1.432.193-1.571-.083-.138-.303-.22-.633-.385z" />
-                  </svg>
-                  Scrivimi su WhatsApp
-                </a>
-
-                <a
-                  href="https://maps.google.com/?q=Via+Enzo+Togni+75,+Broni+PV"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    fontSize: '0.85rem', fontWeight: 600, color: C.primary,
-                    textDecoration: 'none',
-                  }}
-                >
-                  Apri in Google Maps →
-                </a>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── PER CHI È ─────────────────── */
-const profili = [
-  {
-    icon: '🌀',
-    tag: 'Dolore cronico',
-    titolo: 'Soffri di dolore cronico',
-    corpo: 'Lombalgia, cervicalgia, sciatalgia — un dolore che non passa mai davvero, che migliora per qualche settimana e poi torna. Magari hai già provato qualcosa, senza risultati duraturi. Con un percorso costruito sulla tua situazione reale impari a muoverti senza paura e torni alle attività che contano per te.',
-  },
-  {
-    icon: '⚡',
-    tag: 'Infortunio',
-    titolo: 'Hai subito un infortunio',
-    corpo: 'Una distorsione, una lesione muscolare, una tendinopatia che non guarisce. Sai che devi fare qualcosa ma non vuoi rischiare di peggiorare. Con un percorso graduato e progressivo torni allo sport o alle tue attività quotidiane nel modo più adatto alla tua condizione.',
-  },
-  {
-    icon: '🏥',
-    tag: 'Post-operatorio',
-    titolo: 'Stai recuperando da un intervento chirurgico',
-    corpo: 'Protesi, artroscopia, intervento alla schiena o alla spalla. Il recupero che fa la differenza non è quello che ti riporta a "stare discretamente" — è quello che ti riporta a fare. Con un percorso individuale costruito sulla tua situazione post-operatoria lavoriamo insieme per recuperare al meglio della tua condizione.',
-  },
-]
-
-function PerChiSection() {
-  return (
-    <section style={{ background: C.text, color: '#fff', overflow: 'hidden' }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <FadeIn>
-          <div style={{ marginBottom: '3rem' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Per chi è
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: '#fff', marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Questo percorso fa per te se…
-            </h2>
-          </div>
-        </FadeIn>
-
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {profili.map((p, i) => (
-            <StaggerItem key={i}>
-              <div style={{
-                background: 'rgba(255,255,255,0.06)',
-                borderRadius: C.radiusLg,
-                padding: '2rem',
-                height: '100%',
-                display: 'flex', flexDirection: 'column',
-                borderLeft: `3px solid ${C.secondary}`,
-              }}>
-                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{p.icon}</div>
-                <span style={{
-                  display: 'inline-block',
-                  background: `rgba(93,191,176,0.15)`,
-                  color: C.secondary,
-                  fontSize: '0.68rem', fontWeight: 700,
-                  textTransform: 'uppercase', letterSpacing: '0.1em',
-                  padding: '3px 10px', borderRadius: '50px',
-                  marginBottom: '0.75rem', alignSelf: 'flex-start',
-                }}>
-                  {p.tag}
-                </span>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 800, color: '#fff', marginBottom: '0.75rem', lineHeight: 1.3 }}>
-                  {p.titolo}
-                </h3>
-                <p style={{ margin: 0, color: 'rgba(255,255,255,0.7)', fontSize: '0.88rem', lineHeight: 1.8, flex: 1 }}>
-                  {p.corpo}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
-
-        <FadeIn delay={0.3}>
-          <CtaButton mt="2.5rem" />
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── IL PROBLEMA ─────────────────── */
-function ProblemaSection() {
-  const problemPoints = [
-    'Sono troppo generici, non costruiti sulla tua situazione reale',
-    'Sono scollegati da quello che vuoi tornare a fare',
-    'Sono noiosi, difficili da seguire nel tempo',
-    'Non affrontano le paure e le abitudini che mantengono il problema',
-  ]
-
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <FadeIn>
-          <div style={{ maxWidth: '720px' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Il problema
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Perché molte persone che fanno fisioterapia
-              <br />
-              <span style={{ color: C.primary }}>non risolvono davvero il loro problema.</span>
-            </h2>
-          </div>
-        </FadeIn>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start" style={{ marginTop: '3rem' }}>
-          <FadeIn direction="left">
-            <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Hai presente quella sensazione di migliorare durante le sedute, e poi ricominciare
-              da capo appena finiscono?
-            </p>
-            <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', marginTop: '1rem' }}>
-              Non è sfortuna. È il limite di un modello che si concentra sul togliere il dolore
-              nel breve periodo — non sul darti gli strumenti per non ritrovarti nella stessa situazione.
-            </p>
-            <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', marginTop: '1rem' }}>
-              Il modello standard funziona così: terapie passive per ridurre il dolore, qualche
-              tecnica manuale, una lista di movimenti da evitare. E alla fine, un foglio con gli
-              esercizi da fare a casa. Tutto concentrato sul sintomo. Niente sulla persona.
-            </p>
-          </FadeIn>
-
-          <FadeIn direction="right" delay={0.1}>
-            <div style={{
-              background: C.white,
-              borderRadius: C.radiusLg,
-              padding: '2rem',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-            }}>
-              <p style={{ fontWeight: 700, color: C.text, marginBottom: '1.25rem', fontSize: '0.95rem' }}>
-                Perché quegli esercizi, nella maggior parte dei casi, non funzionano:
-              </p>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                {problemPoints.map((p, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
-                    <span style={{ color: '#E05A5A', fontWeight: 700, flexShrink: 0, marginTop: '1px' }}>—</span>
-                    <p style={{ margin: 0, color: `${C.text}88`, fontSize: '0.9rem', lineHeight: 1.7 }}>{p}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div style={{
-              marginTop: '1.5rem',
-              background: `rgba(26,158,201,0.06)`,
-              borderLeft: `4px solid ${C.primary}`,
-              borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`,
-              padding: '1.25rem 1.5rem',
-            }}>
-              <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
-                Il risultato? Qualche settimana di miglioramento, poi il dolore torna. E ricomincia
-                il ciclo. Non perché il tuo caso sia difficile. Ma perché un percorso standardizzato
-                non risolve un problema specifico.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── LA SOLUZIONE ─────────────────── */
+/* ─────────────────── LA SOLUZIONE — differenze con la fisioterapia passiva ─────────────────── */
 const confronto = [
   { standard: 'Terapie passive: tecar, ultrasuoni, massaggi', studio: 'Esercizio terapeutico attivo, in seduta' },
   { standard: 'Pacchetti da 10 sedute uguali per tutti', studio: 'Percorso costruito sulla tua situazione reale' },
@@ -553,7 +279,7 @@ function SoluzioneSection() {
         <FadeIn>
           <div style={{ maxWidth: '720px', marginBottom: '3rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              La soluzione
+              La differenza
             </span>
             <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
               Un approccio diverso esiste.
@@ -712,212 +438,178 @@ function MetodoSection() {
           ))}
         </StaggerChildren>
 
+        {/* Rassicurazione sulla frequenza — al posto dei pacchetti/prezzi */}
         <FadeIn delay={0.2}>
-          <CtaButton center mt="3rem" />
+          <div style={{
+            marginTop: '2.5rem', maxWidth: '640px', marginLeft: 'auto', marginRight: 'auto',
+            background: C.white, borderRadius: C.radiusLg, padding: '1.5rem 2rem',
+            boxShadow: '0 2px 12px rgba(0,0,0,0.05)', textAlign: 'center',
+          }}>
+            <p style={{ margin: 0, fontSize: '0.95rem', lineHeight: 1.7 }}>
+              <span style={{ fontWeight: 700, color: C.text }}>Devo venire tutti i giorni? </span>
+              <span style={{ color: `${C.text}88` }}>No — la maggior parte dei percorsi prevede una seduta a settimana, poi si scala nel tempo verso l&apos;autonomia.</span>
+            </p>
+          </div>
         </FadeIn>
       </div>
     </section>
   )
 }
 
-/* ─────────────────── PERCORSI ─────────────────── */
+/* ─────────────────── COME PRENOTARE ─────────────────── */
+function ComePrenotareSection() {
+  const steps = [
+    { n: '1', testo: 'Scrivimi su WhatsApp o chiama al 351 924 2517.' },
+    { n: '2', testo: 'Ne parliamo brevemente: capiamo insieme la tua situazione.' },
+    { n: '3', testo: 'Fissiamo la prima visita gratuita in studio.' },
+  ]
 
-function PercorsiSection() {
   return (
     <section style={{ background: C.bg }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-
-        {/* Intestazione */}
         <FadeIn>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.75rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Le opzioni di pagamento
+              Come prenotare
             </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              A seconda delle tue necessità, ho pensato a tre tipologie di percorso.
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
+              Tre passaggi, semplici
             </h2>
-            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.8, maxWidth: '580px', marginLeft: 'auto', marginRight: 'auto', fontSize: '1rem' }}>
-              Nessun vincolo contrattuale: puoi interrompere il percorso in qualsiasi momento, senza penali né conguagli.
-            </p>
           </div>
         </FadeIn>
 
-        {/* Card tipologie di pagamento */}
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <StaggerItem>
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
-              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-              borderTop: `5px solid ${C.primary}`,
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📌</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
-                Seduta per seduta
-              </h3>
-              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Paghi ogni seduta singolarmente dopo l&apos;appuntamento. Nessun impegno anticipato.
-              </p>
-              <p style={{ fontSize: '0.85rem', color: C.primary, fontWeight: 600, marginTop: 'auto' }}>
-                Ideale per controlli post-riabilitazione
-              </p>
-            </div>
-          </StaggerItem>
-
-          <StaggerItem>
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
-              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-              borderTop: `5px solid ${C.secondary}`,
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>📅</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
-                Mensile
-              </h3>
-              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Paghi mese per mese in base alla frequenza consigliata. Costo per seduta ridotto.
-              </p>
-              <p style={{ fontSize: '0.85rem', color: '#3A8C7F', fontWeight: 600, marginTop: 'auto' }}>
-                Bonus: check-up gratuiti + sconto seduta. Ideale per condizioni acute e infortuni
-              </p>
-            </div>
-          </StaggerItem>
-
-          <StaggerItem>
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
-              height: '100%', boxShadow: '0 2px 16px rgba(0,0,0,0.06)',
-              borderTop: '5px solid #EEAE30',
-            }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>🗓️</div>
-              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: C.text, marginBottom: '0.5rem' }}>
-                Trimestrale
-              </h3>
-              <p style={{ fontSize: '0.92rem', color: `${C.text}77`, lineHeight: 1.75, marginBottom: '0.75rem' }}>
-                Paghi 3 mesi in anticipo. Costo per seduta inferiore al mensile.
-              </p>
-              <p style={{ fontSize: '0.85rem', color: '#9a7200', fontWeight: 600, marginTop: 'auto' }}>
-                Bonus: 1 seduta gratuita ogni trimestre completato. Ideale per dolore cronico e riabilitazione post-intervento
-              </p>
-            </div>
-          </StaggerItem>
+        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5" stagger={0.1}>
+          {steps.map((s) => (
+            <StaggerItem key={s.n}>
+              <div style={{
+                background: C.white, borderRadius: C.radiusLg, padding: '2rem',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)', borderTop: `3px solid ${C.secondary}`, height: '100%',
+              }}>
+                <div style={{
+                  width: '32px', height: '32px', borderRadius: '50%', background: C.primary,
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: '#fff', fontWeight: 800, fontSize: '0.95rem', marginBottom: '0.9rem',
+                }}>
+                  {s.n}
+                </div>
+                <p style={{ margin: 0, fontSize: '0.96rem', color: C.text, lineHeight: 1.7, fontWeight: 600 }}>
+                  {s.testo}
+                </p>
+              </div>
+            </StaggerItem>
+          ))}
         </StaggerChildren>
 
-        <FadeIn delay={0.15}>
-          <p style={{
-            marginTop: '2rem', textAlign: 'center',
-            fontSize: '0.85rem', color: `${C.text}55`, lineHeight: 1.7,
-          }}>
-            Il costo esatto te lo presento in studio, dopo la valutazione iniziale — dipende dalla frequenza e dalla durata che la tua condizione richiede davvero.
-          </p>
+        <FadeIn delay={0.3}>
+          <CtaButton center mt="2.5rem" />
         </FadeIn>
-
-        {/* CTA */}
-        <FadeIn delay={0.25}>
-          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-            <CtaButton center mt="0" />
-            <p style={{ marginTop: '0.6rem', fontSize: '0.78rem', color: `${C.text}44` }}>
-              Rispondo di persona entro 24 ore · Nessun impegno
-            </p>
-          </div>
-        </FadeIn>
-
       </div>
     </section>
   )
 }
 
-/* ─────────────────── CHI SONO ─────────────────── */
-function ChiSonoSection() {
+/* ─────────────────── DOVE TROVARMI ─────────────────── */
+function DoveTrovarmiSection() {
+  const info = [
+    { label: 'Indirizzo', value: 'Via Enzo Togni, 75, 27043 Broni PV' },
+    { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
+    { label: 'Telefono', value: '351 924 2517' },
+    { label: 'Email', value: 'studio.mantovan@gmail.com' },
+  ]
+
   return (
-    <section style={{ background: C.surface, overflow: 'hidden' }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-14 items-center">
-          {/* Foto */}
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-20">
+        <FadeIn>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Dove trovarmi
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
+              Studio Mantovan · Broni (PV)
+            </h2>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 items-start">
+          {/* Mappa */}
           <FadeIn direction="left">
-            <div style={{ position: 'relative', maxWidth: '420px' }}>
-              <div style={{
-                position: 'absolute', inset: '-1.5rem',
-                background: `radial-gradient(ellipse at center, rgba(93,191,176,0.12) 0%, transparent 70%)`,
-                borderRadius: '3rem', filter: 'blur(20px)',
-              }} />
-              <div style={{
-                position: 'relative', aspectRatio: '1',
-                borderRadius: C.radiusLg, overflow: 'hidden',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.1)',
-              }}>
-                <Image
-                  src="/photos/f3-ritratto.jpg"
-                  alt="Umberto Mantovan fisioterapista – Studio Mantovan Broni"
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                  sizes="(max-width: 768px) 100vw, 420px"
-                />
-              </div>
+            <div style={{
+              borderRadius: C.radiusLg,
+              overflow: 'hidden',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
+              aspectRatio: '16/9',
+              position: 'relative',
+            }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.123456789!2d9.259!3d45.062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787c3c3c3c3c3c3%3A0x0!2sVia+Enzo+Togni+75%2C+27043+Broni+PV!5e0!3m2!1sit!2sit!4v1234567890"
+                width="100%"
+                height="100%"
+                style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Studio Mantovan – Via Enzo Togni, 75, Broni PV"
+              />
             </div>
           </FadeIn>
 
-          {/* Testo */}
+          {/* Info contatti */}
           <FadeIn direction="right" delay={0.1}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Chi sono
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.2 }}>
-              Una sola regola:
-              <br />
-              <span style={{ color: C.primary }}>nessun paziente uguale all&apos;altro.</span>
-            </h2>
-            <p style={{ marginTop: '1.5rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Sono nato a Broni, nel cuore dell&apos;Oltrepò Pavese. Un luogo dove la vita scorre
-              lenta, tra colline e volti familiari.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Mi sono laureato in Fisioterapia all&apos;Università di Pavia, nel pieno della pandemia —
-              un periodo che mi ha insegnato ad adattarmi e a costruire, giorno dopo giorno, il
-              coraggio di trovare la mia strada.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Dopo la laurea mi sono trasferito a Sanremo, dove ho aperto la mia Partita IVA. È stato
-              il primo vero salto nel vuoto: nuove responsabilità, e quella sensazione — bella e un po&apos;
-              spaventosa — di iniziare davvero a costruire qualcosa di mio.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Un anno dopo sono tornato in Oltrepò, in uno studio convenzionato SSN a Casteggio,
-              dove ho affiancato gli studenti di Fisioterapia dell&apos;Università di Pavia durante il
-              tirocinio. Ma quell&apos;esperienza mi ha mostrato anche l&apos;altra faccia della medaglia:
-              protocolli standardizzati, poca personalizzazione, percorsi di cura rallentati da
-              vincoli gestionali.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Così, nel 2025, ho aperto il mio studio a Broni — il paese dove sono cresciuto.
-              Non solo uno spazio di lavoro, ma il luogo dove la mia idea di fisioterapia ha
-              finalmente preso forma: trasparente, basata sulle evidenze scientifiche, e attenta
-              agli aspetti comunicativi e cognitivi del dolore.
-            </p>
-            <div style={{ marginTop: '1.75rem', display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
-              {['Fisioterapia ad accesso diretto', 'Comunicazione efficace', 'Fisioterapia basata sulle evidenze'].map((item) => (
-                <span key={item} style={{
-                  background: C.white,
-                  color: `${C.text}BB`,
-                  fontSize: '0.78rem', fontWeight: 600,
-                  padding: '6px 14px', borderRadius: '50px',
-                  border: `1px solid ${C.surface}`,
-                }}>
-                  {item}
-                </span>
+            <div style={{
+              background: C.white,
+              borderRadius: C.radiusLg,
+              padding: '2rem',
+              boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.5rem',
+            }}>
+              {info.map((item) => (
+                <div key={item.label} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                  <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: C.secondary }}>
+                    {item.label}
+                  </span>
+                  <span style={{ fontSize: '0.95rem', color: C.text, fontWeight: 500, lineHeight: 1.6 }}>
+                    {item.value}
+                  </span>
+                </div>
               ))}
+
+              <div style={{ paddingTop: '0.5rem', borderTop: `1px solid ${C.surface}`, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                <a
+                  href="https://wa.me/393519242517"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    background: '#25D366', color: '#fff',
+                    fontWeight: 700, fontSize: '0.9rem',
+                    padding: '12px 20px', borderRadius: '50px',
+                    textDecoration: 'none',
+                    boxShadow: '0 4px 14px rgba(37,211,102,0.35)',
+                  }}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="18" height="18" fill="#fff">
+                    <path d="M16.003 2.667C8.639 2.667 2.667 8.638 2.667 16c0 2.354.638 4.638 1.849 6.638L2.667 29.333l6.854-1.797A13.285 13.285 0 0 0 16.003 29.333C23.365 29.333 29.333 23.362 29.333 16c0-7.362-5.968-13.333-13.33-13.333zm0 24.267a11.01 11.01 0 0 1-5.617-1.541l-.402-.239-4.068 1.067 1.085-3.962-.263-.412A10.98 10.98 0 0 1 5.003 16c0-6.065 4.935-11 11-11s11 4.935 11 11-4.935 11-11 11zm6.03-8.23c-.33-.165-1.954-.964-2.257-1.074-.303-.11-.523-.165-.744.165-.22.33-.853 1.074-1.046 1.294-.193.22-.385.248-.715.083-.33-.165-1.394-.514-2.656-1.638-.982-.874-1.645-1.953-1.837-2.283-.193-.33-.021-.508.145-.672.15-.148.33-.385.495-.578.165-.193.22-.33.33-.55.11-.22.055-.413-.028-.578-.083-.165-.744-1.794-1.019-2.456-.268-.644-.54-.557-.744-.567l-.633-.011c-.22 0-.578.083-.881.413-.303.33-1.156 1.129-1.156 2.754s1.184 3.194 1.349 3.414c.165.22 2.33 3.558 5.648 4.991.79.341 1.406.544 1.886.697.792.252 1.514.216 2.084.131.636-.095 1.954-.799 2.23-1.571.275-.771.275-1.432.193-1.571-.083-.138-.303-.22-.633-.385z" />
+                  </svg>
+                  Scrivimi su WhatsApp
+                </a>
+
+                <a
+                  href="https://maps.google.com/?q=Via+Enzo+Togni+75,+Broni+PV"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '6px',
+                    fontSize: '0.85rem', fontWeight: 600, color: C.primary,
+                    textDecoration: 'none',
+                  }}
+                >
+                  Apri in Google Maps →
+                </a>
+              </div>
             </div>
-            <CtaButton mt="1.75rem" />
-            <Link
-              href="/chi-sono"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px',
-                marginTop: '1rem',
-                fontSize: '0.9rem', fontWeight: 600, color: C.primary,
-                textDecoration: 'none',
-              }}
-            >
-              Scopri di più su di me →
-            </Link>
           </FadeIn>
         </div>
       </div>

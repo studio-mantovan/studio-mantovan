@@ -12,7 +12,9 @@ interface FadeInProps {
 
 export function FadeIn({ children, delay = 0, direction = 'up', className }: FadeInProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  // margin positivo: l'elemento si anima PRIMA di entrare nello schermo (non dopo),
+  // così lo scroll non mostra mai un vuoto bianco in attesa che l'animazione parta.
+  const isInView = useInView(ref, { once: true, margin: '200px 0px' })
 
   const initial =
     direction === 'up'
@@ -52,7 +54,7 @@ export function StaggerChildren({
   stagger?: number
 }) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: '-60px' })
+  const isInView = useInView(ref, { once: true, margin: '200px 0px' })
 
   return (
     <motion.div
