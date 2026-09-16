@@ -4,20 +4,18 @@ import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
 
 export const metadata: Metadata = {
-  title: 'Dolore cervicale e al braccio a Broni | Studio Mantovan',
+  title: 'Fisioterapia sportiva a Broni | Studio Mantovan',
   description:
-    'Bruciore o formicolio che scende dal collo verso il braccio? Una valutazione che parte da cosa non riesci più a fare, non dalla risonanza. Prima visita gratuita: 351 924 2517.',
+    'Un infortunio sportivo non deve significare smettere di allenarti. Percorso graduato per tornare in campo più forte di prima. Prima visita gratuita: 351 924 2517.',
   keywords: [
-    'cervicalgia Broni',
-    'radicolopatia cervicale',
-    'dolore braccio dal collo',
-    'formicolio braccio',
-    'ernia cervicale',
-    'cervicobrachialgia',
-    'fisioterapista cervicale Oltrepò Pavese',
+    'fisioterapia sportiva Broni',
+    'infortuni sportivi',
+    'ritorno allo sport',
+    'tendinopatia sportiva',
+    'fisioterapista sportivo Oltrepò Pavese',
   ],
   alternates: {
-    canonical: 'https://umbertomantovan.net/patologie/cervicale',
+    canonical: 'https://umbertomantovan.net/patologie/fisioterapia-sportiva',
   },
 }
 
@@ -60,41 +58,41 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
   )
 }
 
-const faqCervicale = [
+const faqSportiva = [
   {
-    q: 'Ho il formicolio al braccio: devo preoccuparmi?',
-    a: 'Spesso è il segnale di una radice nervosa irritata al collo. È fastidioso, ma nella grande maggioranza dei casi si risolve con il trattamento conservativo giusto.',
+    q: 'Posso continuare ad allenarmi mentre recupero da un infortunio?',
+    a: 'Spesso sì, in forma modificata. Fermarsi del tutto non è quasi mai necessario: nella valutazione capiamo insieme cosa puoi continuare a fare in sicurezza.',
   },
   {
-    q: 'Ho fatto la risonanza e c’è un’ernia: devo operarmi?',
-    a: 'Non necessariamente. Il trattamento conservativo produce risultati a lungo termine comparabili alla chirurgia nella maggior parte dei casi — ne parliamo nella valutazione.',
+    q: 'Quanto tempo ci vorrà per tornare a gareggiare?',
+    a: 'Dipende dal tipo di infortunio e da come risponde il tuo corpo al carico — non lo so ancora prima di valutarti. Il percorso si costruisce sui tuoi progressi reali, non su un calendario fisso.',
   },
   {
-    q: 'Da quanto tempo devo avere questi sintomi prima di venire da un fisioterapista?',
-    a: 'Prima vai, meglio è. Aspettare non aiuta e rischia solo di allungare il percorso di recupero.',
+    q: 'Ho paura di infortunarmi di nuovo appena torno ad allenarmi.',
+    a: 'È una paura comune e giustificata. Il percorso include proprio questo: ricostruire la fiducia nel gesto sportivo con un carico progressivo e controllato, non un rientro improvviso.',
   },
   {
-    q: 'Quanto tempo ci vorrà per stare meglio?',
-    a: 'Dipende dalla durata e intensità dei sintomi, ma la maggior parte delle persone nota miglioramenti significativi già nelle prime settimane di trattamento attivo.',
+    q: 'Serve una diagnosi dello specialista sportivo prima di venire da te?',
+    a: 'No. Puoi venire direttamente: valuto io la situazione e, se serve un consulto specialistico, te lo dico chiaramente.',
   },
 ]
 
 const jsonLdFaqPage = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqCervicale.map((f) => ({
+  mainEntity: faqSportiva.map((f) => ({
     '@type': 'Question',
     name: f.q,
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 }
 
-export default function CervicalePage() {
+export default function FisioterapiaSportivaPage() {
   return (
     <div style={{ background: C.bg }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqPage) }} />
       <HeroSection />
-      <ProofStripCervicale />
+      <ProofStripSportiva />
       <ProblemaSection />
       <SoluzioneSection />
       <NonBastaSection />
@@ -103,7 +101,7 @@ export default function CervicalePage() {
       <CtaMidSection />
       <ChiSonoSection />
       <DoveSiamoSection />
-      <FaqCervicaleSection />
+      <FaqSportivaSection />
       <FaqSection />
       <CtaFinaleSection />
     </div>
@@ -133,7 +131,7 @@ function HeroSection() {
               fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em',
               padding: '6px 14px', borderRadius: '50px', marginBottom: '1.25rem',
             }}>
-              Fisioterapista a Broni · Dolore cervicale e al braccio
+              Fisioterapista a Broni · Fisioterapia sportiva
             </span>
           </FadeIn>
 
@@ -142,18 +140,18 @@ function HeroSection() {
               fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: 800,
               color: C.text, lineHeight: 1.28, letterSpacing: '-0.02em', margin: 0,
             }}>
-              &ldquo;Mi hanno detto che ho un&apos;ernia cervicale.&rdquo;
+              &ldquo;Mi hanno detto di fermarmi del tutto.&rdquo;
               <br />
-              <span style={{ color: C.primary }}>Ma nessuno mi ha spiegato perché il formicolio non passa.</span>
+              <span style={{ color: C.primary }}>Ma fermarsi non è l&apos;unica strada per guarire.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p style={{ marginTop: '1.5rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Non un&apos;altra settimana con il collarino. Non un altro &ldquo;vedrai che passa&rdquo;. Una valutazione che parte da cosa non riesci più a fare, non dalla risonanza.
+              Non un altro riposo assoluto. Non un altro &ldquo;quando non senti più dolore puoi ripartire&rdquo;. Una valutazione che parte da cosa ti serve per tornare ad allenarti, non solo da cosa fa male.
             </p>
             <p style={{ marginTop: '0.75rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Molte persone notano i primi miglioramenti già nelle prime settimane di percorso attivo.
+              L&apos;obiettivo non è solo smettere di soffrire. È tornare in campo più forte di prima.
             </p>
           </FadeIn>
 
@@ -170,11 +168,11 @@ function HeroSection() {
 }
 
 /* ─────────────────── PROOF STRIP ─────────────────── */
-function ProofStripCervicale() {
+function ProofStripSportiva() {
   const items = [
-    { icon: '83%', testo: 'migliora senza chirurgia entro 4-6 mesi' },
     { icon: '✓', testo: 'Prima visita gratuita' },
     { icon: '✓', testo: '5+ anni in ambito muscolo-scheletrico' },
+    { icon: '✓', testo: 'Approccio attivo, mai protocolli standard' },
   ]
 
   return (
@@ -183,26 +181,21 @@ function ProofStripCervicale() {
         maxWidth: C.container, margin: '0 auto', padding: `1.1rem ${C.pad}`,
         display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem',
       }}>
-        {items.map((item) => {
-          const isStat = item.icon !== '✓'
-          return (
-            <div key={item.testo} style={{
-              display: 'flex', alignItems: 'center', gap: '10px',
-              fontSize: '0.88rem', fontWeight: 600, color: '#fff', letterSpacing: '0.01em',
+        {items.map((item) => (
+          <div key={item.testo} style={{
+            display: 'flex', alignItems: 'center', gap: '10px',
+            fontSize: '0.88rem', fontWeight: 600, color: '#fff', letterSpacing: '0.01em',
+          }}>
+            <span style={{
+              width: '22px', height: '22px', borderRadius: '50%', background: C.secondary,
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+              fontSize: '0.72rem', fontWeight: 800, color: '#fff', flexShrink: 0,
             }}>
-              <span style={{
-                minWidth: isStat ? 'auto' : '22px', height: isStat ? 'auto' : '22px',
-                padding: isStat ? '2px 10px' : 0,
-                borderRadius: isStat ? '50px' : '50%', background: C.secondary,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: isStat ? '0.85rem' : '0.72rem', fontWeight: 800, color: '#fff', flexShrink: 0,
-              }}>
-                {item.icon}
-              </span>
-              {item.testo}
-            </div>
-          )
-        })}
+              {item.icon}
+            </span>
+            {item.testo}
+          </div>
+        ))}
       </div>
     </div>
   )
@@ -218,16 +211,16 @@ function ProblemaSection() {
             Ti riconosci in questo?
           </span>
           <h2 style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.05rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.4 }}>
-            &ldquo;Il formicolio mi sveglia di notte. Al lavoro, dopo un&apos;ora al PC, il braccio comincia a bruciare.&rdquo;
+            &ldquo;Ho un infortunio da settimane. Ho paura che riprendere ad allenarmi peggiori le cose — ma stare fermo mi sta facendo perdere tutto quello che ho costruito.&rdquo;
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '2rem' }}>
-            È la descrizione che sento più spesso: un dolore che parte dal collo e scende verso spalla, braccio, a volte fino alle dita. Peggiora tenendo il volante, asciugandoti i capelli, dormendo su un fianco.
+            Per chi si allena o fa sport a livello agonistico o amatoriale, un infortunio non è solo un dolore — è un blocco. Salta la stagione, si perde la forma fisica costruita in mesi, cala la fiducia nel proprio corpo.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '1.25rem' }}>
-            Hai già fatto una risonanza. C&apos;è scritta la parola &ldquo;ernia&rdquo;. E da quel momento ogni movimento del collo ti sembra un rischio — anche se nessuno ti ha ancora spiegato cosa significhi davvero quel referto.
+            &ldquo;Riposo assoluto finché non senti più dolore&rdquo; è il consiglio più comune — e spesso il meno utile: durante l&apos;inattività perdi proprio la forza e la resistenza che ti servono per tornare in campo in sicurezza.
           </p>
           <div style={{
             marginTop: '1.75rem',
@@ -237,7 +230,7 @@ function ProblemaSection() {
             padding: '1.25rem 1.5rem',
           }}>
             <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
-              Il referto ti dice cosa c&apos;è. Non ti dice cosa fare.
+              Fermarsi del tutto non ti prepara a ripartire. Ti prepara solo a fermarti.
             </p>
           </div>
         </FadeIn>
@@ -257,53 +250,28 @@ function SoluzioneSection() {
               Perché è diverso
             </span>
             <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Vedere un&apos;ernia nel referto
+              L&apos;obiettivo non è solo farti smettere di soffrire.
               <br />
-              <span style={{ color: C.primary }}>non significa dover operare.</span>
+              <span style={{ color: C.primary }}>È riportarti in campo, più forte di prima.</span>
             </h2>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.1}>
-          <div style={{
-            background: C.white, borderRadius: C.radiusLg, padding: '2rem',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.06)', marginBottom: '1.5rem',
-          }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>83%</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                delle persone con un&apos;ernia cervicale <strong>migliora in modo significativo entro 4-6 mesi</strong>, anche senza chirurgia.
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.secondary, lineHeight: 1 }}>57%</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                delle persone <strong>senza alcun sintomo</strong> over 64 ha un&apos;ernia visibile in risonanza.
-              </p>
-              <p style={{ color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.4rem 0 0' }}>
-                L&apos;immagine da sola non spiega il tuo dolore.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.15}>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px' }}>
-            Nel mio studio non parto dalla risonanza.
+            Per lo sportivo il dolore non è solo un disturbo: è un blocco che tocca allenamento, prestazione, identità.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Parto da te: dove senti il dolore, cosa lo scatena, cosa hai già provato — e ti spiego cosa significa davvero quello che hai letto nel referto.
+            Nel mio studio non parto dalla lista di movimenti da evitare.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            La radice nervosa irritata risponde bene al movimento guidato — non a stare fermi ad aspettare.
+            Parto da: che sport pratichi, a che livello, quali gesti tecnici usi di più, cosa hai smesso di fare da quando ti sei infortunato.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '1.25rem' }}>
             Non uso macchinari passivi.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Uso anche la terapia manuale e tecniche specifiche per il nervo come strumenti per farti muovere prima e con meno fastidio — mai come unico trattamento.
+            Il corpo ritrova forza e fiducia muovendosi e caricandosi in modo progressivo — con esercizi scelti sul tuo sport specifico, non un protocollo generico.
           </p>
         </FadeIn>
 
@@ -326,14 +294,14 @@ function NonBastaSection() {
               Cosa non basta da solo
             </span>
             <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.35, maxWidth: '620px' }}>
-              &ldquo;Se pensi che per il formicolio al braccio serva solo il collarino o aspettare che passi, ti hanno sempre consigliato male.&rdquo;
+              &ldquo;Se pensi che basti aspettare che il dolore sparisca per tornare ad allenarti come prima, rischi di infortunarti di nuovo.&rdquo;
             </h2>
 
             <p style={{ marginTop: '1.5rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              Collarino, riposo prolungato, antinfiammatori: sono le risposte più comuni al dolore cervicale — e da sole sono anche le meno risolutive. Il riposo prolungato non è la soluzione: rallenta il recupero invece di favorirlo.
+              L&apos;assenza di dolore non significa che il tessuto abbia recuperato la capacità di reggere lo sforzo sportivo. Chi rientra di colpo, con la stessa intensità di prima, è tra i più a rischio di recidiva.
             </p>
             <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              La strada che funziona meglio è l&apos;esposizione graduale: tornare a muovere il collo e il braccio nei gesti di tutti i giorni — PC, guida, sonno — in modo progressivo e controllato.
+              La strada che funziona meglio è la progressione graduale del carico: tornare ad allenarti per gradi, aumentando intensità e volume solo quando il corpo dimostra di tollerarli — non secondo il calendario della stagione.
             </p>
 
             <FadeIn delay={0.15}>
@@ -346,12 +314,12 @@ function NonBastaSection() {
               background: C.white, borderRadius: C.radiusLg, padding: '2rem',
               boxShadow: '0 4px 20px rgba(0,0,0,0.06)', textAlign: 'center',
             }}>
-              <div style={{ fontSize: '2.6rem', lineHeight: 1 }}>⚖️</div>
+              <div style={{ fontSize: '2.6rem', lineHeight: 1 }}>🏃</div>
               <p style={{ marginTop: '0.75rem', color: `${C.text}99`, fontSize: '0.88rem', lineHeight: 1.7, margin: '0.75rem 0 0' }}>
-                Il trattamento conservativo ha <strong>risultati a lungo termine comparabili alla chirurgia</strong> nella maggior parte dei casi.
+                Il <strong>carico progressivo</strong> è il fattore più legato alla prevenzione delle recidive negli infortuni sportivi.
               </p>
               <p style={{ marginTop: '0.75rem', color: `${C.text}66`, fontSize: '0.75rem', lineHeight: 1.6, margin: '0.75rem 0 0' }}>
-                Dato di letteratura, non una garanzia individuale.
+                Principio consolidato in letteratura, non una garanzia individuale.
               </p>
             </div>
           </FadeIn>
@@ -366,26 +334,26 @@ const fasi = [
   {
     num: '01',
     titolo: 'Capire cosa sta succedendo davvero',
-    corpo: 'Un\'ernia nel referto non è ancora una diagnosi. Nella valutazione gratuita ascolto la tua storia, guardo cosa riesci e non riesci a fare, e ti spiego cosa significa — e cosa non significa — quello che hai letto nel referto.',
+    corpo: 'Nella valutazione gratuita capiamo insieme cosa hai, cosa può fare il tuo corpo oggi e cosa ti serve per tornare al tuo sport — non un protocollo generico, ma un piano costruito sul tuo gesto sportivo specifico.',
     tag: 'Valutazione gratuita',
   },
   {
     num: '02',
-    titolo: 'Tornare a fidarti del movimento',
-    corpo: 'Il collo e il braccio si riattivano muovendosi, non stando fermi. Uso anche tecniche specifiche per il nervo per ridurne l\'irritazione, insieme a esercizi scelti su misura e carico che aumenta in modo progressivo.',
+    titolo: 'Percorso attivo, carico progressivo',
+    corpo: 'Esercizi scelti su misura, con un carico che aumenta gradualmente man mano che il tessuto dimostra di tollerarlo. Lavoriamo sui gesti tecnici del tuo sport, non solo su esercizi generici.',
     tag: 'Percorso attivo',
   },
   {
     num: '03',
-    titolo: 'Riprendere la tua vita',
-    corpo: 'L\'obiettivo non è solo meno dolore. È dormire senza svegliarti, guidare senza fastidio, tornare al lavoro senza pensarci. Frequenza che si riduce nel tempo, programma costruito sui tuoi obiettivi reali.',
-    tag: 'Autonomia',
+    titolo: 'Ritorno allo sport',
+    corpo: 'Non torni in campo appena il dolore sparisce: torni quando il tuo corpo ha davvero ricostruito la capacità di reggere lo sforzo — con la fiducia per allenarti senza il pensiero costante di infortunarti di nuovo.',
+    tag: 'Ritorno allo sport',
   },
 ]
 
 function FasiSection() {
   return (
-    <section style={{ background: C.surface }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
@@ -442,7 +410,7 @@ function FasiSection() {
 /* ─────────────────── PERCORSO ─────────────────── */
 function PercorsiSection() {
   return (
-    <section style={{ background: C.bg }}>
+    <section style={{ background: C.surface }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
           <div style={{ maxWidth: '680px', marginBottom: '3rem' }}>
@@ -455,10 +423,7 @@ function PercorsiSection() {
               <span style={{ color: C.primary }}>Entri in un percorso.</span>
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Le linee guida internazionali per il dolore cervicale parlano di settimane e mesi, non di un numero fisso di sedute.
-            </p>
-            <p style={{ marginTop: '0.75rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Per questo non trovi un pacchetto: trovi un percorso costruito sul tempo reale che la tua situazione richiede.
+              I tempi dipendono dal tipo di infortunio e dal tuo sport — non trovi un pacchetto standard, trovi un percorso costruito sul tuo obiettivo reale: tornare in campo.
             </p>
           </div>
         </FadeIn>
@@ -469,31 +434,20 @@ function PercorsiSection() {
             boxShadow: '0 4px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)',
             maxWidth: '820px', margin: '0 auto',
           }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>🔄</div>
+            <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>🏋️</div>
             <span style={{
               display: 'inline-block', background: 'rgba(93,191,176,0.12)', color: C.secondary,
               fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
               padding: '3px 10px', borderRadius: '50px', marginBottom: '0.75rem',
             }}>
-              Dolore cervicale persistente
+              Infortuni sportivi
             </span>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: C.text, lineHeight: 1.35, marginBottom: '0.6rem' }}>
-              Cervicalgia, cervicobrachialgia, formicolio al braccio
+              Distorsioni, lesioni muscolari, tendinopatie da sovraccarico
             </h3>
             <p style={{ fontSize: '0.92rem', color: `${C.text}88`, lineHeight: 1.75, marginBottom: '1.75rem', maxWidth: '560px' }}>
-              Pensato per chi convive con dolore al collo o al braccio da settimane o mesi — con o senza ernia visibile in risonanza.
+              Pensato per chi si allena o fa sport, a livello agonistico o amatoriale, e vuole tornare all&apos;attività in sicurezza — non solo smettere di sentire dolore.
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ marginBottom: '1.75rem' }}>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Primi risultati</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>già in 4-6 settimane</span>
-              </div>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Frequenza tipica</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>1-2×/settimana</span>
-              </div>
-            </div>
 
             <div style={{
               background: 'rgba(26,158,201,0.06)', borderLeft: `4px solid ${C.primary}`,
@@ -503,7 +457,7 @@ function PercorsiSection() {
                 Tempistiche realistiche
               </p>
               <p style={{ margin: 0, fontSize: '0.86rem', color: `${C.text}99`, lineHeight: 1.7 }}>
-                Con 1-2 sedute a settimana, molte persone notano i primi miglioramenti concreti già nelle prime 4-6 settimane — meno dolore, meno formicolio, più fiducia nel movimento. Il recupero completo richiede in genere più tempo, con la frequenza che scala verso il basso man mano che torni autonomo. Qualche fase di riacutizzazione è normale e non significa che il percorso non stia funzionando.
+                Dipendono dal tipo e dalla gravità dell&apos;infortunio, oltre che dal tuo sport. Quello che vale sempre: il ritorno all&apos;attività è un processo per gradi, non un interruttore che si accende quando il dolore sparisce. Qualche fase di adattamento al carico è normale e fa parte del percorso, non è un segnale che qualcosa non va.
               </p>
             </div>
           </div>
@@ -512,10 +466,10 @@ function PercorsiSection() {
         <FadeIn delay={0.2}>
           <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginBottom: 0, lineHeight: 1.7 }}>
-              Se noti segnali diversi — debolezza che peggiora, difficoltà a camminare —
+              Qualunque sia il tuo sport, il tuo livello o il tipo di infortunio —
             </p>
             <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginTop: '0.25rem', lineHeight: 1.7 }}>
-              te lo dico subito in prima visita, che è gratuita, e ti indirizzo nel modo giusto.
+              ne parliamo insieme in prima visita, che è gratuita.
             </p>
             <CtaButton center mt="1.25rem" />
           </div>
@@ -539,9 +493,7 @@ function CtaMidSection() {
       <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Non devi decidere se operarti oggi.
-            <br />
-            Devi solo fare il primo passo.
+            Non devi scegliere tra fermarti e rischiare di peggiorare.
           </h2>
           <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.8 }}>
             Se ti sei riconosciuto in quello che hai letto, il primo passo è una chiacchierata —
@@ -578,7 +530,7 @@ function CtaMidSection() {
 /* ─────────────────── CHI SONO ─────────────────── */
 function ChiSonoSection() {
   return (
-    <section style={{ background: C.bg, overflow: 'hidden' }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <div style={{ maxWidth: '680px' }}>
           <FadeIn>
@@ -589,9 +541,9 @@ function ChiSonoSection() {
               Sono Umberto Mantovan, fisioterapista.
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Nel mio studio a Broni non uso tecar, laser o ultrasuoni: il collo e il braccio
-              ritrovano mobilità muovendosi, con un percorso costruito insieme a te — mai un
-              protocollo uguale per tutti.
+              Nel mio studio a Broni non uso tecar, laser o ultrasuoni: il corpo ritrova forza e
+              fiducia muovendosi, con un percorso costruito insieme a te — mai un protocollo
+              uguale per tutti.
             </p>
             <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
               Ogni seduta è 1:1, dedicata completamente a te. E prima di iniziare qualsiasi
@@ -708,18 +660,18 @@ function DoveSiamoSection() {
   )
 }
 
-/* ─────────────────── FAQ SPECIFICHE CERVICALE ─────────────────── */
-function FaqCervicaleSection() {
+/* ─────────────────── FAQ SPECIFICHE SPORTIVA ─────────────────── */
+function FaqSportivaSection() {
   return (
-    <section style={{ background: C.surface }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: `4rem ${C.pad} 1rem` }}>
         <FadeIn>
           <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-            Domande frequenti sul dolore cervicale
+            Domande frequenti sulla fisioterapia sportiva
           </span>
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {faqCervicale.map((f, i) => (
-              <div key={i} style={{ background: C.white, borderRadius: C.radius, padding: '1.5rem' }}>
+            {faqSportiva.map((f, i) => (
+              <div key={i} style={{ background: C.surface, borderRadius: C.radius, padding: '1.5rem' }}>
                 <p style={{ margin: 0, fontWeight: 700, color: C.text, fontSize: '0.92rem' }}>{f.q}</p>
                 <p style={{ marginTop: '0.5rem', color: `${C.text}88`, fontSize: '0.88rem', lineHeight: 1.7, margin: '0.5rem 0 0' }}>{f.a}</p>
               </div>
@@ -738,10 +690,10 @@ function CtaFinaleSection() {
       <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Il primo passo non è decidere se operarti.
+            Non aspettare la fine della stagione
           </h2>
           <p style={{ marginTop: '0.75rem', fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: C.secondary, lineHeight: 1.3 }}>
-            È capire cosa sta succedendo davvero.
+            per capire come tornare in campo.
           </p>
           <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.8 }}>
             La prima visita è gratuita, senza impegno.
