@@ -4,20 +4,19 @@ import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
 
 export const metadata: Metadata = {
-  title: 'Dolore cervicale e al braccio a Broni | Studio Mantovan',
+  title: 'Ginocchio: riabilitazione post-operatoria a Broni | Studio Mantovan',
   description:
-    'Bruciore o formicolio che scende dal collo verso il braccio? Una valutazione che parte da cosa non riesci più a fare, non dalla risonanza. Prima visita gratuita: 351 924 2517.',
+    'L’intervento è andato bene ma il ginocchio non è come prima? Il deficit di forza del quadricipite va recuperato attivamente. Prima visita gratuita: 351 924 2517.',
   keywords: [
-    'cervicalgia Broni',
-    'radicolopatia cervicale',
-    'dolore braccio dal collo',
-    'formicolio braccio',
-    'ernia cervicale',
-    'cervicobrachialgia',
-    'fisioterapista cervicale Oltrepò Pavese',
+    'riabilitazione ginocchio Broni',
+    'fisioterapia dopo artroscopia menisco',
+    'fisioterapia pre-operatoria protesi ginocchio',
+    'deficit quadricipite',
+    'fisioterapista ginocchio Oltrepò Pavese',
+    'riabilitazione post-operatoria ginocchio',
   ],
   alternates: {
-    canonical: 'https://umbertomantovan.net/patologie/cervicale',
+    canonical: 'https://umbertomantovan.net/patologie/ginocchio',
   },
 }
 
@@ -60,50 +59,50 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
   )
 }
 
-const faqCervicale = [
+const faqGinocchio = [
   {
-    q: 'Ho il formicolio al braccio: devo preoccuparmi?',
-    a: 'Spesso è il segnale di una radice nervosa irritata al collo. È fastidioso, ma nella grande maggioranza dei casi si risolve con il trattamento conservativo giusto.',
+    q: 'Il chirurgo mi ha detto che l’intervento è andato bene. Perché il ginocchio non è come prima?',
+    a: 'È molto comune: dopo l’intervento il quadricipite perde forza rapidamente — un meccanismo di protezione, non un danno. Va recuperato con un lavoro attivo, non torna da solo.',
   },
   {
-    q: 'Ho fatto la risonanza e c’è un’ernia: devo operarmi?',
-    a: 'Non necessariamente. Il trattamento conservativo produce risultati a lungo termine comparabili alla chirurgia nella maggior parte dei casi — ne parliamo nella valutazione.',
+    q: 'Camminare un po’ non basta a recuperare?',
+    a: 'No. Il cammino normale richiede molta meno forza di scale, alzarsi dalla sedia o tornare allo sport — serve un lavoro specifico e progressivo su quel muscolo.',
   },
   {
-    q: 'Da quanto tempo devo avere questi sintomi prima di venire da un fisioterapista?',
-    a: 'Prima vai, meglio è. Aspettare non aiuta e rischia solo di allungare il percorso di recupero.',
+    q: 'Devo fare fisioterapia anche prima dell’intervento, se devo operarmi?',
+    a: 'Sì, se possibile. Arrivare all’intervento con più forza e aspettative realistiche rende il recupero dopo più veloce e meno faticoso.',
   },
   {
-    q: 'Quanto tempo ci vorrà per stare meglio?',
-    a: 'Dipende dalla durata e intensità dei sintomi, ma la maggior parte delle persone nota miglioramenti significativi già nelle prime settimane di trattamento attivo.',
+    q: 'Sono passati mesi dall’intervento: è tardi per iniziare un percorso?',
+    a: 'No. Un ginocchio che non si è mai allenato correttamente dopo l’operazione può ancora recuperare — serve un punto di partenza onesto, non importa quanto tempo sia passato.',
   },
 ]
 
 const jsonLdFaqPage = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: faqCervicale.map((f) => ({
+  mainEntity: faqGinocchio.map((f) => ({
     '@type': 'Question',
     name: f.q,
     acceptedAnswer: { '@type': 'Answer', text: f.a },
   })),
 }
 
-export default function CervicalePage() {
+export default function GinocchioPage() {
   return (
     <div style={{ background: C.bg }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqPage) }} />
       <HeroSection />
-      <ProofStripCervicale />
+      <ProofStripGinocchio />
       <ProblemaSection />
       <SoluzioneSection />
-      <NonBastaSection />
+      <TestSection />
       <FasiSection />
       <PercorsiSection />
       <CtaMidSection />
       <ChiSonoSection />
       <DoveSiamoSection />
-      <FaqCervicaleSection />
+      <FaqGinocchioSection />
       <FaqSection />
       <CtaFinaleSection />
     </div>
@@ -133,7 +132,7 @@ function HeroSection() {
               fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em',
               padding: '6px 14px', borderRadius: '50px', marginBottom: '1.25rem',
             }}>
-              Fisioterapista a Broni · Dolore cervicale e al braccio
+              Fisioterapista a Broni · Ginocchio e riabilitazione post-operatoria
             </span>
           </FadeIn>
 
@@ -142,18 +141,18 @@ function HeroSection() {
               fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: 800,
               color: C.text, lineHeight: 1.28, letterSpacing: '-0.02em', margin: 0,
             }}>
-              &ldquo;Mi hanno detto che ho un&apos;ernia cervicale.&rdquo;
+              &ldquo;Il chirurgo mi ha detto che è andato tutto bene.&rdquo;
               <br />
-              <span style={{ color: C.primary }}>Ma nessuno mi ha spiegato perché il formicolio non passa.</span>
+              <span style={{ color: C.primary }}>Ma il ginocchio non è come prima.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p style={{ marginTop: '1.5rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Non un&apos;altra settimana con il collarino. Non un altro &ldquo;vedrai che passa&rdquo;. Una valutazione che parte da cosa non riesci più a fare, non dalla risonanza.
+              Non un altro &ldquo;cammina un po&apos; e vedrai&rdquo;. Una valutazione che parte da quanta forza hai recuperato davvero, non dal referto chirurgico.
             </p>
             <p style={{ marginTop: '0.75rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Molte persone notano i primi miglioramenti già nelle prime settimane di percorso attivo.
+              L&apos;intervento sistema la struttura. Il lavoro per tornare a fare le scale, lo sport, la tua vita, comincia dopo — ed è quello che faccio io.
             </p>
           </FadeIn>
 
@@ -170,9 +169,9 @@ function HeroSection() {
 }
 
 /* ─────────────────── PROOF STRIP ─────────────────── */
-function ProofStripCervicale() {
+function ProofStripGinocchio() {
   const items = [
-    { icon: '83%', testo: 'migliora senza chirurgia entro 4-6 mesi' },
+    { icon: '50-70%', testo: 'di forza del quadricipite persa nelle prime 48 ore dopo l’intervento' },
     { icon: '✓', testo: 'Prima visita gratuita' },
     { icon: '✓', testo: '5+ anni in ambito muscolo-scheletrico' },
   ]
@@ -218,16 +217,16 @@ function ProblemaSection() {
             Ti riconosci in questo?
           </span>
           <h2 style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.05rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.4 }}>
-            &ldquo;Il formicolio mi sveglia di notte. Al lavoro, dopo un&apos;ora al PC, il braccio comincia a bruciare.&rdquo;
+            &ldquo;Mi hanno detto solo di camminare un po&apos; e muoverlo nel letto. Nessuno mi ha parlato di riprendere forza.&rdquo;
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.1}>
           <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '2rem' }}>
-            È la descrizione che sento più spesso: un dolore che parte dal collo e scende verso spalla, braccio, a volte fino alle dita. Peggiora tenendo il volante, asciugandoti i capelli, dormendo su un fianco.
+            È quello che sento raccontare più spesso, anche mesi dopo un&apos;artroscopia o una protesi: i punti si sono chiusi, il referto dice tutto ok, ma scendere le scale resta un&apos;impresa e il ginocchio si sente instabile in salita.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '1.25rem' }}>
-            Hai già fatto una risonanza. C&apos;è scritta la parola &ldquo;ernia&rdquo;. E da quel momento ogni movimento del collo ti sembra un rischio — anche se nessuno ti ha ancora spiegato cosa significhi davvero quel referto.
+            &ldquo;Il ginocchio funziona dal punto di vista chirurgico&rdquo; e &ldquo;il ginocchio funziona nella tua vita di tutti i giorni&rdquo; sono due cose diverse — e nessuno te lo ha spiegato in ospedale.
           </p>
           <div style={{
             marginTop: '1.75rem',
@@ -237,7 +236,7 @@ function ProblemaSection() {
             padding: '1.25rem 1.5rem',
           }}>
             <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
-              Il referto ti dice cosa c&apos;è. Non ti dice cosa fare.
+              L&apos;intervento sistema la struttura. Non ti restituisce automaticamente la forza.
             </p>
           </div>
         </FadeIn>
@@ -257,9 +256,9 @@ function SoluzioneSection() {
               Perché è diverso
             </span>
             <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Vedere un&apos;ernia nel referto
+              Il quadricipite non si spegne per un danno.
               <br />
-              <span style={{ color: C.primary }}>non significa dover operare.</span>
+              <span style={{ color: C.primary }}>Si spegne per proteggerti — e va riacceso.</span>
             </h2>
           </div>
         </FadeIn>
@@ -268,42 +267,26 @@ function SoluzioneSection() {
           <div style={{
             background: C.white, borderRadius: C.radiusLg, padding: '2rem',
             boxShadow: '0 4px 20px rgba(0,0,0,0.06)', marginBottom: '1.5rem',
-          }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>83%</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                delle persone con un&apos;ernia cervicale <strong>migliora in modo significativo entro 4-6 mesi</strong>, anche senza chirurgia.
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.secondary, lineHeight: 1 }}>57%</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                delle persone <strong>senza alcun sintomo</strong> over 64 ha un&apos;ernia visibile in risonanza.
-              </p>
-              <p style={{ color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.4rem 0 0' }}>
-                L&apos;immagine da sola non spiega il tuo dolore.
-              </p>
-            </div>
+          }}>
+            <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>50-70%</div>
+            <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.95rem', lineHeight: 1.8, margin: '0.6rem 0 0' }}>
+              È il deficit di forza del quadricipite che si misura nelle prime 24-48 ore dopo l&apos;intervento, rispetto alla gamba sana. Non è un danno muscolare: il gonfiore e il dolore articolare inibiscono il muscolo come meccanismo di protezione. Il muscolo c&apos;è — semplicemente non si &ldquo;accende&rdquo; come prima.
+            </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.15}>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px' }}>
-            Nel mio studio non parto dalla risonanza.
+            Il cammino normale non basta a riattivarlo: richiede molta meno forza rispetto a salire una scala, alzarsi da una sedia o tornare allo sport.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Parto da te: dove senti il dolore, cosa lo scatena, cosa hai già provato — e ti spiego cosa significa davvero quello che hai letto nel referto.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            La radice nervosa irritata risponde bene al movimento guidato — non a stare fermi ad aspettare.
+            Se non si lavora attivamente per recuperare quella forza, il deficit può restare per mesi — anche quando il referto dice che è tutto a posto.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '1.25rem' }}>
             Non uso macchinari passivi.
           </p>
           <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Uso anche la terapia manuale e tecniche specifiche per il nervo come strumenti per farti muovere prima e con meno fastidio — mai come unico trattamento.
+            Il ginocchio ritrova forza e stabilità muovendosi, con carico progressivo e su misura — non ricevendo un trattamento passivo seduta dopo seduta.
           </p>
         </FadeIn>
 
@@ -315,44 +298,46 @@ function SoluzioneSection() {
   )
 }
 
-/* ─────────────────── COSA NON BASTA DA SOLO ─────────────────── */
-function NonBastaSection() {
+/* ─────────────────── IL TEST CHE PUOI FARE A CASA ─────────────────── */
+function TestSection() {
+  const punti = [
+    'Riesci ad alzarti senza usare le mani per spingere?',
+    'Il ginocchio rimane stabile o tende a cedere verso l’interno?',
+    'C’è una differenza evidente di difficoltà tra i due lati?',
+  ]
+
   return (
     <section style={{ background: C.surface }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
           <FadeIn>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Cosa non basta da solo
+              Un test che puoi fare a casa
             </span>
             <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.35, maxWidth: '620px' }}>
-              &ldquo;Se pensi che per il formicolio al braccio serva solo il collarino o aspettare che passi, ti hanno sempre consigliato male.&rdquo;
+              Alzati da una sedia su una sola gamba. Prima con la sana, poi con quella operata.
             </h2>
-
-            <p style={{ marginTop: '1.5rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              Collarino, riposo prolungato, antinfiammatori: sono le risposte più comuni al dolore cervicale — e da sole sono anche le meno risolutive. Il riposo prolungato non è la soluzione: rallenta il recupero invece di favorirlo.
+            <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
+              Non sostituisce una valutazione professionale, ma ti dà un riferimento concreto. Se la differenza tra le due gambe è marcata — o non riesci a completare il movimento sul lato operato — il quadricipite non ha ancora recuperato la forza necessaria per le attività di tutti i giorni. Non è un problema grave: è un punto di partenza su cui lavorare.
             </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              La strada che funziona meglio è l&apos;esposizione graduale: tornare a muovere il collo e il braccio nei gesti di tutti i giorni — PC, guida, sonno — in modo progressivo e controllato.
-            </p>
-
-            <FadeIn delay={0.15}>
-              <CtaButton mt="2rem" />
+            <FadeIn delay={0.1}>
+              <CtaButton mt="1.75rem" />
             </FadeIn>
           </FadeIn>
 
           <FadeIn delay={0.1} direction="right">
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2rem',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)', textAlign: 'center',
-            }}>
-              <div style={{ fontSize: '2.6rem', lineHeight: 1 }}>⚖️</div>
-              <p style={{ marginTop: '0.75rem', color: `${C.text}99`, fontSize: '0.88rem', lineHeight: 1.7, margin: '0.75rem 0 0' }}>
-                Il trattamento conservativo ha <strong>risultati a lungo termine comparabili alla chirurgia</strong> nella maggior parte dei casi.
+            <div style={{ background: C.white, borderRadius: C.radiusLg, padding: '2rem', boxShadow: '0 4px 20px rgba(0,0,0,0.06)' }}>
+              <p style={{ margin: 0, fontWeight: 700, color: C.text, fontSize: '0.95rem', marginBottom: '1rem' }}>
+                Cosa osservare:
               </p>
-              <p style={{ marginTop: '0.75rem', color: `${C.text}66`, fontSize: '0.75rem', lineHeight: 1.6, margin: '0.75rem 0 0' }}>
-                Dato di letteratura, non una garanzia individuale.
-              </p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+                {punti.map((p) => (
+                  <div key={p} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.7rem' }}>
+                    <span style={{ color: C.secondary, fontWeight: 800, flexShrink: 0 }}>✔</span>
+                    <p style={{ margin: 0, color: `${C.text}99`, fontSize: '0.88rem', lineHeight: 1.6 }}>{p}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </FadeIn>
         </div>
@@ -365,32 +350,32 @@ function NonBastaSection() {
 const fasi = [
   {
     num: '01',
-    titolo: 'Capire cosa sta succedendo davvero',
-    corpo: 'Un\'ernia nel referto non è ancora una diagnosi. Nella valutazione gratuita ascolto la tua storia, guardo cosa riesci e non riesci a fare, e ti spiego cosa significa — e cosa non significa — quello che hai letto nel referto.',
+    titolo: 'Valutazione iniziale',
+    corpo: 'Guardiamo insieme forza, mobilità, stabilità e quali movimenti o attività creano ancora difficoltà. Esci dalla visita gratuita con un quadro chiaro della situazione reale — non di quella attesa secondo un protocollo standard.',
     tag: 'Valutazione gratuita',
   },
   {
     num: '02',
-    titolo: 'Tornare a fidarti del movimento',
-    corpo: 'Il collo e il braccio si riattivano muovendosi, non stando fermi. Uso anche tecniche specifiche per il nervo per ridurne l\'irritazione, insieme a esercizi scelti su misura e carico che aumenta in modo progressivo.',
+    titolo: 'Percorso attivo',
+    corpo: 'Programma di esercizio progressivo calibrato sul tuo punto di partenza e sui tuoi obiettivi concreti: le scale, il lavoro, lo sport. Dove serve, aggiungo terapia manuale per recuperare i movimenti dell\'articolazione — mai come trattamento isolato.',
     tag: 'Percorso attivo',
   },
   {
     num: '03',
-    titolo: 'Riprendere la tua vita',
-    corpo: 'L\'obiettivo non è solo meno dolore. È dormire senza svegliarti, guidare senza fastidio, tornare al lavoro senza pensarci. Frequenza che si riduce nel tempo, programma costruito sui tuoi obiettivi reali.',
+    titolo: 'Ritorno alle attività',
+    corpo: 'Lavoriamo verso un ritorno graduale alle attività che per te contano, con la fiducia nel ginocchio che si costruisce passo dopo passo — non da un giorno all\'altro.',
     tag: 'Autonomia',
   },
 ]
 
 function FasiSection() {
   return (
-    <section style={{ background: C.surface }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Come lavoriamo insieme
+              Come lavoro sul ginocchio
             </span>
             <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
               Il percorso in 3 fasi
@@ -442,7 +427,7 @@ function FasiSection() {
 /* ─────────────────── PERCORSO ─────────────────── */
 function PercorsiSection() {
   return (
-    <section style={{ background: C.bg }}>
+    <section style={{ background: C.surface }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
         <FadeIn>
           <div style={{ maxWidth: '680px', marginBottom: '3rem' }}>
@@ -455,10 +440,7 @@ function PercorsiSection() {
               <span style={{ color: C.primary }}>Entri in un percorso.</span>
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Le linee guida internazionali per il dolore cervicale parlano di settimane e mesi, non di un numero fisso di sedute.
-            </p>
-            <p style={{ marginTop: '0.75rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Per questo non trovi un pacchetto: trovi un percorso costruito sul tempo reale che la tua situazione richiede.
+              I tempi dipendono dal tipo di intervento — non trovi un pacchetto standard, trovi un percorso costruito sul tuo punto di partenza reale.
             </p>
           </div>
         </FadeIn>
@@ -469,53 +451,46 @@ function PercorsiSection() {
             boxShadow: '0 4px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)',
             maxWidth: '820px', margin: '0 auto',
           }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>🔄</div>
+            <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>🦵</div>
             <span style={{
               display: 'inline-block', background: 'rgba(93,191,176,0.12)', color: C.secondary,
               fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
               padding: '3px 10px', borderRadius: '50px', marginBottom: '0.75rem',
             }}>
-              Dolore cervicale persistente
+              Riabilitazione post-operatoria ginocchio
             </span>
             <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: C.text, lineHeight: 1.35, marginBottom: '0.6rem' }}>
-              Cervicalgia, cervicobrachialgia, formicolio al braccio
+              Artroscopia, protesi, meniscectomia, sutura del menisco
             </h3>
             <p style={{ fontSize: '0.92rem', color: `${C.text}88`, lineHeight: 1.75, marginBottom: '1.75rem', maxWidth: '560px' }}>
-              Pensato per chi convive con dolore al collo o al braccio da settimane o mesi — con o senza ernia visibile in risonanza.
+              Pensato sia per chi deve ancora affrontare l&apos;intervento (fisioterapia pre-operatoria) sia per chi lo ha già fatto e non ha ancora recuperato del tutto.
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ marginBottom: '1.75rem' }}>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Primi risultati</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>già in 4-6 settimane</span>
-              </div>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Frequenza tipica</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>1-2×/settimana</span>
-              </div>
-            </div>
 
             <div style={{
               background: 'rgba(26,158,201,0.06)', borderLeft: `4px solid ${C.primary}`,
-              borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`, padding: '1.1rem 1.4rem',
+              borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`, padding: '1.1rem 1.4rem', marginBottom: '1.25rem',
             }}>
               <p style={{ margin: 0, fontSize: '0.85rem', color: C.text, fontWeight: 600, lineHeight: 1.5, marginBottom: '0.4rem' }}>
-                Tempistiche realistiche
+                Tempistiche realistiche (indicative, non scadenze)
               </p>
               <p style={{ margin: 0, fontSize: '0.86rem', color: `${C.text}99`, lineHeight: 1.7 }}>
-                Con 1-2 sedute a settimana, molte persone notano i primi miglioramenti concreti già nelle prime 4-6 settimane — meno dolore, meno formicolio, più fiducia nel movimento. Il recupero completo richiede in genere più tempo, con la frequenza che scala verso il basso man mano che torni autonomo. Qualche fase di riacutizzazione è normale e non significa che il percorso non stia funzionando.
+                Dopo una <strong>meniscectomia parziale</strong>, molte persone tornano alle attività quotidiane senza grosse limitazioni in <strong>3-6 settimane</strong>, e a un&apos;attività sportiva moderata in <strong>2-3 mesi</strong> — se il lavoro sulla forza viene affrontato attivamente. Dopo una <strong>sutura del menisco</strong> i tessuti hanno bisogno di più tempo: il ritorno allo sport richiede in genere <strong>4-6 mesi</strong>. Per una <strong>protesi</strong>, il recupero completo richiede mesi, non settimane — chi arriva all&apos;intervento con più forza recupera più velocemente e con meno dolore.
               </p>
             </div>
+
+            <p style={{ margin: 0, fontSize: '0.85rem', color: `${C.text}77`, lineHeight: 1.7 }}>
+              <strong style={{ color: C.text }}>Frequenza:</strong> più intensa nelle prime settimane, quando il deficit di forza è più marcato; si dirada man mano che recuperi forza e autonomia negli esercizi. Nessun numero fisso di sedute: la cadenza si calibra su come risponde il tuo ginocchio.
+            </p>
           </div>
         </FadeIn>
 
         <FadeIn delay={0.2}>
           <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
             <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginBottom: 0, lineHeight: 1.7 }}>
-              Se noti segnali diversi — debolezza che peggiora, difficoltà a camminare —
+              Se sono passati mesi dall&apos;intervento e non hai mai fatto un percorso attivo —
             </p>
             <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginTop: '0.25rem', lineHeight: 1.7 }}>
-              te lo dico subito in prima visita, che è gratuita, e ti indirizzo nel modo giusto.
+              non è tardi. Ne parliamo in prima visita, che è gratuita.
             </p>
             <CtaButton center mt="1.25rem" />
           </div>
@@ -539,13 +514,10 @@ function CtaMidSection() {
       <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Non devi decidere se operarti oggi.
-            <br />
-            Devi solo fare il primo passo.
+            Il recupero non finisce quando si chiude la ferita.
           </h2>
           <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.8 }}>
-            Se ti sei riconosciuto in quello che hai letto, il primo passo è una chiacchierata —
-            non un impegno.
+            Finisce quando il ginocchio torna a fare quello che ti serve: le scale, il lavoro, lo sport, la vita che avevi prima.
           </p>
           <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
             <a
@@ -589,9 +561,9 @@ function ChiSonoSection() {
               Sono Umberto Mantovan, fisioterapista.
             </h2>
             <p style={{ marginTop: '1.25rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Nel mio studio a Broni non uso tecar, laser o ultrasuoni: il collo e il braccio
-              ritrovano mobilità muovendosi, con un percorso costruito insieme a te — mai un
-              protocollo uguale per tutti.
+              Nel mio studio a Broni non uso tecar, laser o ultrasuoni: il ginocchio ritrova forza
+              e stabilità muovendosi, con un percorso costruito insieme a te — mai un protocollo
+              uguale per tutti.
             </p>
             <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
               Ogni seduta è 1:1, dedicata completamente a te. E prima di iniziare qualsiasi
@@ -708,18 +680,18 @@ function DoveSiamoSection() {
   )
 }
 
-/* ─────────────────── FAQ SPECIFICHE CERVICALE ─────────────────── */
-function FaqCervicaleSection() {
+/* ─────────────────── FAQ SPECIFICHE GINOCCHIO ─────────────────── */
+function FaqGinocchioSection() {
   return (
-    <section style={{ background: C.surface }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: `4rem ${C.pad} 1rem` }}>
         <FadeIn>
           <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-            Domande frequenti sul dolore cervicale
+            Domande frequenti sul ginocchio
           </span>
           <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            {faqCervicale.map((f, i) => (
-              <div key={i} style={{ background: C.white, borderRadius: C.radius, padding: '1.5rem' }}>
+            {faqGinocchio.map((f, i) => (
+              <div key={i} style={{ background: C.surface, borderRadius: C.radius, padding: '1.5rem' }}>
                 <p style={{ margin: 0, fontWeight: 700, color: C.text, fontSize: '0.92rem' }}>{f.q}</p>
                 <p style={{ marginTop: '0.5rem', color: `${C.text}88`, fontSize: '0.88rem', lineHeight: 1.7, margin: '0.5rem 0 0' }}>{f.a}</p>
               </div>
@@ -738,10 +710,10 @@ function CtaFinaleSection() {
       <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Il primo passo non è decidere se operarti.
+            Hai già aspettato settimane, o mesi?
           </h2>
           <p style={{ marginTop: '0.75rem', fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: C.secondary, lineHeight: 1.3 }}>
-            È capire cosa sta succedendo davvero.
+            Non è tardi per iniziare.
           </p>
           <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.8 }}>
             La prima visita è gratuita, senza impegno.

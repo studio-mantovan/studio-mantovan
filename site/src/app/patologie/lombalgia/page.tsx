@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
@@ -124,9 +123,9 @@ function HeroSection() {
 
       <div
         style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad} 3.5rem`, position: 'relative' }}
-        className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-12 items-center"
+        className="grid grid-cols-1"
       >
-        <div>
+        <div style={{ maxWidth: '680px' }}>
           <FadeIn>
             <span style={{
               display: 'inline-block', background: 'rgba(26,158,201,0.1)', color: C.primary,
@@ -164,26 +163,6 @@ function HeroSection() {
             </p>
           </FadeIn>
         </div>
-
-        <FadeIn delay={0.1} direction="right">
-          <div style={{ position: 'relative', width: '100%', maxWidth: '420px', margin: '0 auto' }}>
-            <div style={{
-              position: 'absolute', inset: '-1.5rem',
-              background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)',
-              borderRadius: '2.5rem', filter: 'blur(20px)',
-            }} />
-            <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 24px 64px rgba(0,0,0,0.12)' }}>
-              <Image
-                src="/photos/f1-trattamento-lombare.jpg"
-                alt="Umberto Mantovan tratta la zona lombare di un paziente sul lettino"
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-                sizes="(max-width: 768px) 100vw, 420px"
-              />
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   )
@@ -598,22 +577,8 @@ function ChiSonoSection() {
   return (
     <section style={{ background: C.bg, overflow: 'hidden' }}>
       <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-14 items-center">
-          <FadeIn direction="left">
-            <div style={{ position: 'relative', maxWidth: '380px' }}>
-              <div style={{ position: 'relative', aspectRatio: '1', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.1)' }}>
-                <Image
-                  src="/photos/f3-ritratto.jpg"
-                  alt="Umberto Mantovan fisioterapista – Studio Mantovan Broni"
-                  fill
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                  sizes="(max-width: 768px) 100vw, 380px"
-                />
-              </div>
-            </div>
-          </FadeIn>
-
-          <FadeIn direction="right" delay={0.1}>
+        <div style={{ maxWidth: '680px' }}>
+          <FadeIn>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
               Chi sono
             </span>
