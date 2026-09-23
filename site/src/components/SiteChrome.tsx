@@ -8,7 +8,7 @@ import WhatsAppButton from './WhatsAppButton'
 // Landing page da traffico Ads: zero vie di uscita (niente nav, niente footer
 // di sito, niente fab WhatsApp) per non distrarre il traffico freddo dalla CTA
 // principale — vedi anatomia-landing-page-perfetta.md, "meno è più".
-const CHROMELESS_ROUTES = ['/spalla-lesionata']
+const CHROMELESS_ROUTES = ['/spalla-lesionata', '/visita-gratuita-broni', '/spalla-cronica']
 
 export default function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
