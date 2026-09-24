@@ -287,7 +287,7 @@ function IconCard({ Icon, label, sub, tone = 'primary' }: { Icon: LucideIcon; la
 
 function CardRow({ children }: { children: React.ReactNode }) {
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1rem', marginTop: '1rem' }}>
+    <div className="gap-4 md:gap-6" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
       {children}
     </div>
   )
@@ -310,7 +310,7 @@ function LabelPill({ children, color, shadow }: { children: React.ReactNode; col
 function ProblemaSection() {
   return (
     <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: `4rem ${C.pad} 1.75rem` }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4rem ${C.pad} 1.75rem` }}>
         <FadeIn>
           <h2 style={{ margin: '0 auto 2rem', maxWidth: '640px', textAlign: 'center', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: C.text, lineHeight: 1.3 }}>
             Ecco cosa succede di solito a chi soffre di dolore alla spalla
@@ -386,7 +386,7 @@ const garanzie = [
 function SoluzioneSection() {
   return (
     <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: '900px', margin: '0 auto', padding: `2rem ${C.pad} 4rem` }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `2rem ${C.pad} 4rem` }}>
         <FadeIn>
           <div style={{ textAlign: 'center' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
