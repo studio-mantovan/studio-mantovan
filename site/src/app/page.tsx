@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
 import { recensioni } from '@/lib/recensioni'
-import SpallaPromoPopup from '@/components/SpallaPromoPopup'
 
 export const metadata: Metadata = {
   alternates: { canonical: '/' },
@@ -61,7 +60,6 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
 export default function HomePage() {
   return (
     <>
-      <SpallaPromoPopup />
       <HeroSection />
       <ProofStrip />
       <SoluzioneSection />
