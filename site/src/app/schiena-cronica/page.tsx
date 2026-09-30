@@ -141,57 +141,66 @@ function HeroSection() {
         }} />
       </div>
 
-      <div style={{ maxWidth: '640px', margin: '0 auto', padding: `2.5rem ${C.pad} 3rem`, position: 'relative', textAlign: 'center' }}>
-        <FadeIn>
-          <span style={{
-            display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
-            letterSpacing: '0.1em', color: C.secondary, marginBottom: '0.9rem',
-          }}>
-            Cerchi un fisioterapista per mal di schiena o sciatalgia vicino a te?
-          </span>
-          <h1 style={{
-            fontSize: 'clamp(1.9rem, 4.2vw, 2.7rem)', fontWeight: 800,
-            color: C.text, lineHeight: 1.25, letterSpacing: '-0.02em', margin: 0,
-          }}>
-            &ldquo;Ho fatto le mie 10 sedute, stavo meglio. Poi è tornato tutto come prima.&rdquo;
-          </h1>
-        </FadeIn>
+      <div
+        style={{ maxWidth: C.container, margin: '0 auto', padding: `2.5rem ${C.pad} 3rem`, position: 'relative' }}
+        className="grid grid-cols-1 md:grid-cols-[1fr_340px] md:grid-rows-[auto_auto] gap-x-12 gap-y-0"
+      >
+        <div className="order-1 md:order-none md:col-start-1 md:row-start-1" style={{ textAlign: 'center' }}>
+          <FadeIn>
+            <span style={{
+              display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
+              letterSpacing: '0.1em', color: C.secondary, marginBottom: '0.9rem',
+            }}>
+              Cerchi un fisioterapista per mal di schiena o sciatalgia vicino a te?
+            </span>
+            <h1 style={{
+              fontSize: 'clamp(1.9rem, 3.4vw, 3.1rem)', fontWeight: 800,
+              color: C.text, lineHeight: 1.25, letterSpacing: '-0.02em', margin: 0,
+            }}>
+              &ldquo;Ho fatto le mie 10 sedute, stavo meglio. Poi è tornato tutto come prima.&rdquo;
+            </h1>
+          </FadeIn>
+        </div>
 
-        <FadeIn delay={0.08}>
-          <div style={{ position: 'relative', width: '100%', maxWidth: '300px', margin: '1.75rem auto 0' }}>
-            <div style={{
-              position: 'absolute', inset: '-1rem',
-              background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)',
-              borderRadius: '2.5rem', filter: 'blur(20px)',
-            }} />
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              poster="/videos/schiena-flessione-senza-piegare-gambe-poster.jpg"
-              style={{
-                position: 'relative', width: '100%', aspectRatio: '9 / 16', objectFit: 'cover',
-                borderRadius: C.radiusLg, background: '#000',
-                boxShadow: '0 24px 64px rgba(0,0,0,0.15)', display: 'block',
-              }}
-            >
-              <source src="/videos/schiena-flessione-senza-piegare-gambe.mp4" type="video/mp4" />
-            </video>
-          </div>
-        </FadeIn>
+        <div className="order-2 md:order-none md:col-start-2 md:row-start-1 md:row-span-2" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+          <FadeIn delay={0.08} direction="right">
+            <div style={{ position: 'relative', width: '100%', maxWidth: '300px', margin: '1.75rem auto 0' }} className="md:mt-0">
+              <div style={{
+                position: 'absolute', inset: '-1rem',
+                background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)',
+                borderRadius: '2.5rem', filter: 'blur(20px)',
+              }} />
+              <video
+                controls
+                playsInline
+                preload="metadata"
+                poster="/videos/schiena-flessione-senza-piegare-gambe-poster.jpg"
+                style={{
+                  position: 'relative', width: '100%', aspectRatio: '9 / 16', objectFit: 'cover',
+                  borderRadius: C.radiusLg, background: '#000',
+                  boxShadow: '0 24px 64px rgba(0,0,0,0.15)', display: 'block',
+                }}
+              >
+                <source src="/videos/schiena-flessione-senza-piegare-gambe.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </FadeIn>
+        </div>
 
-        <FadeIn delay={0.14}>
-          <p style={{ margin: '1.5rem auto 0', maxWidth: '520px', fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)', fontWeight: 600, color: C.text, lineHeight: 1.6 }}>
-            Schiena in Movimento è il mio percorso di fisioterapia attiva per il mal di schiena e la sciatalgia che durano da mesi o anni. Un percorso costruito sulla tua situazione e sul tempo realmente necessario per ottenere un recupero concreto e duraturo.
-          </p>
-        </FadeIn>
+        <div className="order-3 md:order-none md:col-start-1 md:row-start-2" style={{ textAlign: 'center' }}>
+          <FadeIn delay={0.14}>
+            <p style={{ margin: '1.5rem auto 0', maxWidth: '520px', fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)', fontWeight: 600, color: C.text, lineHeight: 1.6 }}>
+              Schiena in Movimento è il mio percorso di fisioterapia attiva per il mal di schiena e la sciatalgia che durano da mesi o anni. Un percorso costruito sulla tua situazione e sul tempo realmente necessario per ottenere un recupero concreto e duraturo.
+            </p>
+          </FadeIn>
 
-        <FadeIn delay={0.26}>
-          <CtaButton center mt="1.5rem" label="Prenota la tua prima visita gratuita →" />
-          <p style={{ margin: '0.75rem auto 0', fontSize: '0.85rem', color: `${C.text}88`, lineHeight: 1.6, maxWidth: '440px' }}>
-            Ti rispondo personalmente entro 24-48 ore.
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.26}>
+            <CtaButton center mt="1.5rem" label="Prenota la tua prima visita gratuita →" />
+            <p style={{ margin: '0.75rem auto 0', fontSize: '0.85rem', color: `${C.text}88`, lineHeight: 1.6, maxWidth: '440px', marginLeft: 'auto', marginRight: 'auto' }}>
+              Ti rispondo personalmente entro 24-48 ore.
+            </p>
+          </FadeIn>
+        </div>
       </div>
     </section>
   )
@@ -349,9 +358,9 @@ const garanzie = [
 ]
 
 const fasi = [
-  { label: 'All’inizio', titolo: '1 seduta a settimana', testo: 'Per costruire il percorso, lavorare sul movimento e capire come risponde la tua schiena.' },
-  { label: 'Poi', titolo: 'Le sedute si diradano', testo: 'Quando hai più controllo e sicurezza, diminuiamo gradualmente la frequenza.' },
-  { label: 'Nel tempo', titolo: 'La fisioterapia serve sempre meno', testo: 'Perché impari a gestire la tua schiena anche senza dipendere dal lettino o dal fisioterapista.' },
+  { label: 'Fase 1', titolo: '1 seduta a settimana', testo: 'Per costruire il percorso, lavorare sul movimento e capire come risponde la tua schiena.' },
+  { label: 'Fase 2', titolo: '1 seduta ogni due settimane', testo: 'Quando hai più controllo e sicurezza, la frequenza si riduce.' },
+  { label: 'Fase 3', titolo: '1 seduta ogni tre settimane', testo: 'Fino al termine del percorso, per consolidare l’autonomia raggiunta.' },
 ]
 
 function SoluzioneSection() {
@@ -385,9 +394,9 @@ function SoluzioneSection() {
               </p>
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.6rem', marginTop: '1.75rem' }}>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-3 md:gap-4" style={{ marginTop: '1.75rem' }}>
               {fasi.flatMap((f, i) => [
-                <div key={`box-${f.label}`} style={{ background: 'rgba(26,158,201,0.09)', borderRadius: C.radius, padding: '1.1rem 1.35rem', textAlign: 'center', width: '100%', maxWidth: '380px' }}>
+                <div key={`box-${f.label}`} className="w-full md:flex-1" style={{ background: 'rgba(26,158,201,0.09)', borderRadius: C.radius, padding: '1.1rem 1.35rem', textAlign: 'center', maxWidth: '380px' }}>
                   <div style={{ fontSize: '0.72rem', fontWeight: 800, color: C.primary, textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: '0.45rem' }}>
                     {f.label}
                   </div>
@@ -395,7 +404,7 @@ function SoluzioneSection() {
                   <div style={{ fontSize: '0.8rem', color: `${C.text}88`, marginTop: '0.4rem', lineHeight: 1.5 }}>{f.testo}</div>
                 </div>,
                 i < fasi.length - 1
-                  ? <span key={`arrow-${f.label}`} style={{ fontSize: '1.2rem', color: C.primary, fontWeight: 700, lineHeight: 1 }}>↓</span>
+                  ? <span key={`arrow-${f.label}`} className="md:-rotate-90" style={{ fontSize: '1.2rem', color: C.primary, fontWeight: 700, lineHeight: 1, flexShrink: 0 }}>↓</span>
                   : null,
               ])}
             </div>
