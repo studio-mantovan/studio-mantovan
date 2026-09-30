@@ -14,7 +14,7 @@ const C = {
 }
 
 /* ─────────────────── MODULO CONTATTI (Web3Forms) ─────────────────── */
-export function ContactForm() {
+export function ContactForm({ accessKey }: { accessKey?: string } = {}) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -35,7 +35,7 @@ export function ContactForm() {
 
     try {
       const payload = {
-        access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
+        access_key: accessKey || process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY,
         subject: 'Nuovo messaggio dal sito – Studio Mantovan',
         from_name: 'Sito Studio Mantovan',
         name: data.get('name'),

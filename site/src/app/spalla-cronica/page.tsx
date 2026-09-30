@@ -787,7 +787,7 @@ function CtaFinaleSection() {
           </div>
 
           <div style={{ marginTop: '2rem' }}>
-            <ContactForm />
+            <ContactForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_SPALLA_CRONICA} />
           </div>
 
           <div style={{ marginTop: '2rem', textAlign: 'center' }}>
