@@ -2,7 +2,11 @@
 
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, Phone, MapPin } from 'lucide-react'
+
+const TEL = 'tel:+393519242517'
+const TEL_DISPLAY = '351 924 2517'
+const MAPS_URL = 'https://share.google/Z9RQOLbXwiA9FFpQp'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -68,14 +72,25 @@ export default function Header() {
         </nav>
 
         {/* ── CTA desktop ── */}
-        <div className="hidden md:flex items-center" style={{ gap: '12px', flexShrink: 0 }}>
+        <div className="hidden md:flex items-center" style={{ gap: '16px', flexShrink: 0 }}>
           <a
-            href="tel:+393519242517"
-            style={{ fontSize: '13px', color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s' }}
+            href={MAPS_URL}
+            target="_blank" rel="noopener noreferrer"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#1A9EC9')}
             onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
           >
-            351 924 2517
+            <MapPin size={14} strokeWidth={2} />
+            Via Enzo Togni, 75
+          </a>
+          <a
+            href={TEL}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '5px', fontSize: '13px', color: '#6B7280', textDecoration: 'none', transition: 'color 0.2s', whiteSpace: 'nowrap' }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#1A9EC9')}
+            onMouseLeave={e => (e.currentTarget.style.color = '#6B7280')}
+          >
+            <Phone size={14} strokeWidth={2} />
+            {TEL_DISPLAY}
           </a>
           <a
             href="/prenota"
@@ -101,6 +116,29 @@ export default function Header() {
             }}
           >
             Prenota la prima visita gratuita
+          </a>
+        </div>
+
+        {/* ── Indirizzo + telefono — sempre visibili su mobile, tra logo e menu ── */}
+        <div className="flex md:hidden items-center" style={{ gap: '10px' }}>
+          <a
+            href={MAPS_URL}
+            target="_blank" rel="noopener noreferrer"
+            aria-label="Apri l'indirizzo dello studio su Google Maps"
+            style={{ display: 'inline-flex', color: '#6B7280', textDecoration: 'none' }}
+          >
+            <MapPin size={19} strokeWidth={2} />
+          </a>
+          <a
+            href={TEL}
+            style={{
+              display: 'inline-flex', alignItems: 'center', gap: '4px',
+              fontSize: '13px', fontWeight: 700, color: '#1A9EC9',
+              textDecoration: 'none', whiteSpace: 'nowrap',
+            }}
+          >
+            <Phone size={15} strokeWidth={2.25} />
+            {TEL_DISPLAY}
           </a>
         </div>
 
