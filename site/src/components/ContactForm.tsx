@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { trackMetaEvent } from '@/lib/meta-pixel'
+import { trackGoogleAdsLeadFormConversion } from '@/lib/google-ads'
 
 const C = {
   primary:   '#1A9EC9',
@@ -52,6 +53,7 @@ export function ContactForm() {
 
       if (result.success) {
         trackMetaEvent('Lead')
+        trackGoogleAdsLeadFormConversion()
         setStatus('success')
         form.reset()
       } else {
