@@ -17,15 +17,21 @@ const C = {
 // resto della pagina. Il footer resta invariato ovunque altrove sul sito.
 const HIDE_FREE_VISIT_CLAIMS_ROUTES = ['/fisioterapia-a-domicilio']
 
+// Pagine dove la sola CTA "prenota la prima visita gratuita" va nascosta perché
+// ridondante con il contenuto della pagina stessa (es. /prenota, che è già
+// interamente dedicata a quella prenotazione). Il resto del footer resta invariato.
+const HIDE_CTA_STRIP_ROUTES = ['/prenota']
+
 export default function Footer() {
   const pathname = usePathname()
   const hideFreeVisitClaims = HIDE_FREE_VISIT_CLAIMS_ROUTES.includes(pathname)
+  const hideCtaStrip = hideFreeVisitClaims || HIDE_CTA_STRIP_ROUTES.includes(pathname)
 
   return (
     <footer style={{ background: C.text, color: 'rgba(255,255,255,0.75)' }}>
 
       {/* CTA strip */}
-      {!hideFreeVisitClaims && (
+      {!hideCtaStrip && (
         <div style={{ background: C.primary }}>
           <div style={{
             maxWidth: C.container, margin: '0 auto',

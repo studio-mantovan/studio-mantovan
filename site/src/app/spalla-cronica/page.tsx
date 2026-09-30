@@ -2,9 +2,11 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { ContactForm } from '@/components/ContactForm'
 import {
   Pill, Zap, Syringe, BedDouble, ArrowUp, ArrowDown, Weight, Hammer,
   Stethoscope, Dumbbell, CalendarCheck, BadgePercent, Flag,
+  TrendingUp, Moon, Activity, Unlock,
   type LucideIcon,
 } from 'lucide-react'
 
@@ -33,17 +35,16 @@ const C = {
 
 const TEL = '+393519242517'
 const TEL_DISPLAY = '351 924 2517'
-// Link "leggi le recensioni": ricerca diretta della scheda su Google Maps.
-// Se hai un link più preciso dalla dashboard di Google Business Profile, si sostituisce qui.
-const GOOGLE_REVIEWS_URL =
-  'https://www.google.com/maps/search/?api=1&query=Studio+Mantovan+Fisioterapia+in+Movimento+Broni+PV'
+// Link diretto alla scheda Google Business Profile — usato per "leggi le recensioni"
+// e per aprire l'indirizzo nella barra in alto.
+const GOOGLE_REVIEWS_URL = 'https://share.google/Z9RQOLbXwiA9FFpQp'
 
 /* ─── CTA primaria ─── */
 function CtaButton({ center = false, mt = '2rem', label = 'Prenota la tua visita gratuita →' }: { center?: boolean; mt?: string; label?: string }) {
   return (
     <div style={{ marginTop: mt, display: 'flex', justifyContent: center ? 'center' : 'flex-start' }}>
       <a
-        href="/prenota"
+        href="#modulo-contatti"
         style={{
           display: 'inline-flex', alignItems: 'center', gap: '8px',
           background: C.primary, color: '#fff',
@@ -68,6 +69,7 @@ export default function SpallaCronicaLandingPage() {
       <ProofStrip />
       <ProblemaSection />
       <SoluzioneSection />
+      <BeneficiSection />
       <WallOfLoveSection />
       <ConfrontoSection />
       <TendineLesionatoSection />
@@ -93,7 +95,11 @@ function StickyTopBar() {
         maxWidth: C.container, margin: '0 auto', padding: `0.85rem ${C.pad}`,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem',
       }}>
-        <div>
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank" rel="noopener noreferrer"
+          style={{ textDecoration: 'none' }}
+        >
           <div style={{ fontSize: '0.95rem', fontWeight: 800, color: C.primary, letterSpacing: '-0.01em', lineHeight: 1.2 }}>
             Studio Mantovan
           </div>
@@ -103,7 +109,7 @@ function StickyTopBar() {
           <div style={{ fontSize: '0.65rem', fontWeight: 600, color: `${C.text}77`, letterSpacing: '0.03em', lineHeight: 1.35 }}>
             Via Enzo Togni, 75 · Broni (PV)
           </div>
-        </div>
+        </a>
         <a
           href={`tel:${TEL}`}
           style={{
@@ -150,7 +156,7 @@ function HeroSection() {
               fontSize: 'clamp(2rem, 4.2vw, 2.9rem)', fontWeight: 800,
               color: C.text, lineHeight: 1.2, letterSpacing: '-0.02em', margin: 0,
             }}>
-              Torna a fare ciò che oggi il dolore alla spalla ti impedisce di fare.
+              Torna alle attività che oggi il dolore alla spalla ti impedisce di vivere.
             </h1>
             <p style={{ margin: '1.1rem auto 0', maxWidth: '560px', fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)', fontWeight: 600, color: C.text, lineHeight: 1.6 }}>
               Spalla in Movimento è il mio percorso di 8 settimane di fisioterapia attiva per aiutarti a recuperare i movimenti e le attività che per te contano davvero: lavoro, vita quotidiana e sport.
@@ -171,10 +177,7 @@ function HeroSection() {
           </FadeIn>
 
           <FadeIn delay={0.16}>
-            <p style={{ margin: '1.5rem auto 0', fontSize: '0.85rem', fontWeight: 700, color: C.secondary, letterSpacing: '0.02em' }}>
-              Prima visita gratuita →
-            </p>
-            <CtaButton center mt="0.5rem" label="Prenota la tua prima visita gratuita →" />
+            <CtaButton center mt="1.5rem" label="Prenota la tua prima visita gratuita →" />
             <p style={{ margin: '0.75rem auto 0', fontSize: '0.85rem', color: `${C.text}88`, lineHeight: 1.6, maxWidth: '440px' }}>
               Ti rispondo personalmente entro 24-48 ore.
             </p>
@@ -473,6 +476,54 @@ function SoluzioneSection() {
   )
 }
 
+/* ─────────────────── BENEFICI DEL PERCORSO ATTIVO ─────────────────── */
+const benefici = [
+  { Icon: TrendingUp, titolo: 'Più forza e mobilità' },
+  { Icon: Moon, titolo: 'Dormi senza essere svegliato dal dolore' },
+  { Icon: Activity, titolo: 'Meno dolore nei gesti di ogni giorno' },
+  { Icon: Unlock, titolo: 'Meno limitazioni nelle tue attività quotidiane, sportive e lavorative' },
+]
+
+function BeneficiSection() {
+  return (
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <FadeIn>
+          <div style={{ maxWidth: '680px', marginBottom: '2.5rem', textAlign: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Cosa cambia per te
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
+              I benefici di un percorso attivo
+            </h2>
+          </div>
+        </FadeIn>
+
+        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          {benefici.map(({ Icon, titolo }) => (
+            <StaggerItem key={titolo}>
+              <div style={{
+                background: C.white, borderRadius: C.radiusLg, padding: '1.75rem',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)', height: '100%',
+                display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center',
+              }}>
+                <div style={{
+                  width: '52px', height: '52px', borderRadius: '50%',
+                  background: 'linear-gradient(135deg, rgba(26,158,201,0.14), rgba(93,191,176,0.24))',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem',
+                }}>
+                  <Icon size={24} color={C.primary} strokeWidth={2} />
+                </div>
+                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: C.text, margin: 0, lineHeight: 1.35 }}>{titolo}</h3>
+              </div>
+            </StaggerItem>
+          ))}
+        </StaggerChildren>
+      </div>
+    </section>
+  )
+}
+
 /* ─────────────────── CONFRONTO ─────────────────── */
 function ConfrontoSection() {
   const tradizionale = [
@@ -724,33 +775,27 @@ function TendineLesionatoSection() {
 function CtaFinaleSection() {
   return (
     <section style={{ position: 'relative', overflow: 'hidden', background: C.text }}>
-      <div style={{ position: 'relative', maxWidth: '700px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
+      <div id="modulo-contatti" style={{ position: 'relative', maxWidth: '600px', margin: '0 auto', padding: `4.5rem ${C.pad}`, scrollMarginTop: '90px' }}>
         <FadeIn>
-          <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Prenota la tua visita gratuita.
-          </h2>
-          <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}>
-            In circa 60 minuti valuto la tua spalla e ti dico con sincerità se Spalla in Movimento è il percorso adatto a te.
-          </p>
-          <div style={{ marginTop: '2rem' }}>
-            <a
-              href="/prenota"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: C.primary, color: '#fff', fontWeight: 700, fontSize: '1rem',
-                padding: '14px 28px', borderRadius: '50px', textDecoration: 'none',
-                letterSpacing: '0.01em', boxShadow: '0 8px 24px rgba(26,158,201,0.3)', whiteSpace: 'nowrap',
-              }}
-            >
-              Prenota ora →
-            </a>
+          <div style={{ textAlign: 'center' }}>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
+              Prenota la tua visita gratuita.
+            </h2>
+            <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}>
+              In circa 60 minuti valuto la tua spalla e ti dico con sincerità se Spalla in Movimento è il percorso adatto a te. Compila il modulo qui sotto, ti ricontatto io personalmente entro 24 ore.
+            </p>
           </div>
-          <div style={{ marginTop: '1.5rem' }}>
+
+          <div style={{ marginTop: '2rem' }}>
+            <ContactForm />
+          </div>
+
+          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
             <a href={`tel:${TEL}`} style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none' }}>
               📞 {TEL_DISPLAY}
             </a>
           </div>
-          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
+          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', textAlign: 'center' }}>
             📍 Via Enzo Togni, 75, 27043 Broni PV
           </p>
         </FadeIn>
