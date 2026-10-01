@@ -29,7 +29,7 @@ export function ContactForm({
     const data = new FormData(form)
 
     // Honeypot: se questo campo (invisibile per un utente reale) risulta compilato, è un bot.
-    if (String(data.get('botcheck') || '').length > 0) {
+    if (data.get('botcheck')) {
       setStatus('success')
       return
     }
@@ -111,14 +111,14 @@ export function ContactForm({
         display: 'flex', flexDirection: 'column', gap: '1.1rem',
       }}
     >
-      {/* Honeypot anti-spam — invisibile per le persone, i bot lo compilano */}
+      {/* Honeypot anti-spam — display:none, mai visto né autocompilato da browser reali (anche mobile); i bot che compilano tutti i campi lo riempiono comunque */}
       <input
-        type="text"
+        type="checkbox"
         name="botcheck"
         tabIndex={-1}
         autoComplete="off"
         aria-hidden="true"
-        style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', opacity: 0 }}
+        style={{ display: 'none' }}
       />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
