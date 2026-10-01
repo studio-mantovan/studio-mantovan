@@ -14,7 +14,11 @@ const C = {
 }
 
 /* ─────────────────── MODULO CONTATTI (Web3Forms) ─────────────────── */
-export function ContactForm({ accessKey }: { accessKey?: string } = {}) {
+export function ContactForm({
+  accessKey,
+  showEmail = true,
+  messageLabel = 'Messaggio',
+}: { accessKey?: string; showEmail?: boolean; messageLabel?: string } = {}) {
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [errorMsg, setErrorMsg] = useState('')
 
@@ -128,13 +132,15 @@ export function ContactForm({ accessKey }: { accessKey?: string } = {}) {
         </div>
       </div>
 
-      <div>
-        <label htmlFor="email" style={labelStyle}>Email <span style={{ fontWeight: 400, color: `${C.text}55` }}>(facoltativo)</span></label>
-        <input id="email" name="email" type="email" style={inputStyle} />
-      </div>
+      {showEmail && (
+        <div>
+          <label htmlFor="email" style={labelStyle}>Email <span style={{ fontWeight: 400, color: `${C.text}55` }}>(facoltativo)</span></label>
+          <input id="email" name="email" type="email" style={inputStyle} />
+        </div>
+      )}
 
       <div>
-        <label htmlFor="message" style={labelStyle}>Messaggio <span style={{ fontWeight: 400, color: `${C.text}55` }}>(facoltativo)</span></label>
+        <label htmlFor="message" style={labelStyle}>{messageLabel} <span style={{ fontWeight: 400, color: `${C.text}55` }}>(facoltativo)</span></label>
         <textarea id="message" name="message" rows={4} style={{ ...inputStyle, resize: 'vertical' }} />
       </div>
 
