@@ -3,17 +3,12 @@ import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { ContactForm } from '@/components/ContactForm'
-import {
-  Pill, Zap, Syringe, BedDouble, ArrowUp, ArrowDown, Weight, Hammer,
-  Stethoscope, Dumbbell, CalendarCheck, BadgePercent, Flag,
-  TrendingUp, Moon, Activity, Unlock,
-  type LucideIcon,
-} from 'lucide-react'
+import { Stethoscope, Dumbbell, Activity, Droplet, Flame, Bone, Bandage } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Dolore alla Spalla da Mesi? | Studio Mantovan',
   description:
-    'Dolore alla spalla che non passa da mesi? Percorso di fisioterapia attiva a Broni (PV), 8 settimane. Visita fisioterapica gratuita: 351 924 2517.',
+    'Dolore alla spalla che non passa da mesi? Percorso di fisioterapia attiva a Broni (PV) per borsite, tendinite, tendinopatia della cuffia dei rotatori e recupero post-intervento. Visita fisioterapica gratuita: 351 924 2517.',
   robots: { index: false, follow: false },
 }
 
@@ -39,41 +34,16 @@ const TEL_DISPLAY = '351 924 2517'
 // e per aprire l'indirizzo nella barra in alto.
 const GOOGLE_REVIEWS_URL = 'https://share.google/Z9RQOLbXwiA9FFpQp'
 
-/* ─── CTA primaria ─── */
-function CtaButton({ center = false, mt = '2rem', label = 'Prenota la tua visita gratuita →' }: { center?: boolean; mt?: string; label?: string }) {
-  return (
-    <div style={{ marginTop: mt, display: 'flex', justifyContent: center ? 'center' : 'flex-start' }}>
-      <a
-        href="#modulo-contatti"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          background: C.primary, color: '#fff',
-          fontWeight: 700, fontSize: '1.05rem',
-          padding: '16px 30px', borderRadius: '50px',
-          textDecoration: 'none', letterSpacing: '0.01em',
-          boxShadow: '0 6px 24px rgba(26,158,201,0.28)',
-          maxWidth: '100%', justifyContent: 'center', textAlign: 'center',
-        }}
-      >
-        {label}
-      </a>
-    </div>
-  )
-}
-
 export default function SpallaCronicaLandingPage() {
   return (
-    <div style={{ background: C.bg }}>
+    <div id="top" style={{ background: C.bg }}>
       <StickyTopBar />
-      <HeroSection />
+      <HeroFormSection />
       <ProofStrip />
-      <ProblemaSection />
-      <SoluzioneSection />
-      <BeneficiSection />
+      <CasiDusoSection />
       <WallOfLoveSection />
-      <ConfrontoSection />
-      <TendineLesionatoSection />
       <ChiSonoSection />
+      <ConfrontoSection />
       <CtaFinaleSection />
       <MinimalFooter />
       <WhatsAppButton />
@@ -128,8 +98,8 @@ function StickyTopBar() {
   )
 }
 
-/* ─────────────────── HERO ─────────────────── */
-function HeroSection() {
+/* ─────────────────── HERO — TITOLO + MODULO ─────────────────── */
+function HeroFormSection() {
   return (
     <section style={{ position: 'relative', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
@@ -140,67 +110,26 @@ function HeroSection() {
         }} />
       </div>
 
-      <div
-        style={{ maxWidth: C.container, margin: '0 auto', padding: `2.5rem ${C.pad} 3rem`, position: 'relative' }}
-        className="grid grid-cols-1 md:grid-cols-[1fr_300px] gap-10 items-center"
-      >
-        <div style={{ textAlign: 'center' }}>
-          <FadeIn>
-            <span style={{
-              display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
-              letterSpacing: '0.1em', color: C.secondary, marginBottom: '0.9rem',
-            }}>
-              Cerchi un fisioterapista specializzato nella spalla vicino a te?
-            </span>
-            <h1 style={{
-              fontSize: 'clamp(2rem, 4.2vw, 2.9rem)', fontWeight: 800,
-              color: C.text, lineHeight: 1.2, letterSpacing: '-0.02em', margin: 0,
-            }}>
-              Torna alle attività che oggi il dolore alla spalla ti impedisce di vivere.
-            </h1>
-            <p style={{ margin: '1.1rem auto 0', maxWidth: '560px', fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)', fontWeight: 600, color: C.text, lineHeight: 1.6 }}>
-              Spalla in Movimento è il mio percorso di 8 settimane di fisioterapia attiva per aiutarti a recuperare i movimenti e le attività che per te contano davvero: lavoro, vita quotidiana e sport.
-            </p>
-          </FadeIn>
+      <div style={{ maxWidth: '560px', margin: '0 auto', padding: `3rem ${C.pad} 3.5rem`, position: 'relative' }}>
+        <FadeIn>
+          <h1 style={{
+            textAlign: 'center', fontSize: 'clamp(1.9rem, 4vw, 2.6rem)', fontWeight: 800,
+            color: C.text, lineHeight: 1.25, letterSpacing: '-0.02em', margin: 0,
+          }}>
+            Ottieni la tua valutazione fisioterapica gratuita per la spalla.
+          </h1>
+          <p style={{ margin: '1rem auto 0', maxWidth: '440px', textAlign: 'center', fontSize: '1rem', color: `${C.text}99`, lineHeight: 1.6 }}>
+            Compila il modulo qui sotto: ti ricontatto io personalmente entro 24 ore.
+          </p>
+        </FadeIn>
 
-          <FadeIn delay={0.08}>
-            <div style={{
-              marginTop: '1.1rem', display: 'inline-flex', alignItems: 'center', gap: '10px',
-              background: 'rgba(93,191,176,0.12)', borderRadius: '50px',
-              padding: '0.6rem 1.1rem', maxWidth: '480px',
-            }}>
-              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>87%</span>
-              <span style={{ fontSize: '0.85rem', color: C.text, fontWeight: 600, lineHeight: 1.4 }}>
-                di successo riferito dai pazienti con un percorso di fisioterapia attiva basato su esercizio
-              </span>
-            </div>
-          </FadeIn>
-
-          <FadeIn delay={0.16}>
-            <CtaButton center mt="1.5rem" label="Prenota la tua prima visita gratuita →" />
-            <p style={{ margin: '0.75rem auto 0', fontSize: '0.85rem', color: `${C.text}88`, lineHeight: 1.6, maxWidth: '440px' }}>
-              Ti rispondo personalmente entro 24-48 ore.
-            </p>
-          </FadeIn>
-        </div>
-
-        <FadeIn delay={0.1} direction="right">
-          <div style={{ position: 'relative', width: '100%', maxWidth: '300px', margin: '0 auto' }}>
-            <div style={{
-              position: 'absolute', inset: '-1.5rem',
-              background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)',
-              borderRadius: '2.5rem', filter: 'blur(20px)',
-            }} />
-            <div style={{ position: 'relative', aspectRatio: '1 / 1', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 24px 64px rgba(0,0,0,0.12)' }}>
-              <Image
-                src="/photos/f-spalla-davide.jpg"
-                alt="Paziente che solleva un bilanciere sopra la testa senza dolore, dopo un percorso attivo in studio"
-                fill
-                style={{ objectFit: 'cover', objectPosition: 'center 42%' }}
-                priority
-                sizes="(max-width: 768px) 300px, 300px"
-              />
-            </div>
+        <FadeIn delay={0.1}>
+          <div style={{ marginTop: '2rem' }}>
+            <ContactForm
+              accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_SPALLA_CRONICA}
+              showEmail={false}
+              messageLabel="Descrivi il problema"
+            />
           </div>
         </FadeIn>
       </div>
@@ -216,19 +145,6 @@ function ProofStrip() {
         maxWidth: C.container, margin: '0 auto', padding: `1.1rem ${C.pad}`,
         display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.75rem',
       }}>
-        <a
-          href={GOOGLE_REVIEWS_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            display: 'flex', alignItems: 'center', gap: '10px',
-            fontSize: '0.88rem', fontWeight: 700, color: '#fff', letterSpacing: '0.01em',
-            textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(255,255,255,0.4)',
-          }}
-        >
-          <span style={{ color: '#FFD34D', fontSize: '0.85rem' }}>★★★★★</span>
-          Più di 30 recensioni verificate su Google
-        </a>
         {[
           '5+ anni di trattamenti di spalla in ambulatorio',
           '2 anni di attività a Broni',
@@ -247,278 +163,43 @@ function ProofStrip() {
   )
 }
 
-/* ─────────────────── PROBLEMA ─────────────────── */
-const tentativi = [
-  { Icon: Pill, label: 'Farmaci' },
-  { Icon: Zap, label: 'Tecar' },
-  { Icon: Syringe, label: 'Infiltrazioni' },
-  { Icon: BedDouble, label: 'Riposo' },
+/* ─────────────────── CASI D'USO ─────────────────── */
+const casiDuso = [
+  { Icon: Droplet, label: 'Borsite' },
+  { Icon: Flame, label: 'Tendinite' },
+  { Icon: Dumbbell, label: 'Tendinopatia della cuffia dei rotatori' },
+  { Icon: Activity, label: 'Lesione del tendine, sia parziale che massiva' },
+  { Icon: Stethoscope, label: 'Recupero post-intervento chirurgico' },
+  { Icon: Bone, label: 'Recupero post-frattura o post-trauma' },
+  { Icon: Bandage, label: 'Strappi muscolari' },
 ]
 
-const evitati = [
-  { Icon: ArrowUp, label: 'Alzare il braccio sopra la testa', sub: undefined },
-  { Icon: Hammer, label: 'Fare sforzi', sub: undefined },
-  { Icon: Weight, label: 'Sollevare oggetti pesanti', sub: undefined },
-  { Icon: Dumbbell, label: 'Evitare sport e hobby', sub: '“che possono dare problemi alla spalla”' },
-]
-
-function IconCard({ Icon, label, sub, tone = 'primary' }: { Icon: LucideIcon; label: string; sub?: string; tone?: 'primary' | 'muted' }) {
-  const color = tone === 'primary' ? C.primary : `${C.text}88`
-  const bg = tone === 'primary' ? 'rgba(26,158,201,0.1)' : 'rgba(44,44,44,0.07)'
-  return (
-    <div
-      className="w-[calc(50%_-_0.5rem)] md:w-[calc(25%_-_0.75rem)]"
-      style={{
-        background: C.white, borderRadius: C.radius, padding: '1.6rem 0.75rem 1.25rem',
-        boxShadow: '0 2px 12px rgba(0,0,0,0.05)', textAlign: 'center', minHeight: '10rem',
-        display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: '0.7rem',
-      }}
-    >
-      <div style={{
-        width: '52px', height: '52px', borderRadius: '50%', background: bg,
-        display: 'flex', alignItems: 'center', justifyContent: 'center',
-      }}>
-        <Icon size={24} color={color} strokeWidth={2} />
-      </div>
-      <div>
-        <span style={{ fontSize: '0.88rem', fontWeight: 700, color: C.text, lineHeight: 1.3, display: 'block' }}>{label}</span>
-        {sub && <span style={{ fontSize: '0.75rem', color: `${C.text}88`, lineHeight: 1.3, display: 'block', marginTop: '0.2rem' }}>{sub}</span>}
-      </div>
-    </div>
-  )
-}
-
-function CardRow({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="gap-4 md:gap-6" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', marginTop: '1rem' }}>
-      {children}
-    </div>
-  )
-}
-
-function LabelPill({ children, color, shadow }: { children: React.ReactNode; color: string; shadow: string }) {
-  return (
-    <div style={{ display: 'flex', justifyContent: 'center' }}>
-      <span style={{
-        display: 'inline-block', background: color, color: '#fff', fontSize: '0.9rem', fontWeight: 800,
-        padding: '0.65rem 1.4rem', borderRadius: '50px', textAlign: 'center', lineHeight: 1.35,
-        maxWidth: '100%', boxShadow: `0 4px 14px ${shadow}`,
-      }}>
-        {children}
-      </span>
-    </div>
-  )
-}
-
-function ProblemaSection() {
+function CasiDusoSection() {
   return (
     <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4rem ${C.pad} 1.75rem` }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `2.75rem ${C.pad}` }}>
         <FadeIn>
-          <h2 style={{ margin: '0 auto 2rem', maxWidth: '640px', textAlign: 'center', fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 800, color: C.text, lineHeight: 1.3 }}>
-            Ecco cosa succede di solito a chi soffre di dolore alla spalla
+          <h2 style={{
+            textAlign: 'center', fontSize: 'clamp(1.25rem, 2.4vw, 1.6rem)', fontWeight: 800,
+            color: C.text, lineHeight: 1.35, margin: '0 auto 1.5rem', maxWidth: '560px',
+          }}>
+            La Fisioterapia in Movimento è indicata per
           </h2>
-          <LabelPill color={C.primary} shadow="rgba(26,158,201,0.3)">Quello che consigliano</LabelPill>
-          <CardRow>
-            {tentativi.map((t) => (
-              <IconCard key={t.label} Icon={t.Icon} label={t.label} />
-            ))}
-          </CardRow>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <div style={{ marginTop: '2.5rem' }}>
-            <LabelPill color="#C8403A" shadow="rgba(200,64,58,0.3)">Cosa invece sconsigliano</LabelPill>
-          </div>
-          <CardRow>
-            {evitati.map((e) => (
-              <IconCard key={e.label} Icon={e.Icon} label={e.label} sub={e.sub} tone="muted" />
-            ))}
-          </CardRow>
-        </FadeIn>
-
-        <FadeIn delay={0.14}>
-          <div style={{
-            marginTop: '2.5rem', textAlign: 'center',
-            background: 'rgba(26,158,201,0.09)', borderRadius: C.radius, padding: '1.25rem 1.5rem',
-          }}>
-            <p style={{ margin: 0, color: C.text, fontSize: '1.05rem', fontWeight: 800, lineHeight: 1.5 }}>
-              Farmaci e terapie passive, da soli, non ti faranno tornare ad usare la tua spalla come vorresti.
-            </p>
-            <p style={{ margin: '0.5rem 0 0', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.5 }}>
-              Lo dicono le ricerche scientifiche più aggiornate.
-            </p>
-          </div>
-
-          <div style={{
-            marginTop: '1.25rem', textAlign: 'center',
-            background: C.white, borderRadius: C.radiusLg, padding: '1.5rem 1.75rem',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.06)',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.25rem', flexWrap: 'wrap',
-          }}>
-            <div style={{ fontSize: '3rem', fontWeight: 800, color: C.primary, lineHeight: 1, flexShrink: 0 }}>87%</div>
-            <div style={{ flex: '0 1 340px' }}>
-              <p style={{ margin: 0, color: C.text, fontSize: '0.98rem', fontWeight: 700, lineHeight: 1.5 }}>
-                di successo riferito dai pazienti con un percorso basato su esercizio terapeutico.
-              </p>
-              <p style={{ margin: '0.4rem 0 0', color: `${C.text}88`, fontSize: '0.85rem', lineHeight: 1.6 }}>
-                Revisione sistematica Cochrane su oltre 250 persone.
-              </p>
-            </div>
-          </div>
-
-          <div style={{ marginTop: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <p style={{ margin: 0, color: C.text, fontSize: 'clamp(1.1rem, 2.2vw, 1.35rem)', fontWeight: 800, lineHeight: 1.4 }}>
-              Ecco quello che ho pensato per chi ha dolore alla spalla da più di tre mesi.
-            </p>
-            <ArrowDown size={26} color={C.primary} strokeWidth={2.5} style={{ marginTop: '0.5rem' }} />
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── SOLUZIONE — SPALLA IN MOVIMENTO ─────────────────── */
-const garanzie = [
-  { Icon: Stethoscope, titolo: 'Visita fisioterapica gratuita', testo: 'Ti propongo il percorso solo se sei idoneo: ci sono precisi criteri clinici da rispettare, e non sono di facciata.' },
-  { Icon: CalendarCheck, titolo: 'Pagamento mensile', testo: 'Puoi interrompere a metà percorso.' },
-  { Icon: BadgePercent, titolo: 'Sconto sul percorso intero', testo: 'Se scegli tutte le 8 settimane insieme.' },
-]
-
-function SoluzioneSection() {
-  return (
-    <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `2rem ${C.pad} 4rem` }}>
-        <FadeIn>
-          <div style={{ textAlign: 'center' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Spalla in Movimento
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
-              8 settimane. Una seduta a settimana.
-            </h2>
-            <p style={{ margin: '0.9rem auto 0', maxWidth: '560px', color: `${C.text}88`, fontSize: '1rem', lineHeight: 1.7 }}>
-              Tendini e muscoli rispondono al carico e all&apos;esposizione graduale, non al riposo. Solo così puoi tornare ai movimenti che hai smesso di fare.
-            </p>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.08}>
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '0.6rem', flexWrap: 'wrap', marginTop: '1.75rem' }}>
-            {['1 seduta / settimana', '60 minuti', '1:1 con me'].map((chip) => (
-              <span key={chip} style={{
-                background: 'rgba(93,191,176,0.14)', color: C.text, fontSize: '0.8rem', fontWeight: 700,
-                padding: '0.4rem 0.9rem', borderRadius: '50px',
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0.6rem' }}>
+            {casiDuso.map(({ Icon, label }) => (
+              <span key={label} style={{
+                display: 'inline-flex', alignItems: 'center', gap: '8px',
+                background: C.white, color: C.text,
+                fontSize: '0.85rem', fontWeight: 600,
+                padding: '0.55rem 1rem', borderRadius: '50px',
+                boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
               }}>
-                {chip}
+                <Icon size={15} color={C.primary} strokeWidth={2.2} />
+                {label}
               </span>
             ))}
           </div>
-
-          <div style={{ position: 'relative', marginTop: '2rem', padding: '0 4px' }}>
-            <div style={{
-              position: 'absolute', left: '20px', right: '20px', top: '50%', height: '3px',
-              background: `linear-gradient(90deg, ${C.secondary}, ${C.primary})`, transform: 'translateY(-50%)', borderRadius: '3px',
-            }} />
-            <div style={{ position: 'relative', display: 'flex', justifyContent: 'space-between' }}>
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
-                <div key={n} style={{
-                  width: '38px', height: '38px', borderRadius: '50%',
-                  background: n === 8 ? C.primary : C.white,
-                  color: n === 8 ? '#fff' : C.primary,
-                  border: `3px solid ${C.primary}`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontWeight: 800, fontSize: '0.9rem',
-                  boxShadow: '0 2px 8px rgba(26,158,201,0.2)',
-                }}>
-                  {n === 8 ? <Flag size={16} /> : n}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.6rem', fontSize: '0.75rem', fontWeight: 700, color: `${C.text}88` }}>
-            <span>Settimana 1: si parte</span>
-            <span>Settimana 8: confronto finale</span>
-          </div>
         </FadeIn>
-
-        <FadeIn delay={0.12}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4" style={{ marginTop: '2.25rem' }}>
-            {garanzie.map(({ Icon, titolo, testo }) => (
-              <div key={titolo} style={{
-                background: C.white, borderRadius: C.radiusLg, padding: '1.75rem 1.25rem',
-                boxShadow: '0 4px 20px rgba(0,0,0,0.06)', borderTop: `3px solid ${C.secondary}`,
-                textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center',
-              }}>
-                <div style={{
-                  width: '60px', height: '60px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, rgba(26,158,201,0.14), rgba(93,191,176,0.24))',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem',
-                }}>
-                  <Icon size={28} color={C.primary} strokeWidth={2} />
-                </div>
-                <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 800, color: C.text, lineHeight: 1.3 }}>{titolo}</h3>
-                <p style={{ margin: '0.5rem 0 0', maxWidth: '260px', fontSize: '0.88rem', color: `${C.text}88`, lineHeight: 1.6 }}>{testo}</p>
-              </div>
-            ))}
-          </div>
-          <p style={{ marginTop: '1.25rem', textAlign: 'center', fontSize: '0.8rem', color: `${C.text}77` }}>
-            Non prometto una guarigione completa in otto settimane, ma è un lasso di tempo clinicamente coerente per riscontrare i primi miglioramenti.
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.16}>
-          <CtaButton center mt="1.75rem" />
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── BENEFICI DEL PERCORSO ATTIVO ─────────────────── */
-const benefici = [
-  { Icon: TrendingUp, titolo: 'Più forza e mobilità' },
-  { Icon: Moon, titolo: 'Dormi senza essere svegliato dal dolore' },
-  { Icon: Activity, titolo: 'Meno dolore nei gesti di ogni giorno' },
-  { Icon: Unlock, titolo: 'Meno limitazioni nelle tue attività quotidiane, sportive e lavorative' },
-]
-
-function BeneficiSection() {
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
-        <FadeIn>
-          <div style={{ maxWidth: '680px', marginBottom: '2.5rem', textAlign: 'center', marginLeft: 'auto', marginRight: 'auto' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Cosa cambia per te
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
-              I benefici di un percorso attivo
-            </h2>
-          </div>
-        </FadeIn>
-
-        <StaggerChildren className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {benefici.map(({ Icon, titolo }) => (
-            <StaggerItem key={titolo}>
-              <div style={{
-                background: C.white, borderRadius: C.radiusLg, padding: '1.75rem',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.05)', height: '100%',
-                display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', justifyContent: 'center',
-              }}>
-                <div style={{
-                  width: '52px', height: '52px', borderRadius: '50%',
-                  background: 'linear-gradient(135deg, rgba(26,158,201,0.14), rgba(93,191,176,0.24))',
-                  display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem',
-                }}>
-                  <Icon size={24} color={C.primary} strokeWidth={2} />
-                </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: C.text, margin: 0, lineHeight: 1.35 }}>{titolo}</h3>
-              </div>
-            </StaggerItem>
-          ))}
-        </StaggerChildren>
       </div>
     </section>
   )
@@ -723,84 +404,24 @@ function ChiSonoSection() {
   )
 }
 
-/* ─────────────────── HAI UN TENDINE LESIONATO? ─────────────────── */
-function TendineLesionatoSection() {
-  return (
-    <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `3.5rem ${C.pad}` }}>
-        <FadeIn>
-          <div
-            style={{
-              background: C.surface, borderRadius: C.radiusLg, padding: '2rem',
-              border: `1px solid ${C.primary}22`,
-            }}
-            className="grid grid-cols-1 md:grid-cols-[1fr_340px] gap-8 items-center"
-          >
-            <div>
-              <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-                Guarda il video
-              </span>
-              <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
-                Hai un tendine lesionato?
-              </h2>
-              <p style={{ margin: '1rem 0 0', color: `${C.text}99`, fontSize: '1rem', lineHeight: 1.7 }}>
-                In questo video tratto un ragazzo con una lesione alla cuffia dei rotatori.
-              </p>
-            </div>
-
-            <div style={{ width: '100%', maxWidth: '340px', margin: '0 auto' }}>
-              <video
-                controls
-                playsInline
-                preload="metadata"
-                poster="/videos/spalla-lesione-verticale-poster.jpg"
-                style={{
-                  width: '100%', maxWidth: '300px', margin: '0 auto', aspectRatio: '9 / 16', objectFit: 'contain',
-                  borderRadius: C.radiusLg, background: '#000',
-                  boxShadow: '0 16px 48px rgba(0,0,0,0.15)', display: 'block',
-                }}
-              >
-                <source src="/videos/spalla-lesione-verticale.mp4" type="video/mp4" />
-              </video>
-              <CtaButton center mt="1.25rem" />
-            </div>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
 /* ─────────────────── CTA FINALE ─────────────────── */
 function CtaFinaleSection() {
   return (
-    <section style={{ position: 'relative', overflow: 'hidden', background: C.text }}>
-      <div id="modulo-contatti" style={{ position: 'relative', maxWidth: '600px', margin: '0 auto', padding: `4.5rem ${C.pad}`, scrollMarginTop: '90px' }}>
-        <FadeIn>
-          <div style={{ textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-              Prenota la tua visita gratuita.
-            </h2>
-            <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}>
-              In circa 60 minuti valuto la tua spalla e ti dico con sincerità se Spalla in Movimento è il percorso adatto a te. Compila il modulo qui sotto, ti ricontatto io personalmente entro 24 ore.
-            </p>
-          </div>
-
-          <div style={{ marginTop: '2rem' }}>
-            <ContactForm accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_SPALLA_CRONICA} />
-          </div>
-
-          <div style={{ marginTop: '2rem', textAlign: 'center' }}>
-            <a href={`tel:${TEL}`} style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none' }}>
-              📞 {TEL_DISPLAY}
-            </a>
-          </div>
-          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', textAlign: 'center' }}>
-            📍 Via Enzo Togni, 75, 27043 Broni PV
-          </p>
-        </FadeIn>
-      </div>
-    </section>
+    <div style={{ background: C.bg, padding: `2.5rem ${C.pad} 3.5rem`, textAlign: 'center' }}>
+      <a
+        href="#top"
+        style={{
+          display: 'inline-flex', alignItems: 'center', gap: '8px',
+          background: C.primary, color: '#fff',
+          fontWeight: 700, fontSize: '1.05rem',
+          padding: '16px 30px', borderRadius: '50px',
+          textDecoration: 'none', letterSpacing: '0.01em',
+          boxShadow: '0 6px 24px rgba(26,158,201,0.28)',
+        }}
+      >
+        Ottieni la tua visita gratuita per la spalla →
+      </a>
+    </div>
   )
 }
 
