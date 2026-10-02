@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { ContactForm } from '@/components/ContactForm'
-import { Dumbbell, Stethoscope } from 'lucide-react'
+import { Dumbbell, Stethoscope, Activity, Snowflake, RotateCcw, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
   title: 'Dolore alla Spalla da Mesi? | Studio Mantovan',
@@ -69,6 +69,7 @@ export default function SpallaCronicaLandingPage() {
       <HeroSection />
       <ProofStrip />
       <MetodoSection />
+      <AreeClinicheSection />
       <ConfrontoSection />
       <ValutazioneSection />
       <WallOfLoveSection />
@@ -299,6 +300,62 @@ function MetodoSection() {
             </FadeIn>
           ))}
         </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────── PER CHI È PENSATO ─────────────────── */
+const areeCliniche = [
+  { Icon: Activity, label: 'Tendinopatia o lesione della cuffia dei rotatori, quando è indicato un percorso conservativo.' },
+  { Icon: Snowflake, label: 'Spalla congelata (capsulite adesiva), per gestire il dolore e recuperare progressivamente la mobilità.' },
+  { Icon: RotateCcw, label: 'Instabilità della spalla, anche in chi pratica sport o ha avuto episodi ricorrenti.' },
+  { Icon: Stethoscope, label: 'Recupero dopo un intervento chirurgico, seguendo personalmente il percorso riabilitativo.' },
+  { Icon: Clock, label: 'Dolore persistente alla spalla, anche quando hai già provato altri trattamenti senza ottenere il risultato che cercavi.' },
+]
+
+function AreeClinicheSection() {
+  return (
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: '820px', margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <FadeIn>
+          <h2 style={{
+            textAlign: 'center', fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800,
+            color: C.text, lineHeight: 1.3, margin: '0 auto 2rem', maxWidth: '620px',
+          }}>
+            Posso aiutarti se il problema della tua spalla è...
+          </h2>
+        </FadeIn>
+
+        <StaggerChildren className="flex flex-col" stagger={0.08}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+            {areeCliniche.map(({ Icon, label }) => (
+              <StaggerItem key={label}>
+                <div style={{
+                  display: 'flex', alignItems: 'flex-start', gap: '0.9rem',
+                  background: C.white, borderRadius: C.radius, padding: '1.1rem 1.3rem',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
+                }}>
+                  <div style={{
+                    width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(26,158,201,0.1)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  }}>
+                    <Icon size={18} color={C.primary} strokeWidth={2} />
+                  </div>
+                  <p style={{ margin: 0, color: C.text, fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 600 }}>{label}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </div>
+        </StaggerChildren>
+
+        <FadeIn delay={0.2}>
+          <p style={{ marginTop: '2rem', textAlign: 'center', color: `${C.text}88`, fontSize: '0.95rem', lineHeight: 1.7 }}>
+            Non significa che esista un percorso uguale per tutti.
+            <br />
+            Prima ti valuto. Poi decidiamo insieme da dove partire.
+          </p>
+        </FadeIn>
       </div>
     </section>
   )
