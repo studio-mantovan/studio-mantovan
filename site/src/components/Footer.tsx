@@ -112,11 +112,8 @@ export default function Footer() {
               {[
                 { href: '/',               label: 'Home' },
                 { href: '/chi-sono',       label: 'Chi sono' },
-                { href: '/servizi',        label: 'Servizi' },
-                { href: '/percorsi',       label: 'Percorsi e tariffe' },
                 { href: '/blog',           label: 'Blog' },
                 { href: '/zone-servite',   label: 'Zone servite' },
-                { href: '/fisioterapia-a-domicilio', label: 'Fisioterapia a domicilio' },
                 { href: '/dove-trovarmi',  label: 'Dove trovarmi' },
                 { href: '/prenota',        label: 'Prenota la visita' },
               ].map(({ href, label }) => (
