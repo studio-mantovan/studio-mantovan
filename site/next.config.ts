@@ -63,6 +63,13 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Landing /spalla-cronica (noindex, traffico ads) eliminata: il suo contenuto
+      // è diventato la pagina di servizio /patologie/spalla.
+      {
+        source: "/spalla-cronica",
+        destination: "/patologie/spalla",
+        permanent: true,
+      },
     ];
   },
 };

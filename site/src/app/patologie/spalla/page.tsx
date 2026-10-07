@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
-import Link from 'next/link'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
+import { Dumbbell, Stethoscope, Activity, Snowflake, RotateCcw, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Dolore alla spalla a Broni | Studio Mantovan',
+  title: 'Dolore alla Spalla e Cuffia dei Rotatori a Broni | Studio Mantovan',
   description:
-    'Hai un referto con scritto "lesione della cuffia"? Prima di operarti o rifare un\'infiltrazione, una valutazione vera a Broni. Prima visita gratuita: 351 924 2517.',
+    'Un referto con "lesione della cuffia" o un\'infiltrazione che non ha risolto il problema? Percorso di fisioterapia attiva 1 a 1 a Broni (PV). Prima visita fisioterapica gratuita: 351 924 2517.',
   keywords: [
     'dolore spalla Broni',
     'fisioterapista spalla Broni',
@@ -16,18 +16,18 @@ export const metadata: Metadata = {
     'RCRSP',
     'fisioterapia spalla Oltrepò Pavese',
     'spalla congelata',
+    'capsulite adesiva',
   ],
   alternates: {
     canonical: 'https://umbertomantovan.net/patologie/spalla',
   },
 }
 
-/* ─── Costanti design system (da landing-page-style.md) ─── */
+/* ─── Design system (da landing-page-style.md) ─── */
 const C = {
   primary:        '#1A9EC9',
   primaryDark:    '#147FA0',
   secondary:      '#5DBFB0',
-  secondaryLight: '#7ED4C8',
   bg:             '#FAFAF8',
   text:           '#2C2C2C',
   surface:        '#F0F4F5',
@@ -37,6 +37,37 @@ const C = {
   radiusLg:       '24px',
   container:      '1100px',
   pad:            '1.5rem',
+}
+
+const TEL = '+393519242517'
+const TEL_DISPLAY = '351 924 2517'
+const GOOGLE_REVIEWS_URL = 'https://share.google/Z9RQOLbXwiA9FFpQp'
+const MAPS_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.123456789!2d9.259!3d45.062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787c3c3c3c3c3c3%3A0x0!2sVia+Enzo+Togni+75%2C+27043+Broni+PV!5e0!3m2!1sit!2sit!4v1234567890'
+
+const faqSpalla = [
+  {
+    q: 'Ho una lesione alla cuffia dei rotatori alla risonanza: devo operarmi?',
+    a: 'Non necessariamente: fino al 39% delle persone senza alcun dolore ha una lesione della cuffia visibile in imaging. Ne parliamo nella tua valutazione, guardando il quadro clinico completo, non solo il referto.',
+  },
+  {
+    q: 'Il cortisone mi ha aiutato per un po’, poi il dolore è tornato: cosa faccio adesso?',
+    a: 'È un pattern comune: le infiltrazioni danno spesso un beneficio modesto e temporaneo. Il passo successivo utile è un percorso di carico progressivo che lavori sulla causa del sovraccarico, non solo sul sintomo.',
+  },
+  {
+    q: 'Ho paura che muovere la spalla peggiori la situazione.',
+    a: 'Nella maggior parte dei casi è il contrario: il movimento guidato e progressivo è il trattamento centrale, non il rischio. Ne parliamo con calma nella tua valutazione gratuita.',
+  },
+]
+
+const jsonLdFaqPage = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqSpalla.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
 }
 
 /* ─── CTA primaria ─── */
@@ -61,51 +92,19 @@ function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: str
   )
 }
 
-const faqSpalla = [
-  {
-    q: 'Ho una lesione alla cuffia dei rotatori: devo operarmi?',
-    a: 'Non necessariamente. Il referto va sempre letto insieme al quadro clinico completo — ne parliamo nella prima visita gratuita.',
-  },
-  {
-    q: 'Il cortisone mi ha aiutato per un po’, poi il dolore è tornato: cosa faccio adesso?',
-    a: 'È un pattern comune. Il passo successivo è costruire un percorso che lavori sulla causa del sovraccarico, non solo sul sintomo del momento.',
-  },
-  {
-    q: 'Quante sedute mi serviranno?',
-    a: 'Non lo so ancora — dipende da cosa emerge in valutazione. Non vendo sedute, costruisco un percorso: la durata te la spiego chiaramente in prima visita, che è gratuita.',
-  },
-  {
-    q: 'Ho paura che muovere la spalla peggiori la situazione.',
-    a: 'Nella maggior parte dei casi il movimento guidato è la soluzione, non il rischio. Ne parliamo insieme, con calma, in valutazione.',
-  },
-]
-
-const jsonLdFaqPage = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: faqSpalla.map((f) => ({
-    '@type': 'Question',
-    name: f.q,
-    acceptedAnswer: { '@type': 'Answer', text: f.a },
-  })),
-}
-
 export default function SpallaPage() {
   return (
     <div style={{ background: C.bg }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqPage) }} />
       <HeroSection />
-      <ProofStripSpalla />
-      <ProblemaSection />
-      <SoluzioneSection />
-      <NonBastaSection />
-      <FasiSection />
-      <PercorsiSection />
-      <CasoRealeSection />
-      <TestimonianzaSection />
-      <CtaMidSection />
+      <ProofStrip />
+      <MetodoSection />
+      <AreeClinicheSection />
+      <ConfrontoSection />
+      <ValutazioneSection />
+      <WallOfLoveSection />
       <ChiSonoSection />
-      <DoveSiamoSection />
+      <DoveTrovarmiSection />
       <FaqSpallaSection />
       <FaqSection />
       <CtaFinaleSection />
@@ -127,16 +126,16 @@ function HeroSection() {
 
       <div
         style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad} 3.5rem`, position: 'relative' }}
-        className="grid grid-cols-1 md:grid-cols-[1fr_420px] gap-12 items-center"
+        className="grid grid-cols-1"
       >
-        <div>
+        <div style={{ maxWidth: '680px' }}>
           <FadeIn>
             <span style={{
               display: 'inline-block', background: 'rgba(26,158,201,0.1)', color: C.primary,
               fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em',
               padding: '6px 14px', borderRadius: '50px', marginBottom: '1.25rem',
             }}>
-              Fisioterapista a Broni · Dolore alla spalla e cuffia dei rotatori
+              Fisioterapista a Broni · Spalla e cuffia dei rotatori
             </span>
           </FadeIn>
 
@@ -145,18 +144,18 @@ function HeroSection() {
               fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: 800,
               color: C.text, lineHeight: 1.28, letterSpacing: '-0.02em', margin: 0,
             }}>
-              Hai un referto che dice &ldquo;lesione della cuffia&rdquo;
+              &ldquo;Nel referto hanno scritto &lsquo;lesione della cuffia dei rotatori&rsquo;.&rdquo;
               <br />
-              <span style={{ color: C.primary }}>e nessuno ti ha ancora spiegato cosa significa per te.</span>
+              <span style={{ color: C.primary }}>Ma nessuno mi ha spiegato se devo davvero operarmi.</span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.16}>
             <p style={{ marginTop: '1.5rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Non un&apos;altra infiltrazione. Non un altro &ldquo;aspetta e vedi&rdquo;. Una valutazione che parte da cosa non riesci più a fare, non dall&apos;immagine.
+              Non un&apos;altra infiltrazione che allevia il dolore per qualche settimana. Non un altro &ldquo;evita di muoverla&rdquo;. Una valutazione che parte dal tuo quadro clinico completo, non solo dal referto.
             </p>
             <p style={{ marginTop: '0.75rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              I primi risultati arrivano spesso già nelle prime 6 settimane di percorso attivo.
+              Molte lesioni della cuffia viste in risonanza non causano alcun dolore: vanno sempre lette insieme ai tuoi movimenti, alla tua storia e a cosa oggi non riesci più a fare.
             </p>
           </FadeIn>
 
@@ -167,396 +166,234 @@ function HeroSection() {
             </p>
           </FadeIn>
         </div>
-
-        <FadeIn delay={0.1} direction="right">
-          <div style={{ position: 'relative', width: '100%', maxWidth: '420px', margin: '0 auto' }}>
-            <div style={{
-              position: 'absolute', inset: '-1.5rem',
-              background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.18) 0%, transparent 70%)',
-              borderRadius: '2.5rem', filter: 'blur(20px)',
-            }} />
-            <div style={{ position: 'relative', aspectRatio: '4/5', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 24px 64px rgba(0,0,0,0.12)' }}>
-              <Image
-                src="/photos/f-spalla-davide.jpg"
-                alt="Paziente che solleva un bilanciere sopra la testa senza dolore, dopo un percorso attivo in studio"
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-                sizes="(max-width: 768px) 100vw, 420px"
-              />
-            </div>
-          </div>
-        </FadeIn>
       </div>
     </section>
   )
 }
 
 /* ─────────────────── PROOF STRIP ─────────────────── */
-function ProofStripSpalla() {
-  const items = [
-    { icon: '39%', testo: 'delle persone senza dolore ha una lesione della cuffia visibile in ecografia' },
-    { icon: '✓', testo: 'Prima visita gratuita' },
-    { icon: '✓', testo: '5+ anni in ambito muscolo-scheletrico' },
-  ]
-
+function ProofStrip() {
   return (
     <div style={{ background: C.primary, borderTop: `3px solid ${C.secondary}` }}>
       <div style={{
         maxWidth: C.container, margin: '0 auto', padding: `1.1rem ${C.pad}`,
-        display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '2rem',
+        display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.75rem',
       }}>
-        {items.map((item) => {
-          const isStat = item.icon !== '✓'
-          return (
-            <div key={item.testo} style={{
-              display: 'flex', alignItems: 'center', gap: '10px',
-              fontSize: '0.88rem', fontWeight: 600, color: '#fff', letterSpacing: '0.01em',
-            }}>
-              <span style={{
-                minWidth: isStat ? 'auto' : '22px', height: isStat ? 'auto' : '22px',
-                padding: isStat ? '2px 10px' : 0,
-                borderRadius: isStat ? '50px' : '50%', background: C.secondary,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-                fontSize: isStat ? '0.85rem' : '0.72rem', fontWeight: 800, color: '#fff', flexShrink: 0,
-              }}>
-                {item.icon}
-              </span>
-              {item.testo}
-            </div>
-          )
-        })}
+        <a
+          href={GOOGLE_REVIEWS_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex', alignItems: 'center', gap: '10px',
+            fontSize: '0.88rem', fontWeight: 700, color: '#fff', letterSpacing: '0.01em',
+            textDecoration: 'underline', textUnderlineOffset: '3px', textDecorationColor: 'rgba(255,255,255,0.4)',
+          }}
+        >
+          <span style={{ color: '#FFD34D', fontSize: '0.85rem' }}>★★★★★</span>
+          34 recensioni Google a 5 stelle
+        </a>
+        {[
+          '5+ anni di trattamenti di spalla in ambulatorio',
+          'Prima visita gratuita',
+        ].map((testo) => (
+          <div key={testo} style={{
+            display: 'flex', alignItems: 'center', gap: '8px',
+            fontSize: '0.88rem', fontWeight: 600, color: '#fff', letterSpacing: '0.01em',
+          }}>
+            <span style={{ color: '#fff', fontWeight: 800 }}>✓</span>
+            {testo}
+          </div>
+        ))}
       </div>
     </div>
   )
 }
 
-/* ─────────────────── PROBLEMA ─────────────────── */
-function ProblemaSection() {
+/* ─────────────────── IL METODO — FISIOTERAPIA IN MOVIMENTO ─────────────────── */
+const metodo = [
+  {
+    Icon: Dumbbell,
+    foto: 'f-spalla-davide.jpg',
+    alt: 'Paziente che solleva un bilanciere sopra la testa, guidato da Umberto Mantovan',
+    titolo: 'Esercizio terapeutico specifico',
+    testo: 'Il centro del percorso. Movimenti ed esercizi scelti sulla tua spalla e sulla tua condizione, non un protocollo standard: il carico e la difficoltà aumentano passo dopo passo, insieme a te.',
+  },
+  {
+    Icon: Stethoscope,
+    foto: 'f10-valutazione-manuale-spalla.jpg',
+    alt: 'Umberto Mantovan esegue una mobilizzazione manuale della spalla su una paziente in studio',
+    titolo: 'Terapia manuale',
+    testo: 'Un supporto nei momenti in cui può aiutarti a muoverti meglio, non il trattamento principale. Non voglio che tu debba dipendere dal lettino o dalle sedute per stare meglio.',
+  },
+]
+
+function MetodoSection() {
+  return (
+    <section style={{ background: C.bg }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <FadeIn>
+          <div style={{ maxWidth: '720px', margin: '0 auto 2.5rem', textAlign: 'center' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
+              Il metodo
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
+              Torni a muovere la spalla con la Fisioterapia in Movimento
+            </h2>
+            <p style={{ marginTop: '1rem', color: `${C.text}99`, fontSize: '1rem', lineHeight: 1.8 }}>
+              Fisioterapia in Movimento non è altro che una combinazione di esercizio terapeutico specifico per la tua condizione e, quando utile, terapia manuale. Lo facciamo insieme, in studio, 1 a 1.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5" style={{ maxWidth: '820px', margin: '0 auto' }}>
+          {metodo.map(({ Icon, foto, alt, titolo, testo }, i) => (
+            <FadeIn key={titolo} delay={i * 0.08}>
+              <div style={{
+                background: C.white, borderRadius: C.radiusLg, overflow: 'hidden',
+                boxShadow: '0 2px 12px rgba(0,0,0,0.05)', height: '100%',
+              }}>
+                <div style={{ position: 'relative', width: '100%', aspectRatio: '4/3' }}>
+                  <Image
+                    src={`/photos/${foto}`}
+                    alt={alt}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 768px) 100vw, 400px"
+                  />
+                </div>
+                <div style={{ padding: '1.5rem 1.75rem 1.75rem', borderTop: `3px solid ${C.secondary}` }}>
+                  <div style={{
+                    width: '40px', height: '40px', borderRadius: '50%',
+                    background: 'rgba(26,158,201,0.1)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.9rem',
+                  }}>
+                    <Icon size={19} color={C.primary} strokeWidth={2} />
+                  </div>
+                  <h3 style={{ fontSize: '1.1rem', fontWeight: 700, color: C.text, marginBottom: '0.6rem' }}>{titolo}</h3>
+                  <p style={{ fontSize: '0.94rem', color: `${C.text}99`, lineHeight: 1.8, margin: 0 }}>{testo}</p>
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────── PER CHI È PENSATO ─────────────────── */
+const areeCliniche = [
+  { Icon: Activity, label: 'Tendinopatia o lesione della cuffia dei rotatori, quando è indicato un percorso conservativo.' },
+  { Icon: Snowflake, label: 'Spalla congelata (capsulite adesiva), per gestire il dolore e recuperare progressivamente la mobilità.' },
+  { Icon: RotateCcw, label: 'Instabilità della spalla, anche in chi pratica sport o ha avuto episodi ricorrenti.' },
+  { Icon: Stethoscope, label: 'Recupero dopo un intervento chirurgico, seguendo personalmente il percorso riabilitativo.' },
+  { Icon: Clock, label: 'Dolore persistente alla spalla, anche quando hai già provato altri trattamenti senza ottenere il risultato che cercavi.' },
+]
+
+function AreeClinicheSection() {
   return (
     <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: '760px', margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+      <div style={{ maxWidth: '820px', margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
         <FadeIn>
-          <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-            Ti riconosci in questo?
-          </span>
-          <h2 style={{ fontSize: 'clamp(1.5rem, 2.8vw, 2.05rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.4 }}>
-            &ldquo;Mi hanno detto che devo operarmi. Ma nessuno mi ha chiesto cosa faccio
-            tutto il giorno con quella spalla.&rdquo;
+          <h2 style={{
+            textAlign: 'center', fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800,
+            color: C.text, lineHeight: 1.3, margin: '0 auto 2rem', maxWidth: '620px',
+          }}>
+            Posso aiutarti se il problema della tua spalla è...
           </h2>
         </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '2rem' }}>
-            È la frase che sento più spesso in prima visita. Il referto arriva prima della conversazione. La cuffia della risonanza diventa la spiegazione di tutto — anche di cose che quella lesione, da sola, non spiega.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.9, fontSize: '1.02rem', marginTop: '1.25rem' }}>
-            Nel frattempo la vita si restringe: la giacca che non infili più di scatto, la notte che si spezza quando ti giri, lo scaffale alto che eviti. Non perché la spalla sia rotta — perché nessuno ti ha ancora detto cosa puoi davvero fare con quello che hai.
-          </p>
-          <div style={{
-            marginTop: '1.75rem',
-            background: 'rgba(26,158,201,0.06)',
-            borderLeft: `4px solid ${C.primary}`,
-            borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`,
-            padding: '1.25rem 1.5rem',
-          }}>
-            <p style={{ margin: 0, color: C.text, fontSize: '0.9rem', lineHeight: 1.75 }}>
-              Il referto che hai in mano ti dice cosa c&apos;è. Non ti dice cosa fare.
-            </p>
-          </div>
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── SOLUZIONE ─────────────────── */
-function SoluzioneSection() {
-  return (
-    <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <FadeIn>
-          <div style={{ maxWidth: '720px', marginBottom: '3rem' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Perché è diverso
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Vedere una lesione nel referto
-              <br />
-              <span style={{ color: C.primary }}>non significa dover operare.</span>
-            </h2>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.1}>
-          <div style={{
-            background: C.white, borderRadius: C.radiusLg, padding: '2rem',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.06)', marginBottom: '1.5rem',
-          }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8"
-          >
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>39%</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                delle persone <strong>senza alcun dolore</strong> alla spalla ha una lesione della cuffia dei rotatori visibile in ecografia.
-              </p>
-            </div>
-            <div>
-              <div style={{ fontSize: '2.4rem', fontWeight: 800, color: C.secondary, lineHeight: 1 }}>2 su 3</div>
-              <p style={{ marginTop: '0.6rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.6rem 0 0' }}>
-                lesioni della cuffia dopo i 60 anni <strong>non danno nessun sintomo</strong>.
-              </p>
-              <p style={{ color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7, margin: '0.4rem 0 0' }}>
-                Non sono automaticamente la causa del tuo dolore attuale.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.15}>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px' }}>
-            Nel mio studio non parto dall&apos;immagine.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Parto da te: cosa non riesci più a fare, da quanto tempo, cosa hai già provato.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            La valutazione clinica — non solo la risonanza — è quello che guida la decisione su cosa fare davvero.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '1.25rem' }}>
-            Non uso macchinari passivi.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            La spalla recupera forza e mobilità muovendosi, in modo graduale e su misura — non ricevendo un trattamento passivo seduta dopo seduta.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '1.25rem' }}>
-            Se fai sport (nuoto, tennis, pallavolo, lancio), guardo anche oltre la spalla.
-          </p>
-          <p style={{ color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '720px', marginTop: '0.75rem' }}>
-            Spesso il sovraccarico nasce più in basso, da anca o gambe che non trasferiscono più la forza come dovrebbero.
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <CtaButton mt="2.5rem" />
-        </FadeIn>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── COSA NON BASTA DA SOLO ─────────────────── */
-function NonBastaSection() {
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12 items-start">
-          <FadeIn>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Cosa non basta da solo
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.35, maxWidth: '620px' }}>
-              &ldquo;Se pensi che per una lesione alla cuffia serva solo operarti, o smettere di sforzare il braccio, ti hanno sempre consigliato male.&rdquo;
-            </h2>
-
-            <p style={{ marginTop: '1.5rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              Riposo assoluto, evitare ogni movimento doloroso, infiltrazioni, onde d&apos;urto: sono le prescrizioni più comuni per il dolore alla spalla — e da sole sono anche le meno risolutive. Possono ridurre il dolore per un periodo limitato, ma nessuno studio dimostra che sostituiscano un percorso di carico attivo.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem', maxWidth: '620px' }}>
-              La strada che funziona meglio è l&apos;esposizione graduale: tornare a muovere la spalla nei gesti che fanno male — anche e soprattutto con i pesi — in modo progressivo e controllato.
-            </p>
-
-            <FadeIn delay={0.15}>
-              <CtaButton mt="2rem" />
-            </FadeIn>
-          </FadeIn>
-
-          <FadeIn delay={0.1} direction="right">
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2rem',
-              boxShadow: '0 4px 20px rgba(0,0,0,0.06)', textAlign: 'center',
-            }}>
-              <div style={{ fontSize: '2.6rem', fontWeight: 800, color: C.primary, lineHeight: 1 }}>9 su 10</div>
-              <p style={{ marginTop: '0.75rem', color: `${C.text}99`, fontSize: '0.88rem', lineHeight: 1.7, margin: '0.75rem 0 0' }}>
-                persone, in un percorso riabilitativo strutturato, <strong>evitano l&apos;intervento chirurgico</strong>.
-              </p>
-              <p style={{ marginTop: '0.75rem', color: `${C.text}66`, fontSize: '0.75rem', lineHeight: 1.6, margin: '0.75rem 0 0' }}>
-                Dato di popolazione da programmi conservativi strutturati, non una garanzia individuale.
-              </p>
-            </div>
-          </FadeIn>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ─────────────────── LE 3 FASI ─────────────────── */
-const fasi = [
-  {
-    num: '01',
-    titolo: 'Capire cosa sta succedendo davvero',
-    corpo: 'Una lesione nel referto non è ancora una diagnosi. Nella valutazione gratuita ascolto la tua storia, guardo cosa riesci e non riesci a fare, e ti spiego cosa significa — e cosa non significa — quello che hai letto nel referto.',
-    tag: 'Valutazione gratuita',
-  },
-  {
-    num: '02',
-    titolo: 'Ritrovare fiducia nel movimento',
-    corpo: 'La spalla si riattiva muovendosi, non stando ferma. Esercizi scelti su misura, carico che aumenta in modo progressivo. Uso anche la terapia manuale come strumento per iniziare a muoverti prima e con meno fatica — mai come unico trattamento.',
-    tag: 'Percorso attivo',
-  },
-  {
-    num: '03',
-    titolo: 'Tornare alle attività che contano per te',
-    corpo: 'L’obiettivo non è solo meno dolore. È rimettere la giacca senza pensarci, tornare in acqua, tornare in campo. Frequenza che si riduce nel tempo, programma costruito sui tuoi obiettivi reali.',
-    tag: 'Autonomia',
-  },
-]
-
-function FasiSection() {
-  return (
-    <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <FadeIn>
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Come lavoriamo insieme
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Il percorso in 3 fasi
-            </h2>
-          </div>
-        </FadeIn>
-
-        <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {fasi.map((fase) => (
-            <StaggerItem key={fase.num}>
-              <div style={{
-                position: 'relative', background: C.white, borderRadius: C.radiusLg,
-                padding: '2rem', height: '100%', overflow: 'hidden',
-                boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
-              }}>
+        <StaggerChildren className="flex flex-col" stagger={0.08}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.9rem' }}>
+            {areeCliniche.map(({ Icon, label }) => (
+              <StaggerItem key={label}>
                 <div style={{
-                  position: 'absolute', top: '-16px', right: '-8px',
-                  fontSize: '7rem', fontWeight: 800, lineHeight: 1,
-                  color: `${C.primary}0F`, userSelect: 'none',
+                  display: 'flex', alignItems: 'flex-start', gap: '0.9rem',
+                  background: C.white, borderRadius: C.radius, padding: '1.1rem 1.3rem',
+                  boxShadow: '0 2px 10px rgba(0,0,0,0.05)',
                 }}>
-                  {fase.num}
+                  <div style={{
+                    width: '38px', height: '38px', borderRadius: '50%', background: 'rgba(26,158,201,0.1)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+                  }}>
+                    <Icon size={18} color={C.primary} strokeWidth={2} />
+                  </div>
+                  <p style={{ margin: 0, color: C.text, fontSize: '0.95rem', lineHeight: 1.6, fontWeight: 600 }}>{label}</p>
                 </div>
-                <span style={{
-                  display: 'inline-block', background: 'rgba(26,158,201,0.1)', color: C.primary,
-                  fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
-                  padding: '4px 10px', borderRadius: '50px', marginBottom: '1rem',
-                }}>
-                  {fase.tag}
-                </span>
-                <h3 style={{ fontSize: '1rem', fontWeight: 700, color: C.text, marginBottom: '0.75rem', lineHeight: 1.4 }}>
-                  {fase.titolo}
-                </h3>
-                <p style={{ fontSize: '0.88rem', color: `${C.text}88`, lineHeight: 1.8, margin: 0 }}>
-                  {fase.corpo}
-                </p>
-              </div>
-            </StaggerItem>
-          ))}
+              </StaggerItem>
+            ))}
+          </div>
         </StaggerChildren>
 
         <FadeIn delay={0.2}>
-          <CtaButton center mt="3rem" />
+          <p style={{ marginTop: '2rem', textAlign: 'center', color: `${C.text}88`, fontSize: '0.95rem', lineHeight: 1.7 }}>
+            Non significa che esista un percorso uguale per tutti.
+            <br />
+            Prima ti valuto. Poi decidiamo insieme da dove partire.
+          </p>
         </FadeIn>
       </div>
     </section>
   )
 }
 
-/* ─────────────────── PERCORSO ─────────────────── */
-function PercorsiSection() {
+/* ─────────────────── CONFRONTO ─────────────────── */
+function ConfrontoSection() {
+  const tradizionale = [
+    'Visita a pagamento in cui si guardano solo le carte del medico o le risonanze',
+    'Terapie passive (tecar, laser, ultrasuoni) come trattamento principale',
+    'Seduta di 20-30 minuti, gran parte passata sul lettino',
+    'Stessi esercizi generici per ogni paziente',
+    'Focus solo sul dolore del momento',
+  ]
+  const movimento = [
+    'Visita gratuita in cui valuto attentamente i tuoi referti medici, ma soprattutto le tue sensazioni, i tuoi movimenti e i tuoi obiettivi',
+    'L\'esercizio guidato e progressivo è il centro del trattamento',
+    'Seduta di 60 minuti garantiti, dedicata interamente a te',
+    'Carico progressivo per ricostruire la capacità di movimento e di carico della spalla',
+  ]
+
   return (
-    <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+    <section style={{ background: C.surface }}>
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
         <FadeIn>
-          <div style={{ maxWidth: '680px', marginBottom: '3rem' }}>
+          <div style={{ maxWidth: '680px', marginBottom: '2.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Il percorso
+              La differenza si sente
             </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Non compri sedute.
-              <br />
-              <span style={{ color: C.primary }}>Entri in un percorso.</span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.3 }}>
+              Fisioterapia tradizionale vs. Fisioterapia in Movimento
             </h2>
-            <p style={{ marginTop: '1.25rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Le linee guida internazionali per i disturbi muscolo-scheletrici parlano di settimane e mesi, non di un numero fisso di sedute.
-            </p>
-            <p style={{ marginTop: '0.75rem', color: `${C.text}88`, lineHeight: 1.85, fontSize: '1rem' }}>
-              Per questo non trovi un pacchetto: trovi un percorso costruito sul tempo reale che il tuo tipo di dolore richiede.
-            </p>
           </div>
         </FadeIn>
 
-        <FadeIn delay={0.1}>
-          <div style={{
-            background: C.white, borderRadius: C.radiusLg, padding: '2.5rem',
-            boxShadow: '0 4px 24px rgba(0,0,0,0.06)', border: '1px solid rgba(0,0,0,0.04)',
-            maxWidth: '820px', margin: '0 auto',
-          }}>
-            <div style={{ fontSize: '1.8rem', marginBottom: '0.75rem' }}>🌀</div>
-            <span style={{
-              display: 'inline-block', background: 'rgba(93,191,176,0.12)', color: C.secondary,
-              fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em',
-              padding: '3px 10px', borderRadius: '50px', marginBottom: '0.75rem',
-            }}>
-              Dolore persistente alla spalla
-            </span>
-            <h3 style={{ fontSize: '1.3rem', fontWeight: 800, color: C.text, lineHeight: 1.35, marginBottom: '0.6rem' }}>
-              Cuffia dei rotatori, dolore cronico o ricorrente
-            </h3>
-            <p style={{ fontSize: '0.92rem', color: `${C.text}88`, lineHeight: 1.75, marginBottom: '1.75rem', maxWidth: '560px' }}>
-              Pensato per chi convive con dolore alla spalla da settimane o mesi — con o senza lesione visibile in imaging, con o senza infiltrazioni già tentate.
-            </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" style={{ marginBottom: '1.75rem' }}>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Primi risultati</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>già in 6 settimane</span>
-              </div>
-              <div style={{ background: C.surface, borderRadius: C.radiusSm, padding: '1rem 1.25rem' }}>
-                <span style={{ fontSize: '0.72rem', color: `${C.text}66`, display: 'block', marginBottom: '0.25rem' }}>Frequenza tipica</span>
-                <span style={{ fontSize: '1.1rem', fontWeight: 800, color: C.text }}>1×/settimana</span>
-              </div>
+        <FadeIn delay={0.08}>
+          <div
+            style={{ borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 4px 24px rgba(0,0,0,0.08)' }}
+            className="grid grid-cols-1 md:grid-cols-2"
+          >
+            <div style={{ background: C.white, padding: '2rem 1.75rem' }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: C.text, marginBottom: '1.1rem' }}>Fisioterapia tradizionale</h3>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {tradizionale.map((item) => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.92rem', color: `${C.text}99`, lineHeight: 1.6 }}>
+                    <span style={{ opacity: 0.5, flexShrink: 0 }}>–</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <div style={{
-              background: 'rgba(26,158,201,0.06)', borderLeft: `4px solid ${C.primary}`,
-              borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`, padding: '1.1rem 1.4rem', marginBottom: '1.25rem',
-            }}>
-              <p style={{ margin: 0, fontSize: '0.85rem', color: C.text, fontWeight: 600, lineHeight: 1.5, marginBottom: '0.4rem' }}>
-                Tempistiche realistiche
-              </p>
-              <p style={{ margin: 0, fontSize: '0.86rem', color: `${C.text}99`, lineHeight: 1.7 }}>
-                Con un trattamento a settimana, già nelle prime 6 settimane molte persone notano i primi risultati concreti: meno dolore, più libertà di movimento. Per una risoluzione stabile del problema servono invece, statisticamente, 3–6 mesi di percorso. Non è una linea retta: qualche fase di riacutizzazione è normale e non significa che il percorso non stia funzionando.
-              </p>
+            <div style={{ background: C.text, padding: '2rem 1.75rem' }}>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: C.secondary, marginBottom: '1.1rem' }}>Fisioterapia in Movimento</h3>
+              <ul style={{ margin: 0, padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {movimento.map((item) => (
+                  <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.92rem', color: 'rgba(255,255,255,0.9)', lineHeight: 1.6 }}>
+                    <span style={{ color: C.secondary, fontWeight: 800, flexShrink: 0 }}>✔</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            <div style={{
-              background: 'rgba(93,191,176,0.08)', borderLeft: `3px solid ${C.secondary}`,
-              borderRadius: `0 ${C.radiusSm} ${C.radiusSm} 0`, padding: '0.85rem 1.1rem',
-            }}>
-              <p style={{ margin: 0, fontSize: '0.8rem', color: C.text, fontWeight: 600, lineHeight: 1.5 }}>
-                🎁 Completando il percorso: 1 seduta di rivalutazione gratuita ogni 3 mesi di trattamento, da usare entro 30 giorni dal termine.
-              </p>
-            </div>
-          </div>
-        </FadeIn>
-
-        <FadeIn delay={0.2}>
-          <div style={{ marginTop: '2.5rem', textAlign: 'center' }}>
-            <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginBottom: 0, lineHeight: 1.7 }}>
-              Se il tuo caso è diverso — un trauma recente o una fase post-operatoria —
-            </p>
-            <p style={{ fontSize: '0.95rem', color: `${C.text}88`, marginTop: '0.25rem', lineHeight: 1.7 }}>
-              lo capiamo insieme in prima visita, che è gratuita.
-            </p>
-            <CtaButton center mt="1.25rem" />
           </div>
         </FadeIn>
       </div>
@@ -564,83 +401,101 @@ function PercorsiSection() {
   )
 }
 
-/* ─────────────────── CASO REALE — ROMULUS ─────────────────── */
-function CasoRealeSection() {
+/* ─────────────────── A COSA SERVE LA VALUTAZIONE ─────────────────── */
+const valutazioneSteps = [
+  'mi racconti cosa è successo e cosa oggi ti limita;',
+  'valutiamo insieme i movimenti e la funzione della spalla;',
+  'eseguo i test clinici più indicati per la tua situazione;',
+  'guardiamo insieme eventuali esami che hai già fatto;',
+  'ti spiego quello che emerge in modo semplice e comprensibile;',
+  'definiamo un possibile percorso, con frequenza e obiettivi realistici.',
+]
+
+function ValutazioneSection() {
   return (
     <section style={{ background: C.bg }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[420px_1fr] gap-14 items-center">
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-10 items-center">
           <FadeIn direction="left">
-            <div style={{ position: 'relative', maxWidth: '420px' }}>
-              <div style={{
-                position: 'absolute', inset: '-1.5rem',
-                background: 'radial-gradient(ellipse at center, rgba(93,191,176,0.12) 0%, transparent 70%)',
-                borderRadius: '3rem', filter: 'blur(20px)',
-              }} />
-              <div style={{
-                background: C.white, borderRadius: C.radiusLg, padding: '1rem',
-                boxShadow: '0 16px 48px rgba(0,0,0,0.1)', position: 'relative',
-              }}>
-                <div style={{ position: 'relative', width: '100%', aspectRatio: '1079/565', borderRadius: C.radiusSm, overflow: 'hidden' }}>
-                  <Image
-                    src="/photos/testimonianza-romulus-google.png"
-                    alt="Recensione Google di Romulus Halangescu su Studio Mantovan"
-                    fill
-                    style={{ objectFit: 'contain' }}
-                    sizes="(max-width: 768px) 100vw, 420px"
-                  />
-                </div>
-              </div>
+            <div style={{ position: 'relative', width: '100%', maxWidth: '380px', margin: '0 auto', aspectRatio: '3/4', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.1)' }}>
+              <Image
+                src="/photos/f11-esercizio-guidato-spalla.jpg"
+                alt="Umberto Mantovan guida il movimento di sollevamento del braccio di una paziente durante una valutazione"
+                fill
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, 380px"
+              />
             </div>
           </FadeIn>
 
-          <FadeIn direction="right" delay={0.1}>
-            <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Caso reale
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Romulus, 50 anni
-            </h2>
-            <p style={{ marginTop: '1.25rem', color: `${C.text}99`, lineHeight: 1.85 }}>
-              Romulus è arrivato in studio dopo un problema serio a un tendine della spalla.
-            </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.85 }}>
-              Il percorso è stato costruito seduta dopo seduta, con attenzione specifica alla sua situazione.
-            </p>
-            <p style={{ marginTop: '1rem', color: C.text, fontWeight: 600, lineHeight: 1.85 }}>
-              Oggi Romulus è tornato a muovere la spalla normalmente — questa è la sua recensione, pubblicata su Google.
-            </p>
-          </FadeIn>
+          <div style={{ maxWidth: '560px' }}>
+            <FadeIn>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 800, color: C.text, lineHeight: 1.3 }}>
+                A cosa serve la tua valutazione fisioterapica gratuita?
+              </h2>
+              <p style={{ marginTop: '1.1rem', color: `${C.text}99`, fontSize: '1rem', lineHeight: 1.8 }}>
+                La prima valutazione serve a conoscerci, capire il problema della tua spalla e valutare se posso aiutarti. Durante l&apos;incontro:
+              </p>
+            </FadeIn>
+
+            <StaggerChildren className="flex flex-col" stagger={0.06}>
+              <div style={{ marginTop: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {valutazioneSteps.map((s) => (
+                  <StaggerItem key={s}>
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem' }}>
+                      <span style={{ color: C.secondary, fontWeight: 800, fontSize: '1rem', lineHeight: 1.6, flexShrink: 0 }}>✔</span>
+                      <p style={{ margin: 0, color: C.text, fontSize: '0.98rem', lineHeight: 1.65 }}>{s}</p>
+                    </div>
+                  </StaggerItem>
+                ))}
+              </div>
+            </StaggerChildren>
+
+            <FadeIn delay={0.2}>
+              <p style={{ marginTop: '1.5rem', color: `${C.text}88`, fontSize: '0.95rem', lineHeight: 1.7 }}>
+                Non ti propongo un pacchetto di sedute deciso prima di averti visto.
+                <br />
+                Prima capiamo il problema. Poi, se ha senso lavorare insieme, decidiamo come farlo.
+              </p>
+              <CtaButton mt="1.5rem" />
+            </FadeIn>
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-/* ─────────────────── TESTIMONIANZE — RECENSIONI GOOGLE ─────────────────── */
-const recensioniSpalla = [
+/* ─────────────────── WALL OF LOVE ─────────────────── */
+const walletReviews = [
+  { file: 'testimonianza-romulus-google.png', alt: 'Recensione Google di Romulus Halangescu su Studio Mantovan' },
   { file: 'testimonianza-antonio-ferrari-google.png', alt: 'Recensione Google di Antonio Ferrari su Studio Mantovan' },
   { file: 'testimonianza-giacomo-maini-google.png', alt: 'Recensione Google di Giacomo Maini su Studio Mantovan' },
   { file: 'testimonianza-letizia-casella-google.png', alt: 'Recensione Google di Letizia Casella su Studio Mantovan' },
+  { file: 'testimonianza-bianca-ciocca-google.png', alt: 'Recensione Google di Bianca Ciocca su Studio Mantovan' },
+  { file: 'testimonianza-roby-mada-google.png', alt: 'Recensione Google di Roby Mada su Studio Mantovan' },
+  { file: 'testimonianza-manuela-ascagni-google.png', alt: 'Recensione Google di Manuela Ascagni su Studio Mantovan' },
+  { file: 'testimonianza-carlotta-polatti-google.png', alt: 'Recensione Google di Carlotta Polatti su Studio Mantovan' },
+  { file: 'testimonianza-simona-prun-google.png', alt: 'Recensione Google di Simona Prun su Studio Mantovan' },
 ]
 
-function TestimonianzaSection() {
+function WallOfLoveSection() {
   return (
     <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
         <FadeIn>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Cosa dicono i pazienti
+              Recensioni vere, screenshot veri
             </span>
-            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem' }}>
-              Recensioni Google verificate
+            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.6rem' }}>
+              Cosa dicono le persone che erano dove sei tu adesso
             </h2>
           </div>
         </FadeIn>
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {recensioniSpalla.map((r, i) => (
+          {walletReviews.map((r, i) => (
             <StaggerItem key={r.file}>
               <div style={{
                 background: C.white, borderRadius: C.radiusLg, padding: '1rem',
@@ -653,7 +508,7 @@ function TestimonianzaSection() {
                     alt={r.alt}
                     fill
                     style={{ objectFit: 'contain' }}
-                    sizes="(max-width: 768px) 100vw, 520px"
+                    sizes="(max-width: 768px) 100vw, 360px"
                     loading={i === 0 ? undefined : 'lazy'}
                   />
                 </div>
@@ -661,55 +516,18 @@ function TestimonianzaSection() {
             </StaggerItem>
           ))}
         </StaggerChildren>
-      </div>
-    </section>
-  )
-}
 
-/* ─────────────────── CTA AZZURRA ─────────────────── */
-function CtaMidSection() {
-  return (
-    <section style={{ position: 'relative', overflow: 'hidden', background: C.primary }}>
-      <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
-        <div style={{
-          position: 'absolute', top: '-80px', right: '-80px',
-          width: '500px', height: '500px', borderRadius: '50%',
-          background: 'rgba(255,255,255,0.05)',
-        }} />
-      </div>
-      <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
-        <FadeIn>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Non devi decidere se operarti oggi.
-            <br />
-            Devi solo fare il primo passo.
-          </h2>
-          <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.8 }}>
-            Se ti sei riconosciuto in quello che hai letto, il primo passo è una chiacchierata —
-            non un impegno.
-          </p>
-          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+        <FadeIn delay={0.1}>
+          <div style={{ textAlign: 'center', marginTop: '2rem' }}>
             <a
-              href="/prenota"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: '#fff', color: C.primary,
-                fontWeight: 700, fontSize: '1rem',
-                padding: '14px 28px', borderRadius: '50px',
-                textDecoration: 'none', letterSpacing: '0.01em',
-                boxShadow: '0 8px 24px rgba(0,0,0,0.12)', whiteSpace: 'nowrap',
-              }}
+              href={GOOGLE_REVIEWS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ fontSize: '0.9rem', fontWeight: 700, color: C.primary, textDecoration: 'underline', textUnderlineOffset: '3px' }}
             >
-              Prenota la valutazione gratuita →
+              Leggi tutte le recensioni su Google →
             </a>
           </div>
-          <p style={{ marginTop: '1rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
-            Senza impegno · Prima visita gratuita
-          </p>
-          <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)' }}>
-            📍 Via Enzo Togni, 75, 27043 Broni PV · 📞{' '}
-            <a href="tel:+393519242517" style={{ color: '#fff', textDecoration: 'underline' }}>351 924 2517</a>
-          </p>
         </FadeIn>
       </div>
     </section>
@@ -717,20 +535,33 @@ function CtaMidSection() {
 }
 
 /* ─────────────────── CHI SONO ─────────────────── */
+const certificati = [
+  { file: 'certificato-master-terapia-manuale-ortopedica.jpg', label: 'Master in Terapia Manuale Ortopedica' },
+  { file: 'certificato-master-fisioterapia-sportiva.jpg', label: 'Master in Fisioterapia Sportiva' },
+]
+
+const esperienza = [
+  'Oltre 5 anni di esperienza clinica in ambito muscoloscheletrico.',
+  'Laurea in Fisioterapia presso l’Università degli Studi di Pavia.',
+  'Formazione in Terapia Manuale Ortopedica e Fisioterapia Sportiva.',
+  'Esperienza con dolore muscoloscheletrico, riabilitazione post-chirurgica e recupero dopo infortunio.',
+  '34 recensioni Google a 5 stelle.',
+]
+
 function ChiSonoSection() {
   return (
     <section style={{ background: C.bg, overflow: 'hidden' }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-28">
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-14 items-center">
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-10 items-start">
           <FadeIn direction="left">
-            <div style={{ position: 'relative', maxWidth: '380px' }}>
-              <div style={{ position: 'relative', aspectRatio: '1', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.1)' }}>
+            <div style={{ maxWidth: '300px', margin: '0 auto' }}>
+              <div style={{ position: 'relative', aspectRatio: '4 / 5', borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 16px 48px rgba(0,0,0,0.1)' }}>
                 <Image
                   src="/photos/f3-ritratto.jpg"
-                  alt="Umberto Mantovan fisioterapista – Studio Mantovan Broni"
+                  alt="Umberto Mantovan, fisioterapista – Studio Mantovan Broni"
                   fill
-                  style={{ objectFit: 'cover', objectPosition: 'center top' }}
-                  sizes="(max-width: 768px) 100vw, 380px"
+                  style={{ objectFit: 'cover', objectPosition: '53% 30%' }}
+                  sizes="(max-width: 768px) 100vw, 300px"
                 />
               </div>
             </div>
@@ -738,31 +569,52 @@ function ChiSonoSection() {
 
           <FadeIn direction="right" delay={0.1}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Chi sono
+              Dalla prima valutazione al recupero, ci sono sempre io
             </span>
-            <h2 style={{ fontSize: 'clamp(1.7rem, 3vw, 2.3rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Sono Umberto Mantovan, fisioterapista.
-            </h2>
-            <p style={{ marginTop: '1.25rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Nel mio studio a Broni non uso tecar, laser o ultrasuoni: la spalla riprende forza e
-              mobilità muovendosi, con un percorso costruito insieme a te — mai un protocollo
-              uguale per tutti.
+            <p style={{ marginTop: '0.9rem', color: C.text, fontSize: '1.08rem', fontWeight: 600, lineHeight: 1.7 }}>
+              Sono Umberto Mantovan, fisioterapista e titolare dello Studio Mantovan – Fisioterapia in Movimento a Broni.
             </p>
-            <p style={{ marginTop: '1rem', color: `${C.text}99`, lineHeight: 1.8 }}>
-              Ogni seduta è 1:1, dedicata completamente a te. E prima di iniziare qualsiasi
-              percorso, la prima visita è gratuita: serve a capire insieme se questa è davvero la
-              strada giusta per te.
+            <p style={{ marginTop: '0.9rem', color: `${C.text}99`, lineHeight: 1.8 }}>
+              Ho scelto di lavorare in uno studio professionale indipendente perché voglio poter seguire personalmente ogni persona che entra dalla mia porta. Non vieni valutato da una persona e trattato da un&apos;altra.
             </p>
-            <CtaButton mt="1.75rem" />
-            <Link
-              href="/chi-sono"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '6px', marginTop: '1rem',
-                fontSize: '0.9rem', fontWeight: 600, color: C.primary, textDecoration: 'none',
-              }}
-            >
-              Scopri di più su di me →
-            </Link>
+            <p style={{ marginTop: '0.9rem', color: `${C.text}99`, lineHeight: 1.8 }}>
+              La tua storia, i tuoi obiettivi e i tuoi progressi rimangono al centro del percorso.
+            </p>
+
+            <h3 style={{ marginTop: '1.75rem', fontSize: '1rem', fontWeight: 700, color: C.text }}>La mia esperienza</h3>
+            <ul style={{ margin: '0.75rem 0 0', padding: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+              {esperienza.map((item) => (
+                <li key={item} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.92rem', color: `${C.text}99`, lineHeight: 1.6 }}>
+                  <span style={{ color: C.secondary, fontWeight: 800, flexShrink: 0 }}>✔</span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <div style={{ marginTop: '1.75rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              {certificati.map((c) => (
+                <a
+                  key={c.file}
+                  href={`/photos/${c.file}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Apri l'attestato: ${c.label}`}
+                  style={{
+                    position: 'relative', display: 'block', flex: '1 1 0', minWidth: '140px', maxWidth: '200px',
+                    aspectRatio: '1 / 1.414', borderRadius: C.radiusSm, overflow: 'hidden',
+                    boxShadow: '0 4px 16px rgba(0,0,0,0.12)', border: `1px solid ${C.surface}`,
+                  }}
+                >
+                  <Image
+                    src={`/photos/${c.file}`}
+                    alt={`Attestato ${c.label} — Umberto Mantovan`}
+                    fill
+                    style={{ objectFit: 'cover', objectPosition: 'top' }}
+                    sizes="200px"
+                  />
+                </a>
+              ))}
+            </div>
           </FadeIn>
         </div>
       </div>
@@ -770,89 +622,81 @@ function ChiSonoSection() {
   )
 }
 
-/* ─────────────────── DOVE SIAMO ─────────────────── */
-function DoveSiamoSection() {
-  const info = [
-    { label: 'Indirizzo', value: 'Via Enzo Togni, 75, 27043 Broni PV' },
-    { label: 'Orari', value: 'Lun, Mer, Gio 08–20 · Sab 14–19 · Solo su appuntamento' },
-    { label: 'Telefono', value: '351 924 2517' },
-    { label: 'Email', value: 'studio.mantovan@gmail.com' },
-  ]
-
+/* ─────────────────── DOVE TROVARMI ─────────────────── */
+function DoveTrovarmiSection() {
   return (
     <section style={{ background: C.surface }}>
-      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad}` }} className="md:py-20">
+      <div style={{ maxWidth: C.container, margin: '0 auto', padding: `4.5rem ${C.pad}` }} className="md:py-24">
         <FadeIn>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
             <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
-              Dove siamo
+              Dove trovarmi
             </span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, color: C.text, marginTop: '0.75rem', lineHeight: 1.25 }}>
-              Studio Mantovan · Broni (PV)
+            <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: C.text, marginTop: '0.6rem' }}>
+              Studio Mantovan – Fisioterapia in Movimento
             </h2>
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-8 items-start" style={{ maxWidth: '920px', margin: '0 auto' }}>
           <FadeIn direction="left">
-            <div style={{
-              borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)',
-              aspectRatio: '16/9', position: 'relative',
-            }}>
+            <div style={{ borderRadius: C.radiusLg, overflow: 'hidden', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', aspectRatio: '4/3', position: 'relative' }}>
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2818.123456789!2d9.259!3d45.062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787c3c3c3c3c3c3%3A0x0!2sVia+Enzo+Togni+75%2C+27043+Broni+PV!5e0!3m2!1sit!2sit!4v1234567890"
-                width="100%"
-                height="100%"
+                src={MAPS_EMBED_SRC}
+                width="100%" height="100%"
                 style={{ border: 0, display: 'block', position: 'absolute', inset: 0 }}
-                allowFullScreen
-                loading="lazy"
+                allowFullScreen loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Studio Mantovan – Via Enzo Togni, 75, Broni PV"
               />
             </div>
           </FadeIn>
 
-          <FadeIn direction="right" delay={0.1}>
-            <div style={{
-              background: C.white, borderRadius: C.radiusLg, padding: '2rem',
-              boxShadow: '0 4px 16px rgba(0,0,0,0.06)',
-              display: 'flex', flexDirection: 'column', gap: '1.5rem',
-            }}>
-              {info.map((item) => (
-                <div key={item.label} style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                  <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: C.secondary }}>
-                    {item.label}
-                  </span>
-                  <span style={{ fontSize: '0.95rem', color: C.text, fontWeight: 500, lineHeight: 1.6 }}>
-                    {item.value}
-                  </span>
-                </div>
-              ))}
+          <FadeIn direction="right" delay={0.08}>
+            <div style={{ background: C.white, borderRadius: C.radiusLg, padding: '2rem', boxShadow: '0 4px 16px rgba(0,0,0,0.06)' }}>
+              <p style={{ margin: 0, fontWeight: 700, color: C.text, fontSize: '1rem' }}>
+                Studio Mantovan – Fisioterapia in Movimento
+              </p>
+              <p style={{ marginTop: '0.4rem', color: `${C.text}99`, fontSize: '0.92rem', lineHeight: 1.7 }}>
+                Via Enzo Togni, 75, 27043 Broni PV
+              </p>
+              <p style={{ marginTop: '0.75rem', color: `${C.text}99`, fontSize: '0.92rem' }}>
+                📞 <a href={`tel:${TEL}`} style={{ color: C.text, textDecoration: 'none', fontWeight: 600 }}>{TEL_DISPLAY}</a>
+              </p>
+              <p style={{ marginTop: '0.4rem', color: `${C.text}99`, fontSize: '0.92rem' }}>
+                ✉️ <a href="mailto:studio.mantovan@gmail.com" style={{ color: C.text, textDecoration: 'none', fontWeight: 600 }}>studio.mantovan@gmail.com</a>
+              </p>
 
-              <div style={{ paddingTop: '0.5rem', borderTop: `1px solid ${C.surface}`, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <table style={{ width: '100%', fontSize: '0.85rem', borderCollapse: 'collapse', marginTop: '1.1rem' }}>
+                <tbody>
+                  <tr>
+                    <td style={{ padding: '6px 0', borderBottom: `1px solid ${C.surface}`, color: C.text, fontWeight: 600 }}>Lun · Mer · Gio</td>
+                    <td style={{ padding: '6px 0', borderBottom: `1px solid ${C.surface}`, textAlign: 'right', color: `${C.text}88` }}>08:00–20:00</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px 0', borderBottom: `1px solid ${C.surface}`, color: C.text, fontWeight: 600 }}>Sabato</td>
+                    <td style={{ padding: '6px 0', borderBottom: `1px solid ${C.surface}`, textAlign: 'right', color: `${C.text}88` }}>14:00–19:00</td>
+                  </tr>
+                  <tr>
+                    <td style={{ padding: '6px 0', color: C.text, fontWeight: 600 }}>Mar · Ven · Dom</td>
+                    <td style={{ padding: '6px 0', textAlign: 'right', color: `${C.text}88` }}>Chiuso</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <div style={{ marginTop: '1.5rem' }}>
                 <a
-                  href="https://wa.me/393519242517"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/prenota"
                   style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '8px',
-                    background: '#25D366', color: '#fff', fontWeight: 700, fontSize: '0.9rem',
-                    padding: '12px 20px', borderRadius: '50px', textDecoration: 'none',
-                    boxShadow: '0 4px 14px rgba(37,211,102,0.35)',
+                    display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
+                    background: C.primary, color: '#fff', width: '100%',
+                    fontWeight: 700, fontSize: '0.92rem',
+                    padding: '12px 20px', borderRadius: '50px',
+                    textDecoration: 'none', letterSpacing: '0.01em',
+                    boxShadow: '0 4px 16px rgba(26,158,201,0.25)',
                   }}
                 >
-                  Scrivimi su WhatsApp
-                </a>
-                <a
-                  href="https://maps.google.com/?q=Via+Enzo+Togni+75,+Broni+PV"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '6px',
-                    fontSize: '0.85rem', fontWeight: 600, color: C.primary, textDecoration: 'none',
-                  }}
-                >
-                  Apri in Google Maps →
+                  Richiedi la tua valutazione gratuita →
                 </a>
               </div>
             </div>
@@ -866,7 +710,7 @@ function DoveSiamoSection() {
 /* ─────────────────── FAQ SPECIFICHE SPALLA ─────────────────── */
 function FaqSpallaSection() {
   return (
-    <section style={{ background: C.surface }}>
+    <section style={{ background: C.bg }}>
       <div style={{ maxWidth: '760px', margin: '0 auto', padding: `4rem ${C.pad} 1rem` }}>
         <FadeIn>
           <span style={{ fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: C.secondary }}>
@@ -890,18 +734,15 @@ function FaqSpallaSection() {
 function CtaFinaleSection() {
   return (
     <section style={{ position: 'relative', overflow: 'hidden', background: C.text }}>
-      <div style={{ position: 'relative', maxWidth: '760px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
+      <div style={{ position: 'relative', maxWidth: '700px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Il primo passo non è decidere se operarti.
+          <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
+            Prenota la tua visita gratuita.
           </h2>
-          <p style={{ marginTop: '0.75rem', fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: C.secondary, lineHeight: 1.3 }}>
-            È capire cosa sta succedendo davvero.
+          <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}>
+            In circa 60 minuti valuto la tua spalla e ti dico con sincerità se e come posso aiutarti.
           </p>
-          <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.8 }}>
-            La prima visita è gratuita, senza impegno.
-          </p>
-          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ marginTop: '2rem' }}>
             <a
               href="/prenota"
               style={{
@@ -911,14 +752,16 @@ function CtaFinaleSection() {
                 letterSpacing: '0.01em', boxShadow: '0 8px 24px rgba(26,158,201,0.3)', whiteSpace: 'nowrap',
               }}
             >
-              Prenota la valutazione gratuita →
+              Prenota ora →
             </a>
           </div>
-          <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
+          <div style={{ marginTop: '1.5rem' }}>
+            <a href={`tel:${TEL}`} style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none' }}>
+              📞 {TEL_DISPLAY}
+            </a>
+          </div>
+          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
             📍 Via Enzo Togni, 75, 27043 Broni PV
-          </p>
-          <p style={{ marginTop: '0.35rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-            📞 351 924 2517 · ✉️ studio.mantovan@gmail.com
           </p>
         </FadeIn>
       </div>
