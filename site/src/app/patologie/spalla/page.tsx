@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import { FadeIn, StaggerChildren, StaggerItem } from '@/components/ui/fade-in'
 import { FaqSection } from '@/components/FaqSection'
+import { ContactForm } from '@/components/ContactForm'
 import { Dumbbell, Stethoscope, Activity, Snowflake, RotateCcw, Clock } from 'lucide-react'
 
 export const metadata: Metadata = {
@@ -70,31 +71,9 @@ const jsonLdFaqPage = {
   })),
 }
 
-/* ─── CTA primaria ─── */
-function CtaButton({ center = false, mt = '2rem' }: { center?: boolean; mt?: string }) {
-  return (
-    <div style={{ marginTop: mt, display: 'flex', justifyContent: center ? 'center' : 'flex-start' }}>
-      <a
-        href="/prenota"
-        style={{
-          display: 'inline-flex', alignItems: 'center', gap: '8px',
-          background: C.primary, color: '#fff',
-          fontWeight: 700, fontSize: '1rem',
-          padding: '14px 28px', borderRadius: '50px',
-          textDecoration: 'none', letterSpacing: '0.01em',
-          boxShadow: '0 6px 24px rgba(26,158,201,0.28)',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        Prenota la valutazione gratuita →
-      </a>
-    </div>
-  )
-}
-
 export default function SpallaPage() {
   return (
-    <div style={{ background: C.bg }}>
+    <div id="top" style={{ background: C.bg }}>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaqPage) }} />
       <HeroSection />
       <ProofStrip />
@@ -112,7 +91,7 @@ export default function SpallaPage() {
   )
 }
 
-/* ─────────────────── HERO ─────────────────── */
+/* ─────────────────── HERO — COPY + MODULO ─────────────────── */
 function HeroSection() {
   return (
     <section style={{ position: 'relative', paddingTop: '68px', overflow: 'hidden' }}>
@@ -125,47 +104,53 @@ function HeroSection() {
       </div>
 
       <div
-        style={{ maxWidth: C.container, margin: '0 auto', padding: `5rem ${C.pad} 3.5rem`, position: 'relative' }}
-        className="grid grid-cols-1"
+        style={{ maxWidth: C.container, margin: '0 auto', padding: `2.5rem ${C.pad} 3rem`, position: 'relative' }}
+        className="grid grid-cols-1 lg:grid-cols-[1fr_420px] gap-10 items-start"
       >
-        <div style={{ maxWidth: '680px' }}>
+        <div>
           <FadeIn>
             <span style={{
-              display: 'inline-block', background: 'rgba(26,158,201,0.1)', color: C.primary,
-              fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em',
-              padding: '6px 14px', borderRadius: '50px', marginBottom: '1.25rem',
+              display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
+              letterSpacing: '0.1em', color: C.secondary, marginBottom: '0.9rem',
             }}>
-              Fisioterapista a Broni · Spalla e cuffia dei rotatori
+              Fisioterapia per il dolore alla spalla a Broni e nell&apos;Oltrepò Pavese
             </span>
+            <h1 style={{
+              fontSize: 'clamp(2rem, 4vw, 2.7rem)', fontWeight: 800,
+              color: C.text, lineHeight: 1.22, letterSpacing: '-0.02em', margin: 0,
+            }}>
+              Il mio obiettivo è farti tornare a fare ciò che oggi il dolore alla spalla ti impedisce di fare.
+            </h1>
+            <p style={{ marginTop: '1.1rem', fontSize: 'clamp(1.02rem, 1.6vw, 1.15rem)', fontWeight: 700, color: C.text, lineHeight: 1.6, maxWidth: '560px' }}>
+              Con la Fisioterapia in Movimento ti seguo personalmente in un percorso 1 a 1, costruito dopo un&apos;attenta valutazione della tua spalla.
+            </p>
           </FadeIn>
 
           <FadeIn delay={0.08}>
-            <h1 style={{
-              fontSize: 'clamp(1.9rem, 3.8vw, 2.7rem)', fontWeight: 800,
-              color: C.text, lineHeight: 1.28, letterSpacing: '-0.02em', margin: 0,
-            }}>
-              &ldquo;Nel referto hanno scritto &lsquo;lesione della cuffia dei rotatori&rsquo;.&rdquo;
-              <br />
-              <span style={{ color: C.primary }}>Ma nessuno mi ha spiegato se devo davvero operarmi.</span>
-            </h1>
-          </FadeIn>
-
-          <FadeIn delay={0.16}>
-            <p style={{ marginTop: '1.5rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Non un&apos;altra infiltrazione che allevia il dolore per qualche settimana. Non un altro &ldquo;evita di muoverla&rdquo;. Una valutazione che parte dal tuo quadro clinico completo, non solo dal referto.
+            <p style={{ marginTop: '1.5rem', fontSize: '1.02rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
+              Parto da ciò che oggi ti limita e da quello che vuoi tornare a fare: dormire meglio, alzare il braccio sopra la testa o tornare a praticare le tue attività quotidiane, sportive o lavorative.
             </p>
-            <p style={{ marginTop: '0.75rem', fontSize: '1.05rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
-              Molte lesioni della cuffia viste in risonanza non causano alcun dolore: vanno sempre lette insieme ai tuoi movimenti, alla tua storia e a cosa oggi non riesci più a fare.
-            </p>
-          </FadeIn>
-
-          <FadeIn delay={0.24}>
-            <CtaButton mt="2rem" />
-            <p style={{ marginTop: '0.6rem', fontSize: '0.78rem', color: `${C.text}55` }}>
-              Rispondo di persona entro 24 ore — nessuna diagnosi prima di averti visitato
+            <p style={{ marginTop: '1rem', fontSize: '1.02rem', color: `${C.text}99`, lineHeight: 1.8, maxWidth: '540px' }}>
+              Da qui definiamo insieme il percorso più adatto per aiutarti a recuperare queste attività.
             </p>
           </FadeIn>
         </div>
+
+        <FadeIn delay={0.14}>
+          <div style={{ position: 'sticky', top: '5.5rem' }}>
+            <p style={{ margin: '0 0 0.75rem', textAlign: 'center', fontSize: '0.85rem', fontWeight: 700, color: C.secondary, letterSpacing: '0.02em' }}>
+              Prima visita fisioterapica gratuita →
+            </p>
+            <ContactForm
+              accessKey={process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY_SPALLA_CRONICA}
+              showEmail={false}
+              messageLabel="Descrivi il problema"
+            />
+            <p style={{ margin: '0.9rem auto 0', fontSize: '0.8rem', color: `${C.text}77`, lineHeight: 1.6, textAlign: 'center' }}>
+              Ti rispondo personalmente entro 24 ore.
+            </p>
+          </div>
+        </FadeIn>
       </div>
     </section>
   )
@@ -457,7 +442,21 @@ function ValutazioneSection() {
                 <br />
                 Prima capiamo il problema. Poi, se ha senso lavorare insieme, decidiamo come farlo.
               </p>
-              <CtaButton mt="1.5rem" />
+              <div style={{ marginTop: '1.5rem' }}>
+                <a
+                  href="#top"
+                  style={{
+                    display: 'inline-flex', alignItems: 'center', gap: '8px',
+                    background: C.primary, color: '#fff',
+                    fontWeight: 700, fontSize: '1rem',
+                    padding: '14px 28px', borderRadius: '50px',
+                    textDecoration: 'none', letterSpacing: '0.01em',
+                    boxShadow: '0 6px 24px rgba(26,158,201,0.28)', whiteSpace: 'nowrap',
+                  }}
+                >
+                  Richiedi la tua valutazione gratuita →
+                </a>
+              </div>
             </FadeIn>
           </div>
         </div>
@@ -686,7 +685,7 @@ function DoveTrovarmiSection() {
 
               <div style={{ marginTop: '1.5rem' }}>
                 <a
-                  href="/prenota"
+                  href="#top"
                   style={{
                     display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px',
                     background: C.primary, color: '#fff', width: '100%',
@@ -736,32 +735,36 @@ function CtaFinaleSection() {
     <section style={{ position: 'relative', overflow: 'hidden', background: C.text }}>
       <div style={{ position: 'relative', maxWidth: '700px', margin: '0 auto', padding: `4.5rem ${C.pad}`, textAlign: 'center' }}>
         <FadeIn>
-          <h2 style={{ fontSize: 'clamp(1.5rem, 2.6vw, 2rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
-            Prenota la tua visita gratuita.
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.1rem)', fontWeight: 800, color: '#fff', lineHeight: 1.3 }}>
+            Non rimandare ancora ciò che vuoi tornare a fare.
           </h2>
-          <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.7 }}>
-            In circa 60 minuti valuto la tua spalla e ti dico con sincerità se e come posso aiutarti.
+          <p style={{ marginTop: '1.25rem', color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.8 }}>
+            Se il problema della tua spalla ti sta limitando, possiamo partire da una valutazione. Compila il modulo e raccontami brevemente cosa sta succedendo.
           </p>
-          <div style={{ marginTop: '2rem' }}>
+          <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.78)', fontSize: '1rem', lineHeight: 1.8 }}>
+            Ti ricontatterò personalmente per capire la tua situazione e fissare la tua prima valutazione fisioterapica gratuita in studio a Broni.
+          </p>
+          <div style={{ marginTop: '2rem', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1rem' }}>
             <a
-              href="/prenota"
+              href="#top"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '8px',
-                background: C.primary, color: '#fff', fontWeight: 700, fontSize: '1rem',
-                padding: '14px 28px', borderRadius: '50px', textDecoration: 'none',
-                letterSpacing: '0.01em', boxShadow: '0 8px 24px rgba(26,158,201,0.3)', whiteSpace: 'nowrap',
+                background: C.primary, color: '#fff',
+                fontWeight: 700, fontSize: '1rem',
+                padding: '14px 28px', borderRadius: '50px',
+                textDecoration: 'none', letterSpacing: '0.01em',
+                boxShadow: '0 8px 24px rgba(26,158,201,0.3)', whiteSpace: 'nowrap',
               }}
             >
-              Prenota ora →
+              Richiedi la tua valutazione gratuita →
             </a>
           </div>
-          <div style={{ marginTop: '1.5rem' }}>
-            <a href={`tel:${TEL}`} style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.95rem', fontWeight: 600, textDecoration: 'none' }}>
-              📞 {TEL_DISPLAY}
-            </a>
-          </div>
-          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-            📍 Via Enzo Togni, 75, 27043 Broni PV
+          <p style={{ marginTop: '1.25rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)' }}>
+            Se hai già fatto radiografie, ecografie o risonanze, puoi portarle con te alla valutazione.
+          </p>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.85rem', color: 'rgba(255,255,255,0.65)' }}>
+            📍 Via Enzo Togni, 75, 27043 Broni PV · 📞{' '}
+            <a href={`tel:${TEL}`} style={{ color: '#fff', textDecoration: 'underline' }}>{TEL_DISPLAY}</a>
           </p>
         </FadeIn>
       </div>
