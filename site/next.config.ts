@@ -48,8 +48,8 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/mal-di-schiena",
-        destination: "/patologie/lombalgia",
-        permanent: true,
+        destination: "/",
+        permanent: false,
       },
       {
         source: "/blog-fisioterapia",
@@ -63,12 +63,48 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
-      // Landing /spalla-cronica (noindex, traffico ads) eliminata: il suo contenuto
-      // è diventato la pagina di servizio /patologie/spalla.
+      // Sezione servizi (/servizi, /patologie/*, e le landing dedicate) tolta
+      // temporaneamente il 2026-10-07 per essere rivista e ricostruita con calma.
+      // Redirect non permanenti: tornerà online a breve con contenuti nuovi.
+      {
+        source: "/servizi",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/patologie",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/patologie/:path*",
+        destination: "/",
+        permanent: false,
+      },
       {
         source: "/spalla-cronica",
-        destination: "/patologie/spalla",
-        permanent: true,
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/schiena-cronica",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/spalla-lesionata",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/visita-gratuita-broni",
+        destination: "/",
+        permanent: false,
+      },
+      {
+        source: "/fisioterapia-a-domicilio",
+        destination: "/",
+        permanent: false,
       },
     ];
   },
